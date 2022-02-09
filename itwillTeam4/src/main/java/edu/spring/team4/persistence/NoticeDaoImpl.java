@@ -6,9 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import edu.spring.team4.domain.Notice;
 
+@Repository
 public class NoticeDaoImpl implements NoticeDao{
 	
 	private static final Logger log = LoggerFactory.getLogger(NoticeDaoImpl.class);
