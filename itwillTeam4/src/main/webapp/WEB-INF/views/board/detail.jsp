@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Insert title here 아아아아 ㅡㅇ아ㅏ아</title>
 	</head>
 	<body>
 		
