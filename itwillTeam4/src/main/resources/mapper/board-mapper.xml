@@ -3,12 +3,12 @@
 <mapper namespace="edu.spring.team4.mapper.BoardMapper">
 
 	<select id="selectAll" resultType="Board">
-	SELETE * FROM ${TABLE_BOARD_TABLE} 
+	SELECT * FROM ${TABLE_BOARD_TABLE} 
 	ORDER BY ${COL_BNO} DESC
 	</select> 
 	
 	<select id="selectByBno" resultType="Board">
-	SELETE * FROM ${TABLE_BOARD_TABLE}
+	SELECT * FROM ${TABLE_BOARD_TABLE}
 	WHERE ${COL_BNO} = #{bno}
 	</select> 
 	
