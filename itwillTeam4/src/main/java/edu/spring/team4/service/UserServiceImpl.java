@@ -24,10 +24,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean isValidId(String userid) {
-		log.info("isValidId(userid={}) 호출", userid);
+	public boolean isValidId(String user_id) {
+		log.info("isValidId(user_id={}) 호출", user_id);
 		
-		User user = userDao.checkUserId(userid);
+		User user = userDao.checkUser_Id(user_id);
 		if (user == null) { 
 			return true;
 		} else { 

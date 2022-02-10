@@ -39,10 +39,10 @@ public class UserController {
 	@RequestMapping(value = "/checkid", method = RequestMethod.POST)
 	@ResponseBody
 	
-	public String checkUserId(String userid) {
-		log.info("checkUserId(userid={})", userid);
+	public String checkUser_Id(String user_id) {
+		log.info("checkUser_Id(userid={})", user_id);
 		
-		if (userService.isValidId(userid)) {
+		if (userService.isValidId(user_id)) {
 			return "valid";
 		} else {
 			return "invalid";
