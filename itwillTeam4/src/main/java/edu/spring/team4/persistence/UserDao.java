@@ -5,8 +5,8 @@ import edu.spring.team4.domain.User;
 public interface UserDao {
 	
 	int create(User user);
-	User checkUserId(String userid);
+	User checkUser_Id(String user_id);
 	User read(User user);
-	int updatePoints(String userid, int points);
+	int updatePoints(String user_id, int points);
 	
 }
