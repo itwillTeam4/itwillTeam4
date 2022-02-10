@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
     <!-- MyBatis의 여러가지 환경 설정 -->
     
@@ -19,6 +20,7 @@
         <property name="COL_BOARD_BOOK_PUB" value="board_book_pub"/>
         <property name="COL_BOARD_BOOK_IMG" value="board_book_img"/>
         <property name="COL_BOARD_USERID" value="board_userid"/>
+        <property name="COL_BOARD_REPLY_CNT" value="board_reply_cnt"/>
         
         <!-- USER_TABLE 테이블 관련 상수들 -->
         <property name="TABLE_USER_TABLE" value="user_table"/>
@@ -58,17 +60,15 @@
         <property name="COL_NOTICE_CATEGORY" value="notice_category"/>
         
         <!-- REPLY_TABLE 테이블 관련 상수들 -->
+        <!-- userid, bno는 기존거 사용 -->
         <property name="TABLE_REPLY_TABLE" value="reply_table"/>
         <property name="COL_RNO" value="rno"/>
         <property name="COL_RTEXT" value="rtext"/>
-        <property name="COL_REPLY_USERID" value="reply_userid"/>
         <property name="COL_REPLY_REG_DATE" value="reply_reg_date"/>
         <property name="COL_REPLY_LKIE" value="reply_like"/>
-        <property name="COL_REPLY_BNO" value="reply_bno"/>
+        <property name="COL_REPLY_LKIE_CNT" value="reply_like_cnt"/>
     </properties>
     
     <typeAliases>
         <package name="edu.spring.team4.domain"/>
     </typeAliases>
-
-</configuration>
