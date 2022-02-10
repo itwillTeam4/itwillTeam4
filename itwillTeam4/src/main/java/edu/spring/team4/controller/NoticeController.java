@@ -34,6 +34,17 @@ public class NoticeController {
 		
 	}
 	
-	//TODO:insert부터 쭉
-
+	@RequestMapping(value="/insert", method=RequestMethod.GET)
+	public void insert() {
+		log.info("insert() GET 방식 호출");
+	}
+	
+	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	public String insert(Notice notice) {
+		log.info("insert({}) POST 방식 호출",notice);
+		
+		noticeService.insert(notice);
+		
+		return "redirect:/notice/main";
+	}
 }

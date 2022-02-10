@@ -28,5 +28,13 @@ public class NoticeDaoImpl implements NoticeDao{
 	}
 	
 	//TODO:read 부터 쭉
+	
+	@Override
+	public int create(Notice notice) {
+		log.info("NoticeDaoImpl.create() 호출");
+		
+		
+		return sqlSession.insert(NOTICE_NAMESPACE +".create", notice);
+	}
 
 }

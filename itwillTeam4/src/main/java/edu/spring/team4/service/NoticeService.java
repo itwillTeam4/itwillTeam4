@@ -9,8 +9,10 @@ public interface NoticeService {
 	
 	List<Notice> select();
 	
-//	int insert(Notice notice);
+	int insert(Notice notice);
 //	Notice select(int notice_idx);
+	
+	
 //	int update(Notice notice);
 //	int delete(int notice_idx);
 //	List<Notice> select(int searchType, String searchKeyword);

@@ -25,4 +25,12 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDao.read();
 	}
 
+	@Override
+	public int insert(Notice notice) {
+		log.info("insert({}) 호출", notice);
+		
+		int result = noticeDao.create(notice);
+		
+		return result;
+	}
 }
