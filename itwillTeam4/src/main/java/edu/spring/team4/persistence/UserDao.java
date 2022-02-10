@@ -1,6 +1,6 @@
 package edu.spring.team4.persistence;
 
-import edu.spring.tema4.domain.User;
+import edu.spring.team4.domain.User;
 
 public interface UserDao {
 	

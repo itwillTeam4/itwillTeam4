@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.spring.ex02.domain.User;
-import edu.spring.ex02.service.UserService;
+import edu.spring.team4.domain.User;
+import edu.spring.team4.service.UserService;
 
 @Controller  
 @RequestMapping(value = "/user")
