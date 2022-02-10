@@ -23,8 +23,8 @@ public class NoticeDaoImpl implements NoticeDao{
 	public List<Notice> read() {
 		
 		log.info("NoticeDaoImpl.read() 호출");
-		
 		return sqlSession.selectList(NOTICE_NAMESPACE+".selectAllNotice");
+	
 	}
 	
 	//TODO:read 부터 쭉

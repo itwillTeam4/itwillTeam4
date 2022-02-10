@@ -61,21 +61,17 @@
 							<tr>
 								<th>글 번호</th>
 								<th>글 제목</th>
-								<th>작성자</th>
 								<th>수정 시간</th>
-								<th>조회수</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="board" items="${boardList}" >
+							<c:forEach var="Notice" items="${noticeList}" >
 								<tr>
-									<td>${board.bno }</td>
-									<td><a href="./detail?bno=${board.bno}">${board.title}</a><span>[${board.reply_cnt}]</span></td>
-									<td>${board.userid }</td>
+									<td>${Notice.notice_idx}</td>
+									<td><a href="./detail?notice_idx=${Notice.notice_idx}">${Notice.notice_title}</a></td>
 									<td>
-										<fmt:formatDate value="${board.reg_date}" pattern="yyyy/MM/dd HH:mm" />
+										<fmt:formatDate value="${Notice.notice_reg_date}" pattern="yyyy/MM/dd" />
 									</td>
-									<td>${board.view_cnt }</td>
 								</tr>
 							</c:forEach>
 							

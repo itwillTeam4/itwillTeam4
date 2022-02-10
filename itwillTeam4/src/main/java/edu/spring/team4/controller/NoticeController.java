@@ -27,6 +27,7 @@ public class NoticeController {
 		log.info("main() 호출");
 		
 		List<Notice> noticeList = noticeService.select();
+		System.out.println(noticeList);
 		
 		model.addAttribute("noticeList", noticeList);
 		
