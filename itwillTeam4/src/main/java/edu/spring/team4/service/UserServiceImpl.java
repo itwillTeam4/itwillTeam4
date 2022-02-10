@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.spring.ex02.domain.User;
-import edu.spring.ex02.persistence.UserDao;
+import edu.spring.team4.domain.User;
+import edu.spring.team4.persistence.UserDao;
 
 @Service 
 public class UserServiceImpl implements UserService {
