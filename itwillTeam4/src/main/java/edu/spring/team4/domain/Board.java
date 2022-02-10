@@ -17,12 +17,14 @@ public class Board {
 	private String board_book_pub;
 	private String board_book_img;
 	private String board_userid;
+	private int board_reply_cnt;
 	
 	public Board() {}
 
 	public Board(int bno, String board_title, String board_content, int board_view_cnt, String board_like,
 			int board_meet_idx, Date board_reg_date, String board_tag, String board_book_title,
-			String board_book_authors, String board_book_pub, String board_book_img, String board_userid) {
+			String board_book_authors, String board_book_pub, String board_book_img, String board_userid,
+			int board_reply_cnt) {
 		this.bno = bno;
 		this.board_title = board_title;
 		this.board_content = board_content;
@@ -36,6 +38,7 @@ public class Board {
 		this.board_book_pub = board_book_pub;
 		this.board_book_img = board_book_img;
 		this.board_userid = board_userid;
+		this.board_reply_cnt = board_reply_cnt;
 	}
 
 	public int getBno() {
@@ -142,10 +145,18 @@ public class Board {
 		this.board_userid = board_userid;
 	}
 	
+	public int getBoard_reply_cnt() {
+		return board_reply_cnt;
+	}
+
+	public void setBoard_reply_cnt(int board_reply_cnt) {
+		this.board_reply_cnt = board_reply_cnt;
+	}
+
 	@Override   
 	public String toString() { 
-		return String.format("Board{bno:%d, title:%s, userid:%s, content:%s, reg_date:%s, view_cnt:%d, like:%s, meetIdx:%d, tag:%s, bookTitle:%s, bookAuthors:%s, bookPub:%s, bookImg:%s}", 
-				this.bno, this.board_title, this.board_userid, this.board_content, this.board_reg_date, this.board_view_cnt, this.board_like, this.board_meet_idx, this.board_tag, this.board_book_title, this.board_book_authors, this.board_book_pub, this.board_book_img);
+		return String.format("Board{bno:%d, title:%s, userid:%s, content:%s, reg_date:%s, view_cnt:%d, reply_cnt:%d, like:%s, meetIdx:%d, tag:%s, bookTitle:%s, bookAuthors:%s, bookPub:%s, bookImg:%s}", 
+				this.bno, this.board_title, this.board_userid, this.board_content, this.board_reg_date, this.board_view_cnt, this.board_reply_cnt, this.board_like, this.board_meet_idx, this.board_tag, this.board_book_title, this.board_book_authors, this.board_book_pub, this.board_book_img);
 	}
 	
 }
