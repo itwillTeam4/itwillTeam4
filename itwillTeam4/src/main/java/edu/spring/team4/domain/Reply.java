@@ -9,16 +9,21 @@ public class Reply {
 	private String reply_userid;
 	private Date reply_reg_date;
 	private String reply_like;
+	private int reply_like_cnt;
 	private int reply_bno;
-	
-	public Reply () {}
 
-	public Reply(int rno, String rtext, String reply_userid, Date reply_reg_date, String reply_like, int reply_bno) {
+	public Reply() {
+	}
+
+	public Reply(int rno, String rtext, String reply_userid, Date reply_reg_date, String reply_like, int reply_like_cnt,
+			int reply_bno) {
+		super();
 		this.rno = rno;
 		this.rtext = rtext;
 		this.reply_userid = reply_userid;
 		this.reply_reg_date = reply_reg_date;
 		this.reply_like = reply_like;
+		this.reply_like_cnt = reply_like_cnt;
 		this.reply_bno = reply_bno;
 	}
 
@@ -62,6 +67,14 @@ public class Reply {
 		this.reply_like = reply_like;
 	}
 
+	public int getReply_like_cnt() {
+		return reply_like_cnt;
+	}
+
+	public void setReply_like_cnt(int reply_like_cnt) {
+		this.reply_like_cnt = reply_like_cnt;
+	}
+
 	public int getReply_bno() {
 		return reply_bno;
 	}
@@ -69,10 +82,10 @@ public class Reply {
 	public void setReply_bno(int reply_bno) {
 		this.reply_bno = reply_bno;
 	}
-	
+
 	@Override
 	public String toString() {
-		//TODO:
+		// TODO:
 		return "";
 	}
 }
