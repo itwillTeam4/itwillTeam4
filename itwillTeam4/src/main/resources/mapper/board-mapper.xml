@@ -4,6 +4,6 @@
 
 	<select id="selectAll" resultType="edu.spring.team4.domain.Board">
 	select * from board_table order by bno desc
-	</select> 
+	</select>  
 
 </mapper>
