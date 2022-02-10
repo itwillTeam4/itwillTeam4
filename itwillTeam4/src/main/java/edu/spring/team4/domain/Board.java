@@ -144,8 +144,8 @@ public class Board {
 	
 	@Override
 	public String toString() {
-		//TODO:
-		return "";
+		return String.format("Board{bno:%d, title:%s, userid:%s, content:%s, reg_date:%s, view_cnt:%d, like:%s, meetIdx:%d, tag:%s, bookTitle:%s, bookAuthors:%s, bookPub:%s, bookImg:%s}", 
+				this.bno, this.board_title, this.board_userid, this.board_content, this.board_reg_date, this.board_view_cnt, this.board_like, this.board_meet_idx, this.board_tag, this.board_book_title, this.board_book_authors, this.board_book_pub, this.board_book_img);
 	}
 	
 }
