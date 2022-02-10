@@ -72,5 +72,3 @@
     <typeAliases>
         <package name="edu.spring.team4.domain"/>
     </typeAliases>
-
-</configuration>
