@@ -24,6 +24,7 @@
 		<property name="COL_BOARD_BOOK_IMG" value="board_book_img" />
 		<property name="COL_BOARD_USERID" value="board_userid" />
 		<property name="COL_BOARD_REPLY_CNT" value="board_reply_cnt" />
+		<property name="COL_BOARD_VIEW_CNT" value="board_view_cnt"/>
 
 		<!-- USER_TABLE 테이블 관련 상수들 -->
 		<property name="TABLE_USER_TABLE" value="user_table" />

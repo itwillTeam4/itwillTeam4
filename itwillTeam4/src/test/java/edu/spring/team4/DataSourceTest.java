@@ -35,6 +35,12 @@ public class DataSourceTest {
 	@Test 
 	public void doTest() throws SQLException {
 		logger.info("ds: {}", ds); 
+		
+		Connection conn = ds.getConnection();
+		logger.info("connection: {}" , conn);
+		
+		conn.close();
+		logger.info("connection 해제");
 		logger.info("sessionFactory: {}", sessionFactory);
 		logger.info("sqlSession: {}", sqlSession);
 		
