@@ -13,11 +13,15 @@
 
 </select>
 
+
+
+
+
 <!-- 공지사항 글 번호로 검색 -->
-<select id="selectByNoticeIdx" resultType="Notice">
+<select id="selectOne" resultType="Notice">
 
 SELECT * FROM ${TABLE_NOTICE_TABLE}
-WHERE ${COL_NOTICE_IDX} = #{noticeidx}
+WHERE ${COL_NOTICE_IDX} = #{notice_idx}
 
 
 </select>
@@ -25,15 +29,31 @@ WHERE ${COL_NOTICE_IDX} = #{noticeidx}
 <!-- 새 공지사항 작성 -->
 <insert id="create">
 INSERT INTO ${TABLE_NOTICE_TABLE} (${COL_NOTICE_TITLE},${COL_NOTICE_CONTENT},${COL_NOTICE_CATEGORY})
-VALUES (#{title},#{content},#{category})
+VALUES (#{notice_title},#{notice_content},#{notice_category})
 </insert>
-
 
 <!-- TODO: 수정, 삭제, 검색 -->
 
 
+<update id="update">
+
+UPDATE ${TABLE_NOTICE_TABLE}
+SET ${COL_NOTICE_TITLE} = #{notice_title}, ${COL_NOTICE_CONTENT} = #{notice_content}, ${COL_NOTICE_REG_DATE} = sysdate,
+${COL_NOTICE_CATEGORY} = #{notice_category}
+WHERE ${COL_NOTICE_IDX} = #{notice_idx}
 
 
+
+</update>
+
+
+
+<delete id="delete">
+
+DELETE FROM ${TABLE_NOTICE_TABLE} 
+WHERE ${COL_NOTICE_IDX} = #{notice_idx}
+
+</delete>
 
 
 

@@ -47,4 +47,40 @@ public class NoticeController {
 		
 		return "redirect:/notice/main";
 	}
+	
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public void detail(int notice_idx, Model model) {
+		log.info("detail(notice_idx={}) GET 호출", notice_idx);
+		
+		Notice notice = noticeService.select(notice_idx);
+		model.addAttribute("notice",notice);
+	}
+	
+	@RequestMapping(value="/update", method = RequestMethod.GET)
+	public void update(int notice_idx, Model model) {
+		log.info("update(notice_idx={}) 호출",notice_idx);
+		
+		Notice notice = noticeService.select(notice_idx);
+		model.addAttribute("notice",notice);
+		
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(Notice notice) {
+		log.info("update({}) POST 호출", notice);
+		
+		noticeService.update(notice);
+		
+		return "redirect:/notice/main";
+		
+	}
+	
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public String delete(int notice_idx) {
+		log.info("delete(notice_idx={}) 호출",notice_idx);
+		
+		noticeService.delete(notice_idx);
+		
+		return "redirect:/notice/main";
+	}
 }

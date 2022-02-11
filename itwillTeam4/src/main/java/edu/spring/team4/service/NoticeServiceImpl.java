@@ -32,5 +32,34 @@ public class NoticeServiceImpl implements NoticeService {
 		int result = noticeDao.create(notice);
 		
 		return result;
+		
+	}
+	
+	@Override
+	public Notice select(int notice_idx) {
+		log.info("select(notice_idx={}) 호출", notice_idx);
+		
+		Notice notice = noticeDao.read(notice_idx);
+		
+		
+		return notice;
+	}
+	
+	@Override
+	public int update(Notice notice) {
+		log.info("update({}) 호출", notice);
+		
+		int result = noticeDao.update(notice);
+		
+		return result;
+	}
+	
+	@Override
+	public int delete(int notice_idx) {
+		log.info("delete(notice_idx={}) 호출", notice_idx);
+		
+		int result = noticeDao.delete(notice_idx);
+		
+		return result;
 	}
 }

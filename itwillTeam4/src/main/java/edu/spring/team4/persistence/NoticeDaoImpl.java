@@ -27,7 +27,6 @@ public class NoticeDaoImpl implements NoticeDao{
 	
 	}
 	
-	//TODO:read 부터 쭉
 	
 	@Override
 	public int create(Notice notice) {
@@ -37,4 +36,28 @@ public class NoticeDaoImpl implements NoticeDao{
 		return sqlSession.insert(NOTICE_NAMESPACE +".create", notice);
 	}
 
+	@Override
+	public Notice read(int notice_idx) {
+		
+		log.info("NoticeDaoImpl.read(notice_idx={}) 호출",notice_idx);
+		
+		return sqlSession.selectOne(NOTICE_NAMESPACE+".selectOne",notice_idx);
+	}
+	
+	@Override
+	public int update(Notice notice) {
+		
+		log.info("NoticeDaoImpl.update({}) 호출", notice);
+		
+		
+		return sqlSession.update(NOTICE_NAMESPACE+".update",notice);
+	}
+	
+	@Override
+	public int delete(int notice_idx) {
+		
+		log.info("NoticeDaoImpl.delete(notice_idx={}) 호출", notice_idx);
+		
+		return sqlSession.delete(NOTICE_NAMESPACE+".delete",notice_idx);
+	}
 }

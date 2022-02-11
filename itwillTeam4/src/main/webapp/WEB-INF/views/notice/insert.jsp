@@ -13,7 +13,7 @@
 <body>
 	<div class="container-fluid">
 		<header class="text-center">
-			<h1>새 글 작성 페이지</h1>
+			<h1>공지사항 작성 페이지</h1>
 
 		</header>
 
@@ -27,7 +27,7 @@
 
 		<div>
 			<!-- 입력 양식 -->
-			<form method="post"> <!-- /board/insert POST 방식 전송  -->
+			<form method="post"> 
 				<div>
 					<input type="text" name="notice_title" placeholder="제목 입력" required
 					autofocus>
@@ -40,9 +40,9 @@
 				<div>
 					<select name="notice_category">
 						<!-- TODO: category 고민하기 데이터베이스 수정해야할수도 -->
-						<option value="1">공지사항</option>
-						<option value="2">이벤트</option>
-						<option value="3">FAQ</option>
+						<option value="공지사항">공지사항</option>
+						<option value="이벤트">이벤트</option>
+						<option value="FAQ">FAQ</option>
 					</select>
 				
 				</div>
