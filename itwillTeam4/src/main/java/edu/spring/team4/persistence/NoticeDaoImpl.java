@@ -1,6 +1,8 @@
 package edu.spring.team4.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -59,5 +61,18 @@ public class NoticeDaoImpl implements NoticeDao{
 		log.info("NoticeDaoImpl.delete(notice_idx={}) 호출", notice_idx);
 		
 		return sqlSession.delete(NOTICE_NAMESPACE+".delete",notice_idx);
+	}
+	
+	@Override
+	public List<Notice> read(int type, String keyword) {
+		log.info("NoticeDaoImpl.read(type={}, keyword={}) 호출", type, keyword);
+		
+		
+		Map<String,Object> params = new HashMap();
+		params.put("type", type);
+		params.put("keyword", "%" + keyword.toLowerCase()+"%");
+		
+		return sqlSession.selectList(NOTICE_NAMESPACE+".selectByKeyword", params);
+		
 	}
 }

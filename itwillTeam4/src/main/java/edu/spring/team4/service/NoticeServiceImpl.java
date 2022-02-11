@@ -62,4 +62,13 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		return result;
 	}
+	
+	@Override
+	public List<Notice> select(int type, String keyword) {
+		
+		log.info("select(type={}, keyword={}) 호출", type, keyword);
+		
+		
+		return noticeDao.read(type,keyword);
+	}
 }

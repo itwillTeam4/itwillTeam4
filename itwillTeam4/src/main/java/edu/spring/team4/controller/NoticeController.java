@@ -83,4 +83,17 @@ public class NoticeController {
 		
 		return "redirect:/notice/main";
 	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search(int type, String keyword, Model model) {
+		log.info("search(type={}, keyword={})", type, keyword);
+		
+		List<Notice> list = noticeService.select(type, keyword);
+		
+		model.addAttribute("noticeList", list);
+		
+		
+		
+		return "notice/main";
+	}
 }

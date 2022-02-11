@@ -42,13 +42,12 @@
 			</nav>
 			
 			<div><!-- 검색 기능 UI -->
-				<form action="" method="get">
+				<form action="search" method="get">
 					<select name="type">
 					
 						<option value="1">제목</option>
 						<option value="2">내용</option>
 						<option value="3">제목+내용</option>
-						<option value="4">글쓴이</option>
 					</select>
 					<input type="text" name="keyword" placeholder="검색어 입력" required />
 					<input type="submit" value="검색">
@@ -59,8 +58,8 @@
 					<table>
 						<thead>
 							<tr>
-								<th>글 번호</th>
-								<th>글 제목</th>
+								<th>공지사항 번호</th>
+								<th>공지사항 제목</th>
 								<th>수정 시간</th>
 							</tr>
 						</thead>

@@ -13,7 +13,7 @@ public interface NoticeDao {
 	Notice read(int notice_idx);
 	int update(Notice notice);
 	int delete(int notice_idx);
-//	List<Notice> read(int type, String keyword);
+	List<Notice> read(int type, String keyword);
 	
 	
 }

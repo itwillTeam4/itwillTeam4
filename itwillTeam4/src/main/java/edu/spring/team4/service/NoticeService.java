@@ -16,5 +16,5 @@ public interface NoticeService {
 	int update(Notice notice);
 	
 	int delete(int notice_idx);
-//	List<Notice> select(int searchType, String searchKeyword);
+	List<Notice> select(int type, String keyword);
 }
