@@ -31,7 +31,7 @@ public class BoardDaoImpl implements BoardDao {
 		log.info("boardDaoImpl.read(bno={}) 호출", bno);
 		return sqlSession.selectOne(BOARD_NAMESPACE + ".selectByBno", bno);
 	}
-	 
+	
 	@Override
 	public int create(Board board) {
 		log.info("boardDaoImpl.create({}) 호출", board);

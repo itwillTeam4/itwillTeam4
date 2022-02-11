@@ -26,7 +26,16 @@ public class BoardController {
 		
 		List<Board> list = boardService.select();
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
-		
 	}
 	
+	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	public void insert() {
+		log.info("insert() 호출");
+	}
+	
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public String insert(Board board) {
+		 
+		return "redirect:/board/main";
+	}
 }
