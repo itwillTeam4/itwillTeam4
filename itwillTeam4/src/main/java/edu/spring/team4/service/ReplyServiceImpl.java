@@ -1,0 +1,27 @@
+package edu.spring.team4.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import edu.spring.team4.domain.Reply;
+import edu.spring.team4.persistence.ReplyDao;
+
+@Service
+public class ReplyServiceImpl implements ReplyService {
+
+	private static final Logger log = LoggerFactory.getLogger(ReplyServiceImpl.class);
+
+	@Autowired
+	private ReplyDao replyDao;
+
+	@Override
+	public List<Reply> select(int bno) {
+		log.info("select(bno={})",bno);
+		return replyDao.read(bno);
+	}
+
+}
