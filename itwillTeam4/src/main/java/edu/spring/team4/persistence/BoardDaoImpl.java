@@ -1,6 +1,8 @@
 package edu.spring.team4.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -60,7 +62,11 @@ public class BoardDaoImpl implements BoardDao {
 	public List<Board> read(int type, String keyword) {
 		log.info("boardDaoImpl.read(type={}, keyword={})", type, keyword);
 		
-		return sqlSession.selectList(BOARD_NAMESPACE + ".selectByKeyword", params;
+		Map<String, Object> params = new HashMap<>();
+		params.put("type", type);
+		params.put("keyword", "%" + keyword.toLowerCase() + "%");
+		
+		return sqlSession.selectList(BOARD_NAMESPACE + ".selectByKeyword", params);
 	}
 	
 
