@@ -6,25 +6,26 @@ public class Reply {
 
 	private int rno;
 	private String rtext;
-	private String reply_userid;
+	private String user_id;
 	private Date reply_reg_date;
 	private String reply_like;
 	private int reply_like_cnt;
-	private int reply_bno;
+	private int bno;
 
 	public Reply() {
+		super();
 	}
 
-	public Reply(int rno, String rtext, String reply_userid, Date reply_reg_date, String reply_like, int reply_like_cnt,
-			int reply_bno) {
+	public Reply(int rno, String rtext, String user_id, Date reply_reg_date, String reply_like, int reply_like_cnt,
+			int bno) {
 		super();
 		this.rno = rno;
 		this.rtext = rtext;
-		this.reply_userid = reply_userid;
+		this.user_id = user_id;
 		this.reply_reg_date = reply_reg_date;
 		this.reply_like = reply_like;
 		this.reply_like_cnt = reply_like_cnt;
-		this.reply_bno = reply_bno;
+		this.bno = bno;
 	}
 
 	public int getRno() {
@@ -43,12 +44,12 @@ public class Reply {
 		this.rtext = rtext;
 	}
 
-	public String getReply_userid() {
-		return reply_userid;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setReply_userid(String reply_userid) {
-		this.reply_userid = reply_userid;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public Date getReply_reg_date() {
@@ -75,17 +76,18 @@ public class Reply {
 		this.reply_like_cnt = reply_like_cnt;
 	}
 
-	public int getReply_bno() {
-		return reply_bno;
+	public int getBno() {
+		return bno;
 	}
 
-	public void setReply_bno(int reply_bno) {
-		this.reply_bno = reply_bno;
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 
 	@Override
 	public String toString() {
-		// TODO:
-		return "";
+		return "Reply [rno=" + rno + ", rtext=" + rtext + ", user_id=" + user_id + ", reply_reg_date=" + reply_reg_date
+				+ ", reply_like=" + reply_like + ", reply_like_cnt=" + reply_like_cnt + ", bno=" + bno + "]";
 	}
+
 }

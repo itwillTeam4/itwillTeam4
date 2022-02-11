@@ -72,7 +72,7 @@
 		<property name="COL_RTEXT" value="rtext" />
 		<property name="COL_REPLY_REG_DATE" value="reply_reg_date" />
 		<property name="COL_REPLY_LKIE" value="reply_like" />
-		<property name="COL_REPLY_LKIE_CNT" value="reply_like_cnt" />
+		<property name="COL_REPLY_LIKE_CNT" value="reply_like_cnt" />
 	</properties>
 
 	<typeAliases>
