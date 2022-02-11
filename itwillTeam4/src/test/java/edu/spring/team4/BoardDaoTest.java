@@ -28,8 +28,8 @@ public class BoardDaoTest {
 	public void deTest() {
 		log.info("boardDao: {}", boardDao);
 		
-		List<Board> list = boardDao.read();
-		log.info("list size = {}", list.size());
+//		List<Board> list = boardDao.read();
+//		log.info("list size = {}", list.size());
 		
 //		
 //		Board board = boardDao.read(3);
@@ -39,6 +39,8 @@ public class BoardDaoTest {
 //		int result = boardDao.create(board);
 //		log.info("INSERT 결과: {}", result);
 //		
+		List<Board> list = boardDao.read(1, "테스트");
+		log.info("키워드 검색 결과: {}개 행", list.size());
 		
 	}
 	
