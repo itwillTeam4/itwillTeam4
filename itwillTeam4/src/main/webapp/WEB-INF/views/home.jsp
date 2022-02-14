@@ -15,7 +15,6 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 </head>
@@ -72,9 +71,12 @@
 		<h3>베스트 독서 모임 후기</h3>
 
 
-		
-		
-		
+		<div id="cardSlider" class="swiper-container">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide">슬라이드1</li>
+				<li class="swiper-slide">슬라이드2</li>
+			</ul>
+		</div>
 	</div>
 
 

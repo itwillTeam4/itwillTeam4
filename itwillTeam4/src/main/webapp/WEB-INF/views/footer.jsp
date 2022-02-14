@@ -27,7 +27,7 @@
 		<div id="footerTop">
 			<div id="footerTopLeft">
 				<div id="flogo">
-					<a href="../team4"><img
+					<a href="http://localhost:8181/team4"><!-- 서버구동하고 나중에 다시확인 --><img
 						src="${pageContext.request.contextPath}/resources/img/flogo.png"
 						alt="flogo" /></a>
 

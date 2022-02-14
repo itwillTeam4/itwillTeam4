@@ -23,7 +23,7 @@
 	<div id="wrap">
 		<div id="header">
 			<h1 id="logo">
-				<a href="../team4"><img
+				<a href="http://localhost:8181/team4"><!-- 서버구동하고 다시 확인해야함 --><img
 					src="${pageContext.request.contextPath}/resources/img/logo2.png"
 					alt="logo" /></a>
 			</h1>
@@ -32,8 +32,8 @@
 			<ul id="navui1" class="menu">
 
 
-				<li id="board"><a href="./board/main">커뮤니티</a></li>
-				<li id="notice"><a href="./notice/main">공지사항</a></li>
+				<li id="board"><a href="http://localhost:8181/team4/board/main">커뮤니티</a></li>
+				<li id="notice"><a href="http://localhost:8181/team4/notice/main">공지사항</a></li>
 
 			</ul>
 
@@ -66,11 +66,11 @@
 				<c:if test="${empty signInUserId}">
 					<%-- 로그인 되어 있지 않은경우 --%>
 
-					<li id="login"><a href="./user/signin">로그인</a></li>
-					<li id="signup"><a href="./user/register">회원 가입</a></li>
+					<li id="login"><a href="http://localhost:8181/team4/user/signin">로그인</a></li>
+					<li id="signup"><a href="http://localhost:8181/team4/user/register">회원 가입</a></li>
 				</c:if>
 				<c:if test="${not empty signInUserId }">
-					<li id="logout"><a href="./user/signout">로그아웃</a></li>
+					<li id="logout"><a href="http://localhost:8181/team4/user/logout">로그아웃</a></li>
 				</c:if>
 
 
