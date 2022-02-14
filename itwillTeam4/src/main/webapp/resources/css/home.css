@@ -37,8 +37,9 @@ img {
 	width: 100%
 }
 
-#kakao { 
-	width: 120px; height : 28px;
+#kakao {
+	width: 120px;
+	height: 28px;
 	position: fixed;
 	z-index: 999;
 	right: 0px;
@@ -46,11 +47,73 @@ img {
 	box-sizing: border-box;
 	display: none; /* 수정 해야함 */
 	align-items: center;
-	left:900px;
-	top:1900px;
+	left: 900px;
+	top: 1900px;
 }
-#kakao img{width:6%}
+
+#kakao img {
+	width: 6%
+}
+
 #kakao a {
 	width: 120px;
 	height: 32px;
+}
+
+#carouselWrap {
+	width: 1480px;
+	margin: 0 auto;
+	height: 450px;
+}
+
+#carouselExampleInterval {
+	width: 1480px;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+}
+
+.carousel-inner {
+	border-radius: 10px !important;
+}
+
+#wrap2 {
+	margin: 0 auto;
+	width: 1480px;
+	position: relative;
+	margin-top: 15px;
+	height:500px;
+}
+
+#wrap2_1 h2 {
+	font-size: 30px;
+	font-weight: 700;
+	float: left;
+}
+
+#wrap2_1 h2 span::before {
+	content: ' ';
+    position: absolute;
+    bottom: 29.1rem;
+    left: 117px;
+    width: 100px;
+    background-color: #ffcd6e;
+    height: 0.5rem;
+    z-index: -1;
+}
+
+#wrap2_1 img {
+	left: 20px;
+	width: 65px;
+	height: 35px;
+	position: relative;
+}
+#wrap2 h3 {
+	position:relative;
+	font-size:25px; font-weight:700;
+	float:left;
+	width:230px;
+	margin-top:5px;
+	left:-218px;
+	
 }
