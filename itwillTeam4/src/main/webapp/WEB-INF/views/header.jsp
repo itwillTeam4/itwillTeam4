@@ -28,31 +28,57 @@
 					alt="logo" /></a>
 			</h1>
 
-			<nav>
-				<ul id="navui">
 
-					<li><a href="./search">
-							<div id="meet">
-								<h2>독서모임 찾기</h2>
-							</div>
-					</a></li>
+			<ul id="navui1" class="menu">
 
 
-					<c:if test="${empty signInUserId}">
-						<%-- 로그인 되어 있지 않은경우 --%>
+				<li id="board"><a href="./board/main">커뮤니티</a></li>
+				<li id="notice"><a href="./notice/main">공지사항</a></li>
 
-						<li id="login"><a href="./user/signin">로그인</a></li>
-						<li id="signup"><a href="./user/register">회원 가입</a></li>
-					</c:if>
-					<c:if test="${not empty signInUserId }">
-						<li id="logout"><a href="./user/signout">로그아웃</a></li>
-					</c:if>
+			</ul>
 
 
 
+			<div >
+				<!-- 검색 기능 UI -->
+				<form action="search" method="get" id="searchWrap">
+					<input type="text" name="keyword" 
+						placeholder="함께 읽고 싶은 책이나 독서모임을 검색해보세요." required>
+						 <input type="image"  src="${pageContext.request.contextPath}/resources/img/search.png" >
+						 
+				</form>
+			</div>
 
-				</ul>
-			</nav>
+
+
+			<a href="./search" id="meetSearch">
+				<div id="meet">
+					<h2>독서모임 찾기</h2>
+				</div>
+			</a>
+
+
+			<ul id="navui2" class="menu">
+
+
+
+
+				<c:if test="${empty signInUserId}">
+					<%-- 로그인 되어 있지 않은경우 --%>
+
+					<li id="login"><a href="./user/signin">로그인</a></li>
+					<li id="signup"><a href="./user/register">회원 가입</a></li>
+				</c:if>
+				<c:if test="${not empty signInUserId }">
+					<li id="logout"><a href="./user/signout">로그아웃</a></li>
+				</c:if>
+
+
+
+
+			</ul>
+
+
 
 		</div>
 	</div>

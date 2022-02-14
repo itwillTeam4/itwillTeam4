@@ -20,13 +20,7 @@
 	<div class="container-fluid">
 		
 
-		<nav>
-			<ul>
-				
-				<li><a href="./board/main">게시판 메인</a></li>
-				<li><a href="./notice/main">공지사항 메인</a></li>
-			</ul>
-		</nav>
+		
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
