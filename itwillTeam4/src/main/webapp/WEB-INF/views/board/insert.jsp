@@ -32,6 +32,9 @@
 						<input type="text" name="board_userid" value="admin" required readonly/>
 					</div>
 					<div>
+						<input type="text" name="board_tag" value="태그" required autofocus/>
+					</div>
+					<div>
 						<input type="text" name="board_book_title" value="책 제목" required autofocus/>
 					</div>
 					<div>

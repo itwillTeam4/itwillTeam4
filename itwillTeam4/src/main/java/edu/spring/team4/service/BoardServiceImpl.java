@@ -25,10 +25,14 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int insert(Board board) {
-		
 		int result = boardDao.create(board);
 		
 		return result;
+	}
+
+	@Override
+	public Board select(int bno) {
+		return boardDao.read(bno);
 	}
 
 }

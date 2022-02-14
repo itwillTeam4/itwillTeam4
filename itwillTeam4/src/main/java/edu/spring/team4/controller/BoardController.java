@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,7 +36,20 @@ public class BoardController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Board board) {
-		 
+		boardService.insert(board);
+		
 		return "redirect:/board/main";
+	}
+	
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public void detail(int bno, Model model) {
+		Board board = boardService.select(bno);
+		model.addAttribute("board", board);
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public void update(int bno, Model model) {
+		Board board = boardService.select(bno);
+		model.addAttribute("board", board);
 	}
 }

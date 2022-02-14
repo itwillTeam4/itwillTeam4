@@ -52,7 +52,9 @@
 	              	 	<c:forEach var="board" items="${boardList}">
 	              	 		<tr>
 	              	 			<td>${board.bno}</td>
-	              	 			<td>${board.board_title}</td>
+	              	 			<td>
+	              	 				<a href="./detail?bno=${board.bno}">${board.board_title}</a>
+              	 				</td>
 	              	 			<td>${board.board_userid}</td>
 	              	 			<td>
                           			<fmt:formatDate value="${board.board_reg_date}" pattern="yyyy/MM/dd HH:mm"/>
