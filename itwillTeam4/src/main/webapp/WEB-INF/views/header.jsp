@@ -44,7 +44,7 @@
 				<form action="search" method="get" id="searchWrap">
 					<input type="text" name="keyword" 
 						placeholder="함께 읽고 싶은 책이나 독서모임을 검색해보세요." required>
-						 <input type="image"  src="${pageContext.request.contextPath}/resources/img/search.png" >
+						 <button type="submit"  ><img src="${pageContext.request.contextPath}/resources/img/search.png" alt="search"></button>
 						 
 				</form>
 			</div>

@@ -79,7 +79,7 @@ img {
 	background-color: #007450;
 	text-align: center;
 	position: relative;
-	left: 505px;
+	margin-left:530px;
 	color: white;
 	top: -15px;
 }
@@ -135,7 +135,7 @@ img {
 }
 
 #searchWrap {
-	width: 460px;
+	width: 430px;
 	height: 40px;
 	float: left;
 	left: 300px;
@@ -154,15 +154,12 @@ input::placeholder {
 }
 input[type=text]{
 	
-	width: 43.3rem;
+	width: 20rem;
     padding: 0;
     border: none;	
     background-color: transparent;
     margin-top:3px;
-    margin-left:-15px;
 }
 
-input[type=image]{
-	position:relative;
-	margin-left:20px;
-}
+button {border:0; outline:0; background-color:transparent; margin-top:2px; margin-left:18px; padding:0;}
+button  img { width: 24px; height:24px; margin-left : 15px;  }
