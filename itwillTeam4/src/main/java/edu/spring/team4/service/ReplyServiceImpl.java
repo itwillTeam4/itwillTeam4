@@ -38,6 +38,9 @@ public class ReplyServiceImpl implements ReplyService {
 
 		int result = replyDao.create(reply);
 
+		boardDao.updateReplyCnt(reply.getBno(), 1);
+		
+		
 		return result;
 	}
 
@@ -60,8 +63,7 @@ public class ReplyServiceImpl implements ReplyService {
 		int result = replyDao.delete(rno);
 
 		// 댓글 삭제가 성공한 경우, 게시판 테이블(boards)에서 bno의 댓글수를 감소.
-//		boardDao.updateReplyCnt(bno, -1);
-
+		boardDao.updateReplyCnt(bno, -1);
 		return result;
 	}
 }
