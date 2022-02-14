@@ -16,6 +16,14 @@ public class Reply {
 		super();
 	}
 
+	public Reply(int rno, String rtext, String user_id, int bno) {
+		super();
+		this.rno = rno;
+		this.rtext = rtext;
+		this.user_id = user_id;
+		this.bno = bno;
+	}
+
 	public Reply(int rno, String rtext, String user_id, Date reply_reg_date, String reply_like, int reply_like_cnt,
 			int bno) {
 		super();
@@ -83,11 +91,11 @@ public class Reply {
 	public void setBno(int bno) {
 		this.bno = bno;
 	}
-
 	@Override
 	public String toString() {
-		return "Reply [rno=" + rno + ", rtext=" + rtext + ", user_id=" + user_id + ", reply_reg_date=" + reply_reg_date
-				+ ", reply_like=" + reply_like + ", reply_like_cnt=" + reply_like_cnt + ", bno=" + bno + "]";
+		return String.format(
+				"Reply{rno:%d, rtext:%s, user_id:%s, regdate:%s, bno:%d}", 
+				this.rno, this.rtext, this.user_id, this.reply_reg_date, this.bno);
 	}
 
 }

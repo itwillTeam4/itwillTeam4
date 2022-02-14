@@ -18,5 +18,5 @@ public interface ReplyDao {
 	
 //	int clikeLike(int rno);
 	int delete(int rno);
-	
+	int readBno(int rno);
 }
