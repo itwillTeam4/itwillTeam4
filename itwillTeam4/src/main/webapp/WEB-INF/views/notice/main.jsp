@@ -13,6 +13,8 @@
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 	</head>
 	<body>
+	<%@include file="../header.jsp"%>
+	
 		<div class="container-fluid">
 			<header class="jumbotron text-center">
 				<h1>공지사항 메인</h1>
@@ -79,6 +81,7 @@
 				</div>
 		</div>
 		
+		<%@include file="../footer.jsp"%>
 		
 		<script
 			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

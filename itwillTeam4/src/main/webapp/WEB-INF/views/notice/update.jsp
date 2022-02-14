@@ -12,6 +12,9 @@
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 	</head>
 	<body>
+	
+	<%@include file="../header.jsp"%>
+	
 		<div class="container-fluid">
 			<header>
 				<h1>공지사항 수정 페이지</h1>
@@ -58,6 +61,7 @@
 			</div>
 		</div>
 		
+		
 		<script
 			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 		<script
@@ -83,5 +87,6 @@
 			});
 			
 		</script>
+		
 	</body>
 </html>
