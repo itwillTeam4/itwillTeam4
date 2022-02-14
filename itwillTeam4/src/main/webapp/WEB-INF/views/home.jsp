@@ -18,22 +18,11 @@
 		
 	<%@include file="header.jsp" %>
 	<div class="container-fluid">
-		<header class="jumbotron text-center">
-			<h1>메인 페이지</h1>
-		</header>
+		
 
 		<nav>
 			<ul>
-				<c:if test="${empty signInUserId}">
-					<%-- 로그인 되어 있지 않은경우 --%>
-					<li><a href="./user/register">회원 가입</a></li>
-					<li><a href="./user/signin">로그인</a></li>
-				</c:if>
-				<c:if test="${not empty signInUserId }">
-					<li>
-					<a href="./user/signout">로그아웃</a>
-					</li>
-				</c:if>
+				
 				<li><a href="./board/main">게시판 메인</a></li>
 				<li><a href="./notice/main">공지사항 메인</a></li>
 			</ul>

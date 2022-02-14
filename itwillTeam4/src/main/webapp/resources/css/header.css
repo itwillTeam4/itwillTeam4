@@ -1,0 +1,20 @@
+@charset "UTF-8";
+*{margin:0;padding: 0;}
+a{text-decoration: none; color:inherit;}
+li{list-style: none;}
+body{font-size:15px; color:#333333; font-family: 'Noto Sans KR', sans-serif; }
+.clearfix:after{content: "";display: block;clear: both;}
+img{width:100%}
+
+
+#wrap{width:100%;  border-bottom: 1px solid #e6e6e6;}
+#header{width:1400px; height: 110px; margin:0 auto;}
+#logo{width:93px; height: 55px;position: relative; top:30px; left: 50px;}
+#navui { width:330px; height:36px; float:right; position:relative; top:-15px;}
+
+#meet {width:130px; height:36px; float:left; background-color:#007450; text-align:center;	 color:white;} 
+#meet h2 {font-size:16px;line-height: 36px; font-weight:700;}
+
+
+#login {float:left;text-align:center; margin-left:40px; line-height:36px; font-weight:500;}
+#signup {float:left; text-align:center; margin-left:20px;line-height:36px; font-weight:500;}
