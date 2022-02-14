@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.service.BoardService;
@@ -51,5 +52,24 @@ public class BoardController {
 	public void update(int bno, Model model) {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(Board board) {
+		boardService.update(board);
+		return "redirect:/board/main";
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(int bno) {
+		boardService.delete(bno);
+		return "redirect:/board/main";
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search(int type, String keyword, Model model) {
+		List<Board> list = boardService.select(type, keyword);
+		model.addAttribute("boardList", list);
+		return "/board/main";
 	}
 }
