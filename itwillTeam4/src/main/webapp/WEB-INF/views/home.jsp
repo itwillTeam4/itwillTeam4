@@ -13,9 +13,12 @@
 	rel="stylesheet" type="text/css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet"
-	href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 </head>
 <body>
@@ -71,17 +74,123 @@
 		<h3>베스트 독서 모임 후기</h3>
 
 
-		<div id="cardSlider" class="swiper-container">
-			<ul class="swiper-wrapper">
-				<li class="swiper-slide">슬라이드1</li>
-				<li class="swiper-slide">슬라이드2</li>
-			</ul>
+
+
+		<div class="swiper mySwiper">
+
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="swiper-slide silde-left" >
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="swiper-slide silde-left">
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="swiper-slide silde-left">
+					<a href="#">
+						<div class="a">
+							<div class="a_a">
+								<!--  ${board.board_title}-->
+
+							</div>
+							<div class="a_b">
+								<h5>
+									<!-- ${board.board_userid} -->
+								</h5>
+								<p>
+									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="swiper-pagination"></div>
 		</div>
-	</div>
 
 
 
-	<!-- 
+		<!-- 
 	<div id="kakao">
 		<a href="https://open.kakao.com/o/g8fPcYZd"><img
 			src="${pageContext.request.contextPath}/resources/img/kakao.png"
@@ -90,10 +199,25 @@
 	 -->
 
 
-	<%@include file="footer.jsp"%>
-	<script
-		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<%@include file="footer.jsp"%>
+		<script
+			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript">
+			var swiper = new Swiper(".mySwiper", {
+				slidesPerView : 3,
+				spaceBetween : 3,
+				slidesPerGroup : 3,
+				pagination : {
+					el : ".swiper-pagination",
+					clickable : true,
+				},
+				navigation : {
+					nextEl : ".swiper-button-next",
+					prevEl : ".swiper-button-prev",
+				},
+			});
+		</script>
 </body>
 </html>
