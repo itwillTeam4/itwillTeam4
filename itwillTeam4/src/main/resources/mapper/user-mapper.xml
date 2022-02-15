@@ -15,7 +15,7 @@
 <select id="selectByUser" resultType="User">
 
 		SELECT * FROM ${TABLE_USER_TABLE}
-		WHERE ${COL_USER_CODE} = #{USER_CODE}
+		WHERE ${COL_USER_USER_ID} = #{USER_USER_ID}
 
 
 </select>
