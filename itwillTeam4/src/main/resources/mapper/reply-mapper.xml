@@ -23,6 +23,11 @@
 		SET ${COL_RTEXT} = #{rtext}, ${COL_REPLY_REG_DATE} = sysdate
 		WHERE ${COL_RNO} = #{rno}
 	</update>
+	<update id="update_like">
+		UPDATE ${TABLE_REPLY_TABLE}
+		SET ${COL_REPLY_LIKE} = #{reply_like}, ${COL_REPLY_LIKE_CNT}=${COL_REPLY_LIKE_CNT} + #{increase},${COL_REPLY_REG_DATE} = sysdate
+		WHERE ${COL_RNO} = #{rno}
+	</update>
 
 	<delete id="delete">
 		DELETE FROM ${TABLE_REPLY_TABLE} WHERE ${COL_RNO} = #{rno}
