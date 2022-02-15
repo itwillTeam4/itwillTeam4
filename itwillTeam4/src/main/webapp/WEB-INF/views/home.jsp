@@ -191,24 +191,180 @@
 	</div>
 	<div id="wrap3" class="content">
 		<div class="wrap3List" id="wrap3_1">
-			
-		
+			<p class="wrap3Title">최근 등록 독서 노트</p>
+
+			<ul>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
+
+
+			</ul>
+
+			<div class="more-btn-box">
+				<a href="http://localhost:8181/team4/board/main">
+					<div id="more-btn-box">
+						<span>더보기</span> <img
+							src="${pageContext.request.contextPath}/resources/img/arrow.png"
+							alt="ar">
+
+					</div>
+				</a>
+			</div>
 		</div>
-	
+
 		<div class="wrap3List" id="wrap3_2">
-		
+			<p class="wrap3Title" id="wrap3Title2">지금 가장 인기 있는 독서 모임</p>
+			<img src="${pageContext.request.contextPath}/resources/img/hot.png"
+				alt="hot" id="wrap3img1">
+
+			<ul>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com01.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com02.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com01.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+
+
+			</ul>
+
+			<div class="more-btn-box">
+				<a href="http://localhost:8181/team4/board/main">
+					<div id="more-btn-box">
+						<span>더보기</span> <img
+							src="${pageContext.request.contextPath}/resources/img/arrow.png"
+							alt="ar">
+
+					</div>
+				</a>
+			</div>
 		</div>
-	
+
 	</div>
-	
-	<div id="wrap4" class="content">
-	
-	
-	</div>
+
+	<div id="wrap4" class="content"></div>
 
 
 	<%@include file="footer.jsp"%>
-	
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -228,47 +384,51 @@
 				prevEl : ".swiper-button-prev",
 			},
 		});
-		
-		window.addEventListener(
-			    "wheel",
-			    function (e) {
-			      e.preventDefault();
-			    },
-			    { passive: false }
-			  );
 
-			  var $html = $("html");
+		window.addEventListener("wheel", function(e) {
+			e.preventDefault();
+		}, {
+			passive : false
+		});
 
-			  var page = 1;
+		var $html = $("html");
 
-			  var lastPage = $(".content").length;
+		var page = 1;
 
-			  $html.animate({ scrolltop: 0 }, 10);
+		var lastPage = $(".content").length;
 
-			  $(window).on("wheel", function (e) {
-			    if ($html.is(":animated")) return;
+		$html.animate({
+			scrolltop : 0
+		}, 10);
 
-			    if (e.originalEvent.deltaY > 0) {
-			      if (page == lastPage) return;
+		$(window).on("wheel", function(e) {
+			if ($html.is(":animated"))
+				return;
 
-			      page++;
-			    } else if (e.originalEvent.deltaY < 0) {
-			      if (page == 1) return;
+			if (e.originalEvent.deltaY > 0) {
+				if (page == lastPage)
+					return;
 
-			      page--;
-			    }
+				page++;
+			} else if (e.originalEvent.deltaY < 0) {
+				if (page == 1)
+					return;
 
-			    var posTop = (page - 1) * $(window).height();
+				page--;
+			}
 
-			    $html.animate({ scrollTop: posTop });
-			  });
-			  
-			  
-			  window.onload = function() {
-				  setTimeout (function(){
-					  scrollTo(0,0);
-				  },100);
-			  }
+			var posTop = (page - 1) * $(window).height();
+
+			$html.animate({
+				scrollTop : posTop
+			});
+		});
+
+		/* window.onload = function() {
+		  setTimeout (function(){
+			  scrollTo(0,0);
+		  },100);
+		 }*/
 	</script>
 </body>
 </html>
