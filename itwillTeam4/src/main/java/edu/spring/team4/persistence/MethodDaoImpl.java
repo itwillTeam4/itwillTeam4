@@ -1,4 +1,4 @@
-package edu.spring.team4.method;
+package edu.spring.team4.persistence;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,14 +9,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Methods {
+public class MethodDaoImpl implements MethodDao {
 	/***
 	 * String을 List로 바꿔준다.
 	 * 
 	 * @param string "하나 둘 셋" (띄어쓰기로 구분)
-	 * @return List  [하나,둘,셋]
+	 * @return List [하나,둘,셋]
 	 */
-	public static List<String> toList(String string) {
+	@Override
+	public List<String> toList(String string) {
 		String[] strArr = string.split("\\s+");// Splitting using whitespace
 		ArrayList<String> list = new ArrayList<String>(Arrays.asList(strArr));
 		return list;
@@ -30,18 +31,37 @@ public class Methods {
 	 * @throws JsonMappingException
 	 * @throws JsonProcessingException
 	 */
-	public static Map<String, Integer> toMap(String string) throws JsonMappingException, JsonProcessingException {
+	@Override
+	public Map<String, Integer> toMap(String string) {
 		ObjectMapper mapper = new ObjectMapper();
-		Map<String, Integer> map = mapper.readValue(string, Map.class);
+		Map<String, Integer> map=null;
+		try {
+			map = mapper.readValue(string, Map.class);
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return map;
 	}
 
-	public static String toString(Map<String, Integer> map) throws JsonProcessingException {
+	@Override
+	public String toString(Map<String, Integer> map) {
 		ObjectMapper mapper = new ObjectMapper();
-		return mapper.writeValueAsString(map);
+		String string=null;
+		try {
+			string= mapper.writeValueAsString(map);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return string;
 	}
 
-	public static String toString(List<String> list) {
+	@Override
+	public String toString(List<String> list) {
 		String result = "";
 		for (String str : list) {
 			result = result + str + " ";
