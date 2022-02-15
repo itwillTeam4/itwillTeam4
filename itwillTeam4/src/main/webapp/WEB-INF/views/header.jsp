@@ -64,13 +64,12 @@
 
 
 				<c:if test="${empty signInUserId}">
-					<%-- 로그인 되어 있지 않은경우 --%>
 
-					<li id="login"><a href="http://localhost:8181/team4/user/signin">로그인</a></li>
-					<li id="signup"><a href="http://localhost:8181/team4/user/register">회원 가입</a></li>
+					<li id="login"><a href="./user/signin">로그인</a></li>
+					<li id="signup"><a href="./user/register">회원 가입</a></li>
 				</c:if>
 				<c:if test="${not empty signInUserId }">
-					<li id="logout"><a href="http://localhost:8181/team4/user/logout">로그아웃</a></li>
+					<li id="logout"><a href="./user/signout">로그아웃</a></li>
 				</c:if>
 
 
