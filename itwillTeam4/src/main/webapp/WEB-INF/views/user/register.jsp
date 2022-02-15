@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ 
+    
 <%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html>
@@ -47,20 +49,25 @@
                     </div>
                     
                     <div>
-                        <input type="text" nickname="user_nn" name="userid" placeholder="아이디 입력" required />
+                        <input type="text" nickname="user_nn" name="usernn" placeholder="닉네임 입력" required />
                         <div class="valid">사용 가능한 닉네임입니다.</div>
                         <div class="invalid">닉네임이 중복됐습니다.</div>
                     </div>
                     
                     
                     <div>
-                        <input type="name" name="user_name" placeholder="이름 입력" required />
+                        <input type="text" name="user_name" placeholder="이름 입력" required />
                     </div>
-                    
+                 
+                     
+                     
+                    <div>
+                        <input type="text" name="user_phone" placeholder="전화번호 입력" required />
+                    </div>
                     
                      
                     <div>
-                        <input type="phone" name="user_phone" placeholder="전화번호 입력" required />
+                        <input type="text" name="user_tag" placeholder="유저 태그 입력" required />
                     </div>
                     
                     
@@ -98,4 +105,6 @@
         });
         </script>
     </body>
+    
+    
 </html>

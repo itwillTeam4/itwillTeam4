@@ -31,6 +31,28 @@
                     <div>
                         <input type="submit" value="로그인" />
                     </div>
+                    
+                    <!--  한번 더 입력받는 패스워드 -->
+                     <div>
+                        <input type="password" name="pwd" placeholder="비밀번호 입력" autofocus required />
+                    </div>
+                    
+                     <div>
+                        <input type="text" name="user_nn" placeholder="닉네임 입력" autofocus required />
+                    </div>
+                    
+                     <div>
+                        <input type="text" name="user_name" placeholder="이름 입력" autofocus required />
+                    </div>
+                    
+                      <div>
+                        <input type="text" name="user_phone" placeholder="전화번호 입력" autofocus required />
+                    </div>
+                    
+                      <div>
+                        <input type="text" name="user_tag" placeholder="유저 태그 입력" autofocus required />
+                    </div>
+                    
                     <div>
                         <input type="hidden" name="url" value="${url}" />
                     </div>
