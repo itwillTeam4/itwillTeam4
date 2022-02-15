@@ -38,14 +38,23 @@ public class UserController {
 	
 	@RequestMapping(value = "/checkid", method = RequestMethod.POST)
 	@ResponseBody
-	
-	public String checkUser_Id(String user_id) {
-		log.info("checkUser_Id(userid={})", user_id);
+	public String checkUserId(String user_id) {
+		log.info("checkUserId(user_id={})", user_id);
 		
 		if (userService.isValidId(user_id)) {
-			return "valid";
+			return "valid_id";
 		} else {
-			return "invalid";
+			return "invalid_id";
+		}
+	}
+	
+	@RequestMapping(value = "/checknn", method = RequestMethod.POST)
+	@ResponseBody
+	public String checkUserNn(String user_nn) {
+		if (userService.isValidNn(user_nn)) {
+			return "valid_nn";
+		} else {
+			return "invalid_nn";
 		}
 	}
 	

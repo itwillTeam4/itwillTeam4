@@ -17,11 +17,19 @@ public interface UserMapper {
 	@Insert(SIGN_UP)
 	int insert(User user);
 	
+	// 중복 아이디 체크
 	String CHECK_USER_ID = 
-			"SELECT * FROM ${TABLE_USERS} WHERE ${COL_USERID} = #{userid}";
+			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_ID} = #{user_id}";
+	
+	// 중복 닉네임 체크
+	String CHECK_USER_NN = 
+			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_NN} = #{user_nn}";
 	
 	@Select(CHECK_USER_ID)
-	User selectByUserId(String userid);
+	User selectByUserId(String user_id);
+	
+	@Select(CHECK_USER_NN)
+	User selectByUserNn(String user_nn);
 	
 	String CHECK_SIGN_IN = 
 			"SELECT * FROM ${TABLE_USERS} WHERE ${COL_USERID} = #{userid} AND ${COL_PWD} = #{pwd}";

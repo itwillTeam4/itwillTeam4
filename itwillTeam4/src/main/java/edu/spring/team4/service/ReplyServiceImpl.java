@@ -66,4 +66,10 @@ public class ReplyServiceImpl implements ReplyService {
 		boardDao.updateReplyCnt(bno, -1);
 		return result;
 	}
+
+	@Override
+	public int upLike(int rno, Reply liker) {
+		
+		return replyDao.upLike(rno, liker);
+	}
 }

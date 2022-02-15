@@ -56,7 +56,7 @@
 	<div>
 		<input type="text" id="rtext" name="rtext" placeholder="댓글 입력" />
 		<!--어드민 대신 ${signInUserId}-->
-		<input type="text" id="userid" name="user_id" value= "어드민" readonly="readonly" />
+		<input type="text" id="userid" name="user_id" value= "어드민님" readonly="readonly" />
 		<button id="btn_create_reply">댓글 작성 완료</button>
 		<button id="btn_sort_like">좋아요순</button>
 		<button id="btn_sort_reg">최신순</button>
@@ -188,7 +188,30 @@
     			});
     		}
     	});
-		
+		$("#replies").on('click','.reply_item .reply_like', function(event){
+    		var rno = $(this).prevAll('#rno').val();
+    		var user=$('#userid').val();
+    		var result = confirm('좋아요? 좋냐고');
+    		if (result){
+    			$.ajax({
+    			url: '/team4/replies/'+rno,
+    			type: 'POST',
+    				headers: {
+    					'Content-Type': 'application/json',
+    					'X-HTTP-Method-Override': 'POST'
+    			},
+ 					data: JSON.stringify({'user_id':user}),
+  			  	
+    			success: function () {
+    				getReplies(sort); // 댓글 목록 업데이트
+    				alert(rno + ' 좋아요 성공!');
+    				},
+    			error: function(){
+    				alert(rno + ' 좋아요 실패!');
+    			}
+    			});
+    		}
+		});
 		
 			});
 	</script>

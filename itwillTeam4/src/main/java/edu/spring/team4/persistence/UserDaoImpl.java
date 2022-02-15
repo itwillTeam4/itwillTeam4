@@ -26,10 +26,16 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public User checkUser_Id(String user_id) {
-		log.info("checkUser_Id(user_id={}) 호출", user_id);
+	public User checkUserId(String user_id) {
+		log.info("checkUserId(user_id={}) 호출", user_id);
 		
 		return mapper.selectByUserId(user_id);
+	}
+	
+	@Override
+	public User checkUserNn(String user_nn) {
+		log.info("checkUserNn(user_nn={}) 호출", user_nn);
+		return mapper.selectByUserNn(user_nn);
 	}
 	
 	@Override
@@ -38,15 +44,6 @@ public class UserDaoImpl implements UserDao {
 		return mapper.selectByIdAndPwd(user);
 	}
 	
-	@Override
-	public int updatePoints(String user_id, int points) {
-		log.info("updatePoints(user_id={}, points={}) 호출", user_id, points);
-		
-		Map<String, Object> params = new HashMap<>();
-		params.put("user_id", user_id);
-		params.put("points", points);
-		
-		return mapper.updateUserPoints(params);
-	}
+	
 	
 }
