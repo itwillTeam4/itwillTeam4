@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int create(User user) {
 		log.info("create({}) 호출", user);
-		
 		return mapper.insert(user);
 	}
 	

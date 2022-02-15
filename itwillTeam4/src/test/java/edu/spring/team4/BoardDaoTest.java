@@ -12,7 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.domain.User;
 import edu.spring.team4.persistence.BoardDao;
+import edu.spring.team4.persistence.UserDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
@@ -23,6 +25,7 @@ public class BoardDaoTest {
 	private static final Logger log = LoggerFactory.getLogger(BoardDaoTest.class);
 	
 	@Autowired private BoardDao boardDao;
+	@Autowired private UserDao userDao;
 	
 	@Test
 	public void deTest() {
@@ -39,9 +42,11 @@ public class BoardDaoTest {
 //		int result = boardDao.create(board);
 //		log.info("INSERT 결과: {}", result);
 //		
-		List<Board> list = boardDao.read(1, "테스트");
-		log.info("키워드 검색 결과: {}개 행", list.size());
-		
+//		
+
+		User user = new User(0, "test", "test1234", "테스트닉넴", "테스트이름", null, "000-0000-0000", null, 0, null);
+		int result = userDao.create(user);
+		log.info("create user 결과; {}", result);
 	}
 	
 }

@@ -11,8 +11,8 @@ public interface UserMapper {
 
 	
 	String SIGN_UP = 
-			"INSERT INTO ${TABLE_USERS} (${COL_USER_ID}, ${COL_USER_PWD}, ${COL_USER_NN}, ${COL_USER_NAME}, ${COL_USER_PHONE}) "
-			+ "VALUES (#{user_id}, #{user_pwd}, #{user_nn}, #{user_name}, #{user_phone})";
+			"INSERT INTO ${TABLE_USER_TABLE} (${COL_USER_ID}, ${COL_USER_PWD}, ${COL_USER_NN}, ${COL_USER_NAME}, ${COL_USER_PHONE}, ${COL_USER_TAG}) "
+			+ "VALUES (#{user_id}, #{user_pwd}, #{user_nn}, #{user_name}, #{user_phone}, #{user_tag})";
 	
 	@Insert(SIGN_UP)
 	int insert(User user);

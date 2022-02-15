@@ -35,16 +35,16 @@
             <div>
                 <form action="./register" method="post">
                     <div>
-                        <input type="text" id="userid" name="userid" placeholder="아이디 입력" required />
+                        <input type="text" id="user_id" name="user_id" placeholder="아이디 입력" required />
                         <div class="valid">사용 가능한 아이디입니다.</div>
                         <div class="invalid">아이디가 중복됐습니다.</div>
                     </div>
                     <div>
-                        <input type="password" name="pwd" placeholder="비밀번호 입력" required />
+                        <input type="password" name="user_pwd" placeholder="비밀번호 입력" required />
                     </div>  
                     
-                    
-                    <!--  한번더 입력받는 패스워드 -->
+                    <!-- 
+                     한번더 입력받는 패스워드
                     <input type="password" name="pwd" placeholder="비밀번호 입력" required />
                     </div>
                     
@@ -53,12 +53,15 @@
                         <div class="valid">사용 가능한 닉네임입니다.</div>
                         <div class="invalid">닉네임이 중복됐습니다.</div>
                     </div>
-                    
+                     -->
                     
                     <div>
                         <input type="text" name="user_name" placeholder="이름 입력" required />
                     </div>
                  
+                	<div>
+                        <input type="text" name="user_nn" placeholder="닉네임 입력" required />
+                    </div>
                      
                      
                     <div>

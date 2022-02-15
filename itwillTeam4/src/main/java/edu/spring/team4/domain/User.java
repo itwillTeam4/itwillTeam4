@@ -137,7 +137,7 @@ public class User {
 @Override
 	public String toString() {
 		return String.format("User{user_code=%d, user_id=%s, user_pwd=%s, user_nn=%s, user_name=%s, user_reg_date=%s, user_phone=%s, user_meet_idx=%s,user_admin_check=%d,user_tag=%s", 
-			this.user_code,this.user_id,this.user_pwd,this.user_nn,this.user_name,this.user_reg_date.toString(),this.user_phone,this.user_meet_idx,this.user_admin_check,this.user_tag);
+			this.user_code,this.user_id,this.user_pwd,this.user_nn,this.user_name,this.user_reg_date,this.user_phone,this.user_meet_idx,this.user_admin_check,this.user_tag);
 	}	
 	
 
