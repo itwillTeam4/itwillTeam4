@@ -1,5 +1,6 @@
 package edu.spring.team4.controller;
 
+import java.lang.annotation.Target;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.spring.team4.domain.Reply;
@@ -76,6 +78,18 @@ public class ReplyController {
 
 		ResponseEntity<Integer> entity = new ResponseEntity<>(result, HttpStatus.OK);
 
+		return entity;
+	}
+
+	@RequestMapping(value = "/{rno}", method = RequestMethod.POST)
+	public ResponseEntity<Integer> updateLike(@PathVariable(name = "rno") Integer rno, @RequestBody Reply reply) {
+		log.info("updateLike (rno={},liker={})", rno,reply);
+		
+		int result = replyService.upLike(rno, reply);
+		
+		log.info("마지막  {}",result);
+		ResponseEntity<Integer> entity = new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+		
 		return entity;
 	}
 

@@ -132,7 +132,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="swiper-slide silde-left" >
+				<div class="swiper-slide silde-left">
 					<a href="#">
 						<div class="a">
 							<div class="a_a">
@@ -188,36 +188,247 @@
 			<div class="swiper-pagination"></div>
 		</div>
 
-
-
-		<!-- 
-	<div id="kakao">
-		<a href="https://open.kakao.com/o/g8fPcYZd"><img
-			src="${pageContext.request.contextPath}/resources/img/kakao.png"
-			alt="kakao"> </a>
 	</div>
-	 -->
+	<div id="wrap3" class="content">
+		<div class="wrap3List" id="wrap3_1">
+			<p class="wrap3Title">최근 등록 독서 노트</p>
+
+			<ul>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
+				<li><a href="">
+						<div>
+							<p class="text-overflow note-title">테스트 제목입니다.</p>
+							<p class="text-overflow-line3">테스트 글입니다. 테스트 글입니다. 테스트 글입니다.
+								테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트
+								글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다. 테스트 글입니다.</p>
+							<p class="writer">테스트 작성자 입니다.</p>
+
+						</div>
+				</a></li>
 
 
-		<%@include file="footer.jsp"%>
-		<script
-			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript">
-			var swiper = new Swiper(".mySwiper", {
-				slidesPerView : 3,
-				spaceBetween : 3,
-				slidesPerGroup : 3,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next",
-					prevEl : ".swiper-button-prev",
-				},
+			</ul>
+
+			<div class="more-btn-box">
+				<a href="http://localhost:8181/team4/board/main">
+					<div id="more-btn-box">
+						<span>더보기</span> <img
+							src="${pageContext.request.contextPath}/resources/img/arrow.png"
+							alt="ar">
+
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="wrap3List" id="wrap3_2">
+			<p class="wrap3Title" id="wrap3Title2">지금 가장 인기 있는 독서 모임</p>
+			<img src="${pageContext.request.contextPath}/resources/img/hot.png"
+				alt="hot" id="wrap3img1">
+
+			<ul>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com01.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com02.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+				<li><a href="">
+						<div class="info">
+							<p class="meetTitle text-overflow note-title">테스트제목</p>
+							<p class="meetTheme">테스트테마</p>
+							<div class="status">
+								<span class="name">이름테스트</span>
+								<p class="meetMember">
+									<!-- el -->
+									명 참여중
+								</p>
+							</div>
+
+						</div>
+						<div id="infoImgBox">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/com01.png"
+								alt="com01" class="infoImg">
+						</div>
+
+				</a></li>
+
+
+			</ul>
+
+			<div class="more-btn-box">
+				<a href="http://localhost:8181/team4/board/main">
+					<div id="more-btn-box">
+						<span>더보기</span> <img
+							src="${pageContext.request.contextPath}/resources/img/arrow.png"
+							alt="ar">
+
+					</div>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="wrap4" class="content"></div>
+
+
+	<%@include file="footer.jsp"%>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView : 3,
+			spaceBetween : 3,
+			slidesPerGroup : 3,
+			pagination : {
+				el : ".swiper-pagination",
+				clickable : true,
+			},
+			navigation : {
+				nextEl : ".swiper-button-next",
+				prevEl : ".swiper-button-prev",
+			},
+		});
+
+		window.addEventListener("wheel", function(e) {
+			e.preventDefault();
+		}, {
+			passive : false
+		});
+
+		var $html = $("html");
+
+		var page = 1;
+
+		var lastPage = $(".content").length;
+
+		$html.animate({
+			scrolltop : 0
+		}, 10);
+
+		$(window).on("wheel", function(e) {
+			if ($html.is(":animated"))
+				return;
+
+			if (e.originalEvent.deltaY > 0) {
+				if (page == lastPage)
+					return;
+
+				page++;
+			} else if (e.originalEvent.deltaY < 0) {
+				if (page == 1)
+					return;
+
+				page--;
+			}
+
+			var posTop = (page - 1) * $(window).height();
+
+			$html.animate({
+				scrollTop : posTop
 			});
-		</script>
+		});
+
+		/* window.onload = function() {
+		  setTimeout (function(){
+			  scrollTo(0,0);
+		  },100);
+		 }*/
+	</script>
 </body>
 </html>

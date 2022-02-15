@@ -21,7 +21,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<div id="header">
+		<div id="header" class="content">
 			<h1 id="logo">
 				<a href="http://localhost:8181/team4"><!-- 서버구동하고 다시 확인해야함 --><img
 					src="${pageContext.request.contextPath}/resources/img/logo2.png"
