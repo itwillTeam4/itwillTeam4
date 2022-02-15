@@ -32,7 +32,7 @@ public interface UserMapper {
 	User selectByUserNn(String user_nn);
 	
 	String CHECK_SIGN_IN = 
-			"SELECT * FROM ${TABLE_USERS} WHERE ${COL_USERID} = #{userid} AND ${COL_PWD} = #{pwd}";
+			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_ID} = #{user_id} AND ${COL_USER_PWD} = #{user_pwd}";
 	
 	@Select(CHECK_SIGN_IN)
 	User selectByIdAndPwd(User user);

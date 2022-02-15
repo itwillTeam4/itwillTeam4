@@ -63,28 +63,29 @@ public class UserController {
 		log.info("signIn() GET 호출");
 		
 		
-		if (url != null && !url.equals("")) { 
-			model.addAttribute("url", url); 
-		}
+//		if (url != null && !url.equals("")) { 
+//			model.addAttribute("url", url); 
+//		}
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
-	public void signIn(User user, Model model) {
+	public String signIn(User user, HttpSession session) {
 		log.info("signIn({}) POST 호출", user);
 		
 		User signInUser = userService.checkSignIn(user);
-		log.info("signInUser: {}", signInUser); 
+		if (signInUser != null) {
+			session.setAttribute("signInUserId", signInUser.getUser_id());
+			return "redirect:/";
+		} else {
+			return "redirect:/user/signin";
+		}
 		
-		
-		model.addAttribute("signInUser", signInUser);
 	}
 
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
 	public String signOut(HttpSession session) {
-		
 		session.removeAttribute("signInUserId");
 		session.invalidate();
-		
 		return "redirect:/";
 	}
 	

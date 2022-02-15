@@ -46,7 +46,7 @@
             <div>
                 <form action="./register" method="post">
                     <div>
-                        <input type="email" id="user_id" name="user_id" placeholder="abc@abc.com" required />
+                        <input type="email" id="user_id" name="user_id" placeholder="abc@abc.com" required autofocus/>
                         <div class="valid_id">사용 가능한 아이디입니다.</div>
                         <div class="invalid_id">아이디가 중복됐습니다.</div>
                     </div>
