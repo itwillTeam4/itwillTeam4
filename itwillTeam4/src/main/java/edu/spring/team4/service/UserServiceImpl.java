@@ -25,9 +25,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean isValidId(String user_id) {
-		log.info("isValidId(userid={}) 호출", user_id);
+		log.info("isValidId(user_id={}) 호출", user_id);
 		
-		User user = userDao.checkUser_Id(user_id);
+		User user = userDao.checkUserId(user_id);
+		if (user == null) { 
+			return true;
+		} else { 
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean isValidNn(String user_nn) {
+		log.info("isValidNn(user_nn={}) 호출", user_nn);
+		User user = userDao.checkUserNn(user_nn);
 		if (user == null) { 
 			return true;
 		} else { 
