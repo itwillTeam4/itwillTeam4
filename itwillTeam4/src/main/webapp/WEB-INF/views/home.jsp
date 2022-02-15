@@ -132,7 +132,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="swiper-slide silde-left" >
+				<div class="swiper-slide silde-left">
 					<a href="#">
 						<div class="a">
 							<div class="a_a">
@@ -188,36 +188,87 @@
 			<div class="swiper-pagination"></div>
 		</div>
 
-
-
-		<!-- 
-	<div id="kakao">
-		<a href="https://open.kakao.com/o/g8fPcYZd"><img
-			src="${pageContext.request.contextPath}/resources/img/kakao.png"
-			alt="kakao"> </a>
 	</div>
-	 -->
+	<div id="wrap3" class="content">
+		<div class="wrap3List" id="wrap3_1">
+			
+		
+		</div>
+	
+		<div class="wrap3List" id="wrap3_2">
+		
+		</div>
+	
+	</div>
+	
+	<div id="wrap4" class="content">
+	
+	
+	</div>
 
 
-		<%@include file="footer.jsp"%>
-		<script
-			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript">
-			var swiper = new Swiper(".mySwiper", {
-				slidesPerView : 3,
-				spaceBetween : 3,
-				slidesPerGroup : 3,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next",
-					prevEl : ".swiper-button-prev",
-				},
-			});
-		</script>
+	<%@include file="footer.jsp"%>
+	
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView : 3,
+			spaceBetween : 3,
+			slidesPerGroup : 3,
+			pagination : {
+				el : ".swiper-pagination",
+				clickable : true,
+			},
+			navigation : {
+				nextEl : ".swiper-button-next",
+				prevEl : ".swiper-button-prev",
+			},
+		});
+		
+		window.addEventListener(
+			    "wheel",
+			    function (e) {
+			      e.preventDefault();
+			    },
+			    { passive: false }
+			  );
+
+			  var $html = $("html");
+
+			  var page = 1;
+
+			  var lastPage = $(".content").length;
+
+			  $html.animate({ scrolltop: 0 }, 10);
+
+			  $(window).on("wheel", function (e) {
+			    if ($html.is(":animated")) return;
+
+			    if (e.originalEvent.deltaY > 0) {
+			      if (page == lastPage) return;
+
+			      page++;
+			    } else if (e.originalEvent.deltaY < 0) {
+			      if (page == 1) return;
+
+			      page--;
+			    }
+
+			    var posTop = (page - 1) * $(window).height();
+
+			    $html.animate({ scrollTop: posTop });
+			  });
+			  
+			  
+			  window.onload = function() {
+				  setTimeout (function(){
+					  scrollTo(0,0);
+				  },100);
+			  }
+	</script>
 </body>
 </html>
