@@ -11,4 +11,5 @@ public interface ReplyService {
 	int insert(Reply reply);
 	int update(Reply reply);
 	int delete(int rno);
+	int upLike(int rno,Reply liker);
 }
