@@ -360,7 +360,55 @@
 
 	</div>
 
-	<div id="wrap4" class="content"></div>
+	<div id="wrap4" class="content">
+
+		<div id="wrap4Con">
+
+			<div id="wrap4Con_1">
+				<div class="wrap4ConTitle">
+					<a href="http://localhost:8181/team4/notice/main"><span>이벤트</span></a>
+					<img
+						src="${pageContext.request.contextPath}/resources/img/greenArrow1.png"
+						alt="garr1" class="greenArrow">
+				</div>
+
+				<a href="#"><div class="wrap4ConCon"></div></a>
+
+			</div>
+
+			<div id="wrap4Con_2">
+				<div class="wrap4ConTitle">
+					<a href="http://localhost:8181/team4/notice/main"><span>공지사항</span></a>
+					<img
+						src="${pageContext.request.contextPath}/resources/img/greenArrow1.png"
+						alt="garr1" class="greenArrow">
+				</div>
+
+				<a href="#"><div class="wrap4ConCon2">
+				<ul>
+					<li class="noticeLi" id="noticeLi1">
+					<a href="#">
+					<p class="text-overflow noticeTitle">notice_title</p></a>
+					<p>notice_reg_date</p>
+					</li>
+					
+					<li class="noticeLi" id="noticeLi2">
+					<a href="#">
+					<p class="text-overflow noticeTitle">notice_title</p></a>
+					<p>notice_reg_date</p>
+					</li>
+				
+				</ul>
+				
+				
+				</div></a>
+
+			</div>
+
+
+		</div>
+
+	</div>
 
 
 	<%@include file="footer.jsp"%>

@@ -190,18 +190,18 @@ img {
     -webkit-box-orient: vertical;
 }
 
-#wrap3 { width:100%; height:937px; background-color:#fafafa; font-size:16px; font-family: 'Noto Sans KR', sans-serif;}
+#wrap3 { width:100%; height:937px;  font-size:16px; font-family: 'Noto Sans KR', sans-serif;}
 .wrap3Title{font-size:28px; font-weight:700;margin-bottom: 43px; }
 #wrap3img1 { width:65px; height:35px; position:relative; left:20px; margin-bottom: 50px;}
 
 
-.wrap3List {width:562px; height:783px;  margin: 0 auto; position:relative; background-color:inherit;
+.wrap3List {width:562px; height:783px;  margin: 0 auto; position:relative; 
     top: 8%;}
 #wrap3_1{float:left; left:19%}
 #wrap3_2{left:15%}
 #wrap3_2 li{width:562px; height:177px; box-shadow: 10px 15px 15px #dbdbdb; margin-bottom:34px; border:1px solid #dedede; }
 
-#wrap4{width:100%; height:551px; background-color:blue;}
+
 
 .note-title, .writer {font-weight:700;margin-top: 25px;}
 .note-title{font-size:18px;	}
@@ -255,6 +255,7 @@ img {
 	height:177px;
 	float:left;
 	padding:10px;
+	    padding-left: 40px;
 	
 }
 
@@ -269,3 +270,22 @@ img {
 
 #wrap3_2 a{width:562px; height:177px;}
     
+    #wrap4{width:100%; background-color:#fafafa;}
+    #wrap4Con{width:1194px; height:551px; margin:0 auto;}
+    
+    #wrap4Con_1{width:582px; height:487px; float:left; position:relative; top:30px;}
+    #wrap4Con_2{width:582px; height:487px; position:relative; left: 3%;
+    top: 30px;
+    float: left;}
+    #wrap4Con_1 span{font-size:33px; font-weight:700; float:left;}
+    .greenArrow{width:15px; height:24px;margin-top:13px; margin-left:10px;}
+    .wrap4ConCon{width:582px; height:370px; background-color:white; border:1px solid #dedede; position: relative;
+    top: 40px;}
+    #wrap4Con_2 span{font-size:33px; font-weight:700; float:left;}
+    .wrap4ConCon2{width:582px; height:215px; background-color:white; border:1px solid #dedede; position:relative; top:40px; padding:30px;}
+    .wrap4ConTitle {height:37px;}
+    .noticeLi{width:520px; height:77px;  margin:0 auto;}
+    #noticeLi1{border-bottom : 1px solid #dedede;}
+    #noticeLi2{margin-top:25px;}
+    .noticeTitle{font-weight:700; font-size:16px;}
+    .wrap4ConCon2 ul{ float:left;}
