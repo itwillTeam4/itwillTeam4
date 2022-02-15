@@ -13,12 +13,8 @@
 	<body>
 		<div class="container-fluid">
 		<header class="jumbotron text-center">
-				<p>안녕하세요</p>
-				<span></span><p>멤버</p>
-				<form action="./team4/user/userupdate" method="post">
-					<input type="submit" value="설정">
-				</form>
-			</header>
+			<h1>프로필 수정</h1>
+		</header>
 		</div>
 		
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
