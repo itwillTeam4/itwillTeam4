@@ -51,7 +51,7 @@
 					<li class="boardListTop boardRegDate">날짜</li>
 
 				</ul>
-				<c:forEach var="Notice" begin="0" end="20" step="1" items="${noticeList}">
+				<c:forEach var="Notice" begin="0" end="19" step="1" items="${noticeList}">
 					<ul class="boardList">
 						<li class="boardCategory"><p>${Notice.notice_category}</p></li>
 						<li class="boardTitle"><a href="./detail?notice_idx=${Notice.notice_idx }">${Notice.notice_title }</a></li>
