@@ -71,6 +71,7 @@ public class UserController {
 		User signInUser = userService.checkSignIn(user);
 		if (signInUser != null) {
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
+			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
 			return "redirect:/";
 		} else {
 			return "redirect:/user/signin";
