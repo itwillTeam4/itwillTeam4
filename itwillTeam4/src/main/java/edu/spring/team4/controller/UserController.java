@@ -62,10 +62,6 @@ public class UserController {
 	public void signIn(String url, Model model) {
 		log.info("signIn() GET 호출");
 		
-		
-//		if (url != null && !url.equals("")) { 
-//			model.addAttribute("url", url); 
-//		}
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
@@ -74,7 +70,7 @@ public class UserController {
 		
 		User signInUser = userService.checkSignIn(user);
 		if (signInUser != null) {
-			session.setAttribute("signInUserId", signInUser.getUser_id());
+			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			return "redirect:/";
 		} else {
 			return "redirect:/user/signin";

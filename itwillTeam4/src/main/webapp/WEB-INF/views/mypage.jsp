@@ -12,10 +12,10 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-		<header class="jumbotron text-center">
+		<header class="jumbotron">
 				<p>안녕하세요</p>
-				<span></span><p>멤버</p>
-				<form action="./team4/user/userupdate" method="post">
+				<p><span><Strong>${signInUserId}</Strong></span> 멤버</p>
+				<form action="./user/userupdate" method="post">
 					<input type="submit" value="설정">
 				</form>
 			</header>
