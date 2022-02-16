@@ -82,6 +82,7 @@ public class UserController {
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
 	public String signOut(HttpSession session) {
 		session.removeAttribute("signInUserId");
+		session.removeAttribute("userAdminCheck");
 		session.invalidate();
 		return "redirect:/";
 	}

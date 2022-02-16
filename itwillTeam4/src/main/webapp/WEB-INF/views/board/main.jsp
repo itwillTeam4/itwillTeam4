@@ -20,12 +20,6 @@
 		
 			<nav> <!-- 메뉴 -->
             <ul>
-               <li class="nav-item">
-                  <a href="../user/signin" id="menu-login" type="button">로그인</a>
-               </li>
-               <li>
-                  <a href="../user/signout" type="button">로그아웃</a>
-               </li>
                <li>
                   <a href="../" type="button">메인</a>
                </li>

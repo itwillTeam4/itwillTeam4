@@ -20,23 +20,46 @@
 
 	<div id="contentWrap">
 		<div class="innerWrap">
-		
-		<div class="left-gnb">
-			<div class="profile-box">
-				<p>${signInUserId}님</p>
-				<span>환영합니다.</span>
-			</div>
-			<ul class="comMenu">
-			<li><a href="#">실시간 독서 모임 커뮤니티</a></li>
-			<li><a href="#">나의 독서 모임 커뮤니티</a></li>
-			<li><a href="#">북적북적 놀이터</a></li>
-			<li><a href="#">공지사항/이벤트</a></li>
-			
-			</ul>
-		</div>
 
-		<div class="right-contents"></div>
-		
+			<div class="left-gnb">
+				<div class="profile-box">
+					<p>${signInUserId}님</p>
+					<span>환영합니다.</span>
+				</div>
+				<ul class="comMenu">
+					<li><a href="#">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="#">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="#">북적북적 놀이터</a></li>
+					<li><a href="#" class="on">공지사항/이벤트</a></li>
+
+				</ul>
+			</div>
+
+			<div class="right-contents">
+				<div id="right-top-wrap">
+					<p id="right-contents-title">공지사항</p>
+					<ul class="searchTap">
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">이벤트</a></li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</div>
+
+				<ul class="boardList">
+					<li class="boardListTop boardCategory">구분</li>
+					<li class="boardListTop boardTitle">제목</li>
+					<li class="boardListTop boardRegDate">날짜</li>
+
+				</ul>
+				<c:forEach var="Notice" begin="0" end="20" step="1" items="${noticeList}">
+					<ul class="boardList">
+						<li class="boardCategory"><p>${Notice.notice_category}</p></li>
+						<li class="boardTitle"><a href="./detail?notice_idx=${Notice.notice_idx }">${Notice.notice_title }</a></li>
+						<li class="boardRegDate"><fmt:formatDate value="${Notice.notice_reg_date }"
+								pattern="yyyy-MM-dd" /></li>
+					</ul>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 
@@ -46,7 +69,7 @@
 
 
 
-	
+
 
 	<%@include file="../footer.jsp"%>
 
