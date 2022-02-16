@@ -61,7 +61,7 @@
                     </div>
                     
                     <div>
-                        <input type="text" id="user_tag" name="usertag" placeholder="키워드 프로필??" required autofocus/>
+                        <input type="text" id="user_tag" name="usertag" placeholder="키워드 프로필?" required autofocus/>
                        
                         
                     </div>
