@@ -88,9 +88,13 @@ public class ReplyController {
 		int result = replyService.upLike(rno, reply);
 		
 		log.info("마지막  {}",result);
-		ResponseEntity<Integer> entity = new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
-		
-		return entity;
+		if(result==1) {
+			ResponseEntity<Integer> entity = new ResponseEntity<>(result, HttpStatus.OK);
+			return entity;
+		}else {
+			ResponseEntity<Integer> entity = new ResponseEntity<>(result, HttpStatus.BAD_GATEWAY);
+			return entity;
+		}
 	}
 
 }
