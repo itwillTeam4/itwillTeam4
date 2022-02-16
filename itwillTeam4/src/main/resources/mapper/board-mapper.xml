@@ -4,6 +4,7 @@
 
 	<select id="selectAll" resultType="Board">
 	SELECT * FROM ${TABLE_BOARD_TABLE} 
+	WHERE ${COL_BOARD_MEET_IDX} is null
 	ORDER BY ${COL_BNO} DESC
 	</select> 
 	
@@ -11,6 +12,8 @@
 	SELECT * FROM ${TABLE_BOARD_TABLE}
 	WHERE ${COL_BNO} = #{bno}
 	</select> 
+	
+
 	
 	<insert id="create">
 	INSERT INTO ${TABLE_BOARD_TABLE} (${COL_BOARD_TITLE}, ${COL_BOARD_USERID}, ${COL_BOARD_CONTENT}, ${COL_BOARD_TAG}, ${COL_BOARD_BOOK_TITLE}, ${COL_BOARD_BOOK_AUTHORS}, ${COL_BOARD_BOOK_PUB}, ${COL_BOARD_BOOK_IMG})

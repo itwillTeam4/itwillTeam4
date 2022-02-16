@@ -7,11 +7,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>team4Notice</title>
+<title>책오 공지사항 메인</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
-<link href="${pageContext.request.contextPath}/resources/css/notice.css"
+<link href="${pageContext.request.contextPath}/resources/css/board.css"
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,7 +29,7 @@
 				<ul class="comMenu">
 					<li><a href="#">실시간 독서 모임 커뮤니티</a></li>
 					<li><a href="#">나의 독서 모임 커뮤니티</a></li>
-					<li><a href="#">북적북적 놀이터</a></li>
+					<li><a href="#">자유로운 서평</a></li>
 					<li><a href="#" class="on">공지사항/이벤트</a></li>
 
 				</ul>

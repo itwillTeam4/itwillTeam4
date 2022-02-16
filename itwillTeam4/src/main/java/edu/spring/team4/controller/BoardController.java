@@ -22,13 +22,14 @@ public class BoardController {
 	
 	@Autowired private BoardService boardService;
 	
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/free", method = RequestMethod.GET)
 	public void main(Model model) {
-		log.info("main() 호출");
+		log.info("free() 호출");
 		
 		List<Board> list = boardService.select();
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 	}
+	
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert() {
@@ -39,7 +40,7 @@ public class BoardController {
 	public String insert(Board board) {
 		boardService.insert(board);
 		
-		return "redirect:/board/main";
+		return "redirect:/board/free";
 	}
 	
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
