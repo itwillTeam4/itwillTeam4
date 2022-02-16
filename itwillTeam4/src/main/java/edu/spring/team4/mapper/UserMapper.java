@@ -31,9 +31,12 @@ public interface UserMapper {
 	@Select(CHECK_USER_NN)
 	User selectByUserNn(String user_nn);
 	
+	// 로그인 체크
 	String CHECK_SIGN_IN = 
 			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_ID} = #{user_id} AND ${COL_USER_PWD} = #{user_pwd}";
 	
 	@Select(CHECK_SIGN_IN)
 	User selectByIdAndPwd(User user);
+	
+	
 }
