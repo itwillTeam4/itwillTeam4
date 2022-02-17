@@ -38,5 +38,12 @@ public interface UserMapper {
 	@Select(CHECK_SIGN_IN)
 	User selectByIdAndPwd(User user);
 	
+	// 유저 코드로 불러오기
+	String SELECT_USER_CODE = 
+			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_CODE} = #{user_code}";
+	
+	@Select(SELECT_USER_CODE)
+	User selectByUserCode(String user_code);
+	
 	
 }

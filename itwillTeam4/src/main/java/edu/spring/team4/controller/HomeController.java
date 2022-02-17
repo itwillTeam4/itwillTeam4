@@ -4,12 +4,17 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import edu.spring.team4.domain.User;
+import edu.spring.team4.service.UserService;
 
 /**
  * Handles requests for the application home page.
@@ -45,5 +50,6 @@ public class HomeController {
 	public String userupdate() {
 		return "./user/userupdate";
 	}
+	
 	
 }
