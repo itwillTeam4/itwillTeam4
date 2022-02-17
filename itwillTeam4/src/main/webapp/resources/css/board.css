@@ -276,8 +276,8 @@ img {
 	line-height: 30px;
 	color: white;
 	font-weight: 400;
-	margin-top: 185px;
-	font-size: 14px;
+	margin-top: 5px;
+	font-size: 12px;
 }
 
 .postInfo {
@@ -298,6 +298,7 @@ img {
 	font-size: 18px;
 	font-weight: 400;
 	color: white;
+	
 }
 
 .postRegDate {
@@ -372,3 +373,5 @@ img {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+.profile-box span{font-weight:500;}

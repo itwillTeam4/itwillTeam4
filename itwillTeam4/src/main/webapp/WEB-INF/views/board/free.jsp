@@ -20,7 +20,7 @@
 
 			<div class="left-gnbFree">
 				<div class="profile-box">
-					<p>${signInUserId}님</p>
+					<p><span>${signInUserId}</span>님</p>
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
@@ -55,7 +55,7 @@
 								<div class="boxHeader">
 									<div class="bookImg">
 										<img src="${board.board_book_img}" alt="">
-										<p class="bookImgTitle">${board.board_book_title }</p>
+										<p class="bookImgTitle text-overflow">${board.board_book_title }</p>
 									</div>
 									<div class="postInfo">
 										<p class="postTitle">${board.board_title }</p>
