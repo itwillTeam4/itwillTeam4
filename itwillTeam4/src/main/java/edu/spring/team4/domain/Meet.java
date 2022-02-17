@@ -1,5 +1,7 @@
 package edu.spring.team4.domain;
 
+import java.util.Date;
+
 public class Meet {
 
 	private int meet_idx;
@@ -133,8 +135,6 @@ public class Meet {
 	
 	@Override
 	public String toString() {
-		//TODO:
-		return "";
-	}
-	
-}
+		return String.format("Meet{meet_idx:%d, meet_name:%s, meet_host:%d, meet_intro:%s, meet_theme:%s, meet_member_num:%d, meet_on_or_off:%d, meet_when:%s, meet_book_title:%d, meet_book_authors:%s, meet_book_pub:%s, meet_book_img:%s}",
+				this.meet_idx, this.meet_name, this.meet_host, this.meet_intro, this.meet_theme, this.meet_member_num, this.meet_on_or_off, this. meet_when, this.meet_book_title, this.meet_book_authors, this.meet_book_pub, this.meet_book_img);
+}}
