@@ -110,7 +110,7 @@
 					</div>
 
 					<div>
-						<input type="submit" value="로그인" />
+						<input type="submit" id = "login_confirm" value="로그인" />
 					</div>
 				</div>
 			</form>

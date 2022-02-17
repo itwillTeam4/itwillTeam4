@@ -70,14 +70,13 @@ public class UserController {
 	public String signIn(User user, HttpSession session, Model model) {
 		log.info("signIn({}) POST 호출", user);
 		User signInUser = userService.checkSignIn(user);
-		
 		if (signInUser != null) {
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
 			session.setAttribute("signInUserCode", signInUser.getUser_code());
 			model.addAttribute("signInUser", signInUser);
 			return "redirect:/";
-		} else {
+		} else { 
 			return "redirect:/user/signin";
 		}
 		
