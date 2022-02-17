@@ -105,4 +105,12 @@ public class UserController {
 		return "redirect:/mypage";
 	}
 	
+	@RequestMapping(value = "/userdelete", method = RequestMethod.GET)
+	public String userDelete(int user_code, HttpSession session) {
+		userService.deleteUser(user_code);
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	
 }

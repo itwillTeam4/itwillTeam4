@@ -39,9 +39,7 @@
         	color: red;
             display: none; 
         }
-        .pass { 
-        	-webkit-text-security: disc; 
-        	}
+        
         </style>
 </head>
 <body>
@@ -94,13 +92,16 @@
 				</div>
 
 				<div>
-					<input type="submit" id="btn-complete" value="프로필 수정 완료" />
+					<input type="submit" id="btn-complete" value="수정하기" />
 				</div>
 			</form>
 			
 			<form action="./userdelete" method="get">
 				<div>
-					<input type="submit" id="btn-complete" value="회원탈퇴" />
+					<input type="hidden" value="${userUpdate.user_code}" id="user_code" name="user_code"/>
+				</div>
+				<div>
+					<input type="submit" id="btn-userdelete" value="회원탈퇴" />
 				</div>
 			</form>
 		</div>
@@ -163,6 +164,12 @@
         			$('#user_pwd').val(pwd);
         		}
         	});
+        	
+        	$('#btn-userdelete').click(function(){
+        		var result = window.confirm("정말로 회원 탈퇴를 하시겠습니까?")
+        	});
+        	
+          	
         	
         });
         </script>

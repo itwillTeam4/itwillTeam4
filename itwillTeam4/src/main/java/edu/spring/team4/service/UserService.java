@@ -10,5 +10,6 @@ public interface UserService {
 	User checkSignIn(User user);
 	User select(int user_code);
 	int updateUser(User user);
+	int deleteUser(int user_code);
 
 }

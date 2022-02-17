@@ -56,4 +56,10 @@ public class UserDaoImpl implements UserDao {
 		return sqlSession.update(USER_NAMESPACE + ".update", user);
 	}
 	
+	@Override
+	public int delete(int user_code) {
+		log.info("delete 호출");
+		return sqlSession.delete(USER_NAMESPACE + ".delete", user_code);
+	}
+	
 }

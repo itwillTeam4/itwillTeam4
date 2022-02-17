@@ -64,5 +64,10 @@ public class UserServiceImpl implements UserService {
 	public int updateUser(User user) {
 		return userDao.update(user);
 	}
+	 
+	@Override
+	public int deleteUser(int user_code) {
+		return userDao.delete(user_code);
+	}
 	
 }
