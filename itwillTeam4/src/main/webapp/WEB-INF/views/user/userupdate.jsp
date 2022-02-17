@@ -41,7 +41,7 @@
 		<div>
 			<form action="./userupdate" method="post">
 				<div>
-					<input type="text" value="${signInUserId}" id="user_nn" name="user_nn" placeholder="닉네임 입력" required autofocus/>
+					<input type="text" value="userUpdate.user_nn" id="user_nn" name="user_nn" placeholder="닉네임 입력" required autofocus/>
 					<div class="valid_nn">사용 가능한 닉네임입니다.</div>
 					<div class="invalid_nn">닉네임이 중복됐습니다.</div>
 				</div>
@@ -62,11 +62,11 @@
 				</div>
 
 				<div>
-					<input type="text" value="${signInUserPhone}" name="user_phone" placeholder="전화번호 입력" required />
+					<input type="text" value="userUpdate.user_phone" name="user_phone" placeholder="전화번호 입력" required />
 				</div>
 
 				<div>
-					<input type="text" value="${signInUserTag}" name="user_tag" placeholder="유저 태그 입력" required />
+					<input type="text" value="userUpdate.user_tag" name="user_tag" placeholder="유저 태그 입력" required />
 				</div>
 
 				<div>

@@ -8,5 +8,6 @@ public interface UserDao {
 	User checkUserId(String user_id);
 	User checkUserNn(String user_nn);
 	User read(User user);
+	User read(int user_code);
 	
 }

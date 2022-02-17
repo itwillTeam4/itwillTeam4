@@ -7,10 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.service.UserService;
 
@@ -85,9 +87,7 @@ public class UserController {
 			
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
-			session.setAttribute("signInUserPwd", signInUser.getUser_pwd());
-			session.setAttribute("signInUserPhone", signInUser.getUser_phone());
-			session.setAttribute("signInUserTag", signInUser.getUser_tag());
+			session.setAttribute("signInUserCode", signInUser.getUser_code());
 					
 			return "redirect:/";
 		} else {
@@ -104,5 +104,12 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/userupdate", method = RequestMethod.GET)
+	public String mypage(HttpSession session, User user, Model model) {
+		int userCode = (int)session.getAttribute("signInUserCode");
+		User userUpdate = userService.select(userCode);
+		model.addAttribute("userUpdate", userUpdate);
+		return "/user/userupdate";
+	}
 	
 }

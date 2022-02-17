@@ -43,7 +43,7 @@ public interface UserMapper {
 			"SELECT * FROM ${TABLE_USER_TABLE} WHERE ${COL_USER_CODE} = #{user_code}";
 	
 	@Select(SELECT_USER_CODE)
-	User selectByUserCode(String user_code);
+	User selectByUserCode(int user_code);
 	
 	
 }
