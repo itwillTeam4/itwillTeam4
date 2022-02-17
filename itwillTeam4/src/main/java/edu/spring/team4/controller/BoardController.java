@@ -27,12 +27,13 @@ public class BoardController {
 	public String main(Model model,Paging page,
 			@RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
-			@RequestParam(value = "orderBy", required = false) String orderBy,
+			@RequestParam(value = "orderBy", required = false) String orderby,
 			@RequestParam(value = "act", required = false) String act
 			) {
 		log.info("free() 호출");
 		String result;
 		int board_meet_idx=0;
+		
 		
 		if (act==null){
 			act="free";
@@ -48,7 +49,7 @@ public class BoardController {
 			log.info("자유");
 			result= "board/free";
 		}
-
+		
 		
 		
 		int total = boardService.countBoard(board_meet_idx);
@@ -63,7 +64,7 @@ public class BoardController {
 		}
 		
 		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
-		List<Board> list = boardService.selectPageBoard(page,board_meet_idx);
+		List<Board> list = boardService.selectPageBoard(page,board_meet_idx,orderby);
 		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 		

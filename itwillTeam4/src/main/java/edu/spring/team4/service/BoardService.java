@@ -16,6 +16,6 @@ public interface BoardService {
 
 	int countBoard(int board_meet_idx);
 	
-	List<Board> selectPageBoard(Paging page,int board_meet_idx);
+	List<Board> selectPageBoard(Paging page,int board_meet_idx,String orderby);
 	
 }

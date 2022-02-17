@@ -90,11 +90,12 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<Board> selectPageBoard(Paging page, int board_meet_idx) {
+	public List<Board> selectPageBoard(Paging page, int board_meet_idx, String orderby) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("board_meet_idx",board_meet_idx);
 		params.put("start",page.getStart());
 		params.put("end",page.getEnd());
+		params.put("orderby",orderby);
 		
 		return sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoard",params);
 	}
