@@ -42,7 +42,7 @@
 						</a>
 					</div>
 					<ul class="searchTapFree">
-						<li><a href="#">최신순</a></li>
+						<li><a href="free?orderBy=0">최신순</a></li>
 						<li><a href="#">조회수순</a></li>
 						<li><a href="#">댓글순</a></li>
 					</ul>

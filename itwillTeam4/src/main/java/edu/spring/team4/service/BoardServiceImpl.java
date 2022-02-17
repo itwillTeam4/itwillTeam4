@@ -56,13 +56,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int countBoard() {
-		return boardDao.countBoard();
+	public int countBoard(int board_meet_idx) {
+		return boardDao.countBoard(board_meet_idx);
 	}
 
 	@Override
-	public List<Board> selectPageBoard(Paging page) {
-		return boardDao.selectPageBoard(page);
+	public List<Board> selectPageBoard(Paging page,int board_meet_idx) {
+		return boardDao.selectPageBoard(page,board_meet_idx);
 	}
 
 }

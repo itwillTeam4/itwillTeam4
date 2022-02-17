@@ -30,7 +30,10 @@ public class BoardController {
 			) {
 		log.info("free() 호출");
 		
-		int total = boardService.countBoard();
+		int board_meet_idx=0;
+		
+		int total = boardService.countBoard(board_meet_idx);
+		
 		if (nowPage==null&&cntPerPage==null) {
 			nowPage="1";
 			cntPerPage="10";
@@ -41,7 +44,7 @@ public class BoardController {
 		}
 		
 		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
-		List<Board> list = boardService.selectPageBoard(page);
+		List<Board> list = boardService.selectPageBoard(page,board_meet_idx);
 		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 	}
