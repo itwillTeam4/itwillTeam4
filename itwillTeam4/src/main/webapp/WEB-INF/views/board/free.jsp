@@ -58,8 +58,8 @@
 							<a href="./detail?bno=${board.bno }">
 								<div class="boxHeader">
 									<div class="bookImg">
-										<img src="" alt="">
-										<p class="bookImgTitle">책제목</p>
+										<img src="${board.board_book_img}" alt="">
+										<p class="bookImgTitle">${board.board_book_title }</p>
 									</div>
 									<div class="postInfo">
 										<p class="postTitle">${board.board_title }</p>
