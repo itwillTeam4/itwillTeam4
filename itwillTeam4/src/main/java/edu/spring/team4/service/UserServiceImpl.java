@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.persistence.UserDao;
 
@@ -38,6 +39,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean isValidNn(String user_nn) {
 		log.info("isValidNn(user_nn={}) 호출", user_nn);
+		
 		User user = userDao.checkUserNn(user_nn);
 		if (user == null) { 
 			return true;
@@ -53,4 +55,8 @@ public class UserServiceImpl implements UserService {
 		return userDao.read(user);
 	}
 	
+	 @Override
+	public User select(int user_code) {
+		return userDao.read(user_code);
+	}
 }

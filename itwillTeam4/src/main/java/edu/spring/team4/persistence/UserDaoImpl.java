@@ -43,6 +43,11 @@ public class UserDaoImpl implements UserDao {
 		log.info("read({}) 호출", user);
 		return mapper.selectByIdAndPwd(user);
 	}
+
+	@Override
+	public User read(int user_code) {
+		return mapper.selectByUserCode(user_code);
+	}
 	
 	
 	

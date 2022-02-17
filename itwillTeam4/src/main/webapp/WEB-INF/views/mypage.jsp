@@ -15,7 +15,7 @@
 		<header class="jumbotron">
 				<p>안녕하세요</p>
 				<p><span><Strong>${signInUserId}</Strong></span> 멤버</p>
-				<form action="./user/userupdate" method="post">
+				<form action="./user/userupdate" method="get">
 					<input type="submit" value="설정">
 				</form>
 			</header>

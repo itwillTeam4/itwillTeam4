@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.service.UserService;
 
@@ -40,16 +41,18 @@ public class HomeController {
 		
 		return "home";
 	}
-	
+
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public String mypage() {
-		return "mypage";
+		return "/mypage";
 	}
 	
-	@RequestMapping(value = "/user/userupdate", method = RequestMethod.POST)
-	public String userupdate() {
-		return "./user/userupdate";
-	}
+//	@RequestMapping(value = "/user/userupdate", method = RequestMethod.GET)
+//	public String userupdate() {
+//		
+//		
+//		return "./user/userupdate";
+//	}
 	
 	
 }

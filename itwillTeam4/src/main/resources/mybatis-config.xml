@@ -28,6 +28,7 @@
 		<property name="COL_BOARD_LIKE_CNT" value="board_like_cnt"/>
 		<!-- USER_TABLE 테이블 관련 상수들 -->
 		<property name="TABLE_USER_TABLE" value="user_table" />
+		<property name="COL_USER_CODE" value="user_code/"
 		<property name="COL_USER_ID" value="user_id" />
 		<property name="COL_USER_PWD" value="user_pwd" />
 		<property name="COL_USER_NN" value="user_nn" />
