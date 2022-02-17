@@ -29,7 +29,12 @@
         }
         .invalid_pwd {
             color: red;
+            display: none; 
+        }
+        .invalid_pwd_pre {
+            color: red;
             display: none;   
+        }    
         </style>
 </head>
 <body>
@@ -41,14 +46,22 @@
 		<div>
 			<form action="./userupdate" method="post">
 				<div>
-					<input type="text" value="userUpdate.user_nn" id="user_nn" name="user_nn" placeholder="닉네임 입력" required autofocus/>
+					<input type="hidden" value="${userUpdate.user_nn}" id="user_nn_hid" name="user_nn_hid"/>
+				</div>
+				<div>
+					<input type="text" value="${userUpdate.user_nn}" id="user_nn" name="user_nn" placeholder="닉네임 입력" required autofocus/>
 					<div class="valid_nn">사용 가능한 닉네임입니다.</div>
 					<div class="invalid_nn">닉네임이 중복됐습니다.</div>
 				</div>
 				
 				<div>
+					<input type="hidden" value="${userUpdate.user_pwd}" id="user_pwd_hid" name="user_pwd_hid"/>
+				</div>
+				
+				<div>
 					<input type="password" id="user_pwd_pre" name="user_pwd_pre"
 						placeholder="현재 비밀번호" required />
+					<div class="invalid_pwd_pre">비밀번호가 틀렸습니다.</div>
 				</div>
 				
 				<div>
@@ -62,11 +75,11 @@
 				</div>
 
 				<div>
-					<input type="text" value="userUpdate.user_phone" name="user_phone" placeholder="전화번호 입력" required />
+					<input type="text" value="${userUpdate.user_phone}" name="user_phone" placeholder="전화번호 입력" required />
 				</div>
 
 				<div>
-					<input type="text" value="userUpdate.user_tag" name="user_tag" placeholder="유저 태그 입력" required />
+					<input type="text" value="${userUpdate.user_tag}" name="user_tag" placeholder="유저 태그 입력" required />
 				</div>
 
 				<div>
@@ -89,37 +102,36 @@
 	 <script>
         $(document).ready(function () {
         	
-        	// userid 아이디를 갖는 HTML 요소(input)에 변화가 생겼을 때 호출될 이벤트 리스너 콜백 함수를 등록. 
-        	$('#user_id').change(function (event) {
-        		// Ajax를 이용해서 아이디 중복 체크
-        		var params = { user_id: $(this).val() };
-        		// $.post(Ajax 요청 주소, 요청 파라미터, 응답 성공일 때 실행될 콜백 함수);
-        		$.post('./checkid', params, function (response) {
-        			if (response == 'valid_id') {  // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-        				$('.valid_id').show();  // valid div 보여줌.
-        				$('.invalid_id').hide(); // valid div 없앰(display=none).
-        				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-        			} else {
-        				$('.valid_id').hide(); // valid div 없앰(display=none).
-        				$('.invalid_id').show(); // invalid div 보여줌.
-        				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-        			}
-        		});
-        	});
         	
         	$('#user_nn').change(function (event) {
         		var params_nn = { user_nn: $(this).val() };
-        		$.post('./checknn', params_nn, function (response) {
-        			if (response == 'valid_nn') {  // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-        				$('.valid_nn').show();  // valid div 보여줌.
-        				$('.invalid_nn').hide(); // valid div 없앰(display=none).
-        				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-        			} else {
-        				$('.valid_nn').hide(); // valid div 없앰(display=none).
-        				$('.invalid_nn').show(); // invalid div 보여줌.
-        				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-        			}
-        		});
+        		if ( $('#user_nn_hid').val() == $('#user_nn').val() ){
+        			$('.valid_nn').show();  // valid div 보여줌.
+        			$('.invalid_nn').hide(); // valid div 없앰(display=none).
+        			$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
+        		} else {
+        			$.post('./checknn', params_nn, function (response) {
+           				if (response == 'valid_nn') {  // 사용 가능한 아이디(DB에 없는 아이디)인 경우
+               				$('.valid_nn').show();  // valid div 보여줌.
+               				$('.invalid_nn').hide(); // valid div 없앰(display=none).
+               				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
+               			} else {
+               				$('.valid_nn').hide(); // valid div 없앰(display=none).
+               				$('.invalid_nn').show(); // invalid div 보여줌.
+               				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
+               			}
+            		});
+        		}
+        	});
+        	
+        	$('#user_pwd_pre').change(function(event){
+        		if ($('#user_pwd_hid').val() == $('#user_pwd_pre').val()){
+        			$('.invalid_pwd_pre').hide(); // valid div 없앰(display=none).
+    				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
+        		} else {
+        			$('.invalid_pwd_pre').show(); // invalid div 보여줌.
+    				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
+        		}
         	});
         	
         	$('#user_pwd').change(function(event){
