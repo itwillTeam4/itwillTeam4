@@ -20,7 +20,7 @@
 
 			<div class="left-gnbFree">
 				<div class="profile-box">
-					<p>${signInUserId}님</p>
+					<p><span>${signInUserId}</span>님</p>
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">

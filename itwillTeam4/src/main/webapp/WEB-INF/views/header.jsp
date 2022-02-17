@@ -73,9 +73,9 @@
 				<c:if test="${empty signInUserId}">
 
 					<li id="login">
-						<!--  <a href="./user/signin">-->로그인</a>
+						<!--  <a href="./user/signin">-->로그인
 					</li>
-					<li id="signup"><a href="./user/register">회원 가입</a></li>
+					
 				</c:if>
 				<c:if test="${not empty signInUserId }">
 					<li id="logout"><a href="./user/signout">로그아웃</a></li>
@@ -128,7 +128,7 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="./register" method="post">
+			<form action="./user/register" method="post">
 				<div id="registerInput">
 					<div class="emailInput">
 						<input type="email" id="user_id" name="user_id"
@@ -162,14 +162,15 @@
 					</div>
 
 
-					<div>
-						<input type="text" name="user_phone" placeholder="전화번호 입력"
-							required />
+					<div class="phoneInput">
+						<input type="text" name="user_phone"
+							placeholder="전화번호 입력 (01012345678)" required />
 					</div>
 
 
-					<div>
-						<input type="text" name="user_tag" placeholder="유저 태그 입력" required />
+					<div class="tagInput">
+						<input type="text" name="user_tag"
+							placeholder="유저 태그 입력 (#편안한 #로맨스 #소설)" required />
 					</div>
 
 
@@ -193,27 +194,29 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
-		$("#login").click(function() {
-			$(".modalBackground").fadeIn(300)
-			$("#loginModal").fadeIn(300)
+	$("#login").click(function() {
+		$(".modalBackground").fadeIn(300)
+		$("#loginModal").fadeIn(300)
 
-		})
+	});
 
-		$("#loginClose").click(function() {
-			$(".modalBackground").fadeOut(300)
-			$("#loginModal").fadeOut(300)
-		})
+	$("#loginClose").click(function() {
+		$(".modalBackground").fadeOut(300)
+		$("#loginModal").fadeOut(300)
+	});
 
-		$("#callRegister").click(function() {
-			$("#registerModal").fadeIn(300)
+	$("#callRegister").click(function() {
+		$("#registerModal").fadeIn(300)
 
-		})
+	});
 
-		$("#registerClose").click(function() {
-			$("#registerModal").fadeOut(300)
-		})
-
+	$("#registerClose").click(function() {
+		$("#registerModal").fadeOut(300)
+	});
+	
+	
 		$(document).ready(function() {
+			
 
 			// userid 아이디를 갖는 HTML 요소(input)에 변화가 생겼을 때 호출될 이벤트 리스너 콜백 함수를 등록. 
 			$('#user_id').change(function(event) {
@@ -239,7 +242,7 @@
 				var params_nn = {
 					user_nn : $(this).val()
 				};
-				$.post('./checknn', params_nn, function(response) {
+				$.post('./user/checknn', params_nn, function(response) {
 					if (response == 'valid_nn') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
 						$('.valid_nn').show(); // valid div 보여줌.
 						$('.invalid_nn').hide(); // valid div 없앰(display=none).
@@ -262,6 +265,8 @@
 				}
 			});
 
+			
+			//TODO: 회원가입 성공, 실패 메시지
 		});
 	</script>
 </body>

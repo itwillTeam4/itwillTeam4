@@ -373,3 +373,5 @@ img {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+.profile-box span{font-weight:500;}
