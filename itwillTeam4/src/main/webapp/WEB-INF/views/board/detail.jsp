@@ -57,7 +57,7 @@
 	<div>
 		<input type="text" id="rtext" name="rtext" placeholder="댓글 입력" />
 		<!--어드민 대신 ${signInUserId}-->
-		<input type="text" id="userid" name="user_id" value= "어드민님" readonly="readonly" />
+		<input type="text" id="userid" name="user_id" value= '${signInUserId}' readonly="readonly" />
 		<button id="btn_create_reply">댓글 작성 완료</button>
 		<button id="btn_sort_like">좋아요순</button>
 		<button id="btn_sort_reg">최신순</button>
@@ -101,15 +101,14 @@
          		   + '<input type="text" id="reg_date" name="regdate" value="'
          		   + dateStr
          		   + '" readonly />'
-          		   + '<button class="reply_like">좋아요</button>'
-         		  if (/*this.userid == '${signInUserId}'*/
-         				  true
-         				  ) { // 댓글 작성자 아이디와 로그인한 사용자 아이디가 같으면
+          		   + '<button class="reply_like">좋아요</button>';
+         		  if ( this.user_id == $('#userid').val()
+         				  ) {
               		list += '<button class="reply_update">수정</button>'
               			  + '<button class="reply_delete">삭제</button>';
               	}
 
-         		   + '</div>';
+         		   list+= '</div>';
 				console.log("done");
 				});
             $('#replies').html(list);				
