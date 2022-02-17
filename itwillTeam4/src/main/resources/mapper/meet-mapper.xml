@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.spring.team4.mapper.MeetMapper">
+
+	<select id="selectAll" resultType="Meet">
+	SELECT * FROM ${TABLE_MEET_TABLE} 
+	ORDER BY ${COL_MEET_IDX} DESC
+	</select> 
+	
+	<select id="selectOneMEET_IDX" resultType="Meet">
+	SELECT * FROM ${TABLE_MEET_TABLE}
+	WHERE ${COL_MEET_IDX} = #{meet_idx}
+	</select> 
+	
+	<insert id="create">
+	INSERT INTO ${TABLE_MEET_TABLE} (${COL_MEET_NAME}, ${COL_MEET_HOST}, ${COL_MEET_INTRO}, ${COL_MEET_THEME}, ${COL_MEET_MEMBER_NUM}, ${COL_MEET_ON_OR_OFF}, ${COL_MEET_WHEN}, ${COL_MEET_BOOK_TITLE}, ${COL_MEET_BOOK_AUTHORS}, ${COL_MEET_BOOK_PUB}, ${COL_MEET_BOOK_IMG})
+	VALUES (#{meet_name}, #{meet_host}, #{meet_intro}, #{meet_theme}, #{meet_member_num}, #{meet_on_or_off}, #{meet_when}, #{meet_book_title}, #{meet_book_authors}, #{meet_book_pub}, #{meet_book_img})
+	</insert>
+	
+	<!-- 게시글 수정 -->
+	<update id="update">
+	UPDATE ${TABLE_MEET_TABLE}
+	SET ${COL_MEET_NAME} = #{meet_name}, ${COL_MEET_INTRO} = #{meet_intro}, ${COL_MEET_THEME} = #{meet_theme}, ${COL_MEET_MEMBER_NUM} = #{meet_member_num}, ${COL_MEET_ON_OR_OFF} = #{meet_on_or_off}, ${COL_MEET_WHEN} = #{meet_when}, ${COL_BOARD_REG_DATE} = sysdate
+	WHERE ${COL_MEET_IDX} = #{meet_idx}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete">
+	DELETE FROM ${TABLE_MEET_TABLE}
+	WHERE ${COL_MEET_IDX} = #{meet_idx}
+	</delete>
+	
+	<!--  키워드 검색: (1) 제목, (2) 테마, (3) 호스트 아이디 -->
+	<!-- 동적 SQL -->
+	<select id="selectByKeyword" resultType="MEET">
+	SELECT * FROM ${TABLE_MEET_TABLE}
+		<if test="type == 1">
+		WHERE lower(${COL_MEET_NAME}) LIKE #{keyword}
+		</if>
+		<if test="type == 2">
+		WHERE lower(${COL_MEET_THEME}) LIKE #{keyword}
+		</if>
+		<if test="type == 3">
+		WHERE lower(${COL_MEET_HOST}) LIKE #{keyword}
+		</if>
+ 	ORDER BY ${COL_MEET_IDX} DESC
+	</select>
+	
+	
+</mapper>
