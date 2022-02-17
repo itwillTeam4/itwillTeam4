@@ -18,7 +18,7 @@
 	</select>
 
 	<!-- 페이징 처리 후 게시글 조회 -->
-	<select id="selectPageBoard" resultType="Board">
+	<select id="selectPageBoardBno" resultType="Board">
 		SELECT *
 		FROM (
 		SELECT
@@ -28,7 +28,37 @@
 		FROM ${TABLE_BOARD_TABLE}
 		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
 		ORDER BY
-		BNO DESC
+		${COL_BNO} DESC
+		) A
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	<select id="selectPageBoardReply" resultType="Board">
+		SELECT *
+		FROM (
+		SELECT
+		ROWNUM RN, A.*
+		FROM (
+		SELECT *
+		FROM ${TABLE_BOARD_TABLE}
+		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
+		ORDER BY
+		${COL_BOARD_REPLY_CNT} DESC
+		) A
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	<select id="selectPageBoardView" resultType="Board">
+		SELECT *
+		FROM (
+		SELECT
+		ROWNUM RN, A.*
+		FROM (
+		SELECT *
+		FROM ${TABLE_BOARD_TABLE}
+		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
+		ORDER BY
+		${COL_BOARD_VIEW_CNT} DESC
 		) A
 		)
 		WHERE RN BETWEEN #{start} AND #{end}

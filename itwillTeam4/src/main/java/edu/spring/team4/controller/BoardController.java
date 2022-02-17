@@ -27,7 +27,7 @@ public class BoardController {
 	public String main(Model model,Paging page,
 			@RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
-			@RequestParam(value = "orderBy", required = false) String orderby,
+			@RequestParam(value = "order", required = false) String order,
 			@RequestParam(value = "act", required = false) String act
 			) {
 		log.info("free() 호출");
@@ -61,6 +61,12 @@ public class BoardController {
 			nowPage="1";
 		}else if(cntPerPage==null) {
 			cntPerPage="10";
+		}
+		int orderby=0;
+		if(order==null) {
+			orderby=0;
+		}else {
+			orderby=Integer.parseInt(order);
 		}
 		
 		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
