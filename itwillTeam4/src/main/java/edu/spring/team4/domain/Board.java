@@ -27,7 +27,6 @@ public class Board {
 			int board_meet_idx, Date board_reg_date, String board_tag, String board_book_title,
 			String board_book_authors, String board_book_pub, String board_book_img, String board_userid,
 			int board_reply_cnt, int board_like_cnt) {
-		super();
 		this.bno = bno;
 		this.board_title = board_title;
 		this.board_content = board_content;
