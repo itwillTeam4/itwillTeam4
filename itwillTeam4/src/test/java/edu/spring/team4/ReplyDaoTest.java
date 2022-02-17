@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import edu.spring.team4.domain.Reply;
+import edu.spring.team4.persistence.MethodDao;
 import edu.spring.team4.persistence.ReplyDao;
-import edu.spring.team4.utils.MethodDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/**/*.xml" })

@@ -1,7 +1,6 @@
 package edu.spring.team4.persistence;
 
 import edu.spring.team4.domain.Reply;
-import edu.spring.team4.utils.MethodDao;
 
 import java.util.HashMap;
 import java.util.List;
