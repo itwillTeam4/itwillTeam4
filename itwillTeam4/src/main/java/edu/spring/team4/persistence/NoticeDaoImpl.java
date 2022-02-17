@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.spring.team4.domain.Notice;
+import edu.spring.team4.utils.Paging;
 
 @Repository
 public class NoticeDaoImpl implements NoticeDao{
@@ -74,5 +75,17 @@ public class NoticeDaoImpl implements NoticeDao{
 		
 		return sqlSession.selectList(NOTICE_NAMESPACE+".selectByKeyword", params);
 		
+	}
+
+
+	@Override
+	public int countNotice() {
+		return sqlSession.selectOne(NOTICE_NAMESPACE+".countNotice");
+	}
+
+
+	@Override
+	public List<Notice> selectPageNotice(Paging page) {
+		return sqlSession.selectList(NOTICE_NAMESPACE+".selecPageNotice");
 	}
 }

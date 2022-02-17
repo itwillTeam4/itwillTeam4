@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.spring.team4.domain.Notice;
 import edu.spring.team4.persistence.NoticeDao;
+import edu.spring.team4.utils.Paging;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
@@ -70,5 +71,15 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		
 		return noticeDao.read(type,keyword);
+	}
+
+	@Override
+	public int countNotice() {
+		return noticeDao.countNotice();
+	}
+
+	@Override
+	public List<Notice> selectBoard(Paging page) {
+		return noticeDao.selectPageNotice(page);
 	}
 }

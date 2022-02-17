@@ -3,6 +3,7 @@ package edu.spring.team4.persistence;
 import java.util.List;
 
 import edu.spring.team4.domain.Notice;
+import edu.spring.team4.utils.Paging;
 
 public interface NoticeDao {
 
@@ -16,4 +17,7 @@ public interface NoticeDao {
 	List<Notice> read(int type, String keyword);
 	
 	
+	int countNotice();
+	
+	List<Notice> selectPageNotice(Paging page);
 }
