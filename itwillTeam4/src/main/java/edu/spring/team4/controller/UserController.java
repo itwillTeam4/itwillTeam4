@@ -60,18 +60,6 @@ public class UserController {
 		}
 	}
 	
-	// 정보 수정
-	@RequestMapping()
-	public String updateUser() {
-		return "";
-	}
-	
-	// 회원 탈퇴
-//	public String userDelete() {
-//			return "";
-//	}
-	
-	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public void signIn(String url, Model model) {
 		log.info("signIn() GET 호출");
@@ -105,11 +93,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/userupdate", method = RequestMethod.GET)
-	public String mypage(HttpSession session, User user, Model model) {
+	public String userupdate(HttpSession session, User user, Model model) {
 		int userCode = (int)session.getAttribute("signInUserCode");
 		User userUpdate = userService.select(userCode);
 		model.addAttribute("userUpdate", userUpdate);
 		return "/user/userupdate";
+	}
+	
+	@RequestMapping(value = "/userupdate", method = RequestMethod.POST)
+	public String userupdate(HttpSession session, User user) {
+		int userCode = (int)session.getAttribute("signInUserCode");
+		User userUpdate = userService.select(userCode);
+		return "redirect:/mypage";
 	}
 	
 }

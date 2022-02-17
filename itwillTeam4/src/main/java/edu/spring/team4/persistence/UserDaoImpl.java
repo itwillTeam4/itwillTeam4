@@ -49,6 +49,15 @@ public class UserDaoImpl implements UserDao {
 		return mapper.selectByUserCode(user_code);
 	}
 	
+	@Override
+	public User update(int user_code) {
+		return mapper.updateByUserCode(user_code);
+	}
+	
+	@Override
+	public User UpdatePwd(int user_code) {
+		return mapper.updatePwdByUserCode(user_code);
+	}
 	
 	
 }

@@ -47,12 +47,5 @@ public class HomeController {
 		return "/mypage";
 	}
 	
-//	@RequestMapping(value = "/user/userupdate", method = RequestMethod.GET)
-//	public String userupdate() {
-//		
-//		
-//		return "./user/userupdate";
-//	}
-	
 	
 }

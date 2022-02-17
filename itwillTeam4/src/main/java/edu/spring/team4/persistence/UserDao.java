@@ -9,5 +9,7 @@ public interface UserDao {
 	User checkUserNn(String user_nn);
 	User read(User user);
 	User read(int user_code);
+	User update(int user_code);
+	User UpdatePwd(int user_code);
 	
 }

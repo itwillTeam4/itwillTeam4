@@ -59,4 +59,15 @@ public class UserServiceImpl implements UserService {
 	public User select(int user_code) {
 		return userDao.read(user_code);
 	}
+	
+	 @Override
+	public User updateUser(int user_code) {
+		return userDao.update(user_code);
+	}
+	 
+	@Override
+	public User updateUserPwd(int user_code) {
+		return userDao.UpdatePwd(user_code);
+	}
+	
 }

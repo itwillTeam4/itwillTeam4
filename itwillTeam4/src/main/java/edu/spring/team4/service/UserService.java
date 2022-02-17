@@ -9,5 +9,7 @@ public interface UserService {
 	boolean isValidNn(String user_nn);
 	User checkSignIn(User user);
 	User select(int user_code);
+	User updateUser(int user_code);
+	User updateUserPwd(int user_code);
 
 }

@@ -3,6 +3,7 @@ package edu.spring.team4.mapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import edu.spring.team4.domain.User;
 
@@ -51,6 +52,10 @@ public interface UserMapper {
 	String UPDATE_USER_PWD = 
 			"UPDATE ${TABLE_USER_TABLE} SET ${COL_USER_NN} = #{user_nn}, ${COL_USER_PWD} = #{user_pwd}, ${COL_USER_PHONE} = #{user_phone}, ${COL_USER_REG_DATE} = sysdate, ${COL_USER_TAG} = #{user_tag} WHERE ${COL_USER_CODE} = #{user_code}";
 	
-			
+	@Update(UPDATE_USER)
+	User updateByUserCode(int user_code);
+	
+	@Update(UPDATE_USER_PWD)
+	User updatePwdByUserCode(int user_code);
 	
 }

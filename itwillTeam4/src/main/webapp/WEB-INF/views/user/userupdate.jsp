@@ -35,6 +35,13 @@
             color: red;
             display: none;   
         }    
+        .comfirm_pwd {
+        	color: red;
+            display: none; 
+        }
+        .pass { 
+        	-webkit-text-security: disc; 
+        	}
         </style>
 </head>
 <body>
@@ -62,15 +69,16 @@
 					<input type="password" id="user_pwd_pre" name="user_pwd_pre"
 						placeholder="현재 비밀번호" required />
 					<div class="invalid_pwd_pre">비밀번호가 틀렸습니다.</div>
+					<div class="comfirm_pwd">비밀번호를 입력해주세요.</div>
 				</div>
 				
 				<div>
 					<input type="password" id="user_pwd_ck" name="user_pwd_ck"
-						placeholder="변경할 비밀번호" required />
+						placeholder="변경할 비밀번호" />
 				</div>
 				<div>
 					<input type="password" id="user_pwd" name="user_pwd"
-						placeholder="변경할 비밀번호 확인" required />
+						placeholder="변경할 비밀번호 확인" />
 					<div class="invalid_pwd">비밀번호가 틀렸습니다.</div>
 				</div>
 
@@ -125,13 +133,16 @@
         	});
         	
         	$('#user_pwd_pre').change(function(event){
+        		
+        	
         		if ($('#user_pwd_hid').val() == $('#user_pwd_pre').val()){
-        			$('.invalid_pwd_pre').hide(); // valid div 없앰(display=none).
-    				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-        		} else {
-        			$('.invalid_pwd_pre').show(); // invalid div 보여줌.
-    				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-        		}
+            			$('.invalid_pwd_pre').hide(); // valid div 없앰(display=none).
+        				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
+           		} else {
+           			$('.invalid_pwd_pre').show(); // invalid div 보여줌.
+       				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
+           		}
+        		
         	});
         	
         	$('#user_pwd').change(function(event){
