@@ -58,6 +58,18 @@ public class UserController {
 		}
 	}
 	
+	// 정보 수정
+	@RequestMapping()
+	public String updateUser() {
+		return "";
+	}
+	
+	// 회원 탈퇴
+//	public String userDelete() {
+//			return "";
+//	}
+	
+	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public void signIn(String url, Model model) {
 		log.info("signIn() GET 호출");
@@ -70,8 +82,13 @@ public class UserController {
 		
 		User signInUser = userService.checkSignIn(user);
 		if (signInUser != null) {
+			
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
+			session.setAttribute("signInUserPwd", signInUser.getUser_pwd());
+			session.setAttribute("signInUserPhone", signInUser.getUser_phone());
+			session.setAttribute("signInUserTag", signInUser.getUser_tag());
+					
 			return "redirect:/";
 		} else {
 			return "redirect:/user/signin";
@@ -86,5 +103,6 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
 	
 }

@@ -2,22 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.spring.team4.mapper.UserMapper">
 
-
-	<select id="selectAllUser" resultType="User">
-
-		SELECT * FROM ${TABLE_USER_TABLE}
-		ORDER BY ${COL_USER_CODE} DESC
-
-	</select>
-
-
-	<select id="selectByUser" resultType="User">
-
-		SELECT * FROM ${TABLE_USER_TABLE}
-		WHERE ${COL_USER_USER_ID} = #{USER_USER_ID}
-		
-	</select>
-
 	<update id="update">
 		UPDATE ${TABLE_USER_TABLE}
 		SET ${COL_USER_CODE} = #{user_code}, ${COL_USER_ID} = #{user_id},

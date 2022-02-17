@@ -29,7 +29,7 @@
 					<textarea rows="10" name="board_content" placeholder="내용 입력" required></textarea>
 				</div>
 				<div>
-					<input type="text" name="board_userid" value="admin" required readonly />
+					<input type="text" name="board_userid" value="${signInUserId}" required readonly />
 				</div>
 				<div>
 					<input type="text" id="board_book_title" name="board_book_title" value="책 제목" required autofocus />
