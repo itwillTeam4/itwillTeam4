@@ -32,7 +32,7 @@
 			<ul id="navui1" class="menu">
 
 
-				<li id="board"><a href="http://localhost:8181/team4/board/free">커뮤니티</a></li>
+				<li id="board"><a href="http://localhost:8181/team4/board/">커뮤니티</a></li>
 				<li id="notice"><a href="http://localhost:8181/team4/notice/main">공지사항</a></li>
 
 			</ul>

@@ -23,14 +23,33 @@ public class BoardController {
 	
 	@Autowired private BoardService boardService;
 	
-	@RequestMapping(value = "/free", method = RequestMethod.GET)
-	public void main(Model model,Paging page,
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String main(Model model,Paging page,
 			@RequestParam(value = "nowPage", required = false) String nowPage,
-			@RequestParam(value = "cntPerPage", required = false) String cntPerPage
+			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
+			@RequestParam(value = "orderBy", required = false) String orderBy,
+			@RequestParam(value = "act", required = false) String act
 			) {
 		log.info("free() 호출");
-		
+		String result;
 		int board_meet_idx=0;
+		
+		if (act==null){
+			act="free";
+		}
+		if(act.equals("my")) {
+			log.info("나의");
+			board_meet_idx=1;
+			result= "board/mymeet";
+		}else if (act.equals("rlt")) {
+			log.info("실시간");
+			result= "board/realtime";
+		}else {
+			log.info("자유");
+			result= "board/free";
+		}
+
+		
 		
 		int total = boardService.countBoard(board_meet_idx);
 		
@@ -47,6 +66,8 @@ public class BoardController {
 		List<Board> list = boardService.selectPageBoard(page,board_meet_idx);
 		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
+		
+		return result;
 	}
 	
 	

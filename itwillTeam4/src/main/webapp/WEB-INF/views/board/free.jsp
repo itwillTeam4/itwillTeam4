@@ -24,9 +24,9 @@
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
-					<li><a href="#">실시간 독서 모임 커뮤니티</a></li>
-					<li><a href="#">나의 독서 모임 커뮤니티</a></li>
-					<li><a href="#" class="on">자유로운 서평</a></li>
+					<li><a href="?act=rlt">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="?act=my">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="?act=free" class="on">자유로운 서평</a></li>
 					<li><a href="#">공지사항/이벤트</a></li>
 
 				</ul>
@@ -42,9 +42,9 @@
 						</a>
 					</div>
 					<ul class="searchTapFree">
-						<li><a href="free?orderBy=0">최신순</a></li>
-						<li><a href="#">조회수순</a></li>
-						<li><a href="#">댓글순</a></li>
+						<li><a href="?act=free&orderBy=reg">최신순</a></li>
+						<li><a href="?act=free&orderBy=view">조회수순</a></li>
+						<li><a href="?act=free&orderBy=rpl">댓글순</a></li>
 					</ul>
 				</div>
 
