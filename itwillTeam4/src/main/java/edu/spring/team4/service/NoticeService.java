@@ -22,7 +22,7 @@ public interface NoticeService {
 	// 게시물 총 갯수
 	int countNotice();
 	
-	// 페이징 처리 게시글 조회
-	List<Notice> selectBoard(Paging page);
+	// 페이징 처리 공지글 조회
+	List<Notice> selectPageNotice(Paging page);
 	
 }

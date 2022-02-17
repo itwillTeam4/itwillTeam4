@@ -21,15 +21,15 @@
 	</select>
 
 	<!-- 페이징 처리 후 게시글 조회 -->
-	<select id="selecPageNotice" resultType="Notice">
+	<select id="selectPageNotice" resultType="Notice">
 		SELECT *
 		FROM (
 		SELECT
 		ROWNUM RN, A.*
 		FROM (
 		SELECT *
-		FROM ${TABLE_NOTICE_TABLE
-		ORDER BY SEQ DESC
+		FROM ${TABLE_NOTICE_TABLE}
+		ORDER BY NOTICE_IDX DESC
 		) A
 		)
 		WHERE RN BETWEEN #{start} AND #{end}

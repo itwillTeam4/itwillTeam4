@@ -79,7 +79,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public List<Notice> selectBoard(Paging page) {
+	public List<Notice> selectPageNotice(Paging page) {
 		return noticeDao.selectPageNotice(page);
 	}
 }

@@ -86,6 +86,6 @@ public class NoticeDaoImpl implements NoticeDao{
 
 	@Override
 	public List<Notice> selectPageNotice(Paging page) {
-		return sqlSession.selectList(NOTICE_NAMESPACE+".selecPageNotice");
+		return sqlSession.selectList(NOTICE_NAMESPACE+".selectPageNotice",page);
 	}
 }
