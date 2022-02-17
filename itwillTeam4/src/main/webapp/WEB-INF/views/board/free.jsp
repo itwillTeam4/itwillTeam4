@@ -55,7 +55,7 @@
 								<div class="boxHeader">
 									<div class="bookImg">
 										<img src="${board.board_book_img}" alt="">
-										<p class="bookImgTitle">${board.board_book_title }</p>
+										<p class="bookImgTitle text-overflow">${board.board_book_title }</p>
 									</div>
 									<div class="postInfo">
 										<p class="postTitle">${board.board_title }</p>
