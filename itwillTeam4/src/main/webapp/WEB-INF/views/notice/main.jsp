@@ -35,6 +35,10 @@
 			<div class="right-contents">
 				<div id="right-top-wrap">
 					<p id="right-contents-title">공지사항</p>
+					<c:if test="${userAdminCheck ==1 }">
+						<a href="./insert"><span id="noticeInsert">공지사항작성</span></a>
+					
+					</c:if>
 					<ul class="searchTap">
 						<li><a href="#">공지사항</a></li>
 						<li><a href="#">이벤트</a></li>

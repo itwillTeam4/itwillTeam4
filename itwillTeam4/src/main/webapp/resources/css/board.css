@@ -375,3 +375,18 @@ img {
 }
 
 .profile-box span{font-weight:500;}
+
+#noticeInsert{
+	
+	border: 1px solid #e6e6e6;
+    width: 107px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 20px;
+}
