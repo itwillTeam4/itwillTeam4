@@ -3,69 +3,114 @@
 <mapper namespace="edu.spring.team4.mapper.BoardMapper">
 
 	<select id="selectAll" resultType="Board">
-	SELECT * FROM ${TABLE_BOARD_TABLE} 
-	WHERE ${COL_BOARD_MEET_IDX} is null
-	ORDER BY ${COL_BNO} DESC
-	</select> 
-	
-	<select id="selectByBno" resultType="Board">
-	SELECT * FROM ${TABLE_BOARD_TABLE}
-	WHERE ${COL_BNO} = #{bno}
-	</select> 
-	
+		SELECT * FROM
+		${TABLE_BOARD_TABLE}
+		WHERE ${COL_BOARD_MEET_IDX} is null
+		ORDER BY
+		${COL_BNO} DESC
+	</select>
 
-	
+	<!-- 총 게스글 갯수 출력 -->
+	<select id="countBoard" resultType="Integer">
+		SELECT COUNT(*) FROM
+		${TABLE_BOARD_TABLE}
+	</select>
+
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="selectPageBoard" resultType="Board">
+		SELECT *
+		FROM (
+		SELECT
+		ROWNUM RN, A.*
+		FROM (
+		SELECT *
+		FROM ${TABLE_BOARD_TABLE}
+		ORDER BY
+		BNO DESC
+		) A
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+
+
+
+
+	<select id="selectByBno" resultType="Board">
+		SELECT * FROM
+		${TABLE_BOARD_TABLE}
+		WHERE ${COL_BNO} = #{bno}
+	</select>
+
+
+
 	<insert id="create">
-	INSERT INTO ${TABLE_BOARD_TABLE} (${COL_BOARD_TITLE}, ${COL_BOARD_USERID}, ${COL_BOARD_CONTENT}, ${COL_BOARD_TAG}, ${COL_BOARD_BOOK_TITLE}, ${COL_BOARD_BOOK_AUTHORS}, ${COL_BOARD_BOOK_PUB}, ${COL_BOARD_BOOK_IMG})
-	VALUES (#{board_title}, #{board_userid}, #{board_content}, #{board_tag}, #{board_book_title}, #{board_book_authors}, #{board_book_pub}, #{board_book_img})
+		INSERT INTO ${TABLE_BOARD_TABLE} (${COL_BOARD_TITLE},
+		${COL_BOARD_USERID},
+		${COL_BOARD_CONTENT}, ${COL_BOARD_TAG},
+		${COL_BOARD_BOOK_TITLE},
+		${COL_BOARD_BOOK_AUTHORS},
+		${COL_BOARD_BOOK_PUB},
+		${COL_BOARD_BOOK_IMG})
+		VALUES (#{board_title},
+		#{board_userid}, #{board_content}, #{board_tag},
+		#{board_book_title},
+		#{board_book_authors}, #{board_book_pub},
+		#{board_book_img})
 	</insert>
-	
+
 	<!-- 게시글 수정 -->
 	<update id="update">
-	UPDATE ${TABLE_BOARD_TABLE}
-	SET ${COL_BOARD_TITLE} = #{board_title}, ${COL_BOARD_CONTENT} = #{board_content}, ${COL_BOARD_REG_DATE} = sysdate
-	WHERE ${COL_BNO} = #{bno}
+		UPDATE ${TABLE_BOARD_TABLE}
+		SET ${COL_BOARD_TITLE} =
+		#{board_title}, ${COL_BOARD_CONTENT} =
+		#{board_content},
+		${COL_BOARD_REG_DATE} = sysdate
+		WHERE ${COL_BNO} = #{bno}
 	</update>
 
 	<!-- 게시글 view_cnt -->
 	<update id="updateViewCnt">
-	UPDATE ${TABLE_BOARD_TABLE}
-	SET ${COL_BOARD_VIEW_CNT} = ${COL_BOARD_VIEW_CNT} + 1
-	WHERE ${COL_BNO} = #{bno}
+		UPDATE ${TABLE_BOARD_TABLE}
+		SET ${COL_BOARD_VIEW_CNT}
+		= ${COL_BOARD_VIEW_CNT} + 1
+		WHERE ${COL_BNO} = #{bno}
 	</update>
-	
+
 	<!-- 게시글 삭제 -->
 	<delete id="delete">
-	DELETE FROM ${TABLE_BOARD_TABLE}
-	WHERE ${COL_BNO} = #{bno}
+		DELETE FROM ${TABLE_BOARD_TABLE}
+		WHERE ${COL_BNO} =
+		#{bno}
 	</delete>
-	
-	<!--  키워드 검색: (1) 제목, (2) 내용, (3) 제목+내용, (4) 작성자 아이디 -->
+
+	<!-- 키워드 검색: (1) 제목, (2) 내용, (3) 제목+내용, (4) 작성자 아이디 -->
 	<!-- 동적 SQL -->
 	<select id="selectByKeyword" resultType="Board">
-	SELECT * FROM ${TABLE_BOARD_TABLE}
+		SELECT * FROM ${TABLE_BOARD_TABLE}
 		<if test="type == 1">
-		WHERE lower(${COL_BOARD_TITLE}) LIKE #{keyword}
+			WHERE lower(${COL_BOARD_TITLE}) LIKE #{keyword}
 		</if>
 		<if test="type == 2">
-		WHERE lower(${COL_BOARD_CONTENT}) LIKE #{keyword}
+			WHERE lower(${COL_BOARD_CONTENT}) LIKE #{keyword}
 		</if>
 		<if test="type == 3">
-		WHERE lower(${COL_BOARD_TITLE}) LIKE #{keyword}
-			OR lower(${COL_BOARD_CONTENT}) LIKE #{keyword}
+			WHERE lower(${COL_BOARD_TITLE}) LIKE #{keyword}
+			OR
+			lower(${COL_BOARD_CONTENT}) LIKE #{keyword}
 		</if>
 		<if test="type == 4">
-		WHERE lower(${COL_BOARD_USERID}) LIKE #{keyword}
+			WHERE lower(${COL_BOARD_USERID}) LIKE #{keyword}
 		</if>
- 	ORDER BY ${COL_BNO} DESC
+		ORDER BY ${COL_BNO} DESC
 	</select>
-	   <!-- 해당 글 번호의 댓글 수자를 증가 또는 감소 -->
-    <update id="updateReplyCnt">
-    UPDATE ${TABLE_BOARD_TABLE}
-    SET ${COL_BOARD_REPLY_CNT} = ${COL_BOARD_REPLY_CNT} + #{increase}
-    WHERE ${COL_BNO} = #{bno}
-    </update>
-	
-	
-	
+	<!-- 해당 글 번호의 댓글 수자를 증가 또는 감소 -->
+	<update id="updateReplyCnt">
+		UPDATE ${TABLE_BOARD_TABLE}
+		SET ${COL_BOARD_REPLY_CNT}
+		= ${COL_BOARD_REPLY_CNT} + #{increase}
+		WHERE ${COL_BNO} = #{bno}
+	</update>
+
+
+
 </mapper>

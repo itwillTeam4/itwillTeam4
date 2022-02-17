@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.service.BoardService;
+import edu.spring.team4.utils.Paging;
 
 @Controller
 @RequestMapping(value = "/board")
@@ -23,10 +24,25 @@ public class BoardController {
 	@Autowired private BoardService boardService;
 	
 	@RequestMapping(value = "/free", method = RequestMethod.GET)
-	public void main(Model model) {
+	public void main(Model model,Paging page,
+			@RequestParam(value = "nowPage", required = false) String nowPage,
+			@RequestParam(value = "cntPerPage", required = false) String cntPerPage
+			) {
 		log.info("free() 호출");
 		
-		List<Board> list = boardService.select();
+		int total = boardService.countBoard();
+		if (nowPage==null&&cntPerPage==null) {
+			nowPage="1";
+			cntPerPage="10";
+		}else if(nowPage==null) {
+			nowPage="1";
+		}else if(cntPerPage==null) {
+			cntPerPage="10";
+		}
+		
+		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
+		List<Board> list = boardService.selectPageBoard(page);
+		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 	}
 	

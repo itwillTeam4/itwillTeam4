@@ -3,6 +3,7 @@ package edu.spring.team4.service;
 import java.util.List;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.utils.Paging;
 
 public interface BoardService {
 	
@@ -13,4 +14,8 @@ public interface BoardService {
 	int delete(int bno);
 	List<Board> select(int searchType, String searchKeyword);
 
+	int countBoard();
+	
+	List<Board> selectPageBoard(Paging page);
+	
 }

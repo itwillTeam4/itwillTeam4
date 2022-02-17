@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.utils.Paging;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {
@@ -79,6 +80,16 @@ public class BoardDaoImpl implements BoardDao {
 
 		return sqlSession.update(BOARD_NAMESPACE + ".updateReplyCnt", params);
 
+	}
+
+	@Override
+	public int countBoard() {
+		return sqlSession.selectOne(BOARD_NAMESPACE+".countBoard");
+	}
+
+	@Override
+	public List<Board> selectPageBoard(Paging page) {
+		return sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoard",page);
 	}
 
 }

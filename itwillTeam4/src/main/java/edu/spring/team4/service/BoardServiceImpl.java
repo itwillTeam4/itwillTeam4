@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.persistence.BoardDao;
+import edu.spring.team4.utils.Paging;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -52,6 +53,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<Board> select(int searchType, String searchKeyword) {
 		return boardDao.read(searchType, searchKeyword);
+	}
+
+	@Override
+	public int countBoard() {
+		return boardDao.countBoard();
+	}
+
+	@Override
+	public List<Board> selectPageBoard(Paging page) {
+		return boardDao.selectPageBoard(page);
 	}
 
 }

@@ -3,6 +3,7 @@ package edu.spring.team4.persistence;
 import java.util.List;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.utils.Paging;
 
 public interface BoardDao {
 	
@@ -15,4 +16,8 @@ public interface BoardDao {
 	List<Board> read(int type, String keyword);
 	int updateReplyCnt(int bno, int increase);
 
+	int countBoard();
+	
+	List<Board> selectPageBoard(Paging page);
+	
 }
