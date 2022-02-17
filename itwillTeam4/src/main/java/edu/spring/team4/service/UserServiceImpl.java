@@ -61,13 +61,8 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	 @Override
-	public User updateUser(int user_code) {
-		return userDao.update(user_code);
-	}
-	 
-	@Override
-	public User updateUserPwd(int user_code) {
-		return userDao.UpdatePwd(user_code);
+	public int updateUser(User user) {
+		return userDao.update(user);
 	}
 	
 }

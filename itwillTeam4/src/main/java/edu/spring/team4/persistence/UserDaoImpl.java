@@ -3,6 +3,7 @@ package edu.spring.team4.persistence;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,10 @@ import edu.spring.team4.mapper.UserMapper;
 public class UserDaoImpl implements UserDao {
 	
 	private static final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
-	
+	private static final String USER_NAMESPACE = "edu.spring.team4.mapper.UserMapper";
 
 	@Autowired private UserMapper mapper;
+	@Autowired private SqlSession sqlSession;
 	
 	@Override
 	public int create(User user) {
@@ -50,14 +52,8 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public User update(int user_code) {
-		return mapper.updateByUserCode(user_code);
+	public int update(User user) {
+		return sqlSession.update(USER_NAMESPACE + ".update", user);
 	}
-	
-	@Override
-	public User UpdatePwd(int user_code) {
-		return mapper.updatePwdByUserCode(user_code);
-	}
-	
 	
 }

@@ -2,6 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.spring.team4.mapper.UserMapper">
 
+	<update id="update">
+		UPDATE ${TABLE_USER_TABLE} 
+		SET ${COL_USER_NN} = #{user_nn}, 
+			${COL_USER_PWD} = #{user_pwd}, 
+			${COL_USER_PHONE} = #{user_phone}, 
+			${COL_USER_REG_DATE} = sysdate, 
+			${COL_USER_TAG} = #{user_tag} 
+		WHERE ${COL_USER_CODE} = #{user_code}
+	</update>
 
 	<delete id="delete">
 		DELETE FROM ${TABLE_USER_TABLE}

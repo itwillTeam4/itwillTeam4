@@ -53,6 +53,9 @@
 		<div>
 			<form action="./userupdate" method="post">
 				<div>
+					<input type="hidden" value="${userUpdate.user_code}" id="user_code" name="user_code"/>
+				</div>
+				<div>
 					<input type="hidden" value="${userUpdate.user_nn}" id="user_nn_hid" name="user_nn_hid"/>
 				</div>
 				<div>
@@ -73,21 +76,21 @@
 				</div>
 				
 				<div>
-					<input type="password" id="user_pwd_ck" name="user_pwd_ck"
-						placeholder="변경할 비밀번호" />
+					<input type="password"  id="user_pwd_ck" name="user_pwd_ck"
+						placeholder="변경할 비밀번호"/>
 				</div>
 				<div>
 					<input type="password" id="user_pwd" name="user_pwd"
-						placeholder="변경할 비밀번호 확인" />
+						placeholder="변경할 비밀번호 확인"/>
 					<div class="invalid_pwd">비밀번호가 틀렸습니다.</div>
 				</div>
 
 				<div>
-					<input type="text" value="${userUpdate.user_phone}" name="user_phone" placeholder="전화번호 입력" required />
+					<input type="text" value="${userUpdate.user_phone}" id="user_phone" name="user_phone" placeholder="전화번호 입력" required />
 				</div>
 
 				<div>
-					<input type="text" value="${userUpdate.user_tag}" name="user_tag" placeholder="유저 태그 입력" required />
+					<input type="text" value="${userUpdate.user_tag}" id="user_tag" name="user_tag" placeholder="유저 태그 입력" required />
 				</div>
 
 				<div>
@@ -134,7 +137,6 @@
         	
         	$('#user_pwd_pre').change(function(event){
         		
-        	
         		if ($('#user_pwd_hid').val() == $('#user_pwd_pre').val()){
             			$('.invalid_pwd_pre').hide(); // valid div 없앰(display=none).
         				$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
@@ -152,6 +154,13 @@
         		} else {
         			$('.invalid_pwd').show(); // invalid div 보여줌.
     				$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
+        		}
+        	});
+        	
+        	$('#btn-complete').click(function(){
+        		var pwd = $('#user_pwd_pre').val();
+        		if ($('#user_pwd').val() == "" ){
+        			$('#user_pwd').val(pwd);
         		}
         	});
         	

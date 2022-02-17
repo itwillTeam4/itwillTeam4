@@ -67,16 +67,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
-	public String signIn(User user, HttpSession session) {
+	public String signIn(User user, HttpSession session, Model model) {
 		log.info("signIn({}) POST 호출", user);
-		
 		User signInUser = userService.checkSignIn(user);
+		
 		if (signInUser != null) {
-			
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
 			session.setAttribute("signInUserCode", signInUser.getUser_code());
-					
+			model.addAttribute("signInUser", signInUser);
 			return "redirect:/";
 		} else {
 			return "redirect:/user/signin";
@@ -101,9 +100,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/userupdate", method = RequestMethod.POST)
-	public String userupdate(HttpSession session, User user) {
-		int userCode = (int)session.getAttribute("signInUserCode");
-		User userUpdate = userService.select(userCode);
+	public String userupdate(User user) {
+		userService.updateUser(user);
 		return "redirect:/mypage";
 	}
 	
