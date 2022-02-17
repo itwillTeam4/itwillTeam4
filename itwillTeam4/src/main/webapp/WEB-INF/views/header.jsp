@@ -97,10 +97,10 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="./user/signin" method="post">
+			<form action="http://localhost:8181/team4/user/signin" method="post">
 				<div id="loginInput">
 					<div class="loginInputForm">
-						<input type="text" name="user_id" placeholder="아이디(이메일) 입력"
+						<input type="text" name="user_id" id="idInput" placeholder="아이디(이메일) 입력"
 							autofocus required>
 
 					</div>
@@ -128,7 +128,7 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="./user/register" method="post">
+			<form action="http://localhost:8181/team4/user/register" method="post">
 				<div id="registerInput">
 					<div class="emailInput">
 						<input type="email" id="user_id" name="user_id"

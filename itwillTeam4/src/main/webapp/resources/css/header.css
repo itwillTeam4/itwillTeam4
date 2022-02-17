@@ -65,7 +65,7 @@ img {
 }
 
 #navui2 {
-	width: 125px;
+	width: 200px;
 	height: 36px;
 	float: right;
 	position: relative;
@@ -79,7 +79,7 @@ img {
 	background-color: #007450;
 	text-align: center;
 	position: relative;
-	margin-left: 610px;
+	margin-left: 530px;
 	color: white;
 	top: -15px;
 }
@@ -123,7 +123,14 @@ img {
 	font-weight: 500;
 }
 
-
+#signup {
+	float: left;
+	text-align: center;
+	margin-left: 40px;
+	line-height: 36px;
+	font-weight: 500;
+	cursor:pointer;	
+}
 
 .menu li:after {
 	display: block;
@@ -230,11 +237,11 @@ button  img {
 	width: 320px;
 	height: 42px;
 }
-
+#idInput{
+	    margin-top: 0px;
+}
 .loginInputForm:nth-child(2) {
-	border-top: none;
-	z-index: 1;
-	top: -3px;
+    margin-top: 3px;
 }
 
 #loginModal p {
@@ -335,9 +342,7 @@ button  img {
 }
 
 #user_pwd {
-	border-top: none!important;
-    top: -3px;
-    z-index: 1!important;
+	    margin-top: 3px!important;
 }
 #loginModal input[type=submit], #registerModal input[type=submit] {
 	background-color: #333333;
