@@ -27,7 +27,7 @@
 	<div id="contentWrap">
 		<div class="innerWrap">
 
-			<div class="left-gnb">
+			<div class="left-gnbDetail">
 				<div class="profile-box">
 					<p>
 						<span>${signInUserId}</span>님
