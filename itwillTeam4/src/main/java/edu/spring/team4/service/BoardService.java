@@ -15,7 +15,7 @@ public interface BoardService {
 	List<Board> select(int searchType, String searchKeyword);
 
 	int countBoard(int board_meet_idx);
-	
-	List<Board> selectPageBoard(Paging page,int board_meet_idx,int orderby);
+	List<Board> selectPageBoard(Paging page,String board_meet_idx,int orderby);
+
 	List<Board> selectThree();
 }
