@@ -20,7 +20,9 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Autowired
 	private SqlSession sqlSession;
-
+	@Autowired
+	private MethodDao methodDao;
+	
 	@Override
 	public List<Board> read() {
 		log.info("boardDaoImpl.read() 호출");
@@ -83,15 +85,19 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int countBoard(String board_meet_idx) {
+	public int countBoard(String board_meet_idx1) {
 		Map<String, Object> params = new HashMap<>();
+		List<String> board_meet_idx=methodDao.toList(board_meet_idx1);
+		
 		params.put("board_meet_idx",board_meet_idx);
 		return sqlSession.selectOne(BOARD_NAMESPACE+".countBoard",params);
 	}
 
 	@Override
-		public List<Board> selectPageBoard(Paging page, String board_meet_idx, int orderby) {
+		public List<Board> selectPageBoard(Paging page, String board_meet_idx1, int orderby) {
 		Map<String, Object> params = new HashMap<>();
+		List<String> board_meet_idx=methodDao.toList(board_meet_idx1);
+		
 		params.put("board_meet_idx",board_meet_idx);
 		params.put("start",page.getStart());
 		params.put("end",page.getEnd());

@@ -14,7 +14,11 @@
 	<select id="countBoard" resultType="Integer">
 		SELECT COUNT(*) FROM
 		${TABLE_BOARD_TABLE}
-		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
+		WHERE ${COL_BOARD_MEET_IDX} in
+		<foreach collection="board_meet_idx" index="index"
+			item="board_meet_idx" open="(" close=")" separator=",">
+			#{board_meet_idx}
+		</foreach>
 	</select>
 
 	<!-- 페이징 처리 후 게시글 조회 -->
@@ -27,7 +31,12 @@
 		SELECT *
 		FROM
 		${TABLE_BOARD_TABLE}
-		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
+		WHERE ${COL_BOARD_MEET_IDX} in
+		<foreach collection="board_meet_idx" index="index"
+			item="board_meet_idx" open="(" close=")" separator=",">
+			#{board_meet_idx}
+		</foreach>
+
 		ORDER BY
 		<if test="orderby==0">
 			${COL_BNO}
@@ -44,7 +53,7 @@
 		)
 		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
-	
+
 	<select id="selectPageBoardReply" resultType="Board">
 		SELECT *
 		FROM (
@@ -93,7 +102,8 @@
 
 		SELECT * FROM (
 
-		SELECT * FROM ${TABLE_BOARD_TABLE} ORDER BY ${COL_BNO} DESC)
+		SELECT * FROM ${TABLE_BOARD_TABLE} ORDER BY ${COL_BNO}
+		DESC)
 
 		<![CDATA[where rownum <= 3]]>
 
