@@ -32,7 +32,7 @@ public class BoardController {
 			) {
 		log.info("free() 호출");
 		String result;
-		int board_meet_idx=0;
+		String board_meet_idx="0";
 		
 		
 		if (act==null){
@@ -40,7 +40,7 @@ public class BoardController {
 		}
 		if(act.equals("my")) {
 			log.info("나의");
-			board_meet_idx=1;
+			board_meet_idx="0,1,2";
 			result= "board/mymeet";
 		}else if (act.equals("rlt")) {
 			log.info("실시간");
