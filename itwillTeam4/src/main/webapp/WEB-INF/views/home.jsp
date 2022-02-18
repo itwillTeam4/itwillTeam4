@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -191,7 +192,7 @@
 	</div>
 	<div id="wrap3" class="content">
 		<div class="wrap3List" id="wrap3_1">
-			<p class="wrap3Title">최근 등록 독서 노트</p>
+			<p class="wrap3Title">최근 등록 자유로운 서평</p>
 
 			<ul>
 				<li><a href="">
@@ -372,7 +373,19 @@
 						alt="garr1" class="greenArrow">
 				</div>
 
-				<a href="#"><div class="wrap4ConCon"></div></a>
+				<a
+					href="http://localhost:8181/team4/notice/detail?notice_idx=${event.notice_idx }">
+					<div class="wrap4ConCon">
+						<img
+							src="${pageContext.request.contextPath}/resources/img/event.png"
+							alt="event" id="eventImg">
+						<div id="eventText">
+							<p>${event.notice_title}</p>
+							<fmt:formatDate value="${event.notice_reg_date }"
+								pattern="yyyy-MM-dd" />
+						</div>
+					</div>
+				</a>
 
 			</div>
 
@@ -385,23 +398,20 @@
 				</div>
 
 				<a href="#"><div class="wrap4ConCon2">
-				<ul>
-					<li class="noticeLi" id="noticeLi1">
-					<a href="#">
-					<p class="text-overflow noticeTitle">notice_title</p></a>
-					<p>notice_reg_date</p>
-					</li>
-					
-					<li class="noticeLi" id="noticeLi2">
-					<a href="#">
-					<p class="text-overflow noticeTitle">notice_title</p></a>
-					<p>notice_reg_date</p>
-					</li>
-				
-				</ul>
-				
-				
-				</div></a>
+						<ul>
+							<c:forEach var="notice" items="${noticeList}" begin="0" end="1"
+								step="1">
+								<li class="noticeLi" id="noticeLi1"><a href="http://localhost:8181/team4/notice/detail?notice_idx=${notice.notice_idx }">
+										<p class="text-overflow noticeTitle">${notice.notice_title }</p>
+								</a>
+									<p><fmt:formatDate value="${notice.notice_reg_date }" pattern="yyyy-MM-dd"/></p></li>
+							</c:forEach>
+
+
+						</ul>
+
+
+					</div></a>
 
 			</div>
 

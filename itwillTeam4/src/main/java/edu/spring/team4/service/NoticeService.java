@@ -25,4 +25,7 @@ public interface NoticeService {
 	// 페이징 처리 공지글 조회
 	List<Notice> selectPageNotice(Paging page);
 	
+	//홈화면 공지사항 두개만
+	
+	List<Notice> selectTwo();
 }

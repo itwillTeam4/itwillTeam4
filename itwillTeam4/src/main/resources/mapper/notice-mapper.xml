@@ -29,12 +29,24 @@
 		FROM (
 		SELECT *
 		FROM ${TABLE_NOTICE_TABLE}
-		ORDER BY NOTICE_IDX DESC
+		ORDER BY
+		NOTICE_IDX DESC
 		) A
 		)
 		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 
+	<!-- 홈화면 공지사항 두개만 조회 -->
+	<select id="selectTwo" resultType="Notice">
+
+		SELECT * FROM (
+
+		SELECT * FROM NOTICE_TABLE WHERE NOTICE_CATEGORY = '공지사항' ORDER BY
+		NOTICE_IDX DESC)
+
+		<![CDATA[where rownum <= 2]]>
+
+	</select>
 
 	<!-- 공지사항 글 번호로 검색 -->
 	<select id="selectOne" resultType="Notice">

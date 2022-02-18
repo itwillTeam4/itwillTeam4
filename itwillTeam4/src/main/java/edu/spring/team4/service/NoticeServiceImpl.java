@@ -82,4 +82,9 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<Notice> selectPageNotice(Paging page) {
 		return noticeDao.selectPageNotice(page);
 	}
+	
+	@Override
+	public List<Notice> selectTwo() {
+		return noticeDao.selectTwo();
+	}
 }

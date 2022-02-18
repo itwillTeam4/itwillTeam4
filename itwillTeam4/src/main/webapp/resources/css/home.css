@@ -286,6 +286,19 @@ img {
     .wrap4ConTitle {height:37px;}
     .noticeLi{width:520px; height:77px;  margin:0 auto;}
     #noticeLi1{border-bottom : 1px solid #dedede;}
-    #noticeLi2{margin-top:25px;}
+	.noticeLi:nth-child(3){margin-top: 20px;
+    border-bottom: none!important;}
     .noticeTitle{font-weight:700; font-size:16px;}
     .wrap4ConCon2 ul{ float:left;}
+    
+    
+#wrap4ConCon { width:582px; height:370px;}
+#wrap4ConCon img {width:304px; height:304px;}
+#eventImg {width:304px; height:304px; border:1px solid black;margin-top: 6%;
+    margin-left: -60px; float:left; }
+    
+
+#eventText {position: relative;
+    left: 30px;
+    top: 35%;
+    font-weight: 500;}

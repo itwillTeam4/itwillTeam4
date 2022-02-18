@@ -20,4 +20,6 @@ public interface NoticeDao {
 	int countNotice();
 	
 	List<Notice> selectPageNotice(Paging page);
+	
+	List<Notice> selectTwo();
 }
