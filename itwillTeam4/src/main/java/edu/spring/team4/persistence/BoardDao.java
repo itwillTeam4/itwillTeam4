@@ -16,9 +16,9 @@ public interface BoardDao {
 	List<Board> read(int type, String keyword);
 	int updateReplyCnt(int bno, int increase);
 
-	int countBoard(int board_meet_idx);
+	int countBoard(String board_meet_idx);
 	
-	List<Board> selectPageBoard(Paging page,int board_meet_idx,int orderby);
+	List<Board> selectPageBoard(Paging page,String board_meet_idx,int orderby);
 	List<Board> selectThree();
 	
 }
