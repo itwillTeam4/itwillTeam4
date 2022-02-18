@@ -15,9 +15,9 @@
 		SELECT COUNT(*) FROM
 		${TABLE_BOARD_TABLE}
 		WHERE ${COL_BOARD_MEET_IDX} in
-		<foreach collection="board_meet_idx" index="index"
-			item="board_meet_idx" open="(" close=")" separator=",">
-			#{board_meet_idx}
+		<foreach collection="list" index="index"
+			item="abc" open="(" close=")" separator=",">
+			#{abc}
 		</foreach>
 	</select>
 
@@ -32,9 +32,9 @@
 		FROM
 		${TABLE_BOARD_TABLE}
 		WHERE ${COL_BOARD_MEET_IDX} in
-		<foreach collection="board_meet_idx" index="index"
-			item="board_meet_idx" open="(" close=")" separator=",">
-			#{board_meet_idx}
+		<foreach collection="list" index="index"
+			item="a" open="(" close=")" separator=",">
+			#{a}
 		</foreach>
 
 		ORDER BY

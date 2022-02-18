@@ -1,5 +1,6 @@
 package edu.spring.team4.persistence;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +23,7 @@ public class BoardDaoImpl implements BoardDao {
 	private SqlSession sqlSession;
 	@Autowired
 	private MethodDao methodDao;
-	
+
 	@Override
 	public List<Board> read() {
 		log.info("boardDaoImpl.read() 호출");
@@ -87,29 +88,31 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public int countBoard(String board_meet_idx1) {
 		Map<String, Object> params = new HashMap<>();
-		List<String> board_meet_idx=methodDao.toList(board_meet_idx1);
-		
-		params.put("board_meet_idx",board_meet_idx);
-		return sqlSession.selectOne(BOARD_NAMESPACE+".countBoard",params);
+		List<String> board_meet_idx = new ArrayList<String>();
+		for (String s : methodDao.toList(board_meet_idx1)) {
+			board_meet_idx.add(s);
+		}
+
+		params.put("list", board_meet_idx);
+		return sqlSession.selectOne(BOARD_NAMESPACE + ".countBoard", params);
 	}
 
 	@Override
-		public List<Board> selectPageBoard(Paging page, String board_meet_idx1, int orderby) {
+	public List<Board> selectPageBoard(Paging page, String board_meet_idx1, int orderby) {
 		Map<String, Object> params = new HashMap<>();
-		List<String> board_meet_idx=methodDao.toList(board_meet_idx1);
-		
-		params.put("board_meet_idx",board_meet_idx);
-		params.put("start",page.getStart());
-		params.put("end",page.getEnd());
+		List<String> board_meet_idx = methodDao.toList(board_meet_idx1);
+
+		params.put("list", board_meet_idx);
+		params.put("start", page.getStart());
+		params.put("end", page.getEnd());
 		params.put("orderby", orderby);
-		List<Board> result=null;
-		result= sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoardBno",params);
+		List<Board> result = null;
+		result = sqlSession.selectList(BOARD_NAMESPACE + ".selectPageBoardBno", params);
 		return result;
 	}
 
-	
 	@Override
 	public List<Board> selectThree() {
-		return sqlSession.selectList(BOARD_NAMESPACE+".selectThree");
+		return sqlSession.selectList(BOARD_NAMESPACE + ".selectThree");
 	}
 }

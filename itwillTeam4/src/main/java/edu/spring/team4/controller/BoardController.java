@@ -32,7 +32,7 @@ public class BoardController {
 			) {
 		log.info("free() 호출");
 		String result;
-		String board_meet_idx="0";
+		String board_meet_idx="없다 0";
 		
 		
 		if (act==null){
@@ -40,10 +40,11 @@ public class BoardController {
 		}
 		if(act.equals("my")) {
 			log.info("나의");
-			board_meet_idx="0,1,2";
+			board_meet_idx="있다";
 			result= "board/mymeet";
 		}else if (act.equals("rlt")) {
 			log.info("실시간");
+			board_meet_idx="없다 있다 0";
 			result= "board/realtime";
 		}else {
 			log.info("자유");
@@ -73,6 +74,9 @@ public class BoardController {
 		List<Board> list = boardService.selectPageBoard(page,board_meet_idx,orderby);
 		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
+		model.addAttribute("act", act); // jsp에서 el로 사용할 수 있음.
+		model.addAttribute("order", order); // jsp에서 el로 사용할 수 있음.
+		
 		
 		return result;
 	}
