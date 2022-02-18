@@ -237,6 +237,8 @@
 					}
 				});
 			});
+			
+			
 
 			$('#user_nn').change(function(event) {
 				var params_nn = {

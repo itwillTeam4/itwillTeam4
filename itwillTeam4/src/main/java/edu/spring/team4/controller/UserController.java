@@ -77,11 +77,12 @@ public class UserController {
 			model.addAttribute("signInUser", signInUser);
 			return "redirect:/";
 		} else { 
-			return "redirect:/user/signin";
+			return "redirect:/";
 		}
 		
 	}
 
+			
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
 	public String signOut(HttpSession session) {
 		session.removeAttribute("signInUserId");
