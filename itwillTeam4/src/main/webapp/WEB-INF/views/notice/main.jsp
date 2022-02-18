@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link href="${pageContext.request.contextPath}/resources/css/board.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 </head>
 <body>
 	<%@include file="../header.jsp"%>

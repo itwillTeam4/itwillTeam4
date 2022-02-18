@@ -15,6 +15,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/board.css"
 	type="text/css">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 
 </head>
 <body>
