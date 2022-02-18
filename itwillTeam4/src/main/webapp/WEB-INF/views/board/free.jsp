@@ -20,7 +20,9 @@
 
 			<div class="left-gnbFree">
 				<div class="profile-box">
-					<p><span>${signInUserId}</span>님</p>
+					<p>
+						<span>${signInUserId}</span>님
+					</p>
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
@@ -82,9 +84,11 @@
 						</div>
 					</c:forEach>
 				</div>
-								<div style="display: block; text-align: center;">
+				<div style="display: block; text-align: center;">
 					<c:if test="${paging.startPage != 1 }">
-						<a href="?act=${act}&order=${order}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+						<a href="?<c:if test="${order !=null }">
+					order=${order}&
+						</c:if>		act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 					</c:if>
 					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 						<c:choose>
@@ -92,12 +96,18 @@
 								<b>${p }</b>
 							</c:when>
 							<c:when test="${p != paging.nowPage }">
-								<a href="?act=${act}&order=${order}&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+								<a href="?	<c:if test="${order !=null }">
+					order=${order}&
+						</c:if>act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
 							</c:when>
 						</c:choose>
 					</c:forEach>
 					<c:if test="${paging.endPage != paging.lastPage}">
-						<a href="?act=${act}&order=${order}&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+						<a href="?<c:if test="${order !=null }">
+					order=${order}&
+						</c:if>act=${act }
+						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+
 					</c:if>
 				</div>
 			</div>
