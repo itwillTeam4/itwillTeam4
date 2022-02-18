@@ -83,7 +83,7 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int countBoard(int board_meet_idx) {
+	public int countBoard(String board_meet_idx) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("board_meet_idx",board_meet_idx);
 		return sqlSession.selectOne(BOARD_NAMESPACE+".countBoard",params);

@@ -31,8 +31,8 @@ public class BoardDaoTest {
 	public void deTest() {
 		log.info("boardDao: {}", boardDao);
 		
-//		List<Board> list = boardDao.read();
-//		log.info("list size = {}", list.size());
+		List<Board> list = boardDao.read();
+		log.info("list size = {}", list.size());
 		
 //		
 //		Board board = boardDao.read(3);
@@ -44,9 +44,6 @@ public class BoardDaoTest {
 //		
 //		
 
-		User user = new User(0, "test", "test1234", "테스트닉넴", "테스트이름", null, "000-0000-0000", null, 0, null);
-		int result = userDao.create(user);
-		log.info("create user 결과; {}", result);
 	}
 	
 }

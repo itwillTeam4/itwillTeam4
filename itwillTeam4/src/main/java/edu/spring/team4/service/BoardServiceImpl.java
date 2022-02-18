@@ -56,7 +56,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int countBoard(int board_meet_idx) {
+	public int countBoard(String board_meet_idx) {
 		return boardDao.countBoard(board_meet_idx);
 	}
 
