@@ -42,6 +42,8 @@
 				</ul>
 			</div>
 
+
+
 			<div class="right-contentsDetail ">
 
 				<div class="detailTop">
@@ -56,12 +58,12 @@
 								pattern="yyyy-MM-dd hh:mm:ss" />
 						</p>
 					</div>
-					
-					<div class="detailContentWrap">
-						<p class="detailContent">${board.board_content }</p>
-					</div>
-				</div>
 
+
+				</div>
+				<div class="detailContentWrap">
+					<p class="detailContent">${board.board_content }</p>
+				</div>
 
 			</div>
 		</div>

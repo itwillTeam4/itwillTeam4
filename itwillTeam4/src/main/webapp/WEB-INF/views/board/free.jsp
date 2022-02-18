@@ -33,13 +33,13 @@
 
 				</ul>
 			</div>
-
+		
 			<div class="right-contentsFree">
 				<div id="right-top-wrapFree">
 					<p id="right-contents-title">자유로운 서평</p>
 
 					<div id="writeImg">
-						<a href="./insert">
+						<a href="http://localhost:8181/team4/board/insert">
 							<img src="${pageContext.request.contextPath}/resources/img/write.png" alt="write">
 						</a>
 					</div>
@@ -53,7 +53,7 @@
 				<div class="postBox">
 					<c:forEach begin="0" end="9" step="1" var="board" items="${boardList }">
 						<div class="box">
-							<a href="./detail?bno=${board.bno }">
+							<a href="./board/detail?bno=${board.bno }">
 								<div class="boxHeader">
 									<div class="bookImg">
 										<img src="${board.board_book_img}" alt="">
