@@ -86,22 +86,21 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int countBoard(String board_meet_idx1) {
+	public int countBoard(String board_meet_idx) {
+		log.info("여기ㅣㅣㅣㅣㅣㅣ{}", methodDao.toList(board_meet_idx));
 		Map<String, Object> params = new HashMap<>();
-		List<String> board_meet_idx = new ArrayList<String>();
-		for (String s : methodDao.toList(board_meet_idx1)) {
-			board_meet_idx.add(s);
-		}
-
-		params.put("list", board_meet_idx);
-		return sqlSession.selectOne(BOARD_NAMESPACE + ".countBoard", params);
+		List<String> list = methodDao.toList(board_meet_idx);
+		params.put("list", list);
+		return sqlSession.selectOne(BOARD_NAMESPACE+".countBoard",params);
 	}
 
 	@Override
 	public List<Board> selectPageBoard(Paging page, String board_meet_idx1, int orderby) {
 		Map<String, Object> params = new HashMap<>();
+		log.info("저기ㅣㅣㅣㅣㅣㅣㅣㅣ{}", board_meet_idx1);
+		
 		List<String> board_meet_idx = methodDao.toList(board_meet_idx1);
-
+		board_meet_idx.add("test");
 		params.put("list", board_meet_idx);
 		params.put("start", page.getStart());
 		params.put("end", page.getEnd());

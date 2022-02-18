@@ -28,23 +28,24 @@ public class BoardController {
 			@RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
 			@RequestParam(value = "order", required = false) String order,
-			@RequestParam(value = "act", required = false) String act
+			@RequestParam(value = "act", required = false) String act,
+			@RequestParam(value="userMeetIdx",required=false) String user_meet_idx
 			) {
 		log.info("free() 호출");
 		String result;
-		String board_meet_idx="없다 0";
-		
+		if(user_meet_idx==null) {
+			user_meet_idx="0  1 2 있다 없다";
+		}
 		
 		if (act==null){
 			act="free";
 		}
 		if(act.equals("my")) {
 			log.info("나의");
-			board_meet_idx="있다";
 			result= "board/mymeet";
 		}else if (act.equals("rlt")) {
 			log.info("실시간");
-			board_meet_idx="없다 있다 0";
+			user_meet_idx="없다 있다 0";
 			result= "board/realtime";
 		}else {
 			log.info("자유");
@@ -53,7 +54,6 @@ public class BoardController {
 		
 		
 		
-		int total = boardService.countBoard(board_meet_idx);
 		
 		if (nowPage==null&&cntPerPage==null) {
 			nowPage="1";
@@ -70,12 +70,14 @@ public class BoardController {
 			orderby=Integer.parseInt(order);
 		}
 		
+		int total = boardService.countBoard(user_meet_idx);
 		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
-		List<Board> list = boardService.selectPageBoard(page,board_meet_idx,orderby);
+		List<Board> list = boardService.selectPageBoard(page,user_meet_idx,orderby);
 		model.addAttribute("paging",page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("act", act); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("order", order); // jsp에서 el로 사용할 수 있음.
+		model.addAttribute("userMeetIdx", user_meet_idx); // jsp에서 el로 사용할 수 있음.
 		
 		
 		return result;
@@ -91,7 +93,7 @@ public class BoardController {
 	public String insert(Board board) {
 		boardService.insert(board);
 		
-		return "redirect:/board/";
+		return "redirect:/board";
 	}
 	
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)

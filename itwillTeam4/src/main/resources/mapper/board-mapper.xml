@@ -16,8 +16,8 @@
 		${TABLE_BOARD_TABLE}
 		WHERE ${COL_BOARD_MEET_IDX} in
 		<foreach collection="list" index="index"
-			item="abc" open="(" close=")" separator=",">
-			#{abc}
+			item="a" open="(" close=")" separator=",">
+			#{a}
 		</foreach>
 	</select>
 
