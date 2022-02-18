@@ -23,7 +23,7 @@ public class BoardController {
 	
 	@Autowired private BoardService boardService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String main(Model model,Paging page,
 			@RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
