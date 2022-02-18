@@ -64,5 +64,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<Board> selectPageBoard(Paging page,int board_meet_idx,int orderby) {
 		return boardDao.selectPageBoard(page,board_meet_idx,orderby);
 	}
+	
+	@Override
+	public List<Board> selectThree() {
+		return boardDao.selectThree();
+	}
 
 }

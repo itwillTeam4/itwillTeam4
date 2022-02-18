@@ -109,4 +109,9 @@ public class BoardDaoImpl implements BoardDao {
 		return result;
 	}
 
+	
+	@Override
+	public List<Board> selectThree() {
+		return sqlSession.selectList(BOARD_NAMESPACE+".selectThree");
+	}
 }

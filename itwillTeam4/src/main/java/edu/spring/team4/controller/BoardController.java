@@ -87,7 +87,7 @@ public class BoardController {
 	public String insert(Board board) {
 		boardService.insert(board);
 		
-		return "redirect:/board/free";
+		return "redirect:/board/";
 	}
 	
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
