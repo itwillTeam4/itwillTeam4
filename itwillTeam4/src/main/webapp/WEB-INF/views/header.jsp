@@ -170,7 +170,7 @@
 
 					<div class="tagInput">
 						<input type="text" name="user_tag"
-							placeholder="유저 태그 입력 (#편안한 #로맨스 #소설)" required />
+							placeholder="유저 태그 입력 (#편안한 #로맨스 #소설)" />
 					</div>
 
 
@@ -195,31 +195,12 @@
 
 	<script>
 	
-	$(document).ready(function(){
-		if (location.href == "http://localhost:8181/team4/?signin=false"){
-			if ('${signin}' == false) {
-				$(".modalBackground").fadeIn(300);
-				$("#loginModal").fadeIn(300);
-				alert("로그인 정보를 다시 입력해 주세요.");
-			}
-		}
-		
-	});
-	
 
 	$("#login").click(function() {
 		$(".modalBackground").fadeIn(300);
 		$("#loginModal").fadeIn(300);
 	
 	});
-	
-	/* $("#login_confirm").click(function(){
-		if ('${signin}' == "false") {
-			$(".modalBackground").fadeIn(300);
-			$("#loginModal").fadeIn(300);
-			alert("로그인 정보를 다시 입력해 주세요.");
-		}
-	}); */
 
 	$("#loginClose").click(function() {
 		$(".modalBackground").fadeOut(300);
@@ -289,8 +270,30 @@
 				}
 			});
 
-			//TODO: 회원가입 성공, 실패 메시지
+			// 회원가입 성공, 실패 메시지
+			/* $('#btn-complete').click(function(event){
+				alert("회원가입 성공! 반갑습니다*^^*");
+			}); */
 			
+			if ('${register}' == true) {
+				alert("회원가입 성공! 반갑습니다*^^*");
+			} 
+			
+			if (location.href == "http://localhost:8181/team4/?register=fail"){
+				if ('${register}' == false) {
+					$("#registerModal").fadeIn(300);
+					alert("회원가입 정보를 다시 입력해 주세요.");
+				} 
+			}
+			
+			// 로그인 실패
+			if (location.href == "http://localhost:8181/team4/?signin=fail"){
+				if ('${signin}' == false) {
+					$(".modalBackground").fadeIn(300);
+					$("#loginModal").fadeIn(300);
+					alert("로그인 정보를 다시 입력해 주세요.");
+				}
+			}
 			
 		
 		});

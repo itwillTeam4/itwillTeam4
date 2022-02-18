@@ -33,9 +33,14 @@ public class UserController {
 	public String register(User user) {
 		log.info("register({}) POST 호출", user);
 		
-		userService.registerNewUser(user);
+		int result = userService.registerNewUser(user);
 		
-		return "redirect:/";  
+		if (result == 1) {
+			return "redirect:/";
+		} else {
+			return "redirect:/?register=false";
+		}
+		
 	}
 	
 	@RequestMapping(value = "/checkid", method = RequestMethod.POST)
@@ -74,10 +79,11 @@ public class UserController {
 			session.setAttribute("signInUserId", signInUser.getUser_nn());
 			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
 			session.setAttribute("signInUserCode", signInUser.getUser_code());
+			session.setAttribute("userMeetIndex", signInUser.getUser_meet_idx());
 			model.addAttribute("signInUser", signInUser);
 			return "redirect:/";
 		} else { 
-			return "redirect:/?signin=false";
+			return "redirect:/?signin=fail";
 		}
 		
 	}
