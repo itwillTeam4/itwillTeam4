@@ -90,22 +90,14 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<Board> selectPageBoard(Paging page, int board_meet_idx, int orderby) {
+		public List<Board> selectPageBoard(Paging page, String board_meet_idx, int orderby) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("board_meet_idx",board_meet_idx);
 		params.put("start",page.getStart());
 		params.put("end",page.getEnd());
+		params.put("orderby", orderby);
 		List<Board> result=null;
-		if(orderby==1) {
-			log.info("여기는 dao 조회수");
-			result= sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoardView",params);
-		}else if(orderby==2) {
-			log.info("여기는 dao 댓글");
-			result= sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoardReply",params);
-		}else {
-			log.info("여기는 dao 최신");
-			result= sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoardBno",params);
-		}
+		result= sqlSession.selectList(BOARD_NAMESPACE+".selectPageBoardBno",params);
 		return result;
 	}
 
