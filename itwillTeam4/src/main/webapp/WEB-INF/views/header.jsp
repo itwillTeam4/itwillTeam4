@@ -34,7 +34,7 @@
 			<ul id="navui1" class="menu">
 
 
-				<li id="board"><a href="http://localhost:8181/team4/board/">커뮤니티</a></li>
+				<li id="board"><a href="http://localhost:8181/team4/board">커뮤니티</a></li>
 				<li id="notice"><a
 					href="http://localhost:8181/team4/notice/main">공지사항</a></li>
 
@@ -194,25 +194,47 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
-	$("#login").click(function() {
-		$(".modalBackground").fadeIn(300)
-		$("#loginModal").fadeIn(300)
-
+	
+	$(document).ready(function(){
+		if (location.href == "http://localhost:8181/team4/?signin=false"){
+			if ('${signin}' == false) {
+				$(".modalBackground").fadeIn(300);
+				$("#loginModal").fadeIn(300);
+				alert("로그인 정보를 다시 입력해 주세요.");
+			}
+		}
+		
 	});
+	
+
+	$("#login").click(function() {
+		$(".modalBackground").fadeIn(300);
+		$("#loginModal").fadeIn(300);
+	
+	});
+	
+	/* $("#login_confirm").click(function(){
+		if ('${signin}' == "false") {
+			$(".modalBackground").fadeIn(300);
+			$("#loginModal").fadeIn(300);
+			alert("로그인 정보를 다시 입력해 주세요.");
+		}
+	}); */
 
 	$("#loginClose").click(function() {
-		$(".modalBackground").fadeOut(300)
-		$("#loginModal").fadeOut(300)
+		$(".modalBackground").fadeOut(300);
+		$("#loginModal").fadeOut(300);
 	});
 
 	$("#callRegister").click(function() {
-		$("#registerModal").fadeIn(300)
+		$("#registerModal").fadeIn(300);
 
 	});
 
 	$("#registerClose").click(function() {
-		$("#registerModal").fadeOut(300)
+		$("#registerModal").fadeOut(300);
 	});
+	
 	
 	
 		$(document).ready(function() {
@@ -267,8 +289,10 @@
 				}
 			});
 
-			
 			//TODO: 회원가입 성공, 실패 메시지
+			
+			
+		
 		});
 	</script>
 </body>

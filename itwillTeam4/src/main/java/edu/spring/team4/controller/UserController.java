@@ -77,7 +77,7 @@ public class UserController {
 			model.addAttribute("signInUser", signInUser);
 			return "redirect:/";
 		} else { 
-			return "redirect:/";
+			return "redirect:/?signin=false";
 		}
 		
 	}
