@@ -79,14 +79,17 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public void insert() {
+	public void insert(Model model, @RequestParam(value = "MeetIdx", required = false) String meet_idx) {
 		log.info("insert() 호출");
+		if (meet_idx == null) {
+			meet_idx = "0";
+		}
+		model.addAttribute("userMeetIdx", meet_idx);
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Board board) {
 		boardService.insert(board);
-
 		return "redirect:/board";
 	}
 
@@ -114,7 +117,7 @@ public class BoardController {
 		return "redirect:/board/main";
 	}
 
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	@RequestMapping(value = "/search", method = RequestMethod.GET) 
 	public String search(int type, String keyword, Model model) {
 		List<Board> list = boardService.select(type, keyword);
 		model.addAttribute("boardList", list);
