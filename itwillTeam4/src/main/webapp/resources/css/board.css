@@ -575,7 +575,9 @@ img {
     }
     
 .reply_like{margin-left:20px;}
-.reply_item{margin-top:40px;}
+.reply_item{margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e6e6e6;}
 .replyInput{
 	
 	height: 100px;
