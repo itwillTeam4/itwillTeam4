@@ -103,7 +103,7 @@
 					<div id="replies"></div>
 					
 					
-					<input type="text" id="rtext" name="rtext" class="replyInput" placeholder="댓글을 입력해주세요!" />
+					<input type="text" id="rtext1" name="rtext" class="replyInput" placeholder="댓글을 입력해주세요!" />
 					<!--어드민 대신 ${signInUserId}-->
 					<input type="hidden" id="userid" name="user_id"
 						value='${signInUserId}' readonly="readonly" />
@@ -185,10 +185,10 @@
 		getReplies(sort)	
 	});
 	$('#btn_create_reply').click(function (event){
-		var replyText=$('#rtext').val();
+		var replyText=$('#rtext1').val();
 		if(replyText==''){
 			alert('댓글 내용을 입력하세요');
-			$('#rtext').focus();
+			$('#rtext1').focus();
 			return;				
 		}
 		var replier=$('#userid').val();
