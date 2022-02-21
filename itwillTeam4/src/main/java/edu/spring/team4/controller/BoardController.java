@@ -98,7 +98,7 @@ public class BoardController {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
 	}
-
+	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public void update(int bno, Model model) {
 		Board board = boardService.select(bno);
@@ -108,7 +108,7 @@ public class BoardController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(Board board) {
 		boardService.update(board);
-		return "redirect:/board/main";
+		return "redirect:/board";
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
