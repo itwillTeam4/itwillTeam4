@@ -108,9 +108,13 @@
 					<input type="hidden" id="userid" name="user_id"
 						value='${signInUserId}' readonly="readonly" />
 					<button id="btn_create_reply">등록</button>
-					
+					<ul>
+		            <c:if test="${signInUserId == board.board_userid}">
+		               <!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
+		               <li id="btn_create_reply"><a href="./update?bno=${board.bno}">수정</a></li>
+		            </c:if>
+		         </ul>
 				</div>
-				
 				
 
 
