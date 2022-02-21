@@ -97,23 +97,26 @@
 				<div class="replyBox">
 					<p class="replyCnt">댓글 ${board.board_reply_cnt }</p>
 					
+					<button id="btn_sort_like">좋아요순</button>
+					<button id="btn_sort_reg">최신순</button>
+					
 					<div id="replies"></div>
 					
 					
-					<input type="text" id="rtext" name="rtext" placeholder="댓글 입력" />
+					<input type="text" id="rtext" name="rtext" class="replyInput" placeholder="댓글을 입력해주세요!" />
 					<!--어드민 대신 ${signInUserId}-->
-					<input type="text" id="userid" name="user_id"
+					<input type="hidden" id="userid" name="user_id"
 						value='${signInUserId}' readonly="readonly" />
 					<button id="btn_create_reply">등록</button>
-					<button id="btn_sort_like">좋아요순</button>
-					<button id="btn_sort_reg">최신순</button>
+					
 				</div>
+				
 				
 
 
 			</div>
 		</div>
-	</div>
+	</div>	
 
 
 
@@ -141,6 +144,9 @@
 			var date = new Date(this.reply_reg_date); // JavaScript Date 객체 생성
 			var dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
         	list += '<div class="reply_item">'
+        		+'<input type="hidden" id="rno" name="rno" value="'
+      		   + this.rno
+      		   + '" readonly />'
         		+ '<p id="user_id" name="userid">'
       		   + this.user_id
       		   + '</p>'
@@ -149,18 +155,18 @@
      		   + '</p>'
      		   + '<div class="rtextBox"><input type="text" id="rtext" name="rtext" value="'
      		   + this.rtext
-     		   +'" /></dix>'
+     		   +'" /></div>'
      		   +'<div class="replyLikeBox">'
      		   + '<img src="${pageContext.request.contextPath}/resources/img/like.png"'
      		   +'alt="like" class="boxLikeImg">'
      		   + '<span id="reply_like_cnt" name="replylikecnt">'
      		   + this.reply_like_cnt
      		   + '</span> </div>'
-      		   + '<button class="reply_like">좋아요</button>';
+      		   + '<button class="reply_like replyI">좋아요</button>';
      		  if ( this.user_id == $('#userid').val()
      				  ) {
-          		list += '<button class="reply_update">수정</button>'
-          			  + '<button class="reply_delete">삭제</button>';
+          		list += '<button class="reply_update replyI">수정</button>'
+          			  + '<button class="reply_delete replyI">삭제</button>';
           	}
      		   list+= '</div>';
 			console.log("done");
