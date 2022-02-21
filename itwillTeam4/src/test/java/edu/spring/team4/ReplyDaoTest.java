@@ -34,38 +34,13 @@ public class ReplyDaoTest {
 	public void doTest() {
 		log.info("replyDao:{}", replyDao);
 
-//		Reply reply = new Reply(0, "test 태스트", "admin", null, "", 0, 5);
-//		int result = replyDao.create(reply);
-//		log.info("insert result: {}", result);
-
-//		List<Reply> list = replyDao.read(4);
-//		for (Reply r : list) {
-//			log.info("read result: {}", r);
-//		}
-//		List<Reply> listLike = replyDao.readLike(4);
-//		for (Reply r : listLike) {
-//			log.info("readLike result: {}", r);
-//		}
-//		Reply replyUpdate = new Reply(21, "test 태스트 수정", "admin 여긴 수정되면 안될듯?", null, "", 0, 5);
-//		int result = replyDao.update(replyUpdate);
-//		log.info("update result:{}", result);
-
-		List<String> list = new ArrayList<>();
-		list.add("태그1");
-		list.add("태그2");
-		log.info("list:{}", list);
-		methodDao.removeList(list, "태그1");
-		log.info("list:{}", list);
-		System.out.println(methodDao.addList(list, "태그1"));
-		System.out.println(methodDao.addList(list, "태그1"));
-		System.out.println(methodDao.addList(list, "태그3"));
-		log.info("list:{}", list);
-		Map<String, Integer> map = new HashMap<>();
-		map.put("태그1", 10);
-		map.put("태그2", 10);
-		methodDao.addMap(map, list);
-		log.info("map:{}", map);
-		methodDao.removeMap(map, list);
-		log.info("map:{}", map);
+Reply reply=new Reply();
+reply.setBno(47);
+reply.setRtext("젠지자아아아ㅏ장");
+reply.setUser_id("강민수");
+reply.setUser_code(8);
+System.out.println(reply);
+		replyDao.create(reply);
+		
 	}
 }

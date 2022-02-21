@@ -83,13 +83,13 @@
 						<img
 							src="${pageContext.request.contextPath}/resources/img/like.png"
 							alt="like" class="boxLikeImg">
-						<p>&nbsp;${board.board_like_cnt }</p>
+						<p class="blc" >&nbsp;${board.board_like_cnt }</p>
 					</div>
 					<div class="boxReply boxReply2">
 						<img
 							src="${pageContext.request.contextPath}/resources/img/reply.png"
 							alt="reply" class="boxReplyImg">
-						<p>&nbsp;${board.board_reply_cnt  }</p>
+						<p class="blc">&nbsp;${board.board_reply_cnt  }</p>
 					</div>
 				</div>
 
@@ -132,6 +132,8 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		var boardNo =${board.bno};
+		var userCode=${signInUserCode};
+		console.log(userCode);
 		var sort = 'all';
 		function getReplies(sort){
 		$.getJSON('http://localhost:8181/team4/replies/'+sort+'/' + boardNo, function(respText) {
@@ -147,7 +149,7 @@
         		+'<input type="hidden" id="rno" name="rno" value="'
       		   + this.rno
       		   + '" readonly />'
-        		+ '<p id="user_id" name="userid">'
+			   + '<p id="user_id" name="userid">'
       		   + this.user_id
       		   + '</p>'
      		   + '<p id="reg_date" name="regdate">'
@@ -163,7 +165,7 @@
      		   + this.reply_like_cnt
      		   + '</span> </div>'
       		   + '<button class="reply_like replyI">좋아요</button>';
-     		  if ( this.user_id == $('#userid').val()
+     		  if ( this.user_code == userCode
      				  ) {
           		list += '<button class="reply_update replyI">수정</button>'
           			  + '<button class="reply_delete replyI">삭제</button>';
@@ -171,7 +173,9 @@
      		   list+= '</div>';
 			console.log("done");
 			});
-        $('#replies').html(list);				
+        $('#replies').html(list);
+		$('#blc').empty();
+		$('#blc').val(" "+${board.board_reply_cnt  });
      });				
 		}
 	getReplies(sort);		
@@ -192,7 +196,8 @@
 			return;				
 		}
 		var replier=$('#userid').val();
-		
+
+		console.log(userCode);
 		$.ajax({
 			url: 'http://localhost:8181/team4/replies/',
 			type: 'POST',
@@ -203,7 +208,8 @@
 			data: JSON.stringify({
 				'bno': boardNo,
 				'rtext': replyText,
-				'user_id': replier
+				'user_id': replier,
+				'user_code':userCode
 			}),
 			success: function (resp) {
 				console.log(resp);

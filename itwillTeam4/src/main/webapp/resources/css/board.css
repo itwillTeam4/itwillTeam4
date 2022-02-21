@@ -260,6 +260,7 @@ img {
 	box-shadow: 0px 7px 17px #e6e6e6;
 	flex-direction: row;
 	flex-wrap: wrap;
+	border-radius: 10px;
 }
 
 .boxHeader {
