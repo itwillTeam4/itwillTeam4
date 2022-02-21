@@ -106,15 +106,19 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/userupdate", method = RequestMethod.POST)
-	public String userupdate(User user) {
+	public String userupdate(User user, HttpSession session) {
 		userService.updateUser(user);
+		int userCode = (int)session.getAttribute("signInUserCode");
+		User signInUser = userService.select(userCode);
+		session.removeAttribute("signInUserId");
+		session.setAttribute("signInUserId", signInUser.getUser_nn());
+		
 		return "redirect:/mypage";
 	}
 	
 	@RequestMapping(value = "/userdelete", method = RequestMethod.GET)
-	public String userDelete(int user_code, HttpSession session) {
+	public String userDelete(int user_code) {
 		userService.deleteUser(user_code);
-		session.invalidate();
 		return "redirect:/";
 	}
 	
