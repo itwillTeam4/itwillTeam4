@@ -153,7 +153,7 @@
      		   + '<p id="reg_date" name="regdate">'
      		   + dateStr
      		   + '</p>'
-     		   + '<div class="rtextBox"><input type="text" id="rtext" name="rtext" value="'
+     		   + '<div class="rtextBox"><input type="text" class="reply_text" id="rtext'+this.rno+'" name="rtext" value="'
      		   + this.rtext
      		   +'" /></div>'
      		   +'<div class="replyLikeBox">'
@@ -215,7 +215,9 @@
 	$('#replies').on('click', '.reply_item .reply_update', function () {
 		
 		var rno = $(this).prevAll('#rno').val();
-		var rtext = $(this).prevAll('#rtext').val();
+		console.log(rno);
+		var rtext = $('#rtext'+rno).val();
+		console.log(rtext);
 		
 		$.ajax({
 			url: 'http://localhost:8181/team4/replies/' + rno,

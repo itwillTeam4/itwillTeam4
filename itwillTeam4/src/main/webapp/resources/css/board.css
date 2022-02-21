@@ -538,13 +538,13 @@ img {
 	width: 200px;
 }
 
-#rtext {
+.reply_text {
 	display: block;
 	position: relative;
-	left: -73px;
+	left: 0px;
 	top: 10px;
 	float: left;
-	width:400px;
+	width:100% !important;
 }
 
 #reply_like_cnt {
