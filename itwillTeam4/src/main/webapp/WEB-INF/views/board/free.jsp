@@ -75,7 +75,7 @@
 							<div class="boxFooter">
 								<div class="boxLike">
 									<img src="${pageContext.request.contextPath}/resources/img/like.png" alt="like" class="boxLikeImg">
-
+									<p>&nbsp;${board.board_like_cnt }</p>
 								</div>
 								<div class="boxReply">
 									<img src="${pageContext.request.contextPath}/resources/img/reply.png" alt="reply" class="boxReplyImg">

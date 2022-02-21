@@ -205,6 +205,7 @@ img {
 
 .note-title, .writer {font-weight:700;margin-top: 25px;}
 .note-title{font-size:18px;	}
+.note-content{height:72px !important;}
 
 #wrap3_1 li{margin-bottom:30px;border-bottom:1px solid #bebebe; }
 
@@ -307,3 +308,4 @@ img {
     width: 25px !important;
     height: 25px !important;
 }
+

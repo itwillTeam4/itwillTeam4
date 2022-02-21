@@ -201,7 +201,7 @@
 					<li><a href="http://localhost:8181/team4/board/detail?bno=${board.bno }">
 							<div>
 								<p class="text-overflow note-title">${board.board_title }</p>
-								<p class="text-overflow-line3">${board.board_content }</p>
+								<p class="text-overflow-line3 note-content">${board.board_content }</p>
 								<p class="writer">${board.board_userid }</p>
 
 							</div>

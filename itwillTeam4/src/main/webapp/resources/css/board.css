@@ -205,7 +205,7 @@ img {
 
 .left-gnbFree {
 	width: 257px;
-	height: 4086px;
+	height: 4110px;
 	position: relative;
 	float: left;
 	border-right: 1px solid #e6e6e6;
@@ -371,6 +371,7 @@ img {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+
 	max-width: 100%;
 }
 
@@ -420,7 +421,7 @@ img {
 .detailTopWrap{
 	
 
-	margin-left:50px;
+	margin-left:70px;
 	
 }
 .detailTop p {
@@ -465,4 +466,91 @@ img {
 	font-size:16x !important; font-weight:400;
 	
 	color:#333333 !important; 
+}
+
+.detailBookInfo{
+	
+	width:781px;
+	height:238px;
+	background-color:#f8f8f8;
+	margin-top:80px;
+	padding: 30px;
+	
+}
+
+.detailBookInfo img {
+	width:120px;
+	height:174px;
+	float:left;
+	
+}
+
+.detailBookInfos { margin-left: 40px;
+    display: inline-block;
+    margin-top: 40px;}
+.detailBookInfos p {
+	font-size:26px; font-weight: 400;
+	
+}
+
+.detailBookInfos span{
+	font-size:20px; font-weight: 300;
+}
+.boxFooter2{
+	border-bottom:1px solid #e6e6e6 !important;
+	width:936px !important;
+	
+}
+
+.boxLike2{
+	margin-left:70px !important;
+}
+
+.replyBox {
+	padding:70px;
+	
+}
+.replyCnt{font-size:18px; font-weight:700;}
+
+#user_id{
+	    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0px;
+    float: left;
+}
+#reg_date{        font-size: 10px;
+    display: block;
+    margin-bottom: 1px;
+    top: 10px;
+    position: relative;
+    left: 11px;
+    font-weight: 500;
+    width: 200px;
+}
+#rtext{display: block;
+    position: relative;
+    left: -73px;
+    top: 10px;
+    float: left;}
+
+#reply_like_cnt{
+	    font-size: 12px;
+    display: inline-block;
+    position: relative;
+    top: -6px;
+}
+.replyLikeBox{
+	display:inline-block;
+}
+
+.reply_like, .reply_update, .reply_delete{
+	    width: 59px;
+    height: 25px;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    float: left;
+    font-size: 13px;
+    top: -7px;
+	
 }
