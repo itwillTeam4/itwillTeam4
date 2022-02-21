@@ -28,7 +28,7 @@
 				</div>
 				<ul class="comMenu">
 					<li><a href="?act=rlt">실시간 독서 모임 커뮤니티</a></li>
-					<li><a href="?act=my">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="?act=my&MeetIdx=${userMeetIndex}">나의 독서 모임 커뮤니티</a></li>
 					<li><a href="?act=free" class="on">자유로운 서평</a></li>
 					<li><a href="./notice/main">공지사항/이벤트</a></li>
 
