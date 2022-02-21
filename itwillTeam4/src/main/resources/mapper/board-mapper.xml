@@ -127,10 +127,14 @@
 	<!-- 게시글 수정 -->
 	<update id="update">
 		UPDATE ${TABLE_BOARD_TABLE}
-		SET ${COL_BOARD_TITLE} =
-		#{board_title}, ${COL_BOARD_CONTENT} =
-		#{board_content},
-		${COL_BOARD_REG_DATE} = sysdate
+		SET ${COL_BOARD_TITLE} = #{board_title}, 
+		${COL_BOARD_CONTENT} = #{board_content},
+		${COL_BOARD_REG_DATE} = sysdate,
+		${COL_BOARD_BOOK_TITLE} = #{board_book_title},
+		${COL_BOARD_BOOK_AUTHORS} = #{board_book_authors},
+		${COL_BOARD_BOOK_PUB} = #{board_book_pub},
+		${COL_BOARD_BOOK_IMG} = #{board_book_img},
+		${COL_BOARD_TAG} = #{board_tag}
 		WHERE ${COL_BNO} = #{bno}
 	</update>
 
