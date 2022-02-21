@@ -21,7 +21,7 @@ public class ReplyDaoImpl implements ReplyDao {
 	private SqlSession sqlSession;
 	@Autowired
 	private MethodDao methodDao;
-	
+
 	@Override
 	public int create(Reply reply) {
 		log.info("create({}) 호출", reply);
@@ -66,23 +66,23 @@ public class ReplyDaoImpl implements ReplyDao {
 
 	@Override
 	public int upLike(int rno, Reply liker) {
-		log.info("upLike({},{}) 호출",rno,liker);
-		String oldLiker=sqlSession.selectOne(NAMESPACE+".readLiker",rno);
-		List<String> list=methodDao.toList(oldLiker);
-		log.info("list = {}",list);
-		String newLiker = liker.getUser_id();
-	
-		boolean result=methodDao.addList(list, newLiker);
-		log.info("여기까진 왔니 {}",result);
-		if(result) {
+		log.info("upLike({},{}) 호출", rno, liker);
+		String oldLiker = sqlSession.selectOne(NAMESPACE + ".readLiker", rno);
+		List<String> list = methodDao.toList(oldLiker);
+		log.info("list = {}", list);
+		String newLiker = Integer.toString(liker.getUser_code());
+
+		boolean result = methodDao.addList(list, newLiker);
+		log.info("여기까진 왔니 {}", result);
+		if (result) {
 			Map<String, Object> params = new HashMap<>();
-			params.put("reply_like",methodDao.toString(list));
-			params.put("rno",rno);
-			
-			return sqlSession.update(NAMESPACE+".update_like",params);
-		}else {
+			params.put("reply_like", methodDao.toString(list));
+			params.put("rno", rno);
+
+			return sqlSession.update(NAMESPACE + ".update_like", params);
+		} else {
 			return 0;
 		}
-		
+
 	}
 }

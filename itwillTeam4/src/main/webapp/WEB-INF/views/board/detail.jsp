@@ -175,7 +175,7 @@
 			});
         $('#replies').html(list);
 		$('#blc').empty();
-		$('#blc').val(" "+${board.board_reply_cnt  });
+		$('#blc').val(" "+${board.board_reply_cnt});
      });				
 		}
 	getReplies(sort);		
@@ -260,8 +260,8 @@
 	});
 	$("#replies").on('click','.reply_item .reply_like', function(event){
 		var rno = $(this).prevAll('#rno').val();
-		var user=$('#userid').val();
 		var result = confirm('좋아요? 좋냐고');
+		var userCode=${signInUserCode};
 		if (result){
 			$.ajax({
 			url: 'http://localhost:8181/team4/replies/'+rno,
@@ -270,7 +270,7 @@
 					'Content-Type': 'application/json',
 					'X-HTTP-Method-Override': 'POST'
 			},
-					data: JSON.stringify({'user_id':user}),
+					data: JSON.stringify({'user_code':userCode}),
 			  	
 			success: function () {
 				getReplies(sort); // 댓글 목록 업데이트
