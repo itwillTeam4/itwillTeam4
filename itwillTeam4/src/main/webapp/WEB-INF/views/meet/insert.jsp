@@ -81,7 +81,10 @@
 				</div>
 
 				<div>
-					<input type="text" name="meet_host_name" value="${signInUserId}" required readonly />
+					<input type="text" name="meet_host_name" value="${signInUserId}" required/>
+				</div>
+				<div>
+					<input type="text" name="meet_host" value="${signInUserCode}" required readonly/>
 				</div>
 
 				<div>
@@ -121,7 +124,7 @@
 		$(document).ready(function() {
 			$('#btns').hide();
 			$('#book_info2').hide();
-			
+			$('#meet_host')
 			$('#btn_book_search').click(function(event){
 				var title = $('#meet_book_title').val();
 				$.ajax({
