@@ -777,18 +777,19 @@ img {
 .bookModal{
 	
 	
-	width: 550px;
-    height: 350px;
+	width: 530px;
+    height: 330px;
     position: absolute;
     background-color: white;
     left: 50%;
     margin-left: -250px;
-    top: 160px;
+    top: 210px;
     z-index: 2;
     border-radius: 4px;
     box-shadow: 1px 6px 8px #3f3f3f;
-	display:none;
-	padding:30px;
+    display: none;
+    padding: 40px;
+    padding-top: 60px;
 }
 
 .bookModal div{
@@ -797,10 +798,11 @@ img {
 }
 
 #bookModalClose {
-	position: relative;
-	float: right;
-	top: -67px;
-	right: 22px;
+	    position: relative;
+    float: right;
+    top: -7px;
+    right: 20px;
+}
 }
 
 .close img {
@@ -827,7 +829,8 @@ img {
 	width: 400px;
     position: relative;
     left: 50px;
-    top: 105px;
+    top: 95px;
+    height: 130px;
 	
 }
 
@@ -871,14 +874,16 @@ img {
 }
 
 #board_book_title_fake, #board_book_authors_fake, #board_book_pub_fake{
-	width:150px;
-	border:1px solid #e6e6e6;
-	font-weight:400;
-	border-radius: 3px;	
-	margin-bottom:5px;
+	width: 176px;
+    border: 1px solid #e6e6e6;
+    font-weight: 300;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    height: 30px;
+    padding-left: 5px;
 }
 
-#board_book_title_fake::, #board_book_authors_fake, #board_book_pub_fake
 
 
 

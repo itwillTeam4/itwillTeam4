@@ -25,47 +25,55 @@
 
 
 
-<div class="bookModalBG">
-				<div class="bookModal">
-					<div class="book_info"></div>
-					<div class="book_info2">
-
-						<div id="bookModalClose" class="close">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/close.png"
-								alt="close">
-						</div>
-
-						<input type="text" id="board_book_title_fake"
-							placeholder="책 제목을 입력해주세요." required /> <input type="button"
-							id="btn_book_search" name="btn_book_search" value="검색" />
-
-
-
-
-						<div>
-							<input type="text" id="board_book_authors_fake" value="" placeholder="저자" required readonly />
-						</div>
-						<div>
-							<input type="text" id="board_book_pub_fake" value="" placeholder="출판사" required readonly />
-						</div>
-						<div>
-							<input type="hidden" id="board_book_img_fake" value="" required />
-						</div>
-						<div>
-							<input type="text" id="board_book_tag_fake" value="" required />
-						</div>
-
-
-					</div>
-					<div id="btns">
-						<input type="button" id="btn_prev" value="이전검색"> <input
-							type="button" id="btn_next" value="다음검색">
-					</div>
-
-				</div>
+	<div class="bookModalBG">
+		<div class="bookModal">
+			<div id="bookModalClose" class="close">
+				<img
+					src="${pageContext.request.contextPath}/resources/img/close.png"
+					alt="close">
 			</div>
-			
+
+			<div class="book_info"></div>
+			<div class="book_info2">
+
+
+
+				<input type="text" id="board_book_title_fake"
+					placeholder="책 제목을 입력해주세요." required /> <input type="button"
+					id="btn_book_search" name="btn_book_search" value="검색" />
+
+
+
+
+				<div>
+					<input type="text" id="board_book_authors_fake" value=""
+						placeholder="저자" required readonly />
+				</div>
+				<div>
+					<input type="text" id="board_book_pub_fake" value=""
+						placeholder="출판사" required readonly />
+				</div>
+				<div>
+					<input type="hidden" id="board_book_img_fake" value="" required />
+				</div>
+				<div>
+					<input type="text" id="board_book_tag_fake" value="" required />
+				</div>
+
+
+			</div>
+
+
+			<div id="btns">
+				<input type="button" id="btn_prev" class="searchBtn" value="이전검색"> <input
+					type="button" id="btn_next" value="다음검색">
+			</div>
+		</div>
+
+
+
+	</div>
+
 
 	<div id="contentWrap">
 		<div class="innerWrap">
