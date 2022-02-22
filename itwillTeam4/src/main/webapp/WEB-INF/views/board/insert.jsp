@@ -33,6 +33,9 @@
 					<input type="text" name="board_userid" value="${signInUserId}" required readonly />
 				</div>
 				<div>
+					<input type="hidden" name="board_usercode" value="${signInUserCode}" required readonly />
+				</div>
+				<div>
 					<input type="text" id="board_book_title" name="board_book_title" value="책 제목" required autofocus />
 					<input type="button" id="btn_book_search" name="btn_book_search" value="검색하기" />
 				</div>

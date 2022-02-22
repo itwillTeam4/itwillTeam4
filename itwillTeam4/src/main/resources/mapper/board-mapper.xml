@@ -116,12 +116,14 @@
 		${COL_BOARD_BOOK_TITLE},
 		${COL_BOARD_BOOK_AUTHORS},
 		${COL_BOARD_BOOK_PUB},
-		${COL_BOARD_BOOK_IMG})
+		${COL_BOARD_BOOK_IMG},
+		${COL_BOARD_USERCODE})
 		VALUES (#{board_title},
 		#{board_userid}, #{board_content}, #{board_tag},
 		#{board_book_title},
 		#{board_book_authors}, #{board_book_pub},
-		#{board_book_img})
+		#{board_book_img},
+		#{board_usercode})
 	</insert>
 
 	<!-- 게시글 수정 -->
