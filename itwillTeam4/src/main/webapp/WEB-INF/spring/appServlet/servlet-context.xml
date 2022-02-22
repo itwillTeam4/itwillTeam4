@@ -25,12 +25,12 @@
 	<context:component-scan base-package="edu.spring.team4.controller" />
 	
     <!-- interceptor -->
- 	<beans:bean id="authInterceptor" class="edu.spring.team4.interceptor.AuthInterceptor"/>
+ 	<beans:bean id="authInterceptor" class="edu.spring.team4.interceptor.AuthInterceptor"></beans:bean>
  	
  	<interceptors>
  		<interceptor>
  			<mapping path="/board/insert"/>
- 			<beans:ref bean="authIntercepter"/>
+ 			<beans:ref bean="authInterceptor"/>
  		</interceptor>
  	</interceptors>
     
