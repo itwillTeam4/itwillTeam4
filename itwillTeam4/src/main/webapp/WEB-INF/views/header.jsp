@@ -80,7 +80,7 @@
 				</c:if>
 				<c:if test="${not empty signInUserId }">
 					<li id="logout"><a href="http://localhost:8181/team4/user/signout">로그아웃</a></li>
-					<li id="logout"><a href="http://localhost:8181/team4/mypage">마이페이지</a></li>
+					<li id="logout"><a href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
 				</c:if>
 
 			</ul>

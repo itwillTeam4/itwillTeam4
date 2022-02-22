@@ -121,5 +121,7 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public void mypage() {
+	}
 }
