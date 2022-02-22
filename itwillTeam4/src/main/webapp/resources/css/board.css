@@ -94,6 +94,10 @@ img {
 	height: 65px;
 }
 
+#right-top-wrapInsert{
+	height: 65px;
+	    margin-top: 8px;
+}
 .profile-box {
 	width: 253px;
 	height: 113px;
@@ -603,7 +607,8 @@ img {
 	font-weight:500;
 }
 
-#btn_create_reply{width: 100px;
+.btn_create{width: 100px;
+    width: 100px;
     background-color: #007450;
     color: white;
     font-weight: 500;
@@ -612,6 +617,7 @@ img {
     position: relative;
     top: 30px;
     float: right;
+    border: none !important;
 }
 #btn_sort_like, #btn_sort_reg{
 	width: 59px !important;
@@ -737,5 +743,142 @@ img {
 	animation:fadeInUp 1.5s !important;
 	
 }
+
+.ck-content{
+	height:500px !important;
+	
+}
+
+.rightInputTitle{
+	
+	border: 1px solid #c9c9c9 !important;
+    border-radius: 3px;
+    width: 100%!important;
+    margin-top: 37px !important;
+    margin-bottom: 15px;
+    height: 44px;
+    padding-left: 10px!important;
+    font-weight: 500;
+}
+	
+	
+.bookModalBG{
+	
+		position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	display:none;
+}
+
+.bookModal{
+	
+	
+	width: 550px;
+    height: 350px;
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    margin-left: -250px;
+    top: 160px;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 1px 6px 8px #3f3f3f;
+	display:none;
+	padding:30px;
+}
+
+.bookModal div{
+	
+	z-index:5 !important;
+}
+
+#bookModalClose {
+	position: relative;
+	float: right;
+	top: -67px;
+	right: 22px;
+}
+
+.close img {
+	width: 16px;
+	height: 16px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.close img:hover {
+	opacity: 0.8;
+}
+
+.book_info{
+	
+	width:140px;
+	height:203px;
+	border: 1px solid #e6e6e6;
+	float:left;
+	
+}
+
+.book_info2{
+	width: 400px;
+    position: relative;
+    left: 50px;
+    top: 105px;
+	
+}
+
+#book_info img{
+	
+	width:140px;
+	height:203px;
+}
+
+#btn_book_modal{
+	width: 100px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    top: 60px;
+    float: right;
+    position: relative;
+}
+
+#btn_book_search{
+	
+	    width: 55px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    top: 60px;
+    float: right;
+    position: relative;
+}
+.ck-dropdown__arrow {
+	
+	display:none!important;
+}
+
+#board_book_title_fake, #board_book_authors_fake, #board_book_pub_fake{
+	width:150px;
+	border:1px solid #e6e6e6;
+	font-weight:400;
+	border-radius: 3px;	
+	margin-bottom:5px;
+}
+
+#board_book_title_fake::, #board_book_authors_fake, #board_book_pub_fake
+
 
 

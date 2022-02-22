@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 새 글</title>
+<title>책오 새 글 작성</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
@@ -25,6 +25,47 @@
 
 
 
+<div class="bookModalBG">
+				<div class="bookModal">
+					<div class="book_info"></div>
+					<div class="book_info2">
+
+						<div id="bookModalClose" class="close">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/close.png"
+								alt="close">
+						</div>
+
+						<input type="text" id="board_book_title_fake"
+							placeholder="책 제목을 입력해주세요." required /> <input type="button"
+							id="btn_book_search" name="btn_book_search" value="검색" />
+
+
+
+
+						<div>
+							<input type="text" id="board_book_authors_fake" value="" placeholder="저자" required readonly />
+						</div>
+						<div>
+							<input type="text" id="board_book_pub_fake" value="" placeholder="출판사" required readonly />
+						</div>
+						<div>
+							<input type="hidden" id="board_book_img_fake" value="" required />
+						</div>
+						<div>
+							<input type="text" id="board_book_tag_fake" value="" required />
+						</div>
+
+
+					</div>
+					<div id="btns">
+						<input type="button" id="btn_prev" value="이전검색"> <input
+							type="button" id="btn_next" value="다음검색">
+					</div>
+
+				</div>
+			</div>
+			
 
 	<div id="contentWrap">
 		<div class="innerWrap">
@@ -40,27 +81,93 @@
 					<li><a href="../board/?act=rlt">실시간 독서 모임 커뮤니티</a></li>
 					<li><a href="../board/?act=my">나의 독서 모임 커뮤니티</a></li>
 					<li><a href="../board/?act=free">자유로운 서평</a></li>
-					<li><a href="#" class="on">공지사항/이벤트</a></li>
+					<li><a href="#">공지사항/이벤트</a></li>
 
 				</ul>
 			</div>
 
 			<div class="right-contents">
-				<div id="right-top-wrap">
+				<div id="right-top-wrapInsert">
 					<p id="right-contents-title">글쓰기</p>
 
+					<div>
+						<input type="button" id="btn_book_modal" value="도서 검색">
+					</div>
 				</div>
 
 
-				<div class="rightText">
-					<textarea rows="30" cols="30" name="content" id="editor"></textarea>
+				<div class="rightInput">
+
+					<form method="post">
+
+
+						<div>
+							<input type="text" name="board_title" class="rightInputTitle"
+								placeholder="제목을 입력해주세요." required autofocus />
+						</div>
+						<div>
+							<textarea name="board_content" id="editor"
+								placeholder="내용을 입력해주세요." required></textarea>
+						</div>
+
+						<div>
+							<input type="hidden" name="board_usercode"
+								value="${signInUserCode}" required readonly />
+						</div>
+
+
+
+						<div id="book_info_real"></div>
+						<div id="book_info2_real">
+
+							<input type="hidden" id="board_book_title_real"
+								name="board_book_title" value="" required />
+
+
+
+
+
+							<div>
+								<input type="hidden" id="board_book_authors_real"
+									name="board_book_authors" value="" required />
+							</div>
+							<div>
+								<input type="hidden" id="board_book_pub_real"
+									name="board_book_pub" value="" required />
+							</div>
+							<div>
+								<input type="hidden" id="board_book_img_real"
+									name="board_book_img" value="" required />
+							</div>
+							<div>
+								<input type="hidden" id="board_book_tag_real" name="board_tag"
+									value="태그" required />
+							</div>
+							<div id="meetIdx">
+								<input type="hidden" name="board_meet_idx"
+									value="${userMeetIdx}" required readonly />
+							</div>
+
+						</div>
+						<div>
+							<input type="submit" class="btn_create" value="등록" />
+						</div>
+
+					</form>
 				</div>
-
-
-
 			</div>
+
+
+
+
+
+
 		</div>
+
+
+
 	</div>
+
 
 
 
@@ -74,66 +181,79 @@
 
 	<script type="text/javascript">
 	
-	 	
-		var n=0;
-		var msg;
-		$(document).ready(function() {
-			$('#btns').hide();
-			$('#book_info2').hide();
-			$('#meetIdx').hide();
-			$('#btn_book_search').click(function(event) {
-				var title = $('#board_book_title').val();
-				$.ajax({
-					method : "GET",
-					url : "https://dapi.kakao.com/v3/search/book?target=title",
-					data : {
-						query : title,
-						size:50
-					},
-					headers : {
-						Authorization : "KakaoAK 3f1fb761122afdd0796567178c84f3dc"
-					},
-				success: function(info){
-					msg=info;
-					console.log(msg);
-					if(msg.documents.lenght!=0){
-					getBookInfo(n);
-					}
-					else {
-						alert("도서 검색 실패!")
-					}
-				}
-				})
-			});
+	
+	$("#btn_book_modal").click(function() {
+		$(".bookModalBG").fadeIn(300);
+		$(".bookModal").fadeIn(300);
+	
+	});
+	
+	$("#bookModalClose").click(function(){
 		
-		});
-		$('#btn_prev').click(function(){
-			if(n>0){
-				n--;
+		$(".bookModalBG").fadeOut(300);
+		$(".bookModal").fadeOut(300);
+		
+	});
+	
+	
+	
+	 	
+	var n=0;
+	var msg;
+	$(document).ready(function() {
+		$('#btn_book_search').click(function(event) {
+			var title = $('#board_book_title_fake').val();
+			$.ajax({
+				method : "GET",
+				url : "https://dapi.kakao.com/v3/search/book?target=title",
+				data : {
+					query : title,
+					size:50
+				},
+				headers : {
+					Authorization : "KakaoAK 3f1fb761122afdd0796567178c84f3dc"
+				},
+			success: function(info){
+				msg=info;
+				console.log(msg);
+				if(msg.documents.lenght!=0){
 				getBookInfo(n);
+				}
+				else {
+					alert("도서 검색 실패!")
+				}
 			}
+			})
 		});
-		$('#btn_next').click(function(){
-			if(n<msg.documents.length-1){
-				n++;
-				getBookInfo(n);
-			}
-		});
-		function getBookInfo(n){
-			var list_info='';
-			$('#book_info').empty();	
-			list_info +='<div>'
-			+'<img src='+msg.documents[n].thumbnail+'/>'
-			+'</div>'
-			+'</div>';
-			$('#book_info').html(list_info);
-			$('#board_book_title').val(msg.documents[n].title);
-			$('#board_book_authors').val(msg.documents[n].authors);
-			$('#board_book_pub').val(msg.documents[n].publisher);
-			$('#board_book_img').val(msg.documents[n].thumbnail);
-			$('#book_info2').show();
-			$('#btns').show();
-			};
+	
+	});
+	$('#btn_prev').click(function(){
+		if(n>0){
+			n--;
+			getBookInfo(n);
+		}
+	});
+	$('#btn_next').click(function(){
+		if(n<msg.documents.length-1){
+			n++;
+			getBookInfo(n);
+		}
+	});
+	function getBookInfo(n){
+		var list_info='';
+		$('.book_info').empty();	
+		list_info +='<div>'
+		+'<img src='+msg.documents[n].thumbnail+'/>'
+		+'</div>'
+		+'</div>';
+		$('.book_info').html(list_info);
+		$('#board_book_title_fake').val(msg.documents[n].title);
+		$('#board_book_authors_fake').val(msg.documents[n].authors);
+		$('#board_book_pub_fake').val(msg.documents[n].publisher);
+		$('#board_book_img_fake').val(msg.documents[n].thumbnail);
+		$('.book_info2').show();
+		$('#btns').show();
+		};
 	</script>
 
 	<script>
