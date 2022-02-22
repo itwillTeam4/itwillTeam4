@@ -60,9 +60,7 @@ public class BoardController {
 			cntPerPage = "10";
 		}
 		int orderby = 0;
-		if (order == null) {
-			orderby = 0;
-		} else {
+		if (order != null) {
 			orderby = Integer.parseInt(order);
 		}
 

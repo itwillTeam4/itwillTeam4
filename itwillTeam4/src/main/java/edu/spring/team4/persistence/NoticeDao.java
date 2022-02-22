@@ -17,9 +17,9 @@ public interface NoticeDao {
 	List<Notice> read(int type, String keyword);
 	
 	
-	int countNotice();
+	int countNotice(String cat);
 	
-	List<Notice> selectPageNotice(Paging page);
+	List<Notice> selectPageNotice(Paging page,String cat);
 	
 	List<Notice> selectTwo();
 }

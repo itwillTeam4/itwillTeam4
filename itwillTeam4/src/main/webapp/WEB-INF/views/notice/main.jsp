@@ -28,7 +28,7 @@
 					<li><a href="../board/?act=rlt">실시간 독서 모임 커뮤니티</a></li>
 					<li><a href="../board/?act=my">나의 독서 모임 커뮤니티</a></li>
 					<li><a href="../board/?act=free">자유로운 서평</a></li>
-					<li><a href="#" class="on">공지사항/이벤트</a></li>
+					<li><a href="?act=all" class="on">공지사항/이벤트</a></li>
 
 				</ul>
 			</div>
@@ -41,9 +41,9 @@
 					
 					</c:if>
 					<ul class="searchTap">
-						<li><a href="#">공지사항</a></li>
-						<li><a href="#">이벤트</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="?act=notice">공지사항</a></li>
+						<li><a href="?act=event">이벤트</a></li>
+						<li><a href="?act=faq">FAQ</a></li>
 					</ul>
 				</div>
 
