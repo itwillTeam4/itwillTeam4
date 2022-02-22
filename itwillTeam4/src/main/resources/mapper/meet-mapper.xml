@@ -13,8 +13,8 @@
 	</select> 
 	
 	<insert id="create">
-	INSERT INTO ${TABLE_MEET_TABLE} (${COL_MEET_NAME}, ${COL_MEET_HOST}, ${COL_MEET_INTRO}, ${COL_MEET_THEME}, ${COL_MEET_MEMBER_NUM}, ${COL_MEET_ON_OR_OFF}, ${COL_MEET_WHEN}, ${COL_MEET_BOOK_TITLE}, ${COL_MEET_BOOK_AUTHORS}, ${COL_MEET_BOOK_PUB}, ${COL_MEET_BOOK_IMG}, ${COL_MEET_HOST_NAME})
-	VALUES (#{meet_name}, #{meet_host}, #{meet_intro}, #{meet_theme}, #{meet_member_num}, #{meet_on_or_off}, #{meet_when}, #{meet_book_title}, #{meet_book_authors}, #{meet_book_pub}, #{meet_book_img}, #{meet_host_name})
+	INSERT INTO ${TABLE_MEET_TABLE} (${COL_MEET_NAME}, ${COL_MEET_HOST}, ${COL_MEET_INTRO}, ${COL_MEET_THEME}, ${COL_MEET_MEMBER_NUM}, ${COL_MEET_ON_OR_OFF}, ${COL_MEET_BOOK_TITLE}, ${COL_MEET_BOOK_AUTHORS}, ${COL_MEET_BOOK_PUB}, ${COL_MEET_BOOK_IMG}, ${COL_MEET_HOST_NAME})
+	VALUES (#{meet_name}, #{meet_host}, #{meet_intro}, #{meet_theme}, #{meet_member_num}, #{meet_on_or_off}, #{meet_book_title}, #{meet_book_authors}, #{meet_book_pub}, #{meet_book_img}, #{meet_host_name})
 	</insert>
 	
 	<!-- 게시글 수정 -->

@@ -11,7 +11,7 @@ public class Meet {
 	private String meet_theme;
 	private int meet_member_num;
 	private int meet_on_or_off;
-	private int meet_when;
+	private String meet_when;
 	private String meet_book_title;
 	private String meet_book_authors;
 	private String meet_book_pub;
@@ -20,10 +20,11 @@ public class Meet {
 	
 	public Meet() {}
 
-	
-	
+
+
+
 	public Meet(int meet_idx, String meet_name, int meet_host, String meet_intro, String meet_theme,
-			int meet_member_num, int meet_on_or_off, int meet_when, String meet_book_title, String meet_book_authors,
+			int meet_member_num, int meet_on_or_off, String meet_when, String meet_book_title, String meet_book_authors,
 			String meet_book_pub, String meet_book_img, String meet_host_name) {
 		super();
 		this.meet_idx = meet_idx;
@@ -43,9 +44,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_idx() {
 		return meet_idx;
 	}
+
 
 
 
@@ -55,9 +58,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_name() {
 		return meet_name;
 	}
+
 
 
 
@@ -67,9 +72,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_host() {
 		return meet_host;
 	}
+
 
 
 
@@ -79,9 +86,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_intro() {
 		return meet_intro;
 	}
+
 
 
 
@@ -91,9 +100,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_theme() {
 		return meet_theme;
 	}
+
 
 
 
@@ -103,9 +114,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_member_num() {
 		return meet_member_num;
 	}
+
 
 
 
@@ -115,9 +128,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_on_or_off() {
 		return meet_on_or_off;
 	}
+
 
 
 
@@ -127,15 +142,18 @@ public class Meet {
 
 
 
-	public int getMeet_when() {
+
+	public String getMeet_when() {
 		return meet_when;
 	}
 
 
 
-	public void setMeet_when(int meet_when) {
+
+	public void setMeet_when(String meet_when) {
 		this.meet_when = meet_when;
 	}
+
 
 
 
@@ -145,9 +163,11 @@ public class Meet {
 
 
 
+
 	public void setMeet_book_title(String meet_book_title) {
 		this.meet_book_title = meet_book_title;
 	}
+
 
 
 
@@ -157,9 +177,11 @@ public class Meet {
 
 
 
+
 	public void setMeet_book_authors(String meet_book_authors) {
 		this.meet_book_authors = meet_book_authors;
 	}
+
 
 
 
@@ -169,9 +191,11 @@ public class Meet {
 
 
 
+
 	public void setMeet_book_pub(String meet_book_pub) {
 		this.meet_book_pub = meet_book_pub;
 	}
+
 
 
 
@@ -181,9 +205,11 @@ public class Meet {
 
 
 
+
 	public void setMeet_book_img(String meet_book_img) {
 		this.meet_book_img = meet_book_img;
 	}
+
 
 
 
@@ -193,9 +219,11 @@ public class Meet {
 
 
 
+
 	public void setMeet_host_name(String meet_host_name) {
 		this.meet_host_name = meet_host_name;
 	}
+
 
 
 
