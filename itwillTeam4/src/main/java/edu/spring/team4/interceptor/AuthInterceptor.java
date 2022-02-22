@@ -21,7 +21,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 		
 		// 로그인 상태 여부
 		HttpSession session = request.getSession();
-		String signInUserCode = (String)session.getAttribute("signInUserCode");
+		String signInUserCode = session.getAttribute("signInUserCode").toString();
 		
 		if (signInUserCode != null) {
 			log.info("로그인한 유저 코드: {}", signInUserCode);
