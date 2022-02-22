@@ -18,6 +18,7 @@
 	<select id="countNotice" resultType="Integer">
 		SELECT COUNT(*) FROM
 		${TABLE_NOTICE_TABLE}
+		WHERE ${COL_NOTICE_CATEGORY} like #{act}
 	</select>
 
 	<!-- 페이징 처리 후 공지글 조회 -->
@@ -29,6 +30,7 @@
 		FROM (
 		SELECT *
 		FROM ${TABLE_NOTICE_TABLE}
+		WHERE ${COL_NOTICE_CATEGORY} like #{act}
 		ORDER BY
 		NOTICE_IDX DESC
 		) A

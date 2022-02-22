@@ -79,14 +79,18 @@ public class NoticeDaoImpl implements NoticeDao{
 
 
 	@Override
-	public int countNotice() {
-		return sqlSession.selectOne(NOTICE_NAMESPACE+".countNotice");
+	public int countNotice(String act) {
+		return sqlSession.selectOne(NOTICE_NAMESPACE+".countNotice",act);
 	}
 
 
 	@Override
-	public List<Notice> selectPageNotice(Paging page) {
-		return sqlSession.selectList(NOTICE_NAMESPACE+".selectPageNotice",page);
+	public List<Notice> selectPageNotice(Paging page,String act) {
+		Map<String,Object> params = new HashMap();
+		params.put("act", act);
+		params.put("start", page.getStart());
+		params.put("end", page.getEnd());
+		return sqlSession.selectList(NOTICE_NAMESPACE+".selectPageNotice",params);
 	}
 	
 	@Override

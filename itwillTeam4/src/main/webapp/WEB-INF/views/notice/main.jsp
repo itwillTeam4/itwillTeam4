@@ -41,9 +41,9 @@
 					
 					</c:if>
 					<ul class="searchTap">
-						<li><a href="#">공지사항</a></li>
-						<li><a href="#">이벤트</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href="?act=공지사항">공지사항</a></li>
+						<li><a href="?act=이벤트">이벤트</a></li>
+						<li><a href="?act=FAQ">FAQ</a></li>
 					</ul>
 				</div>
 

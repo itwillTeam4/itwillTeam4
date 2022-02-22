@@ -74,13 +74,13 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public int countNotice() {
-		return noticeDao.countNotice();
+	public int countNotice(String act) {
+		return noticeDao.countNotice(act);
 	}
 
 	@Override
-	public List<Notice> selectPageNotice(Paging page) {
-		return noticeDao.selectPageNotice(page);
+	public List<Notice> selectPageNotice(Paging page,String act) {
+		return noticeDao.selectPageNotice(page,act);
 	}
 	
 	@Override

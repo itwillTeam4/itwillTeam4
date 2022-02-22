@@ -25,27 +25,30 @@ public class NoticeController {
 	private NoticeService noticeService;
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public void main(Model model, Paging page, 
-			@RequestParam(value = "nowPage", required = false) String nowPage,
-			@RequestParam(value = "cntPerPage", required = false) String cntPerPage){
+	public void main(Model model, Paging page, @RequestParam(value = "nowPage", required = false) String nowPage,
+			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
+			@RequestParam(value = "act", required = false) String act) {
 		log.info("main() 호출");
 
-		int total = noticeService.countNotice();
-		if (nowPage==null&&cntPerPage==null) {
-			nowPage="1";
-			cntPerPage="20";
-		}else if(nowPage==null) {
-			nowPage="1";
-		}else if(cntPerPage==null) {
-			cntPerPage="20";
+		if (nowPage == null && cntPerPage == null) {
+			nowPage = "1";
+			cntPerPage = "20";
+		} else if (nowPage == null) {
+			nowPage = "1";
+		} else if (cntPerPage == null) {
+			cntPerPage = "20";
 		}
-		page=new Paging(total,Integer.parseInt(nowPage),Integer.parseInt(cntPerPage));
-		List<Notice> noticeList = noticeService.selectPageNotice(page);
+		if(act==null) {
+			act="%";
+		}
+		int total = noticeService.countNotice(act);
+		page = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		List<Notice> noticeList = noticeService.selectPageNotice(page,act);
 		System.out.println(noticeList);
 
-		model.addAttribute("paging",page);
+		model.addAttribute("paging", page);
 		model.addAttribute("noticeList", noticeList);
-		
+
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
