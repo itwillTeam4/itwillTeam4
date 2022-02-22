@@ -12,5 +12,5 @@ public interface MeetDao {
 	int update(Meet meet);
 	int delete(int meet_idx);
 	List<Meet> read(int type, String keyword);
-//
+
 }

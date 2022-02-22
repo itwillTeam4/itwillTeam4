@@ -30,7 +30,7 @@ public class MeetController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert() {
-		log.info("insert() ȣ��");
+		log.info("insert() 호출");
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)

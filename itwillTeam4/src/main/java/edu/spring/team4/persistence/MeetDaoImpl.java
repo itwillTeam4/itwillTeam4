@@ -16,7 +16,7 @@ import edu.spring.team4.domain.Meet;
 public class MeetDaoImpl implements MeetDao {
 	private static final Logger log = LoggerFactory.getLogger(MeetDaoImpl.class);
 	private static final String MEET_NAMESPACE = "edu.spring.team4.mapper.MeetMapper";
-
+//
 	@Autowired
 	private SqlSession sqlSession;
 

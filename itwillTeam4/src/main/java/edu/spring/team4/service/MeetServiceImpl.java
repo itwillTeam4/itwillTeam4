@@ -14,7 +14,7 @@ import edu.spring.team4.persistence.MeetDao;
 public class MeetServiceImpl implements MeetService {
 	private static final Logger log = LoggerFactory.getLogger(MeetServiceImpl.class);
 	
-	
+	//
 	@Autowired private MeetDao meetDao;
 
 	@Override

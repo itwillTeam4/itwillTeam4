@@ -30,7 +30,7 @@
 	WHERE ${COL_MEET_IDX} = #{meet_idx}
 	</delete>
 	
-	<!--  키워드 검색: (1) 제목, (2) 테마, (3) 호스트 아이디 -->
+	<!--  키워드 검색: (1) 제목, (2) 테마, (3) 호스트 아이디  -->
 	<!-- 동적 SQL -->
 	<select id="selectByKeyword" resultType="MEET">
 	SELECT * FROM ${TABLE_MEET_TABLE}

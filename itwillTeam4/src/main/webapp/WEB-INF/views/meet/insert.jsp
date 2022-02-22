@@ -34,7 +34,7 @@
 				<div class="form-eles">
 					<dl>
 						<dt>
-						"독서 모임 테마"
+						"독서 모임테마"
 						</dt>
 						<dd>
 							<select name="meet_theme" valch="yes" msg="독서 모임 테마를 선택하세요">

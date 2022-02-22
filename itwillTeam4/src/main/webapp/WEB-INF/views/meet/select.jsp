@@ -24,7 +24,7 @@
 		</nav>
 		
 		<div class="search">
-			<h2>내게 맞는 독서 모임을 선택해 보세요!</h2>
+			<h2>내게 맞는 독서 모임을 선택해 보세요!!</h2>
 			<div class="searchbox">
 				<form id="searchform" action="/cont/?act=search" method="post">
 				<input type="hidden" name="searchmode" value="Y">

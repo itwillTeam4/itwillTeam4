@@ -35,7 +35,7 @@ public class Meet {
 		this.meet_book_authors = meet_book_authors;
 		this.meet_book_pub = meet_book_pub;
 		this.meet_book_img = meet_book_img;
-		this.meet_host_name = meet_host_name; //추가
+		this.meet_host_name = meet_host_name;
 	}
 
 	public int getMeet_idx() {
