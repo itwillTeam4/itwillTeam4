@@ -53,10 +53,10 @@
 					<div>
 						<input type="text" name="board_tag" value="태그" required  />
 					</div>
-					<div id="meetIdx">
-					<input type="text" name="board_meet_idx" value="${userMeetIdx}" required readonly/>
-					</div>
 				</div>
+					<div id="meetIdx">
+					<input type="text" name="board_meet_idx" value="${MeetIdx}" required readonly/>
+					</div>
 				<div id="btns">
 					<input type="button" id="btn_prev" value="이전검색">
 					<input type="button" id="btn_next" value="다음검색">
@@ -77,7 +77,6 @@
 		$(document).ready(function() {
 			$('#btns').hide();
 			$('#book_info2').hide();
-			$('#meetIdx').hide();
 			$('#btn_book_search').click(function(event) {
 				var title = $('#board_book_title').val();
 				$.ajax({

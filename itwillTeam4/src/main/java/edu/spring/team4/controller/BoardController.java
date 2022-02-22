@@ -71,7 +71,7 @@ public class BoardController {
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("act", act); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("order", order); // jsp에서 el로 사용할 수 있음.
-		model.addAttribute("userMeetIdx", user_meet_idx); // jsp에서 el로 사용할 수 있음.
+		model.addAttribute("MeetIdx", user_meet_idx); // jsp에서 el로 사용할 수 있음.
 
 		return result;
 	}
@@ -82,7 +82,7 @@ public class BoardController {
 		if (meet_idx == null) {
 			meet_idx = "0";
 		}
-		model.addAttribute("userMeetIdx", meet_idx);
+		model.addAttribute("MeetIdx", meet_idx);
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
