@@ -14,12 +14,12 @@ import edu.spring.team4.persistence.MeetDao;
 public class MeetServiceImpl implements MeetService {
 	private static final Logger log = LoggerFactory.getLogger(MeetServiceImpl.class);
 	
-	
+	//
 	@Autowired private MeetDao meetDao;
 
 	@Override
 	public List<Meet> select() {
-		log.info("select() È£Ãâ");
+		log.info("select() í˜¸ì¶œ");
 		
 		
 		return meetDao.read();
@@ -27,7 +27,7 @@ public class MeetServiceImpl implements MeetService {
 
 	@Override
 	public int insert(Meet meet) {
-		log.info("insert({}) È£Ãâ", meet);
+		log.info("insert({}) í˜¸ì¶œ", meet);
 		
 		int result = meetDao.create(meet);
 		
@@ -37,7 +37,7 @@ public class MeetServiceImpl implements MeetService {
 	
 	@Override
 	public Meet select(int meet_idx) {
-		log.info("select(meet_idx={}) È£Ãâ", meet_idx);
+		log.info("select(meet_idx={}) í˜¸ì¶œ", meet_idx);
 		
 		Meet meet = meetDao.read(meet_idx);
 		
@@ -47,7 +47,7 @@ public class MeetServiceImpl implements MeetService {
 	
 	@Override
 	public int update(Meet meet) {
-		log.info("update({}) È£Ãâ", meet);
+		log.info("update({}) í˜¸ì¶œ", meet);
 		
 		int result = meetDao.update(meet);
 		
@@ -56,7 +56,7 @@ public class MeetServiceImpl implements MeetService {
 	
 	@Override
 	public int delete(int meet_idx) {
-		log.info("delete(meet_idx={}) È£Ãâ", meet_idx);
+		log.info("delete(meet_idx={}) í˜¸ì¶œ", meet_idx);
 		
 		int result = meetDao.delete(meet_idx);
 		
@@ -66,7 +66,7 @@ public class MeetServiceImpl implements MeetService {
 	@Override
 	public List<Meet> select(int type, String keyword) {
 		
-		log.info("select(type={}, keyword={}) È£Ãâ", type, keyword);
+		log.info("select(type={}, keyword={}) í˜¸ì¶œ", type, keyword);
 		
 		
 		return meetDao.read(type,keyword);

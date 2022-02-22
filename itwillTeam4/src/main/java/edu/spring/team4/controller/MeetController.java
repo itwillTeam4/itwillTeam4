@@ -22,7 +22,7 @@ public class MeetController {
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void main(Model model) {
-		log.info("main() È£Ãâ");
+		log.info("main() í˜¸ì¶œ");
 		
 		List<Meet> meetlist = meetService.select();
 		model.addAttribute("meetList", meetlist);
@@ -30,7 +30,7 @@ public class MeetController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert() {
-		log.info("insert() È£Ãâ");
+		log.info("insert() í˜¸ì¶œ");
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)

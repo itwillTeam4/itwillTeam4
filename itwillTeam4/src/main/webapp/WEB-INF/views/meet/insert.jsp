@@ -13,7 +13,7 @@
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 </head>
 <body>
-	<%@include file="../header.jsp"%>
+<%@include file="../header.jsp"%>
 	<div class="container-fluid">
 		<header class="jumbotron text-center">
 			<h1>새 모임 개설 페이지</h1>
@@ -33,7 +33,9 @@
 				</div>
 				<div class="form-eles">
 					<dl>
-						<dt>"독서 모임 테마"</dt>
+						<dt>
+						"독서 모임테마"
+						</dt>
 						<dd>
 							<select name="meet_theme" valch="yes" msg="독서 모임 테마를 선택하세요">
 								<option value>선택하세요</option>
@@ -48,10 +50,12 @@
 						</dd>
 					</dl>
 				</div>
-
+				
 				<div class="form-eles">
 					<dl>
-						<dt>"독서 모임 인원수"</dt>
+						<dt>
+						"독서 모임 인원수"
+						</dt>
 						<dd>
 							<select name="meet_member_num" valch="yes" msg="모임 인원수를 설정하세요">
 								<option value>선택하세요</option>
@@ -66,47 +70,43 @@
 						</dd>
 					</dl>
 				</div>
-
-				<div class="form-eles">
+				
+				<div class="form-eles">	
 					<dl>
-						<dt>"온/오프라인"</dt>
+						<dt>
+						"온/오프라인"
+						</dt>
 						<dd>
 							<div class="selradio">
-								<label style="margin-right: 84px;"> <input type="radio" name="meet_on_or_off" value="1"> "온라인"
-								</label> <label> <input type="radio" name="meet_on_or_off" value="2"> "오프라인"
+								<label style="margin-right:84px;">
+									<input type="radio" name="meet_on_or_off" value="1">
+									"온라인"
+								</label>
+								<label>
+									<input type="radio" name="meet_on_or_off" value="2">
+									"오프라인"
 								</label>
 							</div>
 						</dd>
 					</dl>
 				</div>
-
 				<div>
-					<input type="text" name="meet_host_name" value="${signInUserId}" required/>
+					<input type="text" id="meet_host_name" name="meet_host_name" value="" required />
 				</div>
 				<div>
-					<input type="text" name="meet_host" value="${signInUserCode}" required readonly/>
+					<input type="text" id="meet_book_title" name="meet_book_title" value="" required />
 				</div>
-
 				<div>
-					<input type="text" id="meet_book_title" name="meet_book_title" value="책 제목" required />
-					<input type="button" id="btn_book_search" name="btn_book_search" value="검색하기" />
+					<input type="text" id="meet_book_authors" name="meet_book_authors" value="" required />
 				</div>
-				<div id="book_info"></div>
-				<div id="book_info2">
-					<div>
-						<input type="text" id="meet_book_authors" name="meet_book_authors" value="" required />
-					</div>
-					<div>
-						<input type="text" id="meet_book_pub" name="meet_book_pub" value="" required />
-					</div>
-					<div>
-						<input type="text" id="meet_book_img" name="meet_book_img" value="" required />
-					</div>
+				<div>
+					<input type="text" id="meet_book_pub" name="meet_book_pub" value="" required />
 				</div>
-				<div id="btns">
-					<input type="button" id="btn_prev" value="이전검색">
-					<input type="button" id="btn_next" value="다음검색">
+				<div>
+					<input type="text" id="meet_book_img" name="meet_book_img" value="" required />
 				</div>
+				
+				
 
 				<div>
 					<input type="submit" value="게시" />
@@ -116,75 +116,9 @@
 
 	</div>
 	<%@include file="../footer.jsp"%>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript">
-		var n = 0;
-		var msg;
-		$(document).ready(function() {
-			$('#btns').hide();
-			$('#book_info2').hide();
-			$('#meet_host')
-			$('#btn_book_search').click(function(event){
-				var title = $('#meet_book_title').val();
-				$.ajax({
-					method : "GET",
-					url : "https://dapi.kakao.com/v3/search/book?target=title",
-					data : {
-						query : title,
-						size:50
-					},
-					headers : {
-						Authorization : "KakaoAK 3f1fb761122afdd0796567178c84f3dc"
-					},
-				success: function(info){
-					msg=info;
-					console.log(msg);
-					if(msg.documents.lenght!=0){
-					getBookInfo(n);
-					}
-					else {
-						alert("도서 검색 실패!")
-					}
-				}
-				})
-			});
-		});
-		$('#btn_prev').click(function(){
-			if(n>0){
-				n--;
-				getBookInfo(n);
-			}
-		});
-		$('#btn_next').click(function(){
-			if(n<msg.documents.length-1){
-				n++;
-				getBookInfo(n);
-			}
-		});
-		
-		
-		
-		function getBookInfo(n){
-			var list_info='';
-			$('#book_info').empty();	
-			list_info +='<div>'
-			+'<img src='+msg.documents[n].thumbnail+'/>'
-			+'</div>'
-			+'</div>';
-			$('#book_info').html(list_info);
-			$('#meet_book_title').val(msg.documents[n].title);
-			$('#meet_book_authors').val(msg.documents[n].authors);
-			$('#meet_book_pub').val(msg.documents[n].publisher);
-			$('#meet_book_img').val(msg.documents[n].thumbnail);
-			$('#book_info2').show();
-			$('#btns').show();
-			};
-		
-		
-		
-		
-	</script>
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
