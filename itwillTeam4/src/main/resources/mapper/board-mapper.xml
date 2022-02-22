@@ -108,6 +108,13 @@
 		<![CDATA[where rownum <= 3]]>
 
 	</select>
+	
+	<select id="selectByUserCode" resultType="Board">
+	
+		SELECT * FROM ${TABLE_BOARD_TABLE} 
+		WHERE ${COL_BOARD_USERCODE} = #{userCode}
+	
+	</select>
 
 	<insert id="create">
 		INSERT INTO ${TABLE_BOARD_TABLE} (${COL_BOARD_TITLE},

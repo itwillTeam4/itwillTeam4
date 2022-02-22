@@ -20,5 +20,6 @@ public interface BoardDao {
 	
 	List<Board> selectPageBoard(Paging page,String board_meet_idx,int orderby);
 	List<Board> selectThree();
+	List<Board> selectByUserCode(int userCode);
 	
 }

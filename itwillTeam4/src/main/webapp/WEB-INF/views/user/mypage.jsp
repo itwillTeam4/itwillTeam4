@@ -56,7 +56,7 @@
 			<div id="mypageCon3">
 			
 			
-			<c:forEach begin="0" end="9" step="1" var="board" items="${boardList }">
+			<c:forEach begin="0" end="5" step="1" var="board" items="${boardList }">
 						<div class="box">
 							<a href="http://localhost:8181/team4/board/detail?bno=${board.bno }">
 								<div class="boxHeader">

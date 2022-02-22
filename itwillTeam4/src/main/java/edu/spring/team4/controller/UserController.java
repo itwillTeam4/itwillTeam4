@@ -1,5 +1,7 @@
 package edu.spring.team4.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
+import edu.spring.team4.service.BoardService;
 import edu.spring.team4.service.UserService;
 
 @Controller  
@@ -23,6 +26,7 @@ public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired private UserService userService;
+	@Autowired private BoardService boardService;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void register() {
@@ -122,6 +126,11 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public void mypage() {
+	public void mypage(Model model, HttpSession session) {
+		
+		int userCode = (int)session.getAttribute("signInUserCode");
+		List<Board> boardList = boardService.selectByUserCode(userCode);
+		model.addAttribute("boardList",boardList);
+		
 	}
 }

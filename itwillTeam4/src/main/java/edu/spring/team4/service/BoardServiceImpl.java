@@ -69,5 +69,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<Board> selectThree() {
 		return boardDao.selectThree();
 	}
+	
+	@Override
+	public List<Board> selectByUserCode(int userCode) {
+		return boardDao.selectByUserCode(userCode);
+	}
 
 }
