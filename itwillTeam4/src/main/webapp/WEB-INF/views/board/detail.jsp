@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,13 +9,9 @@
 <title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/board.css"
-	type="text/css">
-<link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css" type="text/css">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 
 </head>
 <body>
@@ -56,8 +51,7 @@
 							<span>멤버</span>
 						</p>
 						<p class="detailTopDate">
-							<fmt:formatDate value="${board.board_reg_date }"
-								pattern="yyyy-MM-dd hh:mm:ss" />
+							<fmt:formatDate value="${board.board_reg_date }" pattern="yyyy-MM-dd hh:mm:ss" />
 						</p>
 					</div>
 
@@ -70,8 +64,7 @@
 						<div class="detailBookInfos">
 							<div>
 								<p>${board.board_book_title }</p>
-								<span>${board.board_book_authors } /
-									${board.board_book_pub}
+								<span>${board.board_book_authors } / ${board.board_book_pub}
 									</p>
 							</div>
 						</div>
@@ -80,47 +73,42 @@
 
 				<div class="boxFooter boxFooter2">
 					<div class="boxLike boxLike2">
-						<img
-							src="${pageContext.request.contextPath}/resources/img/like.png"
-							alt="like" class="boxLikeImg">
-						<p class="blc" >&nbsp;${board.board_like_cnt }</p>
+						<img src="${pageContext.request.contextPath}/resources/img/like.png" alt="like" class="boxLikeImg">
+						<p >&nbsp;${board.board_like_cnt }</p>
 					</div>
 					<div class="boxReply boxReply2">
-						<img
-							src="${pageContext.request.contextPath}/resources/img/reply.png"
-							alt="reply" class="boxReplyImg">
-						<p class="blc">&nbsp;${board.board_reply_cnt  }</p>
+						<img src="${pageContext.request.contextPath}/resources/img/reply.png" alt="reply" class="boxReplyImg">
+						<p id="blc1">&nbsp;${board.board_reply_cnt  }</p>
 					</div>
 				</div>
 
 
 				<div class="replyBox">
-					<p class="replyCnt">댓글 ${board.board_reply_cnt }</p>
-					
+					<p id="blc2" class="replyCnt">댓글 ${board.board_reply_cnt }</p>
+
 					<button id="btn_sort_like">좋아요순</button>
 					<button id="btn_sort_reg">최신순</button>
-					
+
 					<div id="replies"></div>
-					
-					
+
+
 					<input type="text" id="rtext1" name="rtext" class="replyInput" placeholder="댓글을 입력해주세요!" />
 					<!--어드민 대신 ${signInUserId}-->
-					<input type="hidden" id="userid" name="user_id"
-						value='${signInUserId}' readonly="readonly" />
+					<input type="hidden" id="userid" name="user_id" value='${signInUserId}' readonly="readonly" />
 					<button id="btn_create_reply">등록</button>
 					<ul>
-		            <c:if test="${signInUserCode == board.board_usercode}">
-		               <!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
-		               <li id="btn_create_reply"><a href="./update?bno=${board.bno}">수정</a></li>
-		            </c:if>
-		         </ul>
+						<c:if test="${signInUserCode == board.board_usercode}">
+							<!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
+							<li id="btn_create_reply"><a href="./update?bno=${board.bno}">수정</a></li>
+						</c:if>
+					</ul>
 				</div>
-				
+
 
 
 			</div>
 		</div>
-	</div>	
+	</div>
 
 
 
@@ -129,12 +117,11 @@
 
 	<%@include file="../footer.jsp"%>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
+		var rpl_cnt=${board.board_reply_cnt};
 		var boardNo =${board.bno};
 		var userCode=${signInUserCode};
 		console.log(userCode);
@@ -178,8 +165,6 @@
 			console.log("done");
 			});
         $('#replies').html(list);
-		$('#blc').empty();
-		$('#blc').val(" "+${board.board_reply_cnt});
      });				
 		}
 	getReplies(sort);		
@@ -216,6 +201,14 @@
 				'user_code':userCode
 			}),
 			success: function (resp) {
+					rpl_cnt +=1;
+					console.log('댓글수 '+rpl_cnt);
+					var str = ' '+rpl_cnt;
+					console.log(str);
+					$('#blc1').empty();
+					$('#blc1').text('\u00A0'+ str);
+					$('#blc2').empty();
+					$('#blc2').text('댓글'+str);
 				console.log(resp);
 				$('#rtext').val('');
 				getReplies(sort);  
@@ -256,6 +249,12 @@
 					'X-HTTP-Method-Override': 'DELETE'
 				},
 				success: function () {
+					rpl_cnt -= 1;
+					var str = ' '+rpl_cnt;
+					$('#blc1').empty();
+					$('#blc1').text('\u00A0'+ str);
+					$('#blc2').empty();
+					$('#blc2').text('댓글'+str);
 					alert(rno + '번 댓글 삭제 성공!');
 					getReplies(sort);
 				}
