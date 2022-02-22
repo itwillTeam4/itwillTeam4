@@ -98,7 +98,7 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="http://localhost:8181/team4/user/signin" method="post">
+			<form action="http://localhost:8181/team4/user/signin?url=${requestScope['javax.servlet.forward.servlet_path']}" method="post">
 				<div id="loginInput">
 					<div class="loginInputForm">
 						<input type="text" name="user_id" id="idInput" placeholder="아이디(이메일) 입력"

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.UriUtils;
 
@@ -77,7 +78,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
-	public String signIn(User user, HttpSession session, Model model) {
+	public String signIn(User user, HttpSession session, Model model,
+			@RequestParam(value = "url", required=true)String url) {
+		
 		log.info("signIn({}) POST 호출", user);
 		User signInUser = userService.checkSignIn(user);
 			if (signInUser != null) { 
@@ -86,7 +89,7 @@ public class UserController {
 				session.setAttribute("signInUserCode", signInUser.getUser_code());
 				session.setAttribute("userMeetIndex", signInUser.getUser_meet_idx());
 				model.addAttribute("signInUser", signInUser);
-				return "redirect:/";
+				return "redirect:/" + url;
 			} else {
 				return "redirect:/?signin=fail";
 			}
