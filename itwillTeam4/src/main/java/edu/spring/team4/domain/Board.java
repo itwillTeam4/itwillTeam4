@@ -19,15 +19,14 @@ public class Board {
 	private String board_userid;
 	private int board_reply_cnt;
 	private int board_like_cnt;
+	private int board_usercode;
 	
-	public Board() {
-		super();
-	}
-
+	public Board() {}
+	
 	public Board(int bno, String board_title, String board_content, int board_view_cnt, String board_like,
 			String board_meet_idx, Date board_reg_date, String board_tag, String board_book_title,
 			String board_book_authors, String board_book_pub, String board_book_img, String board_userid,
-			int board_reply_cnt, int board_like_cnt) {
+			int board_reply_cnt, int board_like_cnt, int board_usercode) {
 		super();
 		this.bno = bno;
 		this.board_title = board_title;
@@ -44,6 +43,7 @@ public class Board {
 		this.board_userid = board_userid;
 		this.board_reply_cnt = board_reply_cnt;
 		this.board_like_cnt = board_like_cnt;
+		this.board_usercode = board_usercode;
 	}
 
 	/**
@@ -254,6 +254,14 @@ public class Board {
 	 */
 	public void setBoard_like_cnt(int board_like_cnt) {
 		this.board_like_cnt = board_like_cnt;
+	}
+
+	public int getBoard_usercode() {
+		return board_usercode;
+	}
+
+	public void setBoard_usercode(int board_usercode) {
+		this.board_usercode = board_usercode;
 	}
 	
 	

@@ -26,6 +26,7 @@
         <property name="COL_BOARD_REPLY_CNT" value="board_reply_cnt" />
         <property name="COL_BOARD_VIEW_CNT" value="board_view_cnt"/>
         <property name="COL_BOARD_LIKE_CNT" value="board_like_cnt"/>
+        <property name="COL_BOARD_USERCODE" value="board_usercode"/>
         <!-- USER_TABLE 테이블 관련 상수들 -->
         <property name="TABLE_USER_TABLE" value="user_table" />
         <property name="COL_USER_CODE" value="user_code" />
