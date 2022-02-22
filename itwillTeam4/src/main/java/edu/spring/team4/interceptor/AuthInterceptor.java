@@ -35,7 +35,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
 			log.debug("URI 디코딩 후:{}", reqUrl);
 			
-			response.sendRedirect("http://localhost:8181/team4/?signin=fail?url=" + reqUrl);
+			response.sendRedirect("http://localhost:8181/team4/?signin=fail");
 			return false;
 		}
 		
