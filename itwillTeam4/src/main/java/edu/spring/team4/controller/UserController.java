@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.UriUtils;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
@@ -79,17 +80,16 @@ public class UserController {
 	public String signIn(User user, HttpSession session, Model model) {
 		log.info("signIn({}) POST 호출", user);
 		User signInUser = userService.checkSignIn(user);
-		if (signInUser != null) {
-			session.setAttribute("signInUserId", signInUser.getUser_nn());
-			session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
-			session.setAttribute("signInUserCode", signInUser.getUser_code());
-			session.setAttribute("userMeetIndex", signInUser.getUser_meet_idx());
-			model.addAttribute("signInUser", signInUser);
-			return "redirect:/";
-		} else { 
-			return "redirect:/?signin=fail";
-		}
-		
+			if (signInUser != null) { 
+				session.setAttribute("signInUserId", signInUser.getUser_nn());
+				session.setAttribute("userAdminCheck", signInUser.getUser_admin_check());
+				session.setAttribute("signInUserCode", signInUser.getUser_code());
+				session.setAttribute("userMeetIndex", signInUser.getUser_meet_idx());
+				model.addAttribute("signInUser", signInUser);
+				return "redirect:/";
+			} else {
+				return "redirect:/?signin=fail";
+			}
 	}
 
 			

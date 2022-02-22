@@ -21,9 +21,10 @@ public class AuthInterceptor implements HandlerInterceptor{
 		
 		// 로그인 상태 여부
 		HttpSession session = request.getSession();
-		String signInUserCode = session.getAttribute("signInUserCode").toString();
+		Object signInUserCode = session.getAttribute("signInUserCode");
 		
 		if (signInUserCode != null) {
+			signInUserCode = session.getAttribute("signInUserCode").toString();
 			log.info("로그인한 유저 코드: {}", signInUserCode);
 			return true;
 		} else {
@@ -32,8 +33,9 @@ public class AuthInterceptor implements HandlerInterceptor{
 			String reqUrl = request.getRequestURL().toString();
 			log.debug("request URL: {}", reqUrl);
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
+			log.debug("URI 디코딩 후:{}", reqUrl);
 			
-			response.sendRedirect("/team4/user/signin?url=" + reqUrl);
+			response.sendRedirect("http://localhost:8181/team4/?signin=fail?url=" + reqUrl);
 			return false;
 		}
 		
