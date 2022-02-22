@@ -35,7 +35,7 @@
 			<p class="mypageName">
 				${signInUserId}<span>멤버</span>
 			</p>
-			<form action="./user/userupdate" method="get">
+			<form action="./userupdate" method="get">
 				<input type="submit" class="mypageOption" value="설정">
 			</form>
 		</div>
