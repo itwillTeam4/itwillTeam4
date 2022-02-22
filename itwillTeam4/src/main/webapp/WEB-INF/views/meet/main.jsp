@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>모임 메인</title>
+<title>책오 게시판 메인</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
@@ -23,14 +23,13 @@
 
 
 	<div class="container-fluid">
-	
 		<div>
 			<!-- 검색 기능 UI -->
 			<form action="./search" method="get">
 				<select name="type">
 					<option value="1">제목</option>
 					<option value="2">테마</option>
-					<option value="3">호스트</option>
+					<option value="3">호스트이름</option>
 				</select> <input type="text" name="keyword" placeholder="검색어 입력" required />
 				<input type="submit" value="검색" />
 			</form>
@@ -41,17 +40,17 @@
 			<table>
 				<thead>
 					<tr>
-						<th>모임 제목</th>
+						<th>글번호</th>
+						<th>제목</th>
 						<th>테마</th>
-						<th>호스트</th>
+						<th>호스트이름</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="meet" items="${meetList}">
 						<tr>
-							<td>${meet.meet_idx}</td>
-							<td><a href="./detail?meet_idx=${meet.meet_idx}">${meet.meet_name}</a>
-							</td>
+						    <td>${meet.meet_idx}</td>
+							<td>${meet.meet_name}</td>
 							<td>${meet.meet_theme}</td>
 							<td>${meet.meet_host_name}</td>
 						</tr>

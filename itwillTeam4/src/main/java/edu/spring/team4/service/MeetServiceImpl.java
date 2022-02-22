@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.spring.team4.domain.Meet;
 import edu.spring.team4.persistence.MeetDao;
+import edu.spring.team4.persistence.UserDao;
 
 @Service
 public class MeetServiceImpl implements MeetService {
@@ -16,10 +17,12 @@ public class MeetServiceImpl implements MeetService {
 	
 	
 	@Autowired private MeetDao meetDao;
+	@Autowired private UserDao userDao;
+	
 
 	@Override
 	public List<Meet> select() {
-		log.info("select() »£√‚");
+		log.info("select() Ìò∏Ï∂ú");
 		
 		
 		return meetDao.read();
@@ -27,7 +30,7 @@ public class MeetServiceImpl implements MeetService {
 
 	@Override
 	public int insert(Meet meet) {
-		log.info("insert({}) »£√‚", meet);
+		log.info("insert({}) Ìò∏Ï∂ú", meet);
 		
 		int result = meetDao.create(meet);
 		
@@ -37,7 +40,7 @@ public class MeetServiceImpl implements MeetService {
 	
 	@Override
 	public Meet select(int meet_idx) {
-		log.info("select(meet_idx={}) »£√‚", meet_idx);
+		log.info("select(meet_idx={}) Ìò∏Ï∂ú", meet_idx);
 		
 		Meet meet = meetDao.read(meet_idx);
 		
@@ -47,28 +50,23 @@ public class MeetServiceImpl implements MeetService {
 	
 	@Override
 	public int update(Meet meet) {
-		log.info("update({}) »£√‚", meet);
-		
-		int result = meetDao.update(meet);
-		
-		return result;
+		log.info("update({}) Ìò∏Ï∂ú", meet);
+
+		return meetDao.update(meet);
 	}
 	
 	@Override
 	public int delete(int meet_idx) {
-		log.info("delete(meet_idx={}) »£√‚", meet_idx);
+		log.info("delete(meet_idx={}) Ìò∏Ï∂ú", meet_idx);
 		
-		int result = meetDao.delete(meet_idx);
-		
-		return result;
+		return meetDao.delete(meet_idx);
 	}
 	
+	
 	@Override
-	public List<Meet> select(int type, String keyword) {
+	public List<Meet> select(int searchType, String searchKeyword) {
+		log.info("select(searchType={}, searchType={})", searchType, searchKeyword);
 		
-		log.info("select(type={}, keyword={}) »£√‚", type, keyword);
-		
-		
-		return meetDao.read(type,keyword);
+		return meetDao.read(searchType, searchKeyword);
 	}
 }
