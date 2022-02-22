@@ -16,8 +16,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
-<link href='fullcalendar/main.css' rel='stylesheet' />
-<script src='fullcalendar/main.js'></script>
 
 </head>
 <body>
@@ -108,19 +106,12 @@
 
 	<%@include file="../footer.jsp"%>
 
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.1/main.global.min.js" integrity="sha256-3dt17Yg5LzGdmVjcMO6UCmb3tHzrzkSs840gbjult00=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@5.10.1/main.global.min.js" integrity="sha256-B23++lLMKxsNUvndnA+0UyTXS6SQ5NKHAv32rxO3AqI=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.10.1/main.global.min.js" integrity="sha256-WbQSQ0zYo3bZNQiA5R5YdIL/CGRzzM3wQVcyVtdZtFQ=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@5.10.1/main.global.min.js" integrity="sha256-UdGTVTqBgOVOXO5g3t3+djyiGANWOGPfWny+aWTJRrI=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@5.10.1/main.global.min.js" integrity="sha256-hv4JZxfujHAembALj9LHpTqw+bX2MDxtqksAOvRy9/c=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/scrollgrid@5.10.1/main.global.min.js" integrity="sha256-k2+wyIVMIVd1Gy1ZRvDiI7+ZVBjNKB91z1tHSPw0x/E=" crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
 		$(document).ready(function() {
-			$("#mypageCon1").hide();
 		});
 
 		$("#tapli1").click(function() {
@@ -162,6 +153,7 @@
 			var calendarEl = document.getElementById('calendar');
 
 			var calendar = new FullCalendar.Calendar(calendarEl, {
+				googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
 				initialView : 'dayGridMonth',
 				initialDate : '2022-02-07',
 				selectable : true,
@@ -171,43 +163,13 @@
 					center : 'title',
 					right : 'dayGridMonth,timeGridWeek,timeGridDay'
 				},
-				events : [ {
-					title : 'All Day Event',
-					start : '2022-02-01'
-				}, {
-					title : 'Long Event',
-					start : '2022-02-07',
-					end : '2022-02-10'
-				}, {
-					groupId : '999',
-					title : 'Repeating Event',
-					start : '2022-02-09T16:00:00'
-				}, {
-					groupId : '999',
-					title : 'Repeating Event',
-					start : '2022-02-16T16:00:00'
-				}, {
-					title : 'Conference',
-					start : '2022-02-11',
-					end : '2022-02-13'
-				}, {
-					title : 'Meeting',
-					start : '2022-02-12T10:30:00',
-					end : '2022-02-12T12:30:00'
-				}, {
-					title : 'Lunch',
-					start : '2022-02-12T12:00:00'
-				}, {
-					title : 'Meeting',
-					start : '2022-02-12T14:30:00'
-				}, {
-					title : 'Birthday Party',
-					start : '2022-02-13T07:00:00'
-				}, {
-					title : 'Click for Google',
-					url : 'http://google.com/',
-					start : '2022-02-28'
-				} ]
+				eventSources : [ {
+					googleCalendarId : 'ko.south_korea#holiday@group.v.calendar.google.com'
+				},
+				{
+					googleCalendarId : 'v0f54lctctfjig2rlnl58o07fc@group.calendar.google.com'
+				}
+				]
 			});
 
 			calendar.render();
