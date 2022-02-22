@@ -24,7 +24,14 @@
     <!-- DispatcherServlet은 edu.spring.ex02.controller 패키지와 그 하위 패키지의 컴포넌트들을 생성, 관리. -->
 	<context:component-scan base-package="edu.spring.team4.controller" />
 	
-    <!-- 인터셉터 -->
- 
+    <!-- interceptor -->
+ 	<beans:bean id="authInterceptor" class="edu.spring.team4.interceptor.AuthInterceptor"/>
+ 	
+ 	<interceptors>
+ 		<interceptor>
+ 			<mapping path="/board/insert"/>
+ 			<beans:ref bean="authIntercepter"/>
+ 		</interceptor>
+ 	</interceptors>
     
 </beans:beans>

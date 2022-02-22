@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.UriUtils;
 
 public class AuthInterceptor implements HandlerInterceptor{
 
@@ -21,12 +22,18 @@ public class AuthInterceptor implements HandlerInterceptor{
 		// 로그인 상태 여부
 		HttpSession session = request.getSession();
 		String signInUserCode = (String)session.getAttribute("signInUserCode");
+		
 		if (signInUserCode != null) {
 			log.info("로그인한 유저 코드: {}", signInUserCode);
 			return true;
 		} else {
 			log.info("로그인 해.");
-			response.sendRedirect("http://localhost:8181/team4/?signin=fail");
+			// 요청 URL 정보를 찾아서 signin 요청에 요청 파라미터 추가
+			String reqUrl = request.getRequestURL().toString();
+			log.debug("request URL: {}", reqUrl);
+			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
+			
+			response.sendRedirect("/team4/user/signin?url=" + reqUrl);
 			return false;
 		}
 		
