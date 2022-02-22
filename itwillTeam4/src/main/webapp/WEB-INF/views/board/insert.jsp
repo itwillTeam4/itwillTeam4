@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>책오 새 글 작성</title>
+<title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
@@ -41,7 +41,9 @@
 				<input type="text" id="board_book_title_fake"
 					placeholder="책 제목을 입력해주세요." required /> <input type="button"
 					id="btn_book_search" name="btn_book_search" value="검색" />
-
+				<div id="bookSubmitBtn" class="bookSubmitBtn">
+					<p>등록</p>
+				</div>
 
 
 
@@ -64,9 +66,9 @@
 			</div>
 
 
-			<div id="btns">
-				<input type="button" id="btn_prev" class="searchBtn" value="이전검색"> <input
-					type="button" id="btn_next" value="다음검색">
+			<div id="btns" class="btns">
+				<input type="button" id="btn_prev" class="searchBtn1"> <input
+					type="button" id="btn_next" class="searchBtn2">
 			</div>
 		</div>
 
@@ -115,7 +117,7 @@
 						</div>
 						<div>
 							<textarea name="board_content" id="editor"
-								placeholder="내용을 입력해주세요." required></textarea>
+								placeholder="내용을 입력해주세요."></textarea>
 						</div>
 
 						<div>
@@ -129,7 +131,7 @@
 						<div id="book_info2_real">
 
 							<input type="hidden" id="board_book_title_real"
-								name="board_book_title" value="" required />
+								name="board_book_title" required />
 
 
 
@@ -137,23 +139,23 @@
 
 							<div>
 								<input type="hidden" id="board_book_authors_real"
-									name="board_book_authors" value="" required />
+									name="board_book_authors" required />
 							</div>
 							<div>
 								<input type="hidden" id="board_book_pub_real"
-									name="board_book_pub" value="" required />
+									name="board_book_pub" required />
 							</div>
 							<div>
 								<input type="hidden" id="board_book_img_real"
-									name="board_book_img" value="" required />
+									name="board_book_img" required />
 							</div>
 							<div>
 								<input type="hidden" id="board_book_tag_real" name="board_tag"
 									value="태그" required />
 							</div>
 							<div id="meetIdx">
-								<input type="hidden" name="board_meet_idx"
-									value="${userMeetIdx}" required readonly />
+								<input type="hidden" name="board_meet_idx" value="${userMeetIdx}"
+									required readonly />
 							</div>
 
 						</div>
@@ -188,7 +190,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script type="text/javascript">
-	
+	//$("#editor").prop('required',true); 
 	
 	$("#btn_book_modal").click(function() {
 		$(".bookModalBG").fadeIn(300);
@@ -201,6 +203,28 @@
 		$(".bookModalBG").fadeOut(300);
 		$(".bookModal").fadeOut(300);
 		
+	});
+	
+	//var fakeToReal = document.getElementById("bookSubmitBtn");
+	
+	$(".bookSubmitBtn").click(function(){
+		
+		$(".bookModalBG").fadeOut(300);
+		$(".bookModal").fadeOut(300);
+		
+		var fakeTitle = $("#board_book_title_fake").val();
+		$("#board_book_title_real").val(fakeTitle);
+		var fakeAuthors = $("#board_book_authors_fake").val();
+		$("#board_book_authors_real").val(fakeAuthors);
+		var fakePub = $("#board_book_pub_fake").val();
+		$("#board_book_pub_real").val(fakePub);
+		var fakeImg= $("#board_book_img_fake").val();
+		$("#board_book_img_real").val(fakeImg);
+		var fakeTag = $("#board_book_tag_fake").val();
+		$("#board_book_tag_real").val(fakeTag);
+		
+				
+				   
 	});
 	
 	
