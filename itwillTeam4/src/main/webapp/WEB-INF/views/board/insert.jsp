@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
@@ -7,71 +8,73 @@
 <title>게시판 새 글</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/board.css"
+	type="text/css">
+<script
+	src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
 </head>
 <body>
-<%@include file="../header.jsp"%>
-	<div class="container-fluid">
-		<header class="jumbotron text-center">
-			<h1>새 글 작성 페이지</h1>
-		</header>
+	<%@include file="../header.jsp"%>
 
-		<nav>
-			<!-- 메뉴 -->
-		</nav>
 
-		<div>
-			<form method="post">
-				<div>
-					<input type="text" name="board_title" placeholder="제목을 입력해 주세요" required autofocus />
+
+
+
+
+	<div id="contentWrap">
+		<div class="innerWrap">
+
+			<div class="left-gnb">
+				<div class="profile-box">
+					<p>
+						<span>${signInUserId}</span>님
+					</p>
+					<span>환영합니다.</span>
 				</div>
-				<div>
-					<textarea rows="10" name="board_content" placeholder="내용 입력" required></textarea>
+				<ul class="comMenu">
+					<li><a href="../board/?act=rlt">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="../board/?act=my">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="../board/?act=free">자유로운 서평</a></li>
+					<li><a href="#" class="on">공지사항/이벤트</a></li>
+
+				</ul>
+			</div>
+
+			<div class="right-contents">
+				<div id="right-top-wrap">
+					<p id="right-contents-title">글쓰기</p>
+
 				</div>
-				<div>
-					<input type="text" name="board_userid" value="${signInUserId}" required readonly />
+
+
+				<div class="rightText">
+					<textarea rows="30" cols="30" name="content" id="editor"></textarea>
 				</div>
-				<div>
-					<input type="hidden" name="board_usercode" value="${signInUserCode}" required readonly />
-				</div>
-				<div>
-					<input type="text" id="board_book_title" name="board_book_title" value="책 제목" required autofocus />
-					<input type="button" id="btn_book_search" name="btn_book_search" value="검색하기" />
-				</div>
-				<div id="book_info"></div>
-				<div id="book_info2">
-					<div>
-						<input type="text" id="board_book_authors" name="board_book_authors" value="" required />
-					</div>
-					<div>
-						<input type="text" id="board_book_pub" name="board_book_pub" value="" required />
-					</div>
-					<div>
-						<input type="text" id="board_book_img" name="board_book_img" value="" required style="display: none;"/>
-					</div>
-					<div>
-						<input type="text" name="board_tag" value="태그" required  />
-					</div>
-					<div id="meetIdx">
-					<input type="text" name="board_meet_idx" value="${userMeetIdx}" required readonly/>
-					</div>
-				</div>
-				<div id="btns">
-					<input type="button" id="btn_prev" value="이전검색">
-					<input type="button" id="btn_next" value="다음검색">
-				</div>
-				<div>
-					<input type="submit" value="등록" />
-				</div>
-			</form>
+
+
+
+			</div>
 		</div>
-
 	</div>
-<%@include file="../footer.jsp"%>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+	<%@include file="../footer.jsp"%>
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 	<script type="text/javascript">
+	
+	 	
 		var n=0;
 		var msg;
 		$(document).ready(function() {
@@ -132,5 +135,16 @@
 			$('#btns').show();
 			};
 	</script>
+
+	<script>
+	 ClassicEditor
+     .create( document.querySelector( '#editor' ), {
+         // 제거 하고싶은 플러그인 (배열)
+     } )
+     .catch( error => {
+         console.error( error );
+     } );
+    </script>
+
 </body>
 </html>
