@@ -112,7 +112,6 @@ public class UserController {
 		User signInUser = userService.select(userCode);
 		session.removeAttribute("signInUserId");
 		session.setAttribute("signInUserId", signInUser.getUser_nn());
-		
 		return "redirect:/mypage";
 	}
 	
