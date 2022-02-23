@@ -52,7 +52,8 @@ public class HomeController {
 		model.addAttribute("boardList",boardList);
 		List<Meet> meetList = meetService.selectThree();
 		model.addAttribute("meetList",meetList);
-		
+		List<Board> boardList2 = boardService.selectBest();
+		model.addAttribute("boardList2", boardList2);
 		
 		
 		return "home";

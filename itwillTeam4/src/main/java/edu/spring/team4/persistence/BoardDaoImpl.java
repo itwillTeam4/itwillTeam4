@@ -143,4 +143,10 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.update(BOARD_NAMESPACE+".updateLike",params);
 	}
 
+	@Override
+	public List<Board> selectBest() {
+		log.info("selectBest({}) 호출");
+		return sqlSession.selectList(BOARD_NAMESPACE+".selectBest");
+				
+	}
 }

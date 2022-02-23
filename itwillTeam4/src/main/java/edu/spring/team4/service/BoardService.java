@@ -21,4 +21,7 @@ public interface BoardService {
 	List<Board> selectThree();
 	
 	List<Board> selectByUserCode(int userCode);
+	
+	List<Board> selectBest();
+	
 }

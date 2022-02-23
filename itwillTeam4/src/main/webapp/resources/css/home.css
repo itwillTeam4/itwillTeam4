@@ -91,12 +91,12 @@ img {
 
 #wrap2 h3 {
 	position: relative;
-	font-size: 25px;
-	font-weight: 700;
-	float: left;
-	width: 230px;
-	margin-top: 5px;
-	left: -218px;
+    font-size: 25px;
+    font-weight: 700;
+    float: left;
+    width: 230px;
+    margin-top: 5px;
+   	right:121px;
 }
 
 .swiper {
@@ -154,7 +154,6 @@ img {
 	height: 80px;
 	background-color: #f8f8f8;
 	position: relative;
-	top: -18px;
 }
 
 }
@@ -324,12 +323,11 @@ img {
     .wrap4ConTitle {height:37px;}
     .noticeLi{width:520px; height:77px;  margin:0 auto;}
     #noticeLi1{border-bottom : 1px solid #dedede;}
-	.noticeLi:nth-child(3){margin-top: 20px;
+	.noticeLi:nth-child(2){margin-top: 20px;
     border-bottom: none!important;}
     .noticeTitle{font-weight:700; font-size:16px;}
     .wrap4ConCon2 ul{ float:left;}
-    
-    
+        
 #wrap4ConCon { width:582px; height:370px;}
 #wrap4ConCon img {width:304px; height:304px;}
 #eventImg {width:304px; height:304px; border:1px solid black;margin-top: 6%;
@@ -367,4 +365,8 @@ img {
     flex-wrap: wrap;
     align-items: flex-end;
     margin-top:35px;
+}
+.a p{
+	font-size:13px; /*여기부터 바꿔야함 2월 24일 새벽 1시 2분*/
+	
 }
