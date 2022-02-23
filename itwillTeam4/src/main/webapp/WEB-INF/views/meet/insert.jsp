@@ -86,6 +86,9 @@
 				<div>
 					<input type="text" name="meet_host" value="${signInUserCode}" required readonly/>
 				</div>
+				<div>
+					<input type="text" name="meet_member_code" value="${signInUserCode}" required readonly/>
+				</div>
 
 				<div>
 					<input type="text" id="meet_book_title" name="meet_book_title" value="책 제목" required />

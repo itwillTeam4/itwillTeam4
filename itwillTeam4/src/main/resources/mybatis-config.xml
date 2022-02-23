@@ -58,7 +58,7 @@
         <property name="COL_MEET_BOOK_PUB" value="meet_book_pub" />
         <property name="COL_MEET_BOOK_IMG" value="meet_book_img" />
         <property name="COL_MEET_HOST_NAME" value="meet_host_name" />
-        <property name="COL_MEET_USER_CODE" value="meet_user_code" />
+        <property name="COL_MEET_MEMBER_CODE" value="meet_member_code" />
 
 
         <!-- NOTICE_TABLE 테이블 관련 상수들 -->
