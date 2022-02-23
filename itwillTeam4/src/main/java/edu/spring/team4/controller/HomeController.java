@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.domain.Meet;
 import edu.spring.team4.domain.Notice;
 import edu.spring.team4.service.BoardService;
+import edu.spring.team4.service.MeetService;
 import edu.spring.team4.service.NoticeService;
 
 /**
@@ -32,6 +34,9 @@ public class HomeController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private MeetService meetService;
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -45,6 +50,8 @@ public class HomeController {
 		model.addAttribute("noticeList", noticeList);
 		List<Board> boardList = boardService.selectThree();
 		model.addAttribute("boardList",boardList);
+		List<Meet> meetList = meetService.selectThree();
+		model.addAttribute("meetList",meetList);
 		
 		
 		

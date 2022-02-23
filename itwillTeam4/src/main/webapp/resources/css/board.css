@@ -922,9 +922,9 @@ to {
 	border-radius: 25px;
 	border: 1px solid #e6e6e6;
 	background-image: url("../img/greenArrow1.png");
-	background-size: auto;
+	background-size: 10px;
 	background-repeat: no-repeat;
-	background-position: 69%;
+	background-position: 54%;
 }
 
 .searchBtn1 {
@@ -933,10 +933,10 @@ to {
 	border-radius: 25px;
 	border: 1px solid #e6e6e6;
 	background-image: url(../img/greenArrow2.png);
-	background-size: auto;
 	background-repeat: no-repeat;
-	background-position: 43%;
+	background-position: 45%;
 	margin-right:30px;
+	background-size: 10px;
 }
 
 .btns{

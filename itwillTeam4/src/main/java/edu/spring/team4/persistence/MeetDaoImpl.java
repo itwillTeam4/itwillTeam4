@@ -61,5 +61,12 @@ public class MeetDaoImpl implements MeetDao {
 
 		return sqlSession.selectList(MEET_NAMESPACE + ".selectByKeyword", params);
 	}
+	
+	@Override
+	public List<Meet> selectThree() {
+		log.info("MeetDaoImpl.selectThree() 호출");
+		
+		return sqlSession.selectList(MEET_NAMESPACE+".selectThree");
+	}
 
 }
