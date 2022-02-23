@@ -72,7 +72,7 @@
 								<p>${board.board_book_title }</p>
 								<span>${board.board_book_authors } /
 									${board.board_book_pub}
-									</p>
+									</span>
 							</div>
 						</div>
 					</div>
