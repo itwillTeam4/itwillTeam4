@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.Notice;
 import edu.spring.team4.service.BoardService;
+import edu.spring.team4.service.MeetService;
 import edu.spring.team4.service.NoticeService;
 
 /**
@@ -31,6 +32,9 @@ public class HomeController {
 	
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private MeetService meetSerive;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
