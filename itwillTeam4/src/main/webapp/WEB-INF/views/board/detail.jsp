@@ -273,7 +273,8 @@
 					$('#blc1').empty();
 					$('#blc1').text("\u00a0"+cnt);
 					$('#blc2').empty();
-					$('#blc2').text("댓글\u00a0"+cnt);
+					$('#blc2').text("댓글\u00a0"+cnt);\
+					
 				}
 			});
 		}
