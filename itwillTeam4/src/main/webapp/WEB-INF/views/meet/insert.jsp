@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>새 모임 개설</title>
+<title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
@@ -14,15 +14,7 @@
 </head>
 <body>
 	<%@include file="../header.jsp"%>
-	<div class="container-fluid">
-		<header class="jumbotron text-center">
-			<h1>새 모임 개설 페이지</h1>
-		</header>
-
-		<nav>
-			<!-- 메뉴 -->
-		</nav>
-
+	
 		<div>
 			<form method="post">
 				<div>
