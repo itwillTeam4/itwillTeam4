@@ -17,6 +17,7 @@ public class Meet {
 	private String meet_book_pub;
 	private String meet_book_img;
 	private String meet_host_name;
+	private String meet_user_code;
 	
 	public Meet() {}
 
@@ -25,7 +26,7 @@ public class Meet {
 
 	public Meet(int meet_idx, String meet_name, int meet_host, String meet_intro, String meet_theme,
 			int meet_member_num, int meet_on_or_off, String meet_when, String meet_book_title, String meet_book_authors,
-			String meet_book_pub, String meet_book_img, String meet_host_name) {
+			String meet_book_pub, String meet_book_img, String meet_host_name, String meet_user_code) {
 		super();
 		this.meet_idx = meet_idx;
 		this.meet_name = meet_name;
@@ -40,6 +41,7 @@ public class Meet {
 		this.meet_book_pub = meet_book_pub;
 		this.meet_book_img = meet_book_img;
 		this.meet_host_name = meet_host_name;
+		this.meet_user_code = meet_user_code;
 	}
 
 
@@ -225,10 +227,22 @@ public class Meet {
 	}
 
 
+	
+	public String getMeet_user_code() {
+		return meet_user_code;
+	}
+
+
+
+
+	public void setMeet_user_code(String meet_user_code) {
+		this.meet_user_code = meet_user_code;
+	}
 
 
 	@Override
 	public String toString() {
-		return String.format("Meet{meet_idx:%d, meet_name:%s, meet_host:%d, meet_intro:%s, meet_theme:%s, meet_member_num:%d, meet_on_or_off:%d, meet_when:%s, meet_book_title:%d, meet_book_authors:%s, meet_book_pub:%s, meet_book_img:%s}",
-				this.meet_idx, this.meet_name, this.meet_host, this.meet_intro, this.meet_theme, this.meet_member_num, this.meet_on_or_off, this. meet_when, this.meet_book_title, this.meet_book_authors, this.meet_book_pub, this.meet_book_img);
-}}
+		return String.format("Meet{meet_idx:%d, meet_name:%s, meet_host:%d, meet_intro:%s, meet_theme:%s, meet_member_num:%d, meet_on_or_off:%d, meet_when:%s, meet_book_title:%d, meet_book_authors:%s, meet_book_pub:%s, meet_book_img:%s, meet_user_code:%s}",
+				this.meet_idx, this.meet_name, this.meet_host, this.meet_intro, this.meet_theme, this.meet_member_num, this.meet_on_or_off, this. meet_when, this.meet_book_title, this.meet_book_authors, this.meet_book_pub, this.meet_book_img, this.meet_user_code);
+	}
+}
