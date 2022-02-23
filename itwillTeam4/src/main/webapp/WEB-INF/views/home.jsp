@@ -73,7 +73,7 @@
 			<img src="${pageContext.request.contextPath}/resources/img/pick.png"
 				alt="pick">
 		</div>
-		<h3>베스트 독서 모임 후기</h3>
+		<h3>베스트 서평</h3>
 
 
 
@@ -83,23 +83,24 @@
 			<div class="swiper-button-next"></div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-wrapper">
+			
+			
+			<c:forEach begin="0" end="5" step="1" var="board2" items="${boardList2 }">
 				<div class="swiper-slide">
-					<a href="#">
+					<a href="http://localhost:8181/team4/board/detail/${board2.bno }">
 						<div class="a">
 							<div class="a_a">
-								<!--  ${board.board_title}-->
-
+								<p class="text-overflow-line3">${board2.board_content }</p>
 							</div>
 							<div class="a_b">
-								<p>
-								
-								</p>
-								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
+								<p>${board2.board_title }</p>
+								<p>${board2.board_userid }</p>
 							</div>
 						</div>
 					</a>
 				</div>
+				
+				</c:forEach>
 			</div>
 
 			<div class="swiper-pagination"></div>
@@ -130,7 +131,7 @@
 			</ul>
 
 			<div class="more-btn-box">
-				<a href="http://localhost:8181/team4/board/main">
+				<a href="http://localhost:8181/team4/board">
 					<div id="more-btn-box">
 						<span>더보기</span> <img
 							src="${pageContext.request.contextPath}/resources/img/arrow.png"
@@ -159,7 +160,7 @@
 								<div class="info2">
 									<span class="name">${meet.meet_host_name }</span> <span
 										class="meetMember"> ${meet.meet_member_num } 명 참여중</span>
-								</div>	
+								</div>
 								<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
 
 
@@ -195,7 +196,8 @@
 
 			<div id="wrap4Con_1">
 				<div class="wrap4ConTitle">
-					<a href="http://localhost:8181/team4/notice/main"><span>이벤트</span></a>
+					<a
+						href="http://localhost:8181/team4/notice/main?act=%EC%9D%B4%EB%B2%A4%ED%8A%B8"><span>이벤트</span></a>
 					<img
 						src="${pageContext.request.contextPath}/resources/img/greenArrow1.png"
 						alt="garr1" class="greenArrow">
@@ -219,31 +221,35 @@
 
 			<div id="wrap4Con_2">
 				<div class="wrap4ConTitle">
-					<a href="http://localhost:8181/team4/notice/main"><span>공지사항</span></a>
+					<a
+						href="http://localhost:8181/team4/notice/main?act=%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD"><span>공지사항</span></a>
 					<img
 						src="${pageContext.request.contextPath}/resources/img/greenArrow1.png"
 						alt="garr1" class="greenArrow">
 				</div>
 
-				<a href="#"><div class="wrap4ConCon2">
-						<ul>
-							<c:forEach var="notice" items="${noticeList}" begin="0" end="1"
-								step="1">
-								<li class="noticeLi" id="noticeLi1"><a
-									href="http://localhost:8181/team4/notice/detail?notice_idx=${notice.notice_idx }">
-										<p class="text-overflow noticeTitle">${notice.notice_title }</p>
-								</a>
-									<p>
-										<fmt:formatDate value="${notice.notice_reg_date }"
-											pattern="yyyy-MM-dd" />
-									</p></li>
-							</c:forEach>
+				<div class="wrap4ConCon2">
+					<ul>
+						<c:forEach var="notice" items="${noticeList}" begin="0" end="1"
+							step="1">
+
+							<li class="noticeLi" id="noticeLi1">
+								<p class="text-overflow noticeTitle">
+									<a
+										href="http://localhost:8181/team4/notice/detail/${notice.notice_idx }">${notice.notice_title }</a>
+								</p>
+								<p>
+									<fmt:formatDate value="${notice.notice_reg_date }"
+										pattern="yyyy-MM-dd" />
+								</p>
+							</li>
+						</c:forEach>
 
 
-						</ul>
+					</ul>
 
 
-					</div></a>
+				</div>
 
 			</div>
 
@@ -313,11 +319,11 @@
 				scrollTop : posTop
 			});
 		});
-		 window.onload = function() {
-		  setTimeout (function(){
-			  scrollTo(0,0);
-		  },100);
-		 }
+		window.onload = function() {
+			setTimeout(function() {
+				scrollTo(0, 0);
+			}, 100);
+		}
 	</script>
 </body>
 </html>
