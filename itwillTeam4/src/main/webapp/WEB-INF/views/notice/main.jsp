@@ -56,7 +56,7 @@
 				<c:forEach var="Notice" begin="0" end="19" step="1" items="${noticeList}">
 					<ul class="boardList">
 						<li class="boardCategory"><p>${Notice.notice_category}</p></li>
-						<li class="boardTitle"><a href="./detail?notice_idx=${Notice.notice_idx }">${Notice.notice_title }</a></li>
+						<li class="boardTitle"><a href="./detail/${Notice.notice_idx }">${Notice.notice_title }</a></li>
 						<li class="boardRegDate"><fmt:formatDate value="${Notice.notice_reg_date }" pattern="yyyy-MM-dd" /></li>
 					</ul>
 				</c:forEach>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -94,10 +95,11 @@ public class BoardController {
 		return "redirect:/board";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public void detail(int bno, Model model) {
+	@RequestMapping(value = "/detail/{bno}", method = RequestMethod.GET)
+	public String detail(Model model ,@PathVariable(name = "bno") Integer bno) {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
+		return "/board/detail";
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)

@@ -54,7 +54,7 @@
 				<div class="postBox">
 					<c:forEach begin="0" end="9" step="1" var="board" items="${boardList }">
 						<div class="box">
-							<a href="./board/detail?bno=${board.bno }">
+							<a href="./board/detail/${board.bno }">
 								<div class="boxHeader">
 									<div class="bookImg">
 										<img src="${board.board_book_img}" alt="">
