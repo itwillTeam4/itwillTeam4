@@ -89,7 +89,7 @@ public class UserController {
 				session.setAttribute("signInUserCode", signInUser.getUser_code());
 				session.setAttribute("userMeetIndex", signInUser.getUser_meet_idx());
 				model.addAttribute("signInUser", signInUser);
-				return "redirect:/" + url;
+				return "redirect:" + url;
 			} else {
 				return "redirect:/?signin=fail";
 			}
@@ -97,11 +97,14 @@ public class UserController {
 
 			
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
-	public String signOut(HttpSession session) {
+	public String signOut(HttpSession session,
+			@RequestParam(value = "url", required=true)String url) {
 		session.removeAttribute("signInUserId");
 		session.removeAttribute("userAdminCheck");
+		session.removeAttribute("signInUserCode");
+		session.removeAttribute("userMeetIndex");
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:" + url;
 	}
 	
 	@RequestMapping(value = "/userupdate", method = RequestMethod.GET)

@@ -71,15 +71,15 @@
 
 
 
-				<c:if test="${empty signInUserId}">
+				<c:if test="${empty signInUserCode}">
 
 					<li id="login">
 						<!--  <a href="./user/signin">-->로그인
 					</li>
 					
 				</c:if>
-				<c:if test="${not empty signInUserId }">
-					<li id="logout"><a href="http://localhost:8181/team4/user/signout">로그아웃</a></li>
+				<c:if test="${not empty signInUserCode }">
+					<li id="logout"><a href="http://localhost:8181/team4/user/signout?url=${requestScope['javax.servlet.forward.servlet_path']}">로그아웃</a></li>
 					<li id="logout"><a href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
 				</c:if>
 
