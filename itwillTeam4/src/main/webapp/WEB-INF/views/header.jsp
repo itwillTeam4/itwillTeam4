@@ -285,13 +285,21 @@
 			}
 			
 			// 로그인 실패
-			if (location.href == "http://localhost:8181/team4/?signin=fail"){
+			
+			var url = window.location.href;
+			if(url.indexOf("fail") != -1){
+				$(".modalBackground").fadeIn(300);
+				$("#loginModal").fadeIn(300);
+			}
+			
+			
+			/* if (location.href == "http://localhost:8181/team4/?signin=fail"){
 				//if ('${signin}' == false) {
 					$(".modalBackground").fadeIn(300);
 					$("#loginModal").fadeIn(300);
 					alert("로그인 정보를 다시 입력해 주세요.");
 				//}
-			}
+			} */
 			
 		
 		});

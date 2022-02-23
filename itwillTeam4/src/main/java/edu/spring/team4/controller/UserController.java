@@ -91,7 +91,7 @@ public class UserController {
 				model.addAttribute("signInUser", signInUser);
 				return "redirect:" + url;
 			} else {
-				return "redirect:/?signin=fail";
+				return "redirect:" + url + "?signin=fail";
 			}
 	}
 
