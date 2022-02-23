@@ -91,94 +91,9 @@
 
 							</div>
 							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
 								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="#">
-						<div class="a">
-							<div class="a_a">
-								<!--  ${board.board_title}-->
-
-							</div>
-							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
-								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="#">
-						<div class="a">
-							<div class="a_a">
-								<!--  ${board.board_title}-->
-
-							</div>
-							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
-								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="swiper-slide silde-left">
-					<a href="#">
-						<div class="a">
-							<div class="a_a">
-								<!--  ${board.board_title}-->
-
-							</div>
-							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
-								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="swiper-slide silde-left">
-					<a href="#">
-						<div class="a">
-							<div class="a_a">
-								<!--  ${board.board_title}-->
-
-							</div>
-							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
-								<p>
-									<!-- ${board.board_meet_idx} = 모임이름으로? -->
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="swiper-slide silde-left">
-					<a href="#">
-						<div class="a">
-							<div class="a_a">
-								<!--  ${board.board_title}-->
-
-							</div>
-							<div class="a_b">
-								<h5>
-									<!-- ${board.board_userid} -->
-								</h5>
+								
+								</p>
 								<p>
 									<!-- ${board.board_meet_idx} = 모임이름으로? -->
 							</div>
@@ -232,29 +147,29 @@
 				alt="hot" id="wrap3img1">
 
 			<ul>
-			
-				<c:forEach begin="0" end="2" step="1" var="meet" items="${meetList }">
-				<li><a href="">
-						<div class="info">
-							<p class="meetTitle text-overflow note-title">${meet.meet_name }</p>
-							<p class="meetTheme">${meet.meet_theme }</p>
-							<div class="status">
-								<span class="name">${meet.meet_host_name }</span>
-								<p class="meetMember">
-									${meet.meet_member_num }
-									명 참여중
-								</p>
+
+				<c:forEach begin="0" end="2" step="1" var="meet"
+					items="${meetList }">
+					<li><a href="">
+							<div class="info">
+								<div class="info1">
+									<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
+									<span class="meetTheme">${meet.meet_theme }</span>
+								</div>
+								<div class="info2">
+									<span class="name">${meet.meet_host_name }</span> <span
+										class="meetMember"> ${meet.meet_member_num } 명 참여중</span>
+								</div>	
+								<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
+
+
+							</div>
+							<div class="infoImgBox">
+								<img src="${meet.meet_book_img }" alt="com01" class="infoImg">
 							</div>
 
-						</div>
-						<div class="infoImgBox">
-							<img
-								src="${meet.meet_book_img }"
-								alt="com01" class="infoImg">
-						</div>
+					</a></li>
 
-				</a></li>	
-				
 				</c:forEach>
 
 
@@ -398,12 +313,11 @@
 				scrollTop : posTop
 			});
 		});
-
-		/* window.onload = function() {
+		 window.onload = function() {
 		  setTimeout (function(){
 			  scrollTo(0,0);
 		  },100);
-		 }*/
+		 }
 	</script>
 </body>
 </html>

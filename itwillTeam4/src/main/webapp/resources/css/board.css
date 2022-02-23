@@ -152,7 +152,7 @@ img {
 
 .searchTapFree {
 	float: right;
-	width: 235px;
+	width: 250px;
 	top: 100px;
 	position: relative;
 	left: 78px;
@@ -172,13 +172,14 @@ img {
 
 .searchTapFree li {
 	float: left;
-	border-radius: 2px;
+	border-radius: 8px;
 	border: 1px solid #e6e6e6;
 	font-size: 15px;
 	font-weight: 400;
 	padding: 15px;
 	padding-bottom: 6px;
 	padding-top: 6px;
+	margin-left:5px;
 }
 
 .boardList {
@@ -262,10 +263,10 @@ img {
 
 .postBox {
 	display: flex;
-	width: 850px;
-	height: 3594px;
-	flex-wrap: wrap;
-	flex-direction: column;
+    width: 880px;
+    height: 3594px;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .box {

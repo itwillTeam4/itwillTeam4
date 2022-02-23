@@ -189,6 +189,15 @@ img {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+.text-overflow-line2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 #wrap3 { width:100%; height:937px;  font-size:16px; font-family: 'Noto Sans KR', sans-serif;}
 .wrap3Title{font-size:28px; font-weight:700;margin-bottom: 43px; }
@@ -252,22 +261,48 @@ img {
 
 .info{
 	font-family: 'Noto Sans KR', sans-serif;
-	width:389px;
+	width:410px;
 	height:177px;
 	float:left;
-	padding:10px;
-	    padding-left: 40px;
+	padding:20px;
+	    padding-left: 30px;
 	
 }
 
 
-.name {float: left; font-weight:500;}
-.meetMember{left: 30px;
-    position: relative;}
-.meetTitle{font-weight:700; font-size:18px}
-.meetTheme{font-weight:700; color:#007450; font-size:14px;}
+.name {font-weight: 700;
+    color: #007450;
+    font-size: 18px;
+    max-width: 120px;}
+.meetMember{
+    margin-left: 10px;
+    font-size: 14px;
+    max-width: 100px;
+    }
+.meetTitle{font-weight: 700;
+    font-size: 18px;
+    max-width: 200px;
+    margin-top: 0px !important;
+    height: 30px;
+    min-width: 100px;}
+.meetTheme{font-weight: 700;
+    color: #007450;
+    font-size: 12px;
+    position: relative;
+    left: 10px;
+    }
     
-.infoImgBox{width:140px; height:203px; float:left;}
+    .meetIntro{
+	
+    position: relative;
+    width: 350px;
+    font-weight: 400;
+    font-size: 14px;
+    top:5px;
+}
+
+    
+.infoImgBox{width:121px; float:right;}
 
 #wrap3_2 a{width:562px; height:177px;}
     
@@ -309,3 +344,25 @@ img {
     height: 25px !important;
 }
 
+.status{
+	
+	
+    display: block;
+    width: 230px;
+    position: relative;
+}
+
+.info1{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.info2{
+	display:flex;
+	flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top:35px;
+}
