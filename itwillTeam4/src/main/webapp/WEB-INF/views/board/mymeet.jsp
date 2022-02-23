@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>책오 자유로운 서평</title>
+<title>책오</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
@@ -38,72 +38,47 @@
 			</div>
 
 			<div class="right-contentsFree">
-				<div id="right-top-wrapFree">
+				<div id="right-top-wrapReal">
 					<p id="right-contents-titleMymeet">나의 독서 모임 커뮤니티</p>
-					<div class="mymeetWrap">
-						<ul>
+					<div class="meetWrap">
+						<ul class="meetUl">
+
+
 							<li><a href="">
-									<div class="info">
-										<p class="meetTitle text-overflow note-title">테스트제목</p>
-										<p class="meetTheme">테스트테마</p>
-										<div class="status">
-											<span class="name">이름테스트</span>
-											<p class="meetMember">
-												<!-- el -->
-												명 참여중
-											</p>
+									<div class="infoReal">
+										<div class="infoReal1">
+											<span class="meetTitle text-overflow note-title">테스트
+												이름</span> <span class="meetTheme">테스트테마</span>
+
+											<div class="meetETC">
+												<span class="meetOnOff"> #온라인모임 </span> <span
+													class="meetWhen"> #한번만 만나요! </span>
+											</div>
+
+
 										</div>
+										<div class="infoReal2">
+											<span class="name">테스트이름</span> <span class="meetMember">
+												0 명 참여중</span>
+										</div>
+										<span class="meetIntro text-overflow-line2">테스트소개입니다.</span>
+
 
 									</div>
-									<div id="infoImgBox">
+									<div class="infoImgBox">
 										<img
 											src="${pageContext.request.contextPath}/resources/img/com01.png"
 											alt="com01" class="infoImg">
 									</div>
 
 							</a></li>
-							
-							<li><a href="">
-									<div class="info">
-										<p class="meetTitle text-overflow note-title">테스트제목</p>
-										<p class="meetTheme">테스트테마</p>
-										<div class="status">
-											<span class="name">이름테스트</span>
-											<p class="meetMember">
-												<!-- el -->
-												명 참여중
-											</p>
-										</div>
 
-									</div>
-									<div id="infoImgBox">
-										<img
-											src="${pageContext.request.contextPath}/resources/img/com01.png"
-											alt="com01" class="infoImg">
-									</div>
 
-							</a></li>
-							
-							<li><a href="">
-									<div class="info">
-										<p class="meetTitle text-overflow note-title">테스트제목</p>
-										<p class="meetTheme">테스트테마</p>
-										<div class="status">
-											<span class="name">이름테스트</span>
-											<p class="meetMember">
-												<!-- el -->
-												명 참여중
-											</p>
-										</div>
 
-									</div>
-									<div id="infoImgBox">
-										<img
-											src="${pageContext.request.contextPath}/resources/img/com01.png"
-											alt="com01" class="infoImg">
-									</div>
 
-							</a></li>
+
+
+
 
 
 						</ul>
