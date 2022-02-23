@@ -102,15 +102,17 @@ public class BoardController {
 		return "/board/detail";
 	}
 	
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public void update(int bno, Model model) {
+	@RequestMapping(value = "/update/{bno}", method = RequestMethod.GET)
+	public String update(Model model, @PathVariable(name = "bno") Integer bno) {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
+		return "/board/update";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(Board board) {
+	public String update(Board board, @PathVariable(name = "bno") Integer bno) {
 		boardService.update(board);
+		
 		return "redirect:/board";
 	}
 
