@@ -85,7 +85,7 @@
 						<a href="../update/${board.bno}">
 							<button class="btnUpdate">수정</button>
 						</a>
-						<a id="menu-delete" href="./delete?bno=${board.bno}">
+						<a id="menu-delete" href="../delete/${board.bno}">
 							<button class="btnDelete">삭제</button>
 						</a>
 					</c:if>

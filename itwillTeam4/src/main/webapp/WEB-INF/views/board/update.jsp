@@ -109,7 +109,7 @@
 
 				<div class="rightInput">
 
-					<form action="./update" method="post">
+					<form action="../update/${board.bno}" method="post">
 
 						<div style="display: none;">
 							<input type="number" name="bno" value="${board.bno}" readonly>

@@ -109,15 +109,14 @@ public class BoardController {
 		return "/board/update";
 	}
 
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/update/{bno}", method = RequestMethod.POST)
 	public String update(Board board, @PathVariable(name = "bno") Integer bno) {
 		boardService.update(board);
-		
-		return "redirect:/board";
+		return "redirect:/board/detail/{bno}";
 	}
 
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String delete(int bno) {
+	@RequestMapping(value = "/delete/{bno}", method = RequestMethod.GET)
+	public String delete(@PathVariable(name = "bno") Integer bno) {
 		boardService.delete(bno);
 		return "redirect:/board/";
 	}
