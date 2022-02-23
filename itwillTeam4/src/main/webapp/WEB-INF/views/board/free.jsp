@@ -47,6 +47,7 @@
 					</div>
 					<ul class="searchTapFree">
 						<li><a href="?act=free&order=0">최신순</a></li>
+						<li><a href="?act=free&order=3">추천순</a></li>
 						<li><a href="?act=free&order=1">조회수순</a></li>
 						<li><a href="?act=free&order=2">댓글순</a></li>
 					</ul>
