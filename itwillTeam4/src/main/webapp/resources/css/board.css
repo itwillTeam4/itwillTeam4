@@ -751,16 +751,33 @@ to {
 }
 
 .box:nth-child(2) {
-	animation: fadeInUp 1.3s;
-}
-
-.box:nth-child(6) {
 	animation: fadeInUp 1.2s;
 }
-
-.box:nth-child(7) {
+.box:nth-child(3) {
+	animation: fadeInUp 1.3s;
+}
+.box:nth-child(4) {
 	animation: fadeInUp 1.4s;
 }
+.box:nth-child(5) {
+	animation: fadeInUp 1.5s;
+}
+.box:nth-child(6) {
+	animation: fadeInUp 1.6s;
+}
+.box:nth-child(7) {
+	animation: fadeInUp 1.7s;
+}
+.box:nth-child(8) {
+	animation: fadeInUp 1.8s;
+}
+.box:nth-child(9) {
+	animation: fadeInUp 1.9s;
+}
+.box:nth-child(10) {
+	animation: fadeInUp 2.0s;
+}
+
 
 .Mybox:nth-child(1) {
 	animation: fadeInUp 1s !important;
