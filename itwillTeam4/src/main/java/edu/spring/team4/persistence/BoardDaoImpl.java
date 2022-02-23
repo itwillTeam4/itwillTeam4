@@ -121,4 +121,5 @@ public class BoardDaoImpl implements BoardDao {
 		log.info("뭐냐{}",userCode);
 		return sqlSession.selectList(BOARD_NAMESPACE+".selectByUserCode",userCode);
 	}
+
 }

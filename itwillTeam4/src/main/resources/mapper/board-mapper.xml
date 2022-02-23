@@ -96,7 +96,6 @@
 		WHERE ${COL_BNO} = #{bno}
 	</select>
 
-
 	<!-- 홈화면 최근작성 자유로운 서평 출력용 셀렉트 3개 -->
 	<select id="selectThree" resultType="Board">
 
