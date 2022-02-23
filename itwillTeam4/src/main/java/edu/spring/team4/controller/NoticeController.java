@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,12 +66,13 @@ public class NoticeController {
 		return "redirect:/notice/main";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public void detail(int notice_idx, Model model) {
+	@RequestMapping(value = "/detail/{notice_idx}", method = RequestMethod.GET)
+	public String detail(@PathVariable(name="notice_idx")int notice_idx, Model model) {
 		log.info("detail(notice_idx={}) GET 호출", notice_idx);
 
 		Notice notice = noticeService.select(notice_idx);
 		model.addAttribute("notice", notice);
+		return "/notice/detail";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
