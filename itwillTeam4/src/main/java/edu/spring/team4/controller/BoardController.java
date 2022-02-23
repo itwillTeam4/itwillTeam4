@@ -89,6 +89,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Board board) {
+		log.info("있는거야? {}",board);
 		boardService.insert(board);
 		return "redirect:/board";
 	}
@@ -114,13 +115,13 @@ public class BoardController {
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(int bno) {
 		boardService.delete(bno);
-		return "redirect:/board/main";
+		return "redirect:/board/";
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET) 
 	public String search(int type, String keyword, Model model) {
 		List<Board> list = boardService.select(type, keyword);
 		model.addAttribute("boardList", list);
-		return "/board/main";
+		return "/board/";
 	}
 }

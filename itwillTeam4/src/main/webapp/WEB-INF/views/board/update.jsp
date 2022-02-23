@@ -144,18 +144,6 @@
 			$('#btns').show();
 			};
 	</script>
-      	<script>
-      	$(document).ready(function(){
-      		
-      		$('#menu-delete').click(function(event){
-      			event.preventDefault();
-      			var result = confirm('정말 삭제할까요?');
-      			if (result){
-      				location = $(this).attr('href'); 
-      			}
-      		});
-      		
-      	});
-      	</script>
+      
 	</body>
 </html>

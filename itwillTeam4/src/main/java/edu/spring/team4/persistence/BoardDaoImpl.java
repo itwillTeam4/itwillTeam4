@@ -41,6 +41,7 @@ public class BoardDaoImpl implements BoardDao {
 	public int create(Board board) {
 		log.info("boardDaoImpl.create({}) 호출", board);
 
+
 		return sqlSession.insert(BOARD_NAMESPACE + ".create", board);
 	}
 

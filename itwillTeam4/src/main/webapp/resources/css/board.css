@@ -878,6 +878,9 @@ to {
 .ck-dropdown__arrow {
 	display: none !important;
 }
+#cke_1_contents{
+	height:450px !important;
+}
 
 #board_book_title_fake, #board_book_authors_fake, #board_book_pub_fake {
 	width: 176px;
@@ -939,4 +942,44 @@ to {
 	text-align:center;
 	
 	
+}
+
+.board_book_title{
+	
+	display: inline-block;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 3px;
+    padding-left: 10px!important;
+    height: 30px;
+    width: 250px !important;
+    top: 77px;
+    position: relative;
+}
+	
+.btnUpdate{
+	
+	
+    width: 70px;
+    height: 36px;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    float: right;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 10px;
+    margin-right: 86px;
+}
+
+.btnDelete{
+	
+	
+    width: 70px;
+    height: 36px;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    float: right;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 10px;
+    margin-right: 20px;
 }
