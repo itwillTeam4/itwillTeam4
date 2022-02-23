@@ -10,6 +10,15 @@
 		${COL_BNO} DESC
 	</select>
 
+	<select id="selectLike" resultType="String">
+	SELECT ${COL_BOARD_LIKE}
+	FROM ${TABLE_BOARD_TABLE}
+		WHERE ${COL_BNO} = #{bno}
+		ORDER BY
+		${COL_BNO} DESC
+	</select>
+
+
 	<!-- 총 게스글 갯수 출력 -->
 	<select id="countBoard" resultType="Integer">
 		SELECT COUNT(*) FROM
@@ -155,6 +164,15 @@
 		= ${COL_BOARD_VIEW_CNT} + 1
 		WHERE ${COL_BNO} = #{bno}
 	</update>
+
+	<update id="updateLike">
+		UPDATE ${TABLE_BOARD_TABLE}
+		SET ${COL_BOARD_LIKE_CNT} = ${COL_BOARD_LIKE_CNT} + #{increase},
+			${COL_BOARD_LIKE} = #{board_like}
+		WHERE ${COL_BNO} = #{bno}
+	</update>
+
+	
 
 	<!-- 게시글 삭제 -->
 	<delete id="delete">

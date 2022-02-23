@@ -12,6 +12,7 @@ public interface BoardDao {
 	int create(Board board);
 	int update(Board board);
 	int updateViewCnt(int bno);
+	int updateLike(int bno, String liker);
 	int delete(int bno);
 	List<Board> read(int type, String keyword);
 	int updateReplyCnt(int bno, int increase);

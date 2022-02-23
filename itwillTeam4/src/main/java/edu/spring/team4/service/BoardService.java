@@ -12,6 +12,7 @@ public interface BoardService {
 	Board select(int bno);
 	int update(Board board);
 	int delete(int bno);
+	int updateLike(int bno,String liker);
 	List<Board> select(int searchType, String searchKeyword);
 
 	int countBoard(String board_meet_idx);

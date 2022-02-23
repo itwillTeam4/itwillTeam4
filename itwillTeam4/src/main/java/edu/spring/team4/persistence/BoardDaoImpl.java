@@ -122,4 +122,25 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.selectList(BOARD_NAMESPACE+".selectByUserCode",userCode);
 	}
 
+	@Override
+	public int updateLike(int bno, String liker) {
+		String old_like = sqlSession.selectOne(BOARD_NAMESPACE+".selectLike",bno);
+		Map<String, Object> params = new HashMap<>();
+		List<String> list = methodDao.toList(old_like);
+		if(list.contains(liker)) {
+			params.put("increase", -1);
+			list.remove(liker);
+		}else {
+			params.put("increase", 1);
+			list.add(liker);
+		}
+		params.put("bno",bno);
+		if(list.size()==0) {
+			params.put("board_like"," ");
+		}else {
+			params.put("board_like",methodDao.toString(list));
+		}
+		return sqlSession.update(BOARD_NAMESPACE+".updateLike",params);
+	}
+
 }

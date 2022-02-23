@@ -90,18 +90,18 @@ public class BoardController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Board board) {
-		log.info("있는거야? {}",board);
+		log.info("있는거야? {}", board);
 		boardService.insert(board);
 		return "redirect:/board/";
 	}
 
 	@RequestMapping(value = "/detail/{bno}", method = RequestMethod.GET)
-	public String detail(Model model ,@PathVariable(name = "bno") Integer bno) {
+	public String detail(Model model, @PathVariable(name = "bno") Integer bno) {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
 		return "/board/detail";
 	}
-	
+
 	@RequestMapping(value = "/update/{bno}", method = RequestMethod.GET)
 	public String update(Model model, @PathVariable(name = "bno") Integer bno) {
 		Board board = boardService.select(bno);
@@ -115,13 +115,21 @@ public class BoardController {
 		return "redirect:/board/detail/{bno}";
 	}
 
+	@RequestMapping(value = "/updateLike/{bno}", method = RequestMethod.GET)
+	public String updateLike(@PathVariable(name = "bno") Integer bno,
+			@RequestParam(value = "liker", required = false) String liker) {
+		log.info("bno={}",bno);
+		boardService.updateLike(bno, liker);
+		return "redirect:/board/detail/{bno}";
+	}
+
 	@RequestMapping(value = "/delete/{bno}", method = RequestMethod.GET)
 	public String delete(@PathVariable(name = "bno") Integer bno) {
 		boardService.delete(bno);
 		return "redirect:/board/";
 	}
 
-	@RequestMapping(value = "/search", method = RequestMethod.GET) 
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(int type, String keyword, Model model) {
 		List<Board> list = boardService.select(type, keyword);
 		model.addAttribute("boardList", list);

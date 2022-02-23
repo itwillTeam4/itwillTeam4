@@ -71,10 +71,12 @@
 				</div>
 
 				<div class="boxFooter boxFooter2">
+				<a href="../updateLike/${board.bno}?liker=${signInUserCode}">
 					<div class="boxLike boxLike2">
 						<img src="${pageContext.request.contextPath}/resources/img/like.png" alt="like" class="boxLikeImg">
 						<p class="blc">&nbsp;${board.board_like_cnt }</p>
 					</div>
+				</a>
 					<div class="boxReply boxReply2">
 						<img src="${pageContext.request.contextPath}/resources/img/reply.png" alt="reply" class="boxReplyImg">
 						<p id="blc1" class="blc">&nbsp;${board.board_reply_cnt  }</p>
@@ -273,7 +275,7 @@
 					$('#blc1').empty();
 					$('#blc1').text("\u00a0"+cnt);
 					$('#blc2').empty();
-					$('#blc2').text("댓글\u00a0"+cnt);\
+					$('#blc2').text("댓글\u00a0"+cnt);
 					
 				}
 			});
@@ -303,8 +305,8 @@
 			});
 		}
 	});
-	
 		});
+	
 	</script>
 </body>
 </html>

@@ -75,4 +75,9 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.selectByUserCode(userCode);
 	}
 
+	@Override
+	public int updateLike(int bno, String liker) {
+		return boardDao.updateLike(bno, liker);
+	}
+
 }
