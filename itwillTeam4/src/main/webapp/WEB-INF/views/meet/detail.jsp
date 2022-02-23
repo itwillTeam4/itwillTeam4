@@ -53,8 +53,15 @@
 						<label for="meet_on_or_off">모임 온&오프라인 여부</label>
 						<input type="text" id="meet_on_or_off" name="meet_on_or_off" value="${meet.meet_on_or_off}" required readonly autofocus/>
 					</div>
+					<div>
+						<label for="meet_join_num">현재 인원 수</label>
+						<input type="text" id="meet_join_num" name="meet_join_num" value="${meet.meet_join_num}" required readonly autofocus/>
+					</div>
 									
-				</div>
+
+
+
+
 
 			</form>
 		</div>

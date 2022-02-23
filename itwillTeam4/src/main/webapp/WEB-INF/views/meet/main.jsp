@@ -44,6 +44,8 @@
 						<th>제목</th>
 						<th>테마</th>
 						<th>호스트이름</th>
+						<th>최대 인원 수</th>
+						<th>현재 참여인원</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,6 +57,8 @@
                             </td>
 							<td>${meet.meet_theme}</td>
 							<td>${meet.meet_host_name}</td>
+							<td>${meet.meet_member_num }</td>	
+							<td>${meet.meet_join_num}</td>				
 						</tr>
 					</c:forEach>
 				</tbody>
