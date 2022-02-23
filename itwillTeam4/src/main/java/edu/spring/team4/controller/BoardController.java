@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -89,14 +90,16 @@ public class BoardController {
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Board board) {
+		log.info("있는거야? {}",board);
 		boardService.insert(board);
 		return "redirect:/board";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public void detail(int bno, Model model) {
+	@RequestMapping(value = "/detail/{bno}", method = RequestMethod.GET)
+	public String detail(Model model ,@PathVariable(name = "bno") Integer bno) {
 		Board board = boardService.select(bno);
 		model.addAttribute("board", board);
+		return "/board/detail";
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -114,13 +117,13 @@ public class BoardController {
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(int bno) {
 		boardService.delete(bno);
-		return "redirect:/board/main";
+		return "redirect:/board/";
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET) 
 	public String search(int type, String keyword, Model model) {
 		List<Board> list = boardService.select(type, keyword);
 		model.addAttribute("boardList", list);
-		return "/board/main";
+		return "/board/";
 	}
 }

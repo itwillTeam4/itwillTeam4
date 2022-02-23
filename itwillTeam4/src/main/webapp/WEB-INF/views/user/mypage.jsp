@@ -157,7 +157,9 @@
 				initialView : 'dayGridMonth',
 				initialDate : '2022-02-07',
 				selectable : true,
-				editable : true,
+				editable : false,
+				displayEventTime: false,
+				locale: "ko",
 				headerToolbar : {
 					left : 'prev,next today',
 					center : 'title',
@@ -166,12 +168,15 @@
 				eventSources : [ 
 				{
 					googleCalendarId : 'v0f54lctctfjig2rlnl58o07fc@group.calendar.google.com'
+					,color : "#FF99CC"
 				},
 				{
 					googleCalendarId : 'ksqbbdr0r3cubgnfg7mcebujso@group.calendar.google.com'
+					,color : "#FFC200"
 				},
 				{
 					googleCalendarId : '23aspkf41g1su64651c5da532c@group.calendar.google.com'
+					,color : "#020715"
 				},
 				]
 			});

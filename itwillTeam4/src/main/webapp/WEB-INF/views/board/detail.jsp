@@ -72,7 +72,7 @@
 								<p>${board.board_book_title }</p>
 								<span>${board.board_book_authors } /
 									${board.board_book_pub}
-									</p>
+									</span>
 							</div>
 						</div>
 					</div>
@@ -91,6 +91,13 @@
 							alt="reply" class="boxReplyImg">
 						<p class="blc">&nbsp;${board.board_reply_cnt  }</p>
 					</div>
+					
+					<c:if test="${signInUserCode == board.board_usercode}">
+		               <!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
+		               <a href="./update?bno=${board.bno}"><button class="btnUpdate">수정</button></a>
+		               <a id="menu-delete" href="./delete?bno=${board.bno}"><button class="btnDelete">삭제</button></a>
+		            </c:if>
+		            
 				</div>
 
 
@@ -109,10 +116,7 @@
 						value='${signInUserId}' readonly="readonly" />
 					<button class="btn_create">등록</button>
 					<ul>
-		            <c:if test="${signInUserCode == board.board_usercode}">
-		               <!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
-		               <li id="btn_create_reply"><a href="./update?bno=${board.bno}">수정</a></li>
-		            </c:if>
+		            
 		         </ul>
 				</div>
 				
@@ -134,6 +138,19 @@
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
+  	$(document).ready(function(){
+  		
+  		$('#menu-delete').click(function(event){
+  			event.preventDefault();
+  			var result = confirm('정말 삭제할까요?');
+  			if (result){
+  				location = $(this).attr('href'); 
+  				alert('삭제되었습니다.')
+  			}
+  		});
+  		
+  	});
+
 	$(document).ready(function() {
 		var boardNo =${board.bno};
 		var userCode=${signInUserCode};
