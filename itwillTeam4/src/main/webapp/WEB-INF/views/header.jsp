@@ -79,8 +79,9 @@
 					
 				</c:if>
 				<c:if test="${not empty signInUserCode }">
+				<li id="logout"><a href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
 					<li id="logout"><a href="http://localhost:8181/team4/user/signout?url=${requestScope['javax.servlet.forward.servlet_path']}">로그아웃</a></li>
-					<li id="logout"><a href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
+					
 				</c:if>
 
 			</ul>

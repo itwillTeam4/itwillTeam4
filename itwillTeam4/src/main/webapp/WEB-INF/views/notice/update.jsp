@@ -1,93 +1,131 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>team4Notice</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
-		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
-	</head>
-	<body>
-	
+<head>
+<meta charset="UTF-8">
+<title>책오</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/board.css"
+	type="text/css">
+<script
+	src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
+</head>
+<body>
 	<%@include file="../header.jsp"%>
-	
-		<div class="container-fluid">
-			<header>
-				<h1>공지사항 수정 페이지</h1>
-			</header>
-			
-			<nav><!-- TODO:페이지 이동 메뉴 -->
-			<ul>
-				<li><a href="../">홈페이지 메인</a></li>
-				<li><a href="./main">공지사항 메인</a></li>
-				<li><a id="menu-delete" href="./delete?notice_idx=${notice.notice_idx }">삭제</a></li>
-			</ul>
-			
-			</nav>
-		
-		
-				<div>
-					<form action="./update" method="post">
-					<div style="display:none;">
-						<input type="number" name="notice_idx" value="${notice.notice_idx }" readonly/>
-					
-					</div>
-				
-					<div>
-						<label for="notice_title">공지사항 제목</label>
-						<input type="text" id="notice_title" name="notice_title" value="${notice.notice_title}" required autofocus/>
-					</div>
-					<div>
-						<label for="notice_content">공지사항 내용</label>
-						<textarea rows="5" id="notice_content" name="notice_content" 	required >${notice.notice_content }</textarea>
-					</div>
 
-					<div>
-						<select name="notice_category"><!-- TODO: FAQ 라면 FAQ가 선택돼있게 구현해야함 최종으로 어떻게 표현될지는 좀 더 고민 -->
+
+	<div id="contentWrap">
+		<div class="innerWrap">
+
+			<div class="left-gnb">
+				<div class="profile-box">
+					<p>
+						<span>${signInUserId}</span>님
+					</p>
+					<span>환영합니다.</span>
+				</div>
+				<ul class="comMenu">
+					<li><a href="../board/?act=rlt">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="../board/?act=my">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="../board/?act=free">자유로운 서평</a></li>
+					<li><a href="#" class="on">공지사항/이벤트</a></li>
+
+				</ul>
+			</div>
+			<form method="post">
+				<div class="right-contents">
+					<div id="right-top-wrapInsert">
+						<p id="right-contents-titleNotice">공지사항 수정</p>
+
+						<select id="selectCat" name="notice_category" class="noticeSelect">
 							<option value="공지사항">공지사항</option>
 							<option value="이벤트">이벤트</option>
 							<option value="FAQ">FAQ</option>
 						</select>
+
 					</div>
-					<div>
-						<input type="submit" value="수정 완료"/>
+
+
+					<div class="rightInput">
+
+
+
+
+						<div>
+							<input type="text" id="board_title" name="notice_title"
+								class="rightInputTitle" value="${notice.notice_title }" placeholder="제목을 입력해주세요." required
+								autofocus />
+						</div>
+						<div>
+							<textarea name="notice_content" id="board_content"
+								placeholder="내용을 입력해주세요." >${notice.notice_content }</textarea>
+						</div>
+
+
+
+
+
+						<div>
+							<input type="submit" class="btn_create" value="수정" />
+						</div>
+
+
 					</div>
-					
-				</form>
-			</div>
+				</div>
+			</form>
+
+
+
+
+
 		</div>
-		<%@include file="../footer.jsp"%>
-		
-		<script
-			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-			
-		<script>
-		
-			$(document).ready(function(){
-				
-				
-				$("#menu-delete").click(function(event){
-					event.preventDefault(); // 링크를 클릭했을때 기본 동작인 요청 보내기를 하지 않음.
-					
-					var result = confirm("정말 삭제할까요?");
-					
-					if(result){//사용자가 YES를 선택했을 때
-						location = $(this).attr("href");// 원래 이동하려고 했던 요청 주소로 요청 보내기
-						
-					}
-					
-					
-				});
-			});
-			
-		</script>
-		
-	</body>
+
+
+
+	</div>
+
+
+
+
+
+
+	<%@include file="../footer.jsp"%>
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript">
+		CKEDITOR.replace('board_content');
+		var selectOp = "<c:out value='${notice.notice_category}'/>";
+
+		$(document).ready(function() {
+
+			console.log(selectOp);
+			if (selectOp =='공지사항') {
+
+				$("#selectCat").find("option:eq(0)").prop("selected", true);
+
+			} else if (selectOp =='이벤트') {
+
+				$("#selectCat").find("option:eq(1)").prop("selected", true);
+
+			} else {
+
+				$("#selectCat").find("option:eq(2)").prop("selected", true);
+
+			};
+
+		});
+	</script>
+</body>
 </html>

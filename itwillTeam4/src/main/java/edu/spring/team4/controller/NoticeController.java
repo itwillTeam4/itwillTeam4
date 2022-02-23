@@ -71,6 +71,7 @@ public class NoticeController {
 		log.info("detail(notice_idx={}) GET 호출", notice_idx);
 
 		Notice notice = noticeService.select(notice_idx);
+		log.info("왜안떠?({})",notice.getNotice_content());
 		model.addAttribute("notice", notice);
 		return "/notice/detail";
 	}

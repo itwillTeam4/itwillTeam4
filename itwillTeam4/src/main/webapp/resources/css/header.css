@@ -43,7 +43,7 @@ img {
 }
 
 #header {
-	width: 1500px;
+	width: 1480px;
 	height: 110px;
 	margin: 0 auto;
 }
@@ -70,19 +70,19 @@ img {
 	float: right;
 	position: relative;
 	top: -15px;
-	margin-right:8px;
+	margin-right:0px;
 }
 
 #meet {
 	width: 130px;
-	height: 36px;
-	float: left;
-	background-color: #007450;
-	text-align: center;
-	position: relative;
-	margin-left: 530px;
-	color: white;
-	top: -15px;
+    height: 36px;
+    float: right;
+    background-color: #007450;
+    text-align: center;
+    position: relative;
+    margin-left: 30px;
+    color: white;
+    top: -15px;
 }
 
 #meet h2 {

@@ -61,11 +61,7 @@ public class Notice {
 		this.notice_category = notice_category;
 	}
 	
-	 @Override
-	public String toString() {
-		
-		return String.format("Notice{notice_idx:%d, notice_title:%s, notice_content:%s, notice_reg_date:%s, notice_category:%s}", 
-				this.notice_idx,this.notice_title,this.notice_content,this.notice_reg_date.toString(),this.notice_category);
-	}
+
+
 	
 }

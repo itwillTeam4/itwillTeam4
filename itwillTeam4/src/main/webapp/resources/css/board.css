@@ -57,7 +57,7 @@ img {
 	position: relative;
 	float: left;
 	border-right: 1px solid #e6e6e6;
-	padding-top: 50px;
+	padding-top: 39px;
 }
 
 .left-gnbDetail {
@@ -65,7 +65,7 @@ img {
 	height: auto;
 	position: relative;
 	float: left;
-	padding-top: 50px;
+	padding-top: 39px;
 }
 
 .right-contents {
@@ -84,6 +84,12 @@ img {
 }
 
 #right-contents-titleMymeet {
+	font-size: 24px;
+	font-weight: 700;
+	display: block;
+}
+
+#right-contents-titleNotice {
 	font-size: 24px;
 	font-weight: 700;
 	display: block;
@@ -141,7 +147,7 @@ img {
 
 .searchTap {
 	float: right;
-	width: 221px;
+	width: 236px;
 }
 
 .searchTapFree {
@@ -153,14 +159,15 @@ img {
 }
 
 .searchTap li {
-	float: left;
-	border-radius: 2px;
-	border: 1px solid #e6e6e6;
-	font-size: 15px;
-	font-weight: 400;
-	padding: 15px;
-	padding-bottom: 6px;
-	padding-top: 6px;
+	    float: left;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 15px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    margin-left: 5px;
 }
 
 .searchTapFree li {
@@ -217,11 +224,11 @@ img {
 
 .left-gnbFree {
 	width: 257px;
-	height: 4110px;
+	height: 100%;
 	position: relative;
 	float: left;
 	border-right: 1px solid #e6e6e6;
-	padding-top: 50px;
+	padding-top: 39px;
 }
 
 .right-contentsFree {
@@ -427,14 +434,27 @@ img {
 	background-image: url("../img/detail.png");
 	background-size: auto;
 	background-repeat: no-repeat;
-	padding-top: 80px;
+	padding-top: 55px;
 }
+
+.detailTopNotice {
+	width: 936px;
+	height: 208px;
+	background-image: url("../img/detail.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	padding-top: 55px;
+}
+
 
 .detailTopWrap {
 	margin-left: 70px;
 }
 
 .detailTop p {
+	color: white;
+}
+.detailTopNotice p {
 	color: white;
 }
 
@@ -473,6 +493,7 @@ img {
 	padding-bottom: 50px;
 	border-bottom: 1px solid #e6e6e6;
 	width: 936px;
+	min-height:700px;
 }
 
 .detailContent {
@@ -627,6 +648,8 @@ img {
 	float: right;
 	border: none !important;
 }
+
+
 
 #btn_sort_like, #btn_sort_reg {
 	width: 59px !important;
@@ -982,4 +1005,58 @@ to {
     font-size: 15px;
     line-height: 10px;
     margin-right: 20px;
+}
+
+
+.btnUpdateNotice{
+	
+	
+    width: 70px;
+    height: 36px;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    float: left;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 10px;
+    margin-left: 30px;
+    margin-top:30px;
+}
+
+.btnDeleteNotice{
+	
+	
+    width: 70px;
+    height: 36px;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    float: left;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 10px;
+    margin-left: 20px;
+    margin-top:30px;
+}
+
+
+.noticeDetailBottom{
+	display: block;
+    width: 100%;
+    min-height: 200px;
+}
+
+.noticeSelect{
+	
+	border-radius:10px;
+	border:1px solid #e6e6e6;
+	font-size:14px;
+	font-weight:400;
+	padding-left:4px;
+	
+}
+
+.noticeSelect:focus{
+	
+	border:1px solid skyblue;
+		
 }

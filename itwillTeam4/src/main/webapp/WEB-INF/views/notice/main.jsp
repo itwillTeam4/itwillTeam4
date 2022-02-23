@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>책오 공지사항 메인</title>
+<title>책오</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link href="${pageContext.request.contextPath}/resources/css/board.css" rel="stylesheet" type="text/css" />
