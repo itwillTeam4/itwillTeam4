@@ -64,7 +64,7 @@
 
 				<c:forEach begin="0" end="5" step="1" var="board" items="${boardList }">
 					<div class="box Mybox">
-						<a href="http://localhost:8181/team4/board/detail?bno=${board.bno }">
+						<a href="http://localhost:8181/team4/board/detail/${board.bno }">
 							<div class="boxHeader">
 								<div class="bookImg">
 									<img src="${board.board_book_img}" alt="">
