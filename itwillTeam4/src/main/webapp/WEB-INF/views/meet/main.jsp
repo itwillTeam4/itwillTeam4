@@ -50,7 +50,9 @@
 					<c:forEach var="meet" items="${meetList}">
 						<tr>
 						    <td>${meet.meet_idx}</td>
-							<td>${meet.meet_name}</td>
+							<td>
+								<a href="./detail?meet_idx=${meet.meet_idx}">${meet.meet_name}</a>
+                            </td>
 							<td>${meet.meet_theme}</td>
 							<td>${meet.meet_host_name}</td>
 						</tr>
