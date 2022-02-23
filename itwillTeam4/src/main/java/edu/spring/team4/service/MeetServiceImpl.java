@@ -69,4 +69,10 @@ public class MeetServiceImpl implements MeetService {
 		
 		return meetDao.read(searchType, searchKeyword);
 	}
+	
+	@Override
+	public List<Meet> selectThree() {
+		log.info("selectThree() 호출");
+		return meetDao.selectThree();
+	}
 }

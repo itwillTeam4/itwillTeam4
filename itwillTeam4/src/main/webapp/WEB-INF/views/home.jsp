@@ -17,7 +17,8 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -196,9 +197,11 @@
 
 			<ul>
 
-				<c:forEach var="board" items="${boardList }" begin="0" end="2" step="1">
+				<c:forEach var="board" items="${boardList }" begin="0" end="2"
+					step="1">
 
-					<li><a href="http://localhost:8181/team4/board/detail?bno=${board.bno }">
+					<li><a
+						href="http://localhost:8181/team4/board/detail?bno=${board.bno }">
 							<div>
 								<p class="text-overflow note-title">${board.board_title }</p>
 								<p class="text-overflow-line3 note-content">${board.board_content }</p>
@@ -229,66 +232,30 @@
 				alt="hot" id="wrap3img1">
 
 			<ul>
+			
+				<c:forEach begin="0" end="2" step="1" var="meet" items="${meetList }">
 				<li><a href="">
 						<div class="info">
-							<p class="meetTitle text-overflow note-title">테스트제목</p>
-							<p class="meetTheme">테스트테마</p>
+							<p class="meetTitle text-overflow note-title">${meet.meet_name }</p>
+							<p class="meetTheme">${meet.meet_theme }</p>
 							<div class="status">
-								<span class="name">이름테스트</span>
+								<span class="name">${meet.meet_host_name }</span>
 								<p class="meetMember">
-									<!-- el -->
+									${meet.meet_member_num }
 									명 참여중
 								</p>
 							</div>
 
 						</div>
-						<div id="infoImgBox">
+						<div class="infoImgBox">
 							<img
-								src="${pageContext.request.contextPath}/resources/img/com01.png"
+								src="${meet.meet_book_img }"
 								alt="com01" class="infoImg">
 						</div>
 
-				</a></li>
-				<li><a href="">
-						<div class="info">
-							<p class="meetTitle text-overflow note-title">테스트제목</p>
-							<p class="meetTheme">테스트테마</p>
-							<div class="status">
-								<span class="name">이름테스트</span>
-								<p class="meetMember">
-									<!-- el -->
-									명 참여중
-								</p>
-							</div>
-
-						</div>
-						<div id="infoImgBox">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/com02.png"
-								alt="com01" class="infoImg">
-						</div>
-
-				</a></li>
-				<li><a href="">
-						<div class="info">
-							<p class="meetTitle text-overflow note-title">테스트제목</p>
-							<p class="meetTheme">테스트테마</p>
-							<div class="status">
-								<span class="name">이름테스트</span>
-								<p class="meetMember">
-									<!-- el -->
-									명 참여중
-								</p>
-							</div>
-
-						</div>
-						<div id="infoImgBox">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/com01.png"
-								alt="com01" class="infoImg">
-						</div>
-
-				</a></li>
+				</a></li>	
+				
+				</c:forEach>
 
 
 			</ul>

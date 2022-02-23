@@ -12,5 +12,7 @@ public interface MeetService {
 	int update(Meet meet);
 	int delete(int meet_idx);
 	List<Meet> select(int searchType, String searchKeyword);
+	
+	List<Meet> selectThree();
 
 }
