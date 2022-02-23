@@ -140,9 +140,8 @@
   			}
   		});
   		
-  	});
 
-	$(document).ready(function() {
+
 		var cnt=${board.board_reply_cnt};
 		var boardNo =${board.bno};
 		var userCode=${signInUserCode};
