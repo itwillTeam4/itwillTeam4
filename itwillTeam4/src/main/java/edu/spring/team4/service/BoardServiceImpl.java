@@ -86,4 +86,9 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Override
+	public Board selectNew(String board_title) {
+		return boardDao.selectNew(board_title);
+	}
+
 }

@@ -149,4 +149,9 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.selectList(BOARD_NAMESPACE+".selectBest");
 				
 	}
+
+	@Override
+	public Board selectNew(String board_title) {
+		return sqlSession.selectOne(BOARD_NAMESPACE+".selectNew", board_title);
+	}
 }

@@ -92,7 +92,9 @@ public class BoardController {
 	public String insert(Board board) {
 		log.info("있는거야? {}", board);
 		boardService.insert(board);
-		return "redirect:/board/";
+		board = boardService.selectNew(board.getBoard_title());
+		int bno = board.getBno();
+		return "redirect:/board/detail/" + bno;
 	}
 
 	@RequestMapping(value = "/detail/{bno}", method = RequestMethod.GET)

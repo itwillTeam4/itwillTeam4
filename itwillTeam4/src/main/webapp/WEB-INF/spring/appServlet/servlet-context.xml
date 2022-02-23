@@ -30,6 +30,8 @@
  	<interceptors>
  		<interceptor>
  			<mapping path="/board/insert"/>
+ 			<mapping path="/board/mymeet"/>
+ 			<mapping path="/board/realtime"/>
  			<beans:ref bean="authInterceptor"/>
  		</interceptor>
  	</interceptors>

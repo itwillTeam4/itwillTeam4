@@ -9,6 +9,7 @@ public interface BoardDao {
 	
 	public List<Board> read();
 	Board read (int bno);
+	Board selectNew(String board_title);
 	int create(Board board);
 	int update(Board board);
 	int updateViewCnt(int bno);
