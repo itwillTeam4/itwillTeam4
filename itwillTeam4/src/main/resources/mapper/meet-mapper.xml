@@ -33,7 +33,7 @@
 	
     <select id="selectByMemberCode" resultType="Meet">
     SELECT * FROM ${TABLE_MEET_TABLE} 
-    WHERE ${COL_MEMBER_CODE} like #{member_code}
+    WHERE ${COL_MEET_MEMBER_CODE} like #{member_code}
     </select>
 	
 	
