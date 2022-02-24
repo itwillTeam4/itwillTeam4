@@ -7,6 +7,14 @@
 	ORDER BY ${COL_MEET_IDX} DESC
 	</select> 
 	
+	<select id="selectLike" resultType="String">
+	SELECT ${COL_MEET_MEMBER_CODE}
+	FROM ${TABLE_MEET_TABLE}
+		WHERE ${COL_MEET_IDX} = #{meet_idx}
+		ORDER BY
+		${COL_MEET_IDX} DESC
+	</select>
+	
 	<select id="selectOneMEET_IDX" resultType="Meet">
 	SELECT * FROM ${TABLE_MEET_TABLE}
 	WHERE ${COL_MEET_IDX} = #{meet_idx}
@@ -52,6 +60,13 @@
 	DELETE FROM ${TABLE_MEET_TABLE}
 	WHERE ${COL_MEET_IDX} = #{meet_idx}
 	</delete>
+	
+	<update id="updateLike">
+		UPDATE ${TABLE_MEET_TABLE}
+		SET ${COL_MEET_JOIN_NUM} = ${COL_MEET_JOIN_NUM} + #{increase},
+			${COL_MEET_MEMBER_CODE} = #{meet_member_code}
+		WHERE ${COL_MEET_IDX} = #{meet_idx}
+	</update>
 	
 	<!--  키워드 검색: (1) 제목, (2) 테마, (3) 호스트 아이디 -->
 	<!-- 동적 SQL -->

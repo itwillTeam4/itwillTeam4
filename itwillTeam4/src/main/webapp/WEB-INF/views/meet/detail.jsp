@@ -162,9 +162,12 @@
 
 				</div>
 
-				<div class="rightApply">
 
-					<h2>모임신청하기</h2>
+				<div class="rightApply">
+					<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">
+						<h2>모임신청하기</h2>
+					</a>
+					
 				</div>
 
 			</div>
