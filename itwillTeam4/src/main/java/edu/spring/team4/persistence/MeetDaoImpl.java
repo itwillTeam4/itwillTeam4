@@ -19,7 +19,8 @@ public class MeetDaoImpl implements MeetDao {
 
 	@Autowired
 	private SqlSession sqlSession;
-
+	@Autowired
+	private MethodDao methodDao;
 	@Override
 	public List<Meet> read() {
 		log.info("meetDaoImpl.read() 호출");
@@ -74,5 +75,25 @@ public class MeetDaoImpl implements MeetDao {
 		log.info("MeetDaoImpl.selectByHost() 호출");
 		return sqlSession.selectList(MEET_NAMESPACE+".selectByHost",host);
 	}
-
+	@Override
+	public int updateLike(int meet_idx, String joiner) {
+		String old_member = sqlSession.selectOne(MEET_NAMESPACE+".selectLike",meet_idx);
+		Map<String, Object> params = new HashMap<>();
+		List<String> list = methodDao.toList(old_member);
+		log.info("여기봐라ㅏ라라ㅏㅏ{}",list);
+		if(list.contains(joiner)) {
+			params.put("increase", -1);
+			list.remove(joiner);
+		}else {
+			params.put("increase", 1);
+			list.add(joiner);
+		}
+		params.put("meet_idx",meet_idx);
+		if(list.size()==0) {
+			params.put("meet_member_code"," ");
+		}else {
+			params.put("meet_member_code",methodDao.toString(list));
+		}
+		return sqlSession.update(MEET_NAMESPACE+".updateLike",params);
+	}
 }

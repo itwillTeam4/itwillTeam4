@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,9 +47,7 @@ public class MeetController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(int meet_idx, Model model) {
 		Meet meet = meetService.select(meet_idx);
-		List<Meet> meetlist = meetService.selectByHost(meet.getMeet_host());
 		model.addAttribute("meet", meet);
-		model.addAttribute("meetlist", meetlist);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -67,6 +66,14 @@ public class MeetController {
 	public String delete(int meet_idx) {
 		meetService.delete(meet_idx);
 		return "redirect:/meet/main";
+	}
+	
+	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
+	public String updateLike(@PathVariable(name = "meet_idx") Integer meet_idx,
+			@RequestParam(value = "joiner", required = false) String joiner) {
+		log.info("meet_idx={},joiner={}",meet_idx,joiner);
+		meetService.updateLike(meet_idx, joiner);
+		return "redirect:/meet/detail?meet_idx={meet_idx}";
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)

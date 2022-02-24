@@ -87,4 +87,6 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<Notice> selectTwo() {
 		return noticeDao.selectTwo();
 	}
+	
+
 }

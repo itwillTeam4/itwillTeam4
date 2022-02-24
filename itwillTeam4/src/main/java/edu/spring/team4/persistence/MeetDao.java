@@ -15,4 +15,5 @@ public interface MeetDao {
 	int delete(int meet_idx);
 	List<Meet> read(int type, String keyword);
 	List<Meet> selectThree();
+	int updateLike(int meet_idx, String joiner);
 }
