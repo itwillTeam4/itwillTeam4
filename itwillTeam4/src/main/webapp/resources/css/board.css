@@ -220,7 +220,7 @@ img {
 
 .innerWrapFree {
 	width: 1194px;
-	height: 4065px;
+	height: 4100px;
 	margin: -20px auto;
 }
 
@@ -235,7 +235,6 @@ img {
 
 .right-contentsFree {
 	width: 918px;
-	height: 4065px;
 	position: relative;
 	float: right;
 	padding: 50px;
@@ -1111,6 +1110,14 @@ to {
 	margin-top: 40px;
 }
 
+.meetThemeReal {
+	font-weight: 700;
+	color: #007450;
+	font-size: 12px;
+	position: relative;
+	left: 10px;
+}
+
 .meetIntro {
 	position: relative;
 	width: 350px;
@@ -1137,6 +1144,8 @@ to {
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
+	margin-top:20px;
+	
 }
 
 .infoReal2 {
