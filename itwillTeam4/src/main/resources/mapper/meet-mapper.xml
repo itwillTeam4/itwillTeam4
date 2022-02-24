@@ -18,6 +18,12 @@
     WHERE ${COL_MEET_IDX} = #{meet_idx}
     </select>
 	
+    <select id="selectByHost" resultType="Meet">
+    SELECT * FROM ${TABLE_MEET_TABLE} 
+    WHERE ${COL_MEET_HOST} = #{host}
+    </select>
+	
+	
 	<select id="selectThree" resultType="Meet">
 	
 	

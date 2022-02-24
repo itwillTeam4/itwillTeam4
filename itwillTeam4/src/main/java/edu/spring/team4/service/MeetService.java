@@ -7,12 +7,15 @@ import edu.spring.team4.domain.Meet;
 public interface MeetService {
 	
 	List<Meet> select();
+	List<Meet> selectByHost(int host);
+
+	
 	int insert(Meet meet);
 	Meet select(int meet_idx);
 	int update(Meet meet);
 	int delete(int meet_idx);
-	List<Meet> select(int searchType, String searchKeyword);
 	
+	List<Meet> select(int searchType, String searchKeyword);
 	List<Meet> selectThree();
 
 }

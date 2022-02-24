@@ -47,7 +47,7 @@
 						<th>최대 인원 수</th>
 						<th>현재 참여인원</th>
 					</tr>
-				</thead>
+				</theads>
 				<tbody>
 					<c:forEach var="meet" items="${meetList}">
 						<tr>

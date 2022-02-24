@@ -69,4 +69,10 @@ public class MeetDaoImpl implements MeetDao {
 		return sqlSession.selectList(MEET_NAMESPACE+".selectThree");
 	}
 
+	@Override
+	public List<Meet> selectByHost(int host) {
+		log.info("MeetDaoImpl.selectByHost() 호출");
+		return sqlSession.selectList(MEET_NAMESPACE+".selectByHost",host);
+	}
+
 }

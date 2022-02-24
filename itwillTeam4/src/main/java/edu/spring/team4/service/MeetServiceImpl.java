@@ -75,4 +75,9 @@ public class MeetServiceImpl implements MeetService {
 		log.info("selectThree() 호출");
 		return meetDao.selectThree();
 	}
+
+	@Override
+	public List<Meet> selectByHost(int host) {
+		return meetDao.selectByHost(host);
+	}
 }
