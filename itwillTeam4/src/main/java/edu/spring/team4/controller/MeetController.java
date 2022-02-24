@@ -40,7 +40,7 @@ public class MeetController {
 	public String insert(Meet meet) {
 		meetService.insert(meet);
 
-		return "redirect:/meet/main";
+		return "redirect:/board?act=rlt";
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
