@@ -1,7 +1,5 @@
 package edu.spring.team4.persistence;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
