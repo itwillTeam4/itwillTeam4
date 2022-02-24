@@ -39,7 +39,15 @@
 
 			<div class="right-contentsFree">
 				<div id="right-top-wrapReal">
-					<p id="right-contents-titleMymeet">실시간 독서 모임 커뮤니티</p>
+					<div style="display: flex; justify-content: space-between;">
+						<p id="right-contents-titleMymeet">실시간 독서 모임 커뮤니티</p>
+						<div id="meetApplyImg">
+							<a href="http://localhost:8181/team4/meet/insert"> <img
+								src="${pageContext.request.contextPath}/resources/img/meet.png"
+								alt="meet">
+							</a>
+						</div>
+					</div>
 					<div class="meetWrap">
 						<ul class="meetUl">
 
@@ -48,33 +56,33 @@
 								<li><a href="">
 										<div class="infoReal">
 											<div class="infoReal1">
-												<span class="meetTitle text-overflow note-title">${meet.meet_name }</span> <span class="meetTheme">${meet.meet_theme }</span>
+												<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
+												<span class="meetTheme">${meet.meet_theme }</span>
 												<div class="meetETC">
-												
-												<c:if test="${meet.meet_on_or_off == 1}">
-													<span class="meetOnOff"> #온라인모임 </span>
-												</c:if>
-												
-												
-												<c:if test="${meet.meet_on_or_off == 2}">
-													<span class="meetOnOff"> #오프라인모임 </span>
-												</c:if>
-													
+
+													<c:if test="${meet.meet_on_or_off == 1}">
+														<span class="meetOnOff"> #온라인모임 </span>
+													</c:if>
+
+
+													<c:if test="${meet.meet_on_or_off == 2}">
+														<span class="meetOnOff"> #오프라인모임 </span>
+													</c:if>
+
 												</div>
 
 											</div>
 											<div class="infoReal2">
-												<span class="name">${meet.meet_host_name }</span> <span class="meetMember">
-													${meet.meet_join_num } 명 참여중</span>
+												<span class="name">${meet.meet_host_name }</span> <span
+													class="meetMember"> ${meet.meet_join_num } 명 참여중</span>
 											</div>
 											<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
 
 
 										</div>
 										<div class="infoImgBoxReal">
-											<img 
-												src="${meet.meet_book_img }"
-												alt="bookimg" class="infoImg">
+											<img src="${meet.meet_book_img }" alt="bookimg"
+												class="infoImg">
 										</div>
 
 								</a></li>
