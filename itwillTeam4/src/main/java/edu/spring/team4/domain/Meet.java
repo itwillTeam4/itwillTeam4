@@ -24,10 +24,12 @@ public class Meet {
 
 
 
-
+	
+	
 	public Meet(int meet_idx, String meet_name, int meet_host, String meet_intro, String meet_theme,
 			int meet_member_num, int meet_on_or_off, String meet_when, String meet_book_title, String meet_book_authors,
-			String meet_book_pub, String meet_book_img, String meet_host_name, String meet_member_code, int meet_join_num) {
+			String meet_book_pub, String meet_book_img, String meet_host_name, String meet_member_code,
+			int meet_join_num) {
 		super();
 		this.meet_idx = meet_idx;
 		this.meet_name = meet_name;
@@ -49,9 +51,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_idx() {
 		return meet_idx;
 	}
+
 
 
 
@@ -63,9 +67,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_name() {
 		return meet_name;
 	}
+
 
 
 
@@ -77,9 +83,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_host() {
 		return meet_host;
 	}
+
 
 
 
@@ -91,9 +99,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_intro() {
 		return meet_intro;
 	}
+
 
 
 
@@ -105,9 +115,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_theme() {
 		return meet_theme;
 	}
+
 
 
 
@@ -119,9 +131,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_member_num() {
 		return meet_member_num;
 	}
+
 
 
 
@@ -133,9 +147,11 @@ public class Meet {
 
 
 
+
 	public int getMeet_on_or_off() {
 		return meet_on_or_off;
 	}
+
 
 
 
@@ -147,9 +163,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_when() {
 		return meet_when;
 	}
+
 
 
 
@@ -161,9 +179,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_book_title() {
 		return meet_book_title;
 	}
+
 
 
 
@@ -175,9 +195,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_book_authors() {
 		return meet_book_authors;
 	}
+
 
 
 
@@ -189,9 +211,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_book_pub() {
 		return meet_book_pub;
 	}
+
 
 
 
@@ -203,9 +227,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_book_img() {
 		return meet_book_img;
 	}
+
 
 
 
@@ -217,9 +243,11 @@ public class Meet {
 
 
 
+
 	public String getMeet_host_name() {
 		return meet_host_name;
 	}
+
 
 
 
@@ -229,28 +257,41 @@ public class Meet {
 	}
 
 
-	
+
+
+
 	public String getMeet_member_code() {
 		return meet_member_code;
 	}
+
+
+
 
 
 	public void setMeet_member_code(String meet_member_code) {
 		this.meet_member_code = meet_member_code;
 	}
 
-	
-	
-	public int getmeet_join_num() {
+
+
+
+
+	public int getMeet_join_num() {
 		return meet_join_num;
 	}
 
 
-	public void setmeet_join_num(int meet_join_num) {
+
+
+
+	public void setMeet_join_num(int meet_join_num) {
 		this.meet_join_num = meet_join_num;
 	}
-	
-	
+
+
+
+
+
 	@Override
 	public String toString() {
 		return String.format("Meet{meet_idx:%d, meet_name:%s, meet_host:%d, meet_intro:%s, meet_theme:%s, meet_member_num:%d, meet_on_or_off:%d, meet_when:%s, meet_book_title:%d, meet_book_authors:%s, meet_book_pub:%s, meet_book_img:%s, meet_member_code:%s, meet_join_num:%d}",

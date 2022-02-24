@@ -57,7 +57,7 @@
 				</div>
 				
 				<div class="boxFooter boxFooter2">
-					<a href="./updateLike/${meet.meet_idx}?Joiner=${signInUserCode}">
+					<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">
 						<div class="boxLike boxLike2">
 							<img src="${pageContext.request.contextPath}/resources/img/like.png" alt="like" class="boxLikeImg">
 							<p class="mjm">&nbsp;${meet.meet_join_num }</p>

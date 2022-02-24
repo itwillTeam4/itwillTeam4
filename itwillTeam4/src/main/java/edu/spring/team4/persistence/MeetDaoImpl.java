@@ -77,6 +77,7 @@ public class MeetDaoImpl implements MeetDao {
 		String old_member = sqlSession.selectOne(MEET_NAMESPACE+".selectLike",meet_idx);
 		Map<String, Object> params = new HashMap<>();
 		List<String> list = methodDao.toList(old_member);
+		log.info("여기봐라ㅏ라라ㅏㅏ{}",list);
 		if(list.contains(joiner)) {
 			params.put("increase", -1);
 			list.remove(joiner);

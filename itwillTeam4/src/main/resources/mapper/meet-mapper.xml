@@ -13,7 +13,7 @@
 	</select> 
 	
 	<select id="selectLike" resultType="String">
-	SELECT ${COL_MEET_USER_CODE}
+	SELECT ${COL_MEET_MEMBER_CODE}
 	FROM ${TABLE_MEET_TABLE}
 		WHERE ${COL_MEET_IDX} = #{meet_idx}
 		ORDER BY

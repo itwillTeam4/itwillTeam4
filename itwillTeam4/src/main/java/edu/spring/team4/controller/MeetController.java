@@ -71,7 +71,7 @@ public class MeetController {
 	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
 	public String updateLike(@PathVariable(name = "meet_idx") Integer meet_idx,
 			@RequestParam(value = "joiner", required = false) String joiner) {
-		log.info("meet_idx={}",meet_idx);
+		log.info("meet_idx={},joiner={}",meet_idx,joiner);
 		meetService.updateLike(meet_idx, joiner);
 		return "redirect:/meet/detail/{meet_idx}";
 	}
