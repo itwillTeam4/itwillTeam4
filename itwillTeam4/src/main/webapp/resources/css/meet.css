@@ -362,12 +362,15 @@ img {
 
 
 .ehofk {	
-	width: 562px;
-	height: 177px;
-	box-shadow: 10px 15px 15px #dbdbdb;
-	margin-bottom: 34px;
+	width: 562px !important;
+	height: 177px !important;
+	box-shadow: 0px 8px 8px #dbdbdb;
 	border: 1px solid #dedede;
+	margin-right:12px;
+	text-align:left;
+	
 }
+
 
 .rightInfo span {
 	font-weight: 700;
@@ -376,9 +379,11 @@ img {
 }
 
 .infoImgBoxDetail{
-	
-	width: 121px;
+width: 121px;
     float: right;
+    left: 15px;
+    position: relative;
+    top:1px;
 }
 
 .meetThemeDetail{
@@ -388,4 +393,18 @@ img {
     font-size: 12px;
     position: relative;
     left: 10px;
+}
+.swiper-wrapper {
+	width: 1230px !important;
+}
+
+.swiper{
+	width:665px!important;
+}
+.mySwiper2{
+	margin-left:0px!important;
+}
+
+.myPrev{
+	right:20px!important;
 }

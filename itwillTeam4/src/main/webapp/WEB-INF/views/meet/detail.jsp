@@ -9,22 +9,22 @@
 <title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="${pageContext.request.contextPath}/resources/css/home.css"
+	rel="stylesheet" type="text/css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/board.css"
-	type="text/css">
+
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/meet.css"
 	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/home.css"
-	type="text/css">
 
-<script
-	src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
+
 
 </head>
 <body>
@@ -131,93 +131,113 @@
 							<span class="meetOnOffDetail2"> 오프라인 </span>
 						</c:if>
 					</div>
-					
-					<div class="detailForms" >
+
+
+					<div class="detailForms">
 						<h3>호스트의 다른 모임</h3>
-						<ul>
-							<c:forEach begin="0" end="9" step="1" var="host_meet"
-								items="${meetlist }">
-								<li class="ehofk"><a
-									href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
-										<div class="info">
-											<div class="info1">
-												<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
-												<span class="meetThemeDetail">${host_meet.meet_theme }</span>
-											</div>
-											<div class="info2">
-												<span class="name">${host_meet.meet_host_name }</span> <span
-													class="meetMember"> ${host_meet.meet_member_num } 명
-													참여중</span>
-											</div>
-											<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
 
 
-										</div>
-										<div class="infoImgBoxDetail ">
-											<img src="${host_meet.meet_book_img }" alt="com01"
-												class="infoImg">
-										</div>
-
-								</a></li>
-
-							</c:forEach>
-						</ul>
+						<div class="swiper mySwiper2">
 
 
 
+							<ul class="swiper-wrapper wpqkf">
+								<c:forEach begin="0" end="9" step="1" var="host_meet"
+										items="${meetlist }">
+										<li class="ehofk swiper-slide"><a
+											href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
+												<div class="info">
+													<div class="info1">
+														<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
+														<span class="meetThemeDetail">${host_meet.meet_theme }</span>
+													</div>
+													<div class="info2">
+														<span class="name">${host_meet.meet_host_name }</span> <span
+															class="meetMember"> ${host_meet.meet_member_num }
+															명 참여중</span>
+													</div>
+													<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
+
+
+												</div>
+												<div class="infoImgBoxDetail ">
+													<img src="${host_meet.meet_book_img }" alt="com01"
+														class="infoImg">
+												</div>
+
+										</a></li>
+
+									</c:forEach>
+							</ul>
+							<div class="swiper-pagination"></div>
+
+
+
+						</div>
 					</div>
 				</div>
+
+				
 			</div>
 
-			<div class="rightDetail">
+		<div class="rightDetail">
 
-				<div class="rightInfo">
-					<div>
-						<p>호스트</p>
-						<span>${meet.meet_host_name }</span>
-					</div>
-					<div>
-						<p>함께 읽을 책</p>
-						<span class="text-overflow">${meet.meet_book_title }</span>
+					<div class="rightInfo">
+						<div>
+							<p>호스트</p>
+							<span>${meet.meet_host_name }</span>
+						</div>
+						<div>
+							<p>함께 읽을 책</p>
+							<span class="text-overflow">${meet.meet_book_title }</span>
+						</div>
+
+						<div>
+							<p>현재 모임인원</p>
+							<span>${meet.meet_join_num}명</span>
+						</div>
+						<div>
+							<p>모임정원</p>
+							<span>${meet.meet_member_num }명</span>
+						</div>
+
+
 					</div>
 
-					<div>
-						<p>현재 모임인원</p>
-						<span>${meet.meet_join_num}명</span>
-					</div>
-					<div>
-						<p>모임정원</p>
-						<span>${meet.meet_member_num }명</span>
-					</div>
 
+					<div class="rightApply">
+						<h2>
+							<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
+						</h2>
+					</div>
 
 				</div>
-
-
-				<div class="rightApply">
-					<h2>
-						<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
-					</h2>
-				</div>
-
-			</div>
 		</div>
 
 
+
+
 	</div>
-
-
-
-
-
 
 	<%@include file="../footer.jsp"%>
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	
 	<script>
-		
+	 setInterval(function(){
+	        
+	        $(".wpqkf").delay(1500)
+	        $(".wpqkf").animate({"margin-left":"-623px"},1000)
+	        $(".wpqkf").delay(1500)
+	        $(".wpqkf").animate({"margin-left":"-1246px"},1000)
+	        $(".wpqkf").delay(1500)
+	        $(".wpqkf").animate({"margin-left":"0px"},1000)
+	        
+	        
+	    },2500)
+	    
 	</script>
 </body>
 </html>
