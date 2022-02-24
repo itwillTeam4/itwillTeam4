@@ -73,7 +73,7 @@ public class MeetController {
 			@RequestParam(value = "joiner", required = false) String joiner) {
 		log.info("meet_idx={},joiner={}",meet_idx,joiner);
 		meetService.updateLike(meet_idx, joiner);
-		return "redirect:/meet/detail/{meet_idx}";
+		return "redirect:/meet/detail?meet_idx={meet_idx}";
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
