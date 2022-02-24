@@ -29,6 +29,7 @@ public class UserController {
 	
 	@Autowired private UserService userService;
 	@Autowired private BoardService boardService;
+	@Autowired private MeetService meetServie;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void register() {
@@ -131,12 +132,15 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public void mypage(Model model, HttpSession session) {
 		
 		int userCode = (int)session.getAttribute("signInUserCode");
 		List<Board> boardList = boardService.selectByUserCode(userCode);
+		List<Meet> meetList = meetServie.selectByMemberCode(Integer.toString(userCode));
 		model.addAttribute("boardList",boardList);
+		model.addAttribute("meetList",meetList);
 		
 	}
 }
