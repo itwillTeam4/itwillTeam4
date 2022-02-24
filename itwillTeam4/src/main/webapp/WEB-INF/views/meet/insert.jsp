@@ -121,10 +121,10 @@
 						<div class="selectRadio">
 							<div class="radio">
 								<label style="margin-right: 84px;"><input type="radio"
-									name="meet_on_or_off" value="0" checked>온라인</label>
+									name="meet_on_or_off" value="1" checked>온라인</label>
 							</div>
 							<div class="radio">
-								<label><input type="radio" name="meet_on_or_off" value="1">오프라인</label>
+								<label><input type="radio" name="meet_on_or_off" value="2">오프라인</label>
 							</div>
 						</div>
 					</div>

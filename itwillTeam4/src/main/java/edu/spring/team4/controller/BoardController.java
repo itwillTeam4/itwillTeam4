@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.spring.team4.domain.Board;
+import edu.spring.team4.domain.Meet;
 import edu.spring.team4.service.BoardService;
+import edu.spring.team4.service.MeetService;
 import edu.spring.team4.utils.Paging;
 
 @Controller
@@ -24,6 +26,10 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
+	
+	
+	@Autowired
+	private MeetService meetService;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String main(Model model, Paging page, @RequestParam(value = "nowPage", required = false) String nowPage,
@@ -46,6 +52,11 @@ public class BoardController {
 		} else if (act.equals("rlt")) {
 			log.info("실시간");
 			user_meet_idx = "없다 있다 0";
+			
+			List<Meet> meetList = meetService.select();
+			model.addAttribute("meetList",meetList);
+			
+			
 			result = "board/realtime";
 		} else {
 			log.info("자유");
@@ -70,11 +81,15 @@ public class BoardController {
 		int total = boardService.countBoard(user_meet_idx);
 		page = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		List<Board> list = boardService.selectPageBoard(page, user_meet_idx, orderby);
+		
+		
 		model.addAttribute("paging", page);
 		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("act", act); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("order", order); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("userMeetIdx", user_meet_idx); // jsp에서 el로 사용할 수 있음.
+		
+		
 
 		return result;
 	}

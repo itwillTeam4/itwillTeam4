@@ -43,34 +43,42 @@
 					<div class="meetWrap">
 						<ul class="meetUl">
 
+							<c:forEach begin="0" end="9" step="1" var="meet"
+								items="${meetList}">
+								<li><a href="">
+										<div class="infoReal">
+											<div class="infoReal1">
+												<span class="meetTitle text-overflow note-title">${meet.meet_name }</span> <span class="meetTheme">${meet.meet_theme }</span>
+												<div class="meetETC">
+												
+												<c:if test="${meet.meet_on_or_off == 1}">
+													<span class="meetOnOff"> #온라인모임 </span>
+												</c:if>
+												
+												
+												<c:if test="${meet.meet_on_or_off == 2}">
+													<span class="meetOnOff"> #오프라인모임 </span>
+												</c:if>
+													
+												</div>
 
-							<li><a href="">
-									<div class="infoReal">
-										<div class="infoReal1">
-											<span class="meetTitle text-overflow note-title">테스트
-												이름</span> <span class="meetTheme">테스트테마</span>
-											<div class="meetETC">
-												<span class="meetOnOff"> #온라인모임 </span> <span
-													class="meetWhen"> #한번만 만나요! </span>
 											</div>
+											<div class="infoReal2">
+												<span class="name">${meet.meet_host_name }</span> <span class="meetMember">
+													${meet.meet_join_num } 명 참여중</span>
+											</div>
+											<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
+
 
 										</div>
-										<div class="infoReal2">
-											<span class="name">테스트이름</span> <span class="meetMember">
-												0 명 참여중</span>
+										<div class="infoImgBoxReal">
+											<img 
+												src="${meet.meet_book_img }"
+												alt="bookimg" class="infoImg">
 										</div>
-										<span class="meetIntro text-overflow-line2">테스트소개입니다.</span>
 
-
-									</div>
-									<div class="infoImgBox">
-										<img
-											src="${pageContext.request.contextPath}/resources/img/com01.png"
-											alt="com01" class="infoImg">
-									</div>
-
-							</a></li>
-
+								</a></li>
+							</c:forEach>
 
 
 
