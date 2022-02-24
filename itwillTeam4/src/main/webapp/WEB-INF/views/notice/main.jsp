@@ -27,8 +27,8 @@
 				<ul class="comMenu">
 					<li><a href="../board/?act=rlt">실시간 독서 모임 커뮤니티</a></li>
 					<li><a href="../board/?act=my">나의 독서 모임 커뮤니티</a></li>
-					<li><a href="../board/?act=free">자유로운 서평</a></li>
-					<li><a href="#" class="on">공지사항/이벤트</a></li>
+					<li><a href="http://localhost:8181/team4/board">자유로운 서평</a></li>
+					<li><a href="http://localhost:8181/team4/notice/main" class="on">공지사항/이벤트</a></li>
 
 				</ul>
 			</div>
