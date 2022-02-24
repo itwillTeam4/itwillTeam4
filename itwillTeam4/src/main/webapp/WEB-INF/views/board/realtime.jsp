@@ -57,7 +57,7 @@
 										<div class="infoReal">
 											<div class="infoReal1">
 												<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
-												<span class="meetTheme">${meet.meet_theme }</span>
+												<span class="meetThemeReal">${meet.meet_theme }</span>
 												<div class="meetETC">
 
 													<c:if test="${meet.meet_on_or_off == 1}">
