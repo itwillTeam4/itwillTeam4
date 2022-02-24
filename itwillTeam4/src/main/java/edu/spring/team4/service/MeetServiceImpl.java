@@ -71,8 +71,8 @@ public class MeetServiceImpl implements MeetService {
 		return meetDao.updateLike(meet_idx, joiner);
 	}
 	@Override
-	public List<Meet> selectByHost(int host) {
-		return meetDao.selectByHost(host);
+	public List<Meet> selectByHost(int host, int meet_idx) {
+		return meetDao.selectByHost(host,meet_idx);
 	}
 
 	@Override

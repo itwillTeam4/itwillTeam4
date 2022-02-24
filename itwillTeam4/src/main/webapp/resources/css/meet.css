@@ -17,8 +17,7 @@ a {
 a:hover {
 	text-decoration: none;
 	color: inherit;
-	!
-	important
+	
 }
 
 li {
@@ -200,12 +199,13 @@ img {
 	color: #FF9B75;
 	margin-left: 20px;
 }
+
 .meetOnOffDetail2 {
 	font-weight: 600;
 	font-size: 16px;
 	color: #FF9B75;
-	display:block;
-	margin-bottom:30px;
+	display: block;
+	margin-bottom: 30px;
 }
 
 .meetETCDetail {
@@ -224,7 +224,7 @@ img {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	margin-top:40px;
+	margin-top: 40px;
 }
 
 .themeintro1 {
@@ -243,21 +243,21 @@ img {
 
 .detailFrame {
 	width: 786px;
-    height: 505px;
-    background-image: url(../img/meetdetailframe.png);
-    background-repeat: no-repeat;
-    display: flex;
-    padding: 80px;
-    justify-content: space-around;
-    margin-top: 40px;
+	height: 505px;
+	background-image: url(../img/meetdetailframe.png);
+	background-repeat: no-repeat;
+	display: flex;
+	padding: 80px;
+	justify-content: space-around;
+	margin-top: 40px;
 }
 
 .frameImgBox img {
 	width: 227px;
-    float: right;
-    right: 4px;
-    position: relative;
-    top: 8px;
+	float: right;
+	right: 4px;
+	position: relative;
+	top: 8px;
 }
 
 .frameInfo {
@@ -268,114 +268,124 @@ img {
 }
 
 .frameTitle {
-	    font-size: 26px;
-    margin-top:20px;
-    font-weight:700;
-    max-width: 270px;
-    	
+	font-size: 26px;
+	margin-top: 20px;
+	font-weight: 700;
+	max-width: 270px;
 }
 
 .frameAuthors {
 	font-size: 20px;
-	margin-top:150px;
-	font-weight:500;
+	margin-top: 150px;
+	font-weight: 500;
 }
 
 .framePub {
 	font-size: 20px;
-	margin-top:30px;
-	font-weight:500;
+	margin-top: 30px;
+	font-weight: 500;
 }
 
 .text-overflow {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
 }
 
-.detailForms{
-	
-	width:786px;
-	border-bottom:1px solid #e6e6e6;
-	
-}
-.detailForms h3{
-	
-	font-weight:500;
-	color:#cd9a6a;
-	margin-top:30px;
-	margin-bottom:30px;
-	
+.detailForms {
+	width: 786px;
+	border-bottom: 1px solid #e6e6e6;
 }
 
-.detailForms p{
-	font-weight:500;
-	
-}
-.detailFormsWrap{
-	
-	    width: 786px;
-    display: flex;
-    margin-top: 60px;
-    flex-direction: column;
-    
+.detailForms h3 {
+	font-weight: 500;
+	color: #cd9a6a;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
-.rightDetail{
-	
+.detailForms p {
+	font-weight: 500;
+}
+
+.detailFormsWrap {
+	width: 786px;
+	display: flex;
+	margin-top: 60px;
+	flex-direction: column;
+}
+
+.rightDetail {
 	width: 378px;
-    height: 250px;
-    padding: 30px;
-    box-shadow: 0px 6px 6px #dbdbdb;
-    border: 1px solid #e6e6e6;
-    position: fixed;
-    left: 1170px;
-	
+	height: 250px;
+	padding: 30px;
+	box-shadow: 0px 6px 6px #dbdbdb;
+	border: 1px solid #e6e6e6;
+	position: fixed;
+	left: 1170px;
 }
 
-.rightInfo{
-	height:100px;
-	display:flex;
-	    flex-direction: column;
-	
+.rightInfo {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
 }
 
-.rightInfo div{
-	display:flex;
+.rightInfo div {
+	display: flex;
 	justify-content: space-between;
 	max-height: 30px;
-	}
-.rightApply{
-	width:100%;
-	height:70px;
-	background-color:#007450;
-
-	color:white;
-	margin-top:30px;
-
 }
 
-.rightApply h2{
-		font-weight:700;
-	font-size:26px;
-		text-align:center;
-	line-height:70px;
+.rightApply {
+	width: 100%;
+	height: 70px;
+	background-color: #007450;
+	color: white;
+	margin-top: 30px;
 }
 
-.rightInfo p{
-	
-	font-weight:700;
-	font-size:14px;
-	color:#007450;
-	
-}
-.rightInfo span{
-	
-	font-weight:700;
-	max-width:140px;
-	font-size:14px;
-	
+.rightApply h2 {
+	font-weight: 700;
+	font-size: 26px;
+	text-align: center;
+	line-height: 70px;
 }
 
+.rightInfo p {
+	font-weight: 700;
+	font-size: 14px;
+	color: #007450;
+}
+
+
+
+.ehofk {	
+	width: 562px;
+	height: 177px;
+	box-shadow: 10px 15px 15px #dbdbdb;
+	margin-bottom: 34px;
+	border: 1px solid #dedede;
+}
+
+.rightInfo span {
+	font-weight: 700;
+	max-width: 140px;
+	font-size: 14px;
+}
+
+.infoImgBoxDetail{
 	
+	width: 121px;
+    float: right;
+}
+
+.meetThemeDetail{
+	
+	font-weight: 700;
+    color: #007450;
+    font-size: 12px;
+    position: relative;
+    left: 10px;
+}

@@ -151,7 +151,7 @@
 
 				<c:forEach begin="0" end="2" step="1" var="meet"
 					items="${meetList }">
-					<li><a href="">
+					<li><a href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
 							<div class="info">
 								<div class="info1">
 									<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>

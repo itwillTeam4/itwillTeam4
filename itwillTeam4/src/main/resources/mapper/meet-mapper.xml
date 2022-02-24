@@ -28,7 +28,7 @@
 	
     <select id="selectByHost" resultType="Meet">
     SELECT * FROM ${TABLE_MEET_TABLE} 
-    WHERE ${COL_MEET_HOST} = #{host}
+    WHERE ${COL_MEET_HOST} = #{host} AND NOT ${COL_MEET_IDX} IN (#{meet_idx})
     </select>
 	
     <select id="selectByMemberCode" resultType="Meet">

@@ -131,22 +131,37 @@
 							<span class="meetOnOffDetail2"> 오프라인 </span>
 						</c:if>
 					</div>
-
-					<div class="detailForms">
+					
+					<div class="detailForms" >
 						<h3>호스트의 다른 모임</h3>
-						<input type="hidden" id="host_name_search"
-							value="${meet.meet_host_name }" />
-						<c:forEach var="host_meet" items="${meetlist}">
-							<tr>
-								<td>${host_meet.meet_idx}</td>
-								<td><a href="./detail?meet_idx=${host_meet.meet_idx}">${host_meet.meet_name}</a>
-								</td>
-								<td>${host_meet.meet_theme}</td>
-								<td>${host_meet.meet_host_name}</td>
-								<td>${host_meet.meet_member_num }</td>
-								<td>${host_meet.meet_join_num}</td>
-							</tr>
-						</c:forEach>
+						<ul>
+							<c:forEach begin="0" end="9" step="1" var="host_meet"
+								items="${meetlist }">
+								<li class="ehofk"><a
+									href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
+										<div class="info">
+											<div class="info1">
+												<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
+												<span class="meetThemeDetail">${host_meet.meet_theme }</span>
+											</div>
+											<div class="info2">
+												<span class="name">${host_meet.meet_host_name }</span> <span
+													class="meetMember"> ${host_meet.meet_member_num } 명
+													참여중</span>
+											</div>
+											<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
+
+
+										</div>
+										<div class="infoImgBoxDetail ">
+											<img src="${host_meet.meet_book_img }" alt="com01"
+												class="infoImg">
+										</div>
+
+								</a></li>
+
+							</c:forEach>
+						</ul>
 
 
 
@@ -178,13 +193,13 @@
 
 				</div>
 
-				
+
 				<div class="rightApply">
-						<h2>
-							<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
-						</h2>
-					</div>
-				
+					<h2>
+						<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
+					</h2>
+				</div>
+
 			</div>
 		</div>
 
