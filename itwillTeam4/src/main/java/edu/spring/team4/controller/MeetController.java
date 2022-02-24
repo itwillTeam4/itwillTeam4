@@ -47,7 +47,9 @@ public class MeetController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(int meet_idx, Model model) {
 		Meet meet = meetService.select(meet_idx);
+		List<Meet> meetlist = meetService.selectByHost(meet.getMeet_host());
 		model.addAttribute("meet", meet);
+		model.addAttribute("meetlist", meetlist);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -83,4 +85,6 @@ public class MeetController {
 		model.addAttribute("meetList", list);
 		return "/meet/main";
 	}
+	
+	
 }
