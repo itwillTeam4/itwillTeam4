@@ -52,32 +52,35 @@
 
 
 				<div>
-			<table>
-				<thead>
-					<tr>
-						<th>글번호</th>
-						<th>제목</th>
-						<th>테마</th>
-						<th>호스트이름</th>
-						<th>최대 인원 수</th>
-						<th>현재 참여인원</th>
-					</tr>
-				</theads>
-				<tbody>
-					<c:forEach var="meet" items="${meetList}">
-						<tr>
-						    <td>${meet.meet_idx}</td>
-							<td>
-								<a href="./detail?meet_idx=${meet.meet_idx}">${meet.meet_name}</a>
-                            </td>
-							<td>${meet.meet_theme}</td>
-							<td>${meet.meet_host_name}</td>
-							<td>${meet.meet_member_num }</td>	
-							<td>${meet.meet_join_num}</td>				
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					<table>
+						<thead>
+							<tr>
+								<th>글번호</th>
+								<th>제목</th>
+								<th>테마</th>
+								<th>호스트이름</th>
+								<th>최대 인원 수</th>
+								<th>현재 참여인원</th>
+								<th>달력</th>
+							</tr>
+							</theads>
+						<tbody>
+							<c:forEach var="meet" items="${meetList}" varStatus="status">
+								<tr>
+									<td>${meet.meet_idx}</td>
+									<td>
+										<a href="./detail?meet_idx=${meet.meet_idx}">${meet.meet_name}</a>
+									</td>
+									<td>${meet.meet_theme}</td>
+									<td>${meet.meet_host_name}</td>
+									<td>${meet.meet_member_num }</td>
+									<td>${meet.meet_join_num}</td>
+								</tr>
+								<p id="when${status.count}">${meet.meet_when}</p>
+								<p class="forCount">${status.count}</p>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
 
 			</div>
@@ -133,6 +136,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
+		var n=$('.forCount').last().text();
+		var cal;
+		
+		for(var i=1;i<=n;i++){
+			cal+=$('#when'+i).text();
+		}
+		console.log(cal);
+
 		$(document).ready(function() {
 		});
 
@@ -170,41 +181,46 @@
 	</script>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
+		document
+				.addEventListener(
+						'DOMContentLoaded',
+						function() {
 
-			var calendarEl = document.getElementById('calendar');
+							var calendarEl = document
+									.getElementById('calendar');
 
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
-				initialView : 'dayGridMonth',
-				initialDate : '2022-02-07',
-				selectable : true,
-				editable : false,
-				displayEventTime: false,
-				locale: "ko",
-				headerToolbar : {
-					left : 'prev,next today',
-					center : 'title',
-					right : 'dayGridMonth,timeGridWeek,timeGridDay'
-				},
-				eventSources : [ 
-				{
-					googleCalendarId : 'v0f54lctctfjig2rlnl58o07fc@group.calendar.google.com'
-					,color : "#FF99CC"
-				},
-				{
-					googleCalendarId : 'ksqbbdr0r3cubgnfg7mcebujso@group.calendar.google.com'
-					,color : "#FFC200"
-				},
-				{
-					googleCalendarId : '23aspkf41g1su64651c5da532c@group.calendar.google.com'
-					,color : "#020715"
-				},
-				]
-			});
+							var calendar = new FullCalendar.Calendar(
+									calendarEl,
+									{
+										googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
+										initialView : 'dayGridMonth',
+										initialDate : '2022-02-07',
+										selectable : true,
+										editable : false,
+										displayEventTime : false,
+										locale : "ko",
+										headerToolbar : {
+											left : 'prev,next today',
+											center : 'title',
+											right : 'dayGridMonth,timeGridWeek,timeGridDay'
+										},
+										eventSources : [
+												{
+													googleCalendarId : 'v0f54lctctfjig2rlnl58o07fc@group.calendar.google.com',
+													color : "#FF99CC"
+												},
+												{
+													googleCalendarId : 'ksqbbdr0r3cubgnfg7mcebujso@group.calendar.google.com',
+													color : "#FFC200"
+												},
+												{
+													googleCalendarId : '23aspkf41g1su64651c5da532c@group.calendar.google.com',
+													color : "#020715"
+												}, ]
+									});
 
-			calendar.render();
-		});
+							calendar.render();
+						});
 	</script>
 </body>
 </html>
