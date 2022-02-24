@@ -1108,6 +1108,7 @@ to {
 	font-size: 12px;
 	position: relative;
 	left: 10px;
+	margin-top: 40px;
 }
 
 .meetIntro {
@@ -1188,4 +1189,9 @@ to {
 .infoImgBoxReal {
 	width: 171px;
 	float: right;
+}
+
+.detailForms{
+	
+	width:786px;
 }
