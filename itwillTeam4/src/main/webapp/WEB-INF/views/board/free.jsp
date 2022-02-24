@@ -87,31 +87,33 @@
 						</div>
 					</c:forEach>
 				</div>
-				<div style="display: block; text-align: center;">
+				<div class="paginationCSS" style="display: block; text-align: center;">
+				<ul class="pagination">
 					<c:if test="${paging.startPage != 1 }">
-						<a href="?<c:if test="${order !=null }">
+						<li class="page-item"><a href="?<c:if test="${order !=null }">
 					order=${order}&
-						</c:if>		act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+						</c:if>		act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&lt;</a></li>
 					</c:if>
 					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 						<c:choose>
 							<c:when test="${p == paging.nowPage }">
-								<b>${p }</b>
+								<li class="page-item active "><a class="page-link  mypage"><b>${p }</b></a></li>
 							</c:when>
 							<c:when test="${p != paging.nowPage }">
-								<a href="?	<c:if test="${order !=null }">
+								<li class="page-item"><a href="?	<c:if test="${order !=null }">
 					order=${order}&
-						</c:if>act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+						</c:if>act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}" class="page-link">${p }</a>
 							</c:when>
 						</c:choose>
 					</c:forEach>
 					<c:if test="${paging.endPage != paging.lastPage}">
-						<a href="?<c:if test="${order !=null }">
+						<li class="page-item"><a href="?<c:if test="${order !=null }">
 					order=${order}&
 						</c:if>act=${act }
-						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&gt;</a></li>
 
 					</c:if>
+					</ul>
 				</div>
 			</div>
 		</div>

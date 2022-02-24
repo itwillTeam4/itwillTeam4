@@ -274,7 +274,6 @@ img {
 .postBox {
 	display: flex;
 	width: 880px;
-	height: 3594px;
 	flex-wrap: wrap;
 	flex-direction: row;
 }
@@ -1203,4 +1202,27 @@ to {
 .detailForms{
 	
 	width:786px;	
+}
+
+.paginationCSS{
+	
+	margin-top:15px;
+}
+.pagination{
+	
+	justify-content: center;
+}
+
+.page-link{
+	
+	color:#007450!important;
+}
+.page-item.active .page-link {
+
+    background-color: #007450!important;
+    border-color: #007450!important;
+}
+
+.mypage{
+	color:#fff!important;
 }

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -8,13 +9,22 @@
 <title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/board.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/meet.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css" type="text/css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/board.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/meet.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/home.css"
+	type="text/css">
 
-<script src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
 
 </head>
 <body>
@@ -71,22 +81,28 @@
 					<c:choose>
 
 						<c:when test="${meet.meet_theme eq '독서토론형'}">
-							<p class="themeintro2">독서토론형 모임은 몇 개의 토론 주제를 뽑아 심도 깊은 토론을 하는 모임입니다.</p>
+							<p class="themeintro2">독서토론형 모임은 몇 개의 토론 주제를 뽑아 심도 깊은 토론을 하는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '책수다형'}">
-							<p class="themeintro2">책수다형 모임은 호스트와 멤버들이 책을 가지고 형식과 제한 없이 자유롭게 생각을 나누는 모임입니다.</p>
+							<p class="themeintro2">책수다형 모임은 호스트와 멤버들이 책을 가지고 형식과 제한 없이
+								자유롭게 생각을 나누는 모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '생활습관 개선형'}">
-							<p class="themeintro2">생활습관 개선형 모임은 책의 도움을 받아 생활 습관을 바꾸는 모임입니다.</p>
+							<p class="themeintro2">생활습관 개선형 모임은 책의 도움을 받아 생활 습관을 바꾸는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '챌린지형'}">
-							<p class="themeintro2">챌린지형 모임은 책과 관련된 특별한 미션과 과제가 주어지는 모임입니다.</p>
+							<p class="themeintro2">챌린지형 모임은 책과 관련된 특별한 미션과 과제가 주어지는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '스터디형'}">
-							<p class="themeintro2">스터디형 모임은 책 한권을 선정하여 멤버들과 함께 책의 내용을 공부하는 모임입니다.</p>
+							<p class="themeintro2">스터디형 모임은 책 한권을 선정하여 멤버들과 함께 책의 내용을
+								공부하는 모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '낭독형'}">
-							<p class="themeintro2">낭독형 모임은 호스트와 멤버들이 책을 같이 소리내어 읽으며 공부하는 모임입니다.</p>
+							<p class="themeintro2">낭독형 모임은 호스트와 멤버들이 책을 같이 소리내어 읽으며 공부하는
+								모임입니다.</p>
 						</c:when>
 
 					</c:choose>
@@ -118,12 +134,12 @@
 
 					<div class="detailForms">
 						<h3>호스트의 다른 모임</h3>
-						<input type="hidden" id="host_name_search" value="${meet.meet_host_name }" />
+						<input type="hidden" id="host_name_search"
+							value="${meet.meet_host_name }" />
 						<c:forEach var="host_meet" items="${meetlist}">
 							<tr>
 								<td>${host_meet.meet_idx}</td>
-								<td>
-									<a href="./detail?meet_idx=${host_meet.meet_idx}">${host_meet.meet_name}</a>
+								<td><a href="./detail?meet_idx=${host_meet.meet_idx}">${host_meet.meet_name}</a>
 								</td>
 								<td>${host_meet.meet_theme}</td>
 								<td>${host_meet.meet_host_name}</td>
@@ -162,14 +178,13 @@
 
 				</div>
 
-
+				
 				<div class="rightApply">
-					<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">
-						<h2>모임신청하기</h2>
-					</a>
-					
-				</div>
-
+						<h2>
+							<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
+						</h2>
+					</div>
+				
 			</div>
 		</div>
 
@@ -182,8 +197,10 @@
 
 
 	<%@include file="../footer.jsp"%>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
 		
 	</script>
