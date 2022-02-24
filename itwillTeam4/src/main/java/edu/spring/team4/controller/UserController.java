@@ -2,6 +2,7 @@ package edu.spring.team4.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -80,7 +81,6 @@ public class UserController {
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
 	public String signIn(User user, HttpSession session, Model model,
 			@RequestParam(value = "url", required=true)String url) {
-		
 		log.info("signIn({}) POST 호출", user);
 		User signInUser = userService.checkSignIn(user);
 			if (signInUser != null) { 
