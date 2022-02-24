@@ -116,6 +116,7 @@
   		SELECT * FROM
 		${TABLE_BOARD_TABLE}
 		WHERE ${COL_BOARD_TITLE} = #{board_title}
+		ORDER BY ${COL_BOARD_REG_DATE} DESC
  		)
 		WHERE ROWNUM = 1
 	</select>
