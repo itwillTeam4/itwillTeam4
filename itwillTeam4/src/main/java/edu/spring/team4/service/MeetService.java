@@ -11,6 +11,7 @@ public interface MeetService {
 	Meet select(int meet_idx);
 	int update(Meet meet);
 	int delete(int meet_idx);
+	int updateLike(int meet_idx,String joiner);
 	List<Meet> select(int searchType, String searchKeyword);
 	
 	List<Meet> selectThree();

@@ -74,5 +74,11 @@ public class MeetServiceImpl implements MeetService {
 	public List<Meet> selectThree() {
 		log.info("selectThree() 호출");
 		return meetDao.selectThree();
+	
+	}
+	
+	@Override
+	public int updateLike(int meet_idx, String joiner) {
+		return meetDao.updateLike(meet_idx, joiner);
 	}
 }
