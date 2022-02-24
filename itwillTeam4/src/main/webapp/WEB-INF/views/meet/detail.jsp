@@ -146,7 +146,7 @@
 			
 				<div class="rightInfo">
 					<div><p>호스트</p><span>${meet.meet_host_name }</span></div>
-					<div><p>함께 읽을 책</p><span class="text-overflow maxWidth">${meet.meet_book_title }</span></div>
+					<div><p>함께 읽을 책</p><span class="text-overflow">${meet.meet_book_title }</span></div>
 					
 					<div><p>현재 모임인원</p><span>${meet.meet_join_num}명</span></div>
 					<div><p>모임정원</p><span>${meet.meet_member_num }명</span></div>
