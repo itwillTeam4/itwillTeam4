@@ -130,7 +130,7 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="http://localhost:8181/team4/user/register" method="post">
+			<form action="http://localhost:8181/team4/user/register?url=${requestScope['javax.servlet.forward.servlet_path']}" method="post">
 				<div id="registerInput">
 					<div class="emailInput">
 						<input type="email" id="user_id" name="user_id"
