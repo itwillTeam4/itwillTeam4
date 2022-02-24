@@ -15,6 +15,7 @@ import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.persistence.BoardDao;
 import edu.spring.team4.persistence.UserDao;
+import edu.spring.team4.utils.AES256;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
@@ -26,13 +27,25 @@ public class BoardDaoTest {
 	
 	@Autowired private BoardDao boardDao;
 	@Autowired private UserDao userDao;
+	@Autowired private AES256 aes256;
 	
 	@Test
-	public void deTest() {
-		log.info("boardDao: {}", boardDao);
+	public void deTest() throws Exception {
+
 		
-		List<Board> list = boardDao.read();
-		log.info("list size = {}", list.size());
+		
+        AES256 aes256 = new AES256();
+        String text = "abc";
+        String cipherText = aes256.encrypt(text);
+        System.out.println(text);
+        System.out.println(cipherText);
+        System.out.println(aes256.decrypt(cipherText));
+		
+		
+		
+//		log.info("boardDao: {}", boardDao);
+//		List<Board> list = boardDao.read();
+//		log.info("list size = {}", list.size());
 		
 //		
 //		Board board = boardDao.read(3);
