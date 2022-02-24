@@ -6,9 +6,12 @@ import edu.spring.team4.domain.Meet;
 
 public interface MeetDao {
 	
-	 List<Meet> read();
-	 List<Meet> selectByHost(int host);
+	List<Meet> read();
+	List<Meet> selectByHost(int host);
+	List<Meet> selectByMemberCode(String userCode);
 	
+	 
+	 
 	Meet read (int meet_idx);
 	int create(Meet meet);
 	int update(Meet meet);

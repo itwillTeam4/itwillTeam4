@@ -23,17 +23,13 @@ public class MeetServiceImpl implements MeetService {
 	@Override
 	public List<Meet> select() {
 		log.info("select() 호출");
-		
-		
 		return meetDao.read();
 	}
 
 	@Override
 	public int insert(Meet meet) {
 		log.info("insert({}) 호출", meet);
-		
 		int result = meetDao.create(meet);
-		
 		return result;
 		
 	}
@@ -41,24 +37,19 @@ public class MeetServiceImpl implements MeetService {
 	@Override
 	public Meet select(int meet_idx) {
 		log.info("select(meet_idx={}) 호출", meet_idx);
-		
 		Meet meet = meetDao.read(meet_idx);
-		
-		
 		return meet;
 	}
 	
 	@Override
 	public int update(Meet meet) {
 		log.info("update({}) 호출", meet);
-
 		return meetDao.update(meet);
 	}
 	
 	@Override
 	public int delete(int meet_idx) {
 		log.info("delete(meet_idx={}) 호출", meet_idx);
-		
 		return meetDao.delete(meet_idx);
 	}
 	
@@ -82,5 +73,10 @@ public class MeetServiceImpl implements MeetService {
 	@Override
 	public List<Meet> selectByHost(int host) {
 		return meetDao.selectByHost(host);
+	}
+
+	@Override
+	public List<Meet> selectByMemberCode(String userCode) {
+		return meetDao.selectByMemberCode(userCode);
 	}
 }

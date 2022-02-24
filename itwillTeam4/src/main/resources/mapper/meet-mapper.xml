@@ -31,11 +31,14 @@
     WHERE ${COL_MEET_HOST} = #{host}
     </select>
 	
+    <select id="selectByMemberCode" resultType="Meet">
+    SELECT * FROM ${TABLE_MEET_TABLE} 
+    WHERE ${COL_MEMBER_CODE} like #{member_code}
+    </select>
+	
 	
 	
 	<select id="selectThree" resultType="Meet">
-	
-	
 	SELECT * FROM (
 
 		SELECT * FROM ${TABLE_MEET_TABLE} ORDER BY ${COL_MEET_MEMBER_NUM} DESC)

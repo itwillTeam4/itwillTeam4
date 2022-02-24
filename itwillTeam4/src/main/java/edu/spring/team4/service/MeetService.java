@@ -8,7 +8,7 @@ public interface MeetService {
 	
 	List<Meet> select();
 	List<Meet> selectByHost(int host);
-
+	List<Meet> selectByMemberCode(String userCode);
 	
 	int insert(Meet meet);
 	Meet select(int meet_idx);

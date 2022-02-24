@@ -75,6 +75,9 @@ public class MeetDaoImpl implements MeetDao {
 		log.info("MeetDaoImpl.selectByHost() 호출");
 		return sqlSession.selectList(MEET_NAMESPACE+".selectByHost",host);
 	}
+	
+	
+	
 	@Override
 	public int updateLike(int meet_idx, String joiner) {
 		String old_member = sqlSession.selectOne(MEET_NAMESPACE+".selectLike",meet_idx);
@@ -92,8 +95,16 @@ public class MeetDaoImpl implements MeetDao {
 		if(list.size()==0) {
 			params.put("meet_member_code"," ");
 		}else {
-			params.put("meet_member_code",methodDao.toString(list));
+			params.put("meet_member_code"," "+methodDao.toString(list)+" ");
 		}
 		return sqlSession.update(MEET_NAMESPACE+".updateLike",params);
+	}
+
+	@Override
+	public List<Meet> selectByMemberCode(String userCode) {
+		return sqlSession.selectList(MEET_NAMESPACE+".selectByMemberCode", " %"+userCode+"% ");
+		
+		
+		
 	}
 }
