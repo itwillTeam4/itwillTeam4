@@ -31,10 +31,17 @@ public class AuthInterceptor implements HandlerInterceptor{
 			log.info("로그인 해.");
 			// 요청 URL 정보를 찾아서 signin 요청에 요청 파라미터 추가
 			String reqUrl = request.getRequestURL().toString();
+			String reqParam = request.getParameter("act");
+			if ((reqParam != null && reqParam.equals("free")) || reqParam == null) {
+				return true;
+			} 
 			log.debug("request URL: {}", reqUrl);
+
+
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
+
 			log.debug("URI 디코딩 후:{}", reqUrl);
-			
+
 			String query = request.getQueryString();
 			String target ="";
 			if (query == null) { //
@@ -42,9 +49,9 @@ public class AuthInterceptor implements HandlerInterceptor{
 			} else {
 				target = UriUtils.encode(reqUrl + "?" + query, "UTF-8");
 			}
-			
+
 			//log.debug("URI 디코딩 후:{}", reqUrl);
-			response.sendRedirect("http://localhost:8181/team4/board?signin=fail?url=" + target);
+			response.sendRedirect("http://localhost:8181/team4/board?signin=fail&url=" + target);
 			return false;
 
 		}
