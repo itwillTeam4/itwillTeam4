@@ -36,13 +36,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(User user) {
+	public String register(User user, @RequestParam(value = "url", required=true)String url) {
 		log.info("register({}) POST 호출", user);
 		
 		int result = userService.registerNewUser(user);
 		
 		if (result == 1) {
-			return "redirect:/";
+			return "redirect:" + url;
 		} else {
 			return "redirect:/?register=false";
 		}
