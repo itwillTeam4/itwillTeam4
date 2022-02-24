@@ -23,13 +23,13 @@
 			<div class="left-gnbFree">
 				<div class="profile-box">
 					<p>
-						<span>${signInUserId}</span>님
+						<span id="user">${signInUserId}</span>님
 					</p>
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
-					<li><a href="?act=rlt">실시간 독서 모임 커뮤니티</a></li>
-					<li><a href="?act=my&MeetIdx=${userMeetIndex}">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="?act=rlt" id="rlt_rink">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="?act=my&MeetIdx=${userMeetIndex}" id="mymeet_rink">나의 독서 모임 커뮤니티</a></li>
 					<li><a href="?act=free" class="on">자유로운 서평</a></li>
 					<li><a href="./notice/main">공지사항/이벤트</a></li>
 
@@ -122,7 +122,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-	
+	<script>
 	
 	
 </body>
