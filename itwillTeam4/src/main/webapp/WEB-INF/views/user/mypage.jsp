@@ -52,10 +52,32 @@
 
 
 				<div>
-					<ul>
-						<li><a href="http://localhost:8181/team4/meet/insert" type="button">메인</a></li>
-
-					</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>글번호</th>
+						<th>제목</th>
+						<th>테마</th>
+						<th>호스트이름</th>
+						<th>최대 인원 수</th>
+						<th>현재 참여인원</th>
+					</tr>
+				</theads>
+				<tbody>
+					<c:forEach var="meet" items="${meetList}">
+						<tr>
+						    <td>${meet.meet_idx}</td>
+							<td>
+								<a href="./detail?meet_idx=${meet.meet_idx}">${meet.meet_name}</a>
+                            </td>
+							<td>${meet.meet_theme}</td>
+							<td>${meet.meet_host_name}</td>
+							<td>${meet.meet_member_num }</td>	
+							<td>${meet.meet_join_num}</td>				
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 				</div>
 
 			</div>
