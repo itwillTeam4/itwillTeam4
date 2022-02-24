@@ -30,23 +30,9 @@
 
 
 
-	<div class="bookModalBG">
-		<div class="bookModal">
-			<div id="bookModalClose" class="close">
-				<img
-					src="${pageContext.request.contextPath}/resources/img/close.png"
-					alt="close">
-			</div>
 
 
-		</div>
-
-
-
-	</div>
-
-
-	<div id="contentWrap">
+	<div class="contentWrapMeet">
 		<div class="innerWrapMeet">
 
 
@@ -135,10 +121,10 @@
 						<div class="selectRadio">
 							<div class="radio">
 								<label style="margin-right: 84px;"><input type="radio"
-									name="meet_type" value="0" checked>온라인</label>
+									name="meet_on_or_off" value="0" checked>온라인</label>
 							</div>
 							<div class="radio">
-								<label><input type="radio" name="meet_type" value="1">오프라인</label>
+								<label><input type="radio" name="meet_on_or_off" value="1">오프라인</label>
 							</div>
 						</div>
 					</div>
@@ -158,25 +144,25 @@
 
 
 								<input type="text" id="meet_book_title"
-									placeholder="책 제목을 입력해주세요." required /> <input type="button"
+									placeholder="책 제목을 입력해주세요." name="meet_book_title" required /> <input type="button"
 									id="btn_book_search" name="btn_book_search" value="검색" />
 								
 
 
 
 								<div>
-									<input type="text" id="meet_book_authors" value=""
+									<input type="text" id="meet_book_authors" name="meet_book_authors" value=""
 										placeholder="저자" required readonly />
 								</div>
 								<div>
-									<input type="text" id="meet_book_pub" value=""
+									<input type="text" id="meet_book_pub" name="meet_book_pub"  value=""
 										placeholder="출판사" required readonly />
 								</div>
 								<div>
-									<input type="hidden" id="meet_book_img" value="" required />
+									<input type="hidden" id="meet_book_img" name="meet_book_img"  value="" required />
 								</div>
 								<div>
-									<input type="hidden" id="meet_book_tag" value=""  />
+									<input type="hidden" id="meet_book_tag"  name="meet_book_tag" value=""  />
 								</div>
 
 

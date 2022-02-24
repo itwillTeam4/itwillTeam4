@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+input:focus { 
+    outline: none !important;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+	!
+	important
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-size: 16px;
+	color: #333333;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+img {
+	width: 100%
+}
+
+.contentWrapMeet{
+	
+	width: 100%;
+    margin-top: 100px;
+    display: flex;
+    height: auto;
+    min-height: 100%;
+}
+
+
+.innerWrapMeet{
+	width: 1194px;
+    height: auto;
+    margin: 10px auto;
+}
+.innerWrapMeetFlex{
+	width: 1194px;
+    height: auto;
+    margin: 10px auto;
+    display:flex
+}
+
+.rightInputTop {width: 100%; border-bottom:2px solid black; height:70px;
+margin-bottom: 3px;
+}
+.rightInput h2{float:left; font-weight:700; }
+
+.applyInput{
+	height:1600px;
+	border-top:1px solid black;
+	
+}
+
+.applyInputForms{
+	
+	height: 125px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-bottom:1px solid #e6e6e6;
+    
+}
+
+.selectRadio{
+	    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputFormsLeft{
+	min-width:300px;
+	font-size:18px;
+	font-weight:400;
+	
+}
+.inputFormsRight{
+	
+	border-radius: 3px;
+    border: 1px solid #c9c9c9 !important;
+    color: #333333;
+    font-size: 16px;
+    padding: 11px 15px;
+    line-height: 1.5;
+    letter-spacing: -0.16px;
+    background-color: #FFFFFF !important;
+    vertical-align: middle ;
+    width: 100% !important;
+}
+
+.radio input[type=radio]{
+	width:23px;
+	height:23px;
+	margin-right:8px;
+	vertical-align:middle;
+}
+.selectForm{
+	
+	
+	border-radius: 3px;
+    border: 1px solid #c9c9c9;
+    color: #333333;
+    font-size: 16px;
+    padding: 11px 15px;
+    line-height: 1.5;
+    letter-spacing: -0.16px;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+
+.applyInputText{
+	
+	    width:100%!important;
+	    border:none!important;
+	    resize:none;
+	    
+}
+
+.applyInputText:focus{
+	
+	outline:none!important;
+}
+
+.applyInputText::placeholder{
+	
+color:#cccccc;
+	}
+
+.bigForm {
+	
+	height:300px!important;}
+	
+.bigbigForm{
+	
+	height:400px!important;
+}
+.book_info_div{
+	
+	position:relative;
+	top:-20px;
+}
+
+#meet_book_title, #meet_book_authors, #meet_book_pub {
+	width: 176px;
+	border: 1px solid #e6e6e6;
+	font-weight: 300;
+	border-radius: 3px;
+	margin-bottom: 5px;
+	font-size: 16px;
+	height: 30px;
+	padding-left: 5px;
+}
+
+#meet_book_authors,#meet_book_pub{
+	
+	background-color:#f8f8f8;
+}
+
+.leftDetail{
+
+	margin-right:30px;
+	
+	
+}

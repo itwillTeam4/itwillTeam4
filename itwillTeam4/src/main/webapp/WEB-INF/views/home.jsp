@@ -90,11 +90,11 @@
 					<a href="http://localhost:8181/team4/board/detail/${board2.bno }">
 						<div class="a">
 							<div class="a_a">
-								<p class="text-overflow-line3">${board2.board_content }</p>
+								<p class="text-overflow-line5">${board2.board_content }</p>
 							</div>
 							<div class="a_b">
-								<p>${board2.board_title }</p>
-								<p>${board2.board_userid }</p>
+								<p class="a_bUser">${board2.board_userid }</p>
+								<p class="a_bTitle">${board2.board_title }</p>
 							</div>
 						</div>
 					</a>
