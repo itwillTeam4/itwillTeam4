@@ -121,12 +121,24 @@
 						<div class="selectRadio">
 							<div class="radio">
 								<label style="margin-right: 84px;"><input type="radio"
-									name="meet_on_or_off" value="1" checked>온라인</label>
+									name="meet_on_or_off" value="0" checked>온라인</label>
 							</div>
 							<div class="radio">
-								<label><input type="radio" name="meet_on_or_off" value="2">오프라인</label>
+								<label><input type="radio" name="meet_on_or_off" value="1">오프라인</label>
 							</div>
 						</div>
+					</div>
+					<div>
+						<input type="hidden" name="meet_host_name" value="${signInUserId}" required/>
+					</div>
+					<div>
+						<input type="hidden" name="meet_host" value="${signInUserCode}" required readonly/>
+					</div>
+					<div>
+						<input type="hidden" name="meet_member_code" value="${signInUserCode}" required readonly/>
+					</div>
+					<div>
+						<input type="hidden" name="meet_join_num" value="1" required readonly/>
 					</div>
 
 
