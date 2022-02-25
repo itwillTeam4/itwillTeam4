@@ -273,7 +273,10 @@
 				}
 			});
 
-			
+			// 회원가입 성공, 실패 메시지
+			$('#btn-complete').click(function(event){
+				alert("가입하신 이메일(아이디)로 인증메일을 전송했습니다!");
+			});
 			
 			if (location.href == "http://localhost:8181/team4/?register=fail"){
 				if ('${register}' == false) {

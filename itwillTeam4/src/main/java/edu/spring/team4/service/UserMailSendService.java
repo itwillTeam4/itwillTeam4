@@ -67,9 +67,10 @@ public class UserMailSendService {
 		String htmlStr = "<h2>안녕하세요 책오 입니다!</h2><br><br>" 
 				+ "<h3>" + user_nn + "님</h3>" + "<p>인증하기 버튼을 누르시면 로그인을 하실 수 있습니다 : " 
 				+ "<a href='http://localhost:8181" + request.getContextPath() + "/user/key_alter?user_nn="+ user_nn +"&user_key="+key+"'>인증하기</a></p>"
-				+ "(혹시 잘못 전달된 메일이라면 이 이메일을 무시하셔도 됩니다)";
+				+ "<p>인증을 하셔야 아이디/비밀번호 찾기가 가능합니다 </p>"
+				+ "<p>(혹시 잘못 전달된 메일이라면 이 이메일을 무시하셔도 됩니다) </p>";
 		try {
-			mail.setSubject("[본인인증] 책오의 인증메일입니다", "utf-8");
+			mail.setSubject("[본인인증] 독서 커뮤니티 <책오>의 인증메일입니다", "utf-8");
 			mail.setText(htmlStr, "utf-8", "html");
 			mail.addRecipient(RecipientType.TO, new InternetAddress(user_id));
 			mailSender.send(mail);
