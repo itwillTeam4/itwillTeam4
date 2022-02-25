@@ -198,6 +198,7 @@
 					<p class="searchModalP">아이디/비밀번호 찾기</p>
 					<p class="searchModalP2">인증된 이메일만 정보 찾기가 가능합니다 :)</p>
 				</div>
+				<div class="btnWrap">
 				<div style="margin-bottom: 10px;"
 					class="custom-control custom-radio custom-control-inline">
 					<input type="radio" class="custom-control-input" id="search_1" name="search_total"  checked="checked">
@@ -207,40 +208,39 @@
 					<input type="radio" class="custom-control-input" id="search_2" name="search_total" > 
 					<label class="custom-control-label font-weight-bold " for="search_2">비밀번호 찾기</label>
 				</div>
+				</div>
 				<div id="searchI">
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputName_1">이름</label>
 						<div>
-							<input type="text" class="form-control" id="inputName_1" name="inputName_1" placeholder="ex) 갓민수">
+							<input type="text" class="form-control ywForm" id="inputName_1" name="inputName_1" placeholder="ex) 갓민수">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputPhone_1">휴대폰번호</label>
 						<div>
-							<input type="text" class="form-control" id="inputPhone_1" name="inputPhone_1" placeholder="ex) 01077779999">
+							<input type="text" class="form-control ywForm" id="inputPhone_1" name="inputPhone_1" placeholder="ex) 01077779999">
 						</div>
 					</div>
 					<div class="form-group">
-						<button id="searchBtn" type="button" onclick="idSearch_click()" class="btn btn-primary btn-block">확인</button>
-					<a class="btn btn-danger btn-block"	href="${pageContext.request.contextPath}">취소</a>
+						<button id="searchBtn" type="button" class="btn btn-primary btn-block ywBtn">찾기</button>
 					</div>
 				</div>
 				<div id="searchP" style="display: none;">
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputId">아이디</label>
 						<div>
-							<input type="text" class="form-control" id="inputId" name="inputId_2" placeholder="ex) godmisu">
+							<input type="text" class="form-control ywForm" id="inputId" name="inputId_2" placeholder="ex) godmisu">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputEmail_2">이메일</label>
 						<div>
-							<input type="email" class="form-control" id="inputEmail_2"	name="inputEmail_2" placeholder="ex) E-mail@gmail.com">
+							<input type="email" class="form-control ywForm" id="inputEmail_2"	name="inputEmail_2" placeholder="ex) E-mail@gmail.com">
 						</div>
 					</div>
 					<div class="form-group">
-						<button id="searchBtn2" type="button" class="btn btn-primary btn-block">확인</button>
-					<a class="btn btn-danger btn-block"	href="${pageContext.request.contextPath}">취소</a>
+						<button id="searchBtn2" type="button" class="btn btn-primary btn-block ywBtn">찾기</button>
 				</div>
 				</div>
 			</div>
