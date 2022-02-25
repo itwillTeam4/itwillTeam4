@@ -63,8 +63,8 @@
 						<img src="${board.board_book_img }" alt="bookImg">
 						<div class="detailBookInfos">
 							<div>
-								<p>${board.board_book_title }</p>
-								<span>${board.board_book_authors } / ${board.board_book_pub} </span>
+								<p class="text-overflow pMax">${board.board_book_title }</p>
+								<span class="text-overflow spanMax">${board.board_book_authors } / ${board.board_book_pub} </span>
 							</div>
 						</div>
 					</div>

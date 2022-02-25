@@ -160,7 +160,7 @@
 												</div>
 												<div class="info2">
 													<span class="name">${host_meet.meet_host_name }</span> <span
-														class="meetMember"> ${host_meet.meet_member_num } 명
+														class="meetMember"> ${host_meet.meet_join_num } 명
 														참여중</span>
 												</div>
 												<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
