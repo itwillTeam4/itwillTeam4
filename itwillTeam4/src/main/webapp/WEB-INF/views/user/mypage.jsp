@@ -19,7 +19,7 @@
 	rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/resources/css/board.css"
 	rel="stylesheet" type="text/css" />
-	<link href="${pageContext.request.contextPath}/resources/css/meet.css"
+<link href="${pageContext.request.contextPath}/resources/css/meet.css"
 	rel="stylesheet" type="text/css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,9 @@
 		<div class="mypageConWrap">
 
 			<div id="mypageCon1">
-				<div id='calendar'></div>
+				<div class="calendarWrap">
+					<div id='calendar'></div>
+				</div>
 			</div>
 			<div id="mypageCon2">
 				<div>
@@ -66,7 +68,8 @@
 
 
 					<ul class="myInfoWrap">
-						<c:forEach begin="0" end="9" step="1" var="meet" items="${meetList }">
+						<c:forEach begin="0" end="9" step="1" var="meet"
+							items="${meetList }">
 							<li class="ehofk2"><a
 								href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
 									<div class="info">
@@ -76,16 +79,14 @@
 										</div>
 										<div class="info2">
 											<span class="name">${meet.meet_host_name }</span> <span
-												class="meetMember"> ${meet.meet_join_num } 명
-												참여중</span>
+												class="meetMember"> ${meet.meet_join_num } 명 참여중</span>
 										</div>
 										<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
 
 
 									</div>
 									<div class="infoImgBoxMy ">
-										<img src="${meet.meet_book_img }" alt="com01"
-											class="infoImg">
+										<img src="${meet.meet_book_img }" alt="com01" class="infoImg">
 									</div>
 
 							</a></li>
@@ -97,7 +98,7 @@
 
 				</div>
 
-				<div style="display:none">
+				<div style="display: none">
 					<table>
 						<thead>
 							<tr>
