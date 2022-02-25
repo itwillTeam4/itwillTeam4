@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.spring.team4.domain.Meet;
+import edu.spring.team4.utils.Paging;
 
 @Repository
 public class MeetDaoImpl implements MeetDao {
@@ -22,9 +23,14 @@ public class MeetDaoImpl implements MeetDao {
 	@Autowired
 	private MethodDao methodDao;
 	@Override
-	public List<Meet> read() {
+	public List<Meet> read(Paging page) {
+		
+		Map<String, Object> params = new HashMap<>();
+		params.put("start", page.getStart());
+		params.put("end", page.getEnd());
+		
 		log.info("meetDaoImpl.read() 호출");
-		return sqlSession.selectList(MEET_NAMESPACE + ".selectAll");
+		return sqlSession.selectList(MEET_NAMESPACE + ".selectAll",params);
 	}
 
 	@Override
@@ -122,5 +128,10 @@ public class MeetDaoImpl implements MeetDao {
 		params.put("meet_theme", meet_theme);
 		params.put("meet_book_title", "%"+meet_book_title+"%");
 		return sqlSession.selectList(MEET_NAMESPACE+".find",params);
+	}
+
+	@Override
+	public int countMeet() {
+		return sqlSession.selectOne(MEET_NAMESPACE+".count");
 	}
 }

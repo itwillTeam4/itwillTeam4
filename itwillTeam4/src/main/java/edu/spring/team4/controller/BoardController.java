@@ -37,32 +37,6 @@ public class BoardController {
 			@RequestParam(value = "order", required = false) String order,
 			@RequestParam(value = "act", required = false) String act,
 			@RequestParam(value = "MeetIdx", required = false) String user_meet_idx) {
-		log.info("free() 호출");
-		String result;
-		if (user_meet_idx == null) {
-			user_meet_idx = "0  1 2 있다 없다";
-		}
-
-		if (act == null) {
-			act = "free";
-		}
-		if (act.equals("my")) {
-			log.info("나의");
-			result = "board/mymeet";
-		} else if (act.equals("rlt")) {
-			log.info("실시간");
-			user_meet_idx = "없다 있다 0";
-			
-			List<Meet> meetList = meetService.select();
-			model.addAttribute("meetList",meetList);
-			
-			
-			result = "board/realtime";
-		} else {
-			log.info("자유");
-			result = "board/free";
-		}
-
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
 			cntPerPage = "10";
@@ -71,20 +45,49 @@ public class BoardController {
 		} else if (cntPerPage == null) {
 			cntPerPage = "10";
 		}
+		log.info("free() 호출");
+		String result;
+		if (user_meet_idx == null) {
+			user_meet_idx = "0";
+		}
+
+		int total = boardService.countBoard(user_meet_idx);
+		if (act == null) {
+			act = "free";
+		}
+		if (act.equals("my")) {
+			log.info("나의");
+			result = "board/mymeet";
+			
+		} else if (act.equals("rlt")) {
+			log.info("실시간");
+			total = meetService.countMeet();
+			
+			page = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+			List<Meet> meetList = meetService.select(page);
+			model.addAttribute("meetList",meetList);
+			
+			result = "board/realtime";
+		} else {
+			log.info("자유");
+			result = "board/free";
+		}
+
 		int orderby = 0;
 		if (order == null) {
 			orderby = 0;
 		} else {
 			orderby = Integer.parseInt(order);
 		}
-
-		int total = boardService.countBoard(user_meet_idx);
+		
+		if(!act.equals("rlt")) {
 		page = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		List<Board> list = boardService.selectPageBoard(page, user_meet_idx, orderby);
+		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
+		}
 		
 		
 		model.addAttribute("paging", page);
-		model.addAttribute("boardList", list); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("act", act); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("order", order); // jsp에서 el로 사용할 수 있음.
 		model.addAttribute("userMeetIdx", user_meet_idx); // jsp에서 el로 사용할 수 있음.

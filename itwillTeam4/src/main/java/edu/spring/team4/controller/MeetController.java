@@ -31,8 +31,8 @@ public class MeetController {
 	public void main(Model model) {
 		log.info("main() ȣ��");
 
-		List<Meet> meetlist = meetService.select();
-		model.addAttribute("meetList", meetlist);
+//		List<Meet> meetlist = meetService.select();
+//		model.addAttribute("meetList", meetlist);
 	}
 
 	@RequestMapping(value = "/find", method = RequestMethod.GET)

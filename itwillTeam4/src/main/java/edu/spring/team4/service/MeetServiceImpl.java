@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import edu.spring.team4.domain.Meet;
 import edu.spring.team4.persistence.MeetDao;
 import edu.spring.team4.persistence.UserDao;
+import edu.spring.team4.utils.Paging;
 
 @Service
 public class MeetServiceImpl implements MeetService {
@@ -21,9 +22,9 @@ public class MeetServiceImpl implements MeetService {
 	
 
 	@Override
-	public List<Meet> select() {
+	public List<Meet> select(Paging page) {
 		log.info("select() 호출");
-		return meetDao.read();
+		return meetDao.read(page);
 	}
 
 	@Override
@@ -83,5 +84,10 @@ public class MeetServiceImpl implements MeetService {
 	@Override
 	public List<Meet> find(int meet_on_or_off, String meet_theme, String meet_book_title) {
 		return meetDao.find(meet_on_or_off, meet_theme, meet_book_title);
+	}
+
+	@Override
+	public int countMeet() {
+		return meetDao.countMeet();
 	}
 }
