@@ -14,6 +14,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link href="${pageContext.request.contextPath}/resources/css/board.css"
 	rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 </head>
 <body>
 	<%@include file="../header.jsp"%>
@@ -51,9 +52,9 @@
 					<div class="meetWrap">
 						<ul class="meetUl">
 
-							<c:forEach var="meet"
-								items="${meetList}">
-								<li><a href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
+							<c:forEach var="meet" items="${meetList}">
+								<li><a
+									href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
 										<div class="infoReal">
 											<div class="infoReal1">
 												<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
@@ -96,29 +97,40 @@
 
 
 						</ul>
-					</div>
-	<div class="paginationCSS" style="display: block; text-align: center;">
-				<ul class="pagination">
-					<c:if test="${paging.startPage != 1 }">
-						<li class="page-item"><a href="?act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&lt;</a></li>
-					</c:if>
-					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
-						<c:choose>
-							<c:when test="${p == paging.nowPage }">
-								<li class="page-item active "><a class="page-link  mypage"><b>${p }</b></a></li>
-							</c:when>
-							<c:when test="${p != paging.nowPage }">
-								<li class="page-item"><a href="?act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}" class="page-link">${p }</a>
-							</c:when>
-						</c:choose>
-					</c:forEach>
-					<c:if test="${paging.endPage != paging.lastPage}">
-						<li class="page-item"><a href="?act=${act }
-						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&gt;</a></li>
 
-					</c:if>
-					</ul>
-				</div>
+
+					</div>
+					<div class="paginationCSS realPage"
+						style="display: block; text-align: center;">
+						<ul class="pagination">
+							<c:if test="${paging.startPage != 1 }">
+								<li class="page-item"><a
+									href="?act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}"
+									class="page-link">&lt;</a></li>
+							</c:if>
+							<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
+								var="p">
+								<c:choose>
+									<c:when test="${p == paging.nowPage }">
+										<li class="page-item active "><a
+											class="page-link  mypage"><b>${p }</b></a></li>
+									</c:when>
+									<c:when test="${p != paging.nowPage }">
+										<li class="page-item"><a
+											href="?act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}"
+											class="page-link">${p }</a>
+									</c:when>
+								</c:choose>
+							</c:forEach>
+							<c:if test="${paging.endPage != paging.lastPage}">
+								<li class="page-item"><a
+									href="?act=${act }
+						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}"
+									class="page-link">&gt;</a></li>
+
+							</c:if>
+						</ul>
+					</div>
 
 				</div>
 
@@ -130,6 +142,8 @@
 
 
 		</div>
+
+
 	</div>
 
 	<%@include file="../footer.jsp"%>
