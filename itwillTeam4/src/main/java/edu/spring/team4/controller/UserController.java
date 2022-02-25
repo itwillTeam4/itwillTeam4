@@ -129,11 +129,13 @@ public class UserController {
 		User signInUser = userService.select(userCode);
 		session.removeAttribute("signInUserId");
 		session.setAttribute("signInUserId", signInUser.getUser_nn());
-		return "redirect:/mypage";
+		return "redirect:../";
 	}
 	
 	@RequestMapping(value = "/userdelete", method = RequestMethod.GET)
-	public String userDelete(int user_code) {
+	public String userDelete(HttpSession session, int user_code) {
+		session.invalidate();
+		
 		userService.deleteUser(user_code);
 		return "redirect:/";
 	}

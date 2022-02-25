@@ -171,7 +171,7 @@
 
 					<div class="tagInput">
 						<input type="text" name="user_tag"
-							placeholder="유저 태그 입력 (#편안한 #로맨스 #소설)" />
+							placeholder="선호 태그 입력 (#편안한 #로맨스 #소설)" />
 					</div>
 
 

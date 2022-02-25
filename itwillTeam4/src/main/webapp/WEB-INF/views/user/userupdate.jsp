@@ -115,113 +115,56 @@
 
 
 					</div>
+
+
+
+					<div class="applyInputForms">
+
+						<div class="inputFormsLeft">
+							<p>전화번호 변경</p>
+						</div>
+
+						<div class="inputFormsRight userWidth">
+							<input type="text" value="${userUpdate.user_phone}"
+								id="user_phone" name="user_phone"
+								placeholder="전화번호 입력(01012345678)" required />
+						</div>
+					</div>
+
+
+					<div class="applyInputForms">
+
+						<div class="inputFormsLeft">
+							<p>선호 태그 변경</p>
+						</div>
+						<div class="inputFormsRight userWidth">
+							<input type="text" value="${userUpdate.user_tag}" id="user_tag"
+								name="user_tag" placeholder="선호 태그 입력 (#편안한 #로맨스 #소설)" required />
+						</div>
+					</div>
+
+
+
+
+
+					<div>
+						<input type="submit" class="btn_create" value="수정" />
+					</div>
+				</form>
+
+				<form action="./userdelete" method="get">
+					<div>
+						<input type="hidden" value="${userUpdate.user_code}"
+							id="user_code" name="user_code" />
+					</div>
+					<div>
+						<input type="submit" id="btn-userdelete" class="btn-userdelete" value="회원탈퇴" />
+					</div>
 				</form>
 			</div>
 
 
-			<div class="applyInputForms">
 
-				<div class="inputFormsLeft">
-					<p>독서 모임 정원</p>
-				</div>
-				<select name="meet_member_num" class="selectForm">
-					<option value="3">3</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="8">8</option>
-					<option value="10">10</option>
-					<option value="12">12</option>
-					<option value="15">15</option>
-					<option value="18">18</option>
-					<option value="20">20</option>
-				</select>
-			</div>
-
-			<div class="applyInputForms">
-
-				<div class="inputFormsLeft">
-					<p>온라인/오프라인</p>
-				</div>
-				<div class="selectRadio">
-					<div class="radio">
-						<label style="margin-right: 84px;"><input type="radio"
-							name="meet_on_or_off" value="1" checked>온라인</label>
-					</div>
-					<div class="radio">
-						<label><input type="radio" name="meet_on_or_off" value="2">오프라인</label>
-					</div>
-				</div>
-			</div>
-			<div>
-				<input type="hidden" name="meet_host_name" value="${signInUserId}"
-					required />
-			</div>
-			<div>
-				<input type="hidden" name="meet_host" value="${signInUserCode}"
-					required readonly />
-			</div>
-			<div>
-				<input type="hidden" name="meet_member_code"
-					value="${signInUserCode}" required readonly />
-			</div>
-			<div>
-				<input type="hidden" name="meet_join_num" value="1" required
-					readonly />
-			</div>
-
-
-
-
-			<div class="applyInputForms bigbigForm">
-
-				<div class="inputFormsLeft">
-					<p>도서 선정</p>
-				</div>
-				<div class="book_info_div">
-					<div class="book_info"></div>
-					<div class="book_info2">
-
-
-
-						<input type="text" id="meet_book_title"
-							placeholder="책 제목을 입력해주세요." name="meet_book_title" required /> <input
-							type="button" id="btn_book_search" name="btn_book_search"
-							value="검색" />
-
-
-
-
-						<div>
-							<input type="text" id="meet_book_authors"
-								name="meet_book_authors" value="" placeholder="저자" required
-								readonly />
-						</div>
-						<div>
-							<input type="text" id="meet_book_pub" name="meet_book_pub"
-								value="" placeholder="출판사" required readonly />
-						</div>
-						<div>
-							<input type="hidden" id="meet_book_img" name="meet_book_img"
-								value="" required />
-						</div>
-						<div>
-							<input type="hidden" id="meet_book_tag" name="meet_book_tag"
-								value="" />
-						</div>
-
-
-					</div>
-
-
-					<div id="btns" class="btns">
-						<input type="button" id="btn_prev" class="searchBtn1"> <input
-							type="button" id="btn_next" class="searchBtn2">
-					</div>
-				</div>
-			</div>
-			<div>
-				<input type="submit" class="btn_create" value="등록" />
-			</div>
 
 
 		</div>
@@ -235,7 +178,6 @@
 
 
 
-	</div>
 
 
 

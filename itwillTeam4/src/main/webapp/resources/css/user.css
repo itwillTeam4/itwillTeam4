@@ -281,3 +281,31 @@ img {
 }
 .nullbox{height:21px;}
 
+.btn_create {
+	width: 100px;
+	width: 100px;
+	background-color: #007450;
+	color: white;
+	font-weight: 500;
+	height: 50px;
+	border-radius: 7px;
+	position: relative;
+	top: 30px;
+	float: right;
+	border: none !important;
+}
+
+.btn-userdelete{
+	width: 100px;
+	width: 100px;
+	background-color: #FF9B75;
+	color: white;
+	font-weight: 500;
+	height: 50px;
+	border-radius: 7px;
+	position: relative;
+	top: 30px;
+	border: none !important;
+	float:left;
+}
+
