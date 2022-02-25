@@ -17,6 +17,14 @@
 		WHERE ${COL_USER_CODE} = #{user_code}
 	</delete>
 
-
-
+	<update id="getKey" parameterType="Map" >
+		UPDATE ${TABLE_USER_TABLE}
+		SET ${COL_USER_KEY} = #{user_key} 
+		WHERE ${COL_USER_NN} = #{user_nn}
+	</update>
+	<update id="alter_userkey" parameterType="Map">
+		UPDATE ${TABLE_USER_TABLE}
+		SET ${COL_USER_KEY} = 'Y' 
+		WHERE ${COL_USER_NN} = #{user_nn} AND ${COL_USER_KEY} = #{user_key} 
+	</update>
 </mapper>

@@ -40,6 +40,7 @@
         <property name="COL_USER_ADMIN_CHECK"
             value="user_admin_check" />
         <property name="COL_USER_TAG" value="user_tag" />
+        <property name="COL_USER_KEY" value="user_key"/>
 
 
         <!-- MEET_TABLE 테이블 관련 상수들 -->
