@@ -120,7 +120,7 @@ public class MeetDaoImpl implements MeetDao {
 		}
 		params.put("meet_on_or_off", 3-meet_on_or_off);
 		params.put("meet_theme", meet_theme);
-		params.put("meet_book_title", meet_book_title);
+		params.put("meet_book_title", "%"+meet_book_title+"%");
 		return sqlSession.selectList(MEET_NAMESPACE+".find",params);
 	}
 }
