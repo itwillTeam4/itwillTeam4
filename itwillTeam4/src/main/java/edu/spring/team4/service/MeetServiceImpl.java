@@ -79,4 +79,9 @@ public class MeetServiceImpl implements MeetService {
 	public List<Meet> selectByMemberCode(String userCode) {
 		return meetDao.selectByMemberCode(userCode);
 	}
+
+	@Override
+	public List<Meet> find(int meet_on_or_off, String meet_theme, String meet_book_title) {
+		return meetDao.find(meet_on_or_off, meet_theme, meet_book_title);
+	}
 }

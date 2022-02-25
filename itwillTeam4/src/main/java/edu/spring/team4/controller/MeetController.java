@@ -2,6 +2,8 @@ package edu.spring.team4.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +34,26 @@ public class MeetController {
 		List<Meet> meetlist = meetService.select();
 		model.addAttribute("meetList", meetlist);
 	}
-	
+
 	@RequestMapping(value = "/find", method = RequestMethod.GET)
 	public void search(Model model) {
-		log.info("what() ȣ��");
+		log.info("와아아아아아{}",model);
+	}
+
+	@RequestMapping(value = "/find", method = RequestMethod.POST)
+	public void search(Model model,HttpServletRequest httpServletRequest) {
+		log.info("이거 머야??{}", httpServletRequest.getParameter("search1"));
+		log.info("이거 머야??{}", httpServletRequest.getParameter("search2[]"));
+		log.info("이거 머야??{}", httpServletRequest.getParameter("search3"));
+		int meet_on_or_off = 0;
+		if(httpServletRequest.getParameter("search1")!=null) {
+			meet_on_or_off=Integer.parseInt(httpServletRequest.getParameter("search1"));
+		}
+		String meet_theme=httpServletRequest.getParameter("search2[]");
+		String meet_book_title=httpServletRequest.getParameter("search3");
+		List<Meet> meetlist = meetService.find(meet_on_or_off, meet_theme, meet_book_title);
+				
+		model.addAttribute("meetList", meetlist);		
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
@@ -53,7 +71,7 @@ public class MeetController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(int meet_idx, Model model) {
 		Meet meet = meetService.select(meet_idx);
-		List<Meet> meetlist = meetService.selectByHost(meet.getMeet_host(),meet.getMeet_idx());
+		List<Meet> meetlist = meetService.selectByHost(meet.getMeet_host(), meet.getMeet_idx());
 		model.addAttribute("meet", meet);
 		model.addAttribute("meetlist", meetlist);
 	}
@@ -76,17 +94,17 @@ public class MeetController {
 //		return "redirect:/meet/detail?meet_idx={meet_idx}";
 
 	}
+
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(int meet_idx) {
 		meetService.delete(meet_idx);
 		return "redirect:/board?act=rlt";
 	}
-	
-	
+
 	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
 	public String updateLike(@PathVariable(name = "meet_idx") Integer meet_idx,
 			@RequestParam(value = "joiner", required = false) String joiner) {
-		log.info("meet_idx={},joiner={}",meet_idx,joiner);
+		log.info("meet_idx={},joiner={}", meet_idx, joiner);
 		meetService.updateLike(meet_idx, joiner);
 		return "redirect:/meet/detail?meet_idx={meet_idx}";
 	}
@@ -98,6 +116,5 @@ public class MeetController {
 		model.addAttribute("meetList", list);
 		return "/meet/main";
 	}
-	
-	
+
 }

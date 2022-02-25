@@ -106,8 +106,21 @@ public class MeetDaoImpl implements MeetDao {
 	@Override
 	public List<Meet> selectByMemberCode(String userCode) {
 		return sqlSession.selectList(MEET_NAMESPACE+".selectByMemberCode", " %"+userCode+"% ");
-		
-		
-		
+	}
+
+	@Override
+	public List<Meet> find(int meet_on_or_off, String meet_theme, String meet_book_title) {
+		log.info("여기는 meetDao.find");
+		Map<String, Object> params = new HashMap<>();
+		if(meet_theme==null) {
+			meet_theme="%";
+		}
+		if(meet_book_title==""||meet_book_title==null) {
+			meet_book_title="%";
+		}
+		params.put("meet_on_or_off", 3-meet_on_or_off);
+		params.put("meet_theme", meet_theme);
+		params.put("meet_book_title", meet_book_title);
+		return sqlSession.selectList(MEET_NAMESPACE+".find",params);
 	}
 }

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.spring.team4.mapper.MeetMapper">
+	
+	<select id="find" resultType="Meet">
+	SELECT * FROM ${TABLE_MEET_TABLE}
+	WHERE ${COL_MEET_ON_OR_OFF} != #{meet_on_or_off}
+	AND ${COL_MEET_THEME} like #{meet_theme}
+	AND ${COL_MEET_BOOK_TITLE} like #{meet_book_title}
+	</select>
 
 	<select id="selectAll" resultType="Meet">
 	SELECT * FROM ${TABLE_MEET_TABLE} 

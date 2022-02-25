@@ -9,6 +9,7 @@ public interface MeetService {
 	List<Meet> select();
 	List<Meet> selectByHost(int host,int meet_idx);
 	List<Meet> selectByMemberCode(String userCode);
+	List<Meet> find(int meet_on_or_off, String meet_theme, String meet_book_title);
 	
 	int insert(Meet meet);
 	Meet select(int meet_idx);
