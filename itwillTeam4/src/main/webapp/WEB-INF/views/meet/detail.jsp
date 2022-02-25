@@ -3,7 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -140,7 +140,7 @@
 					</div>
 
 
-					<div class="detailForms">
+					<div class="detailForms noBorder">
 						<h3>호스트의 다른 모임</h3>
 
 
@@ -212,13 +212,20 @@
 				</div>
 
 
-				<fmt:formatNumber value = "${signInUserCode }" type = "number" var="uc" />
+				<fmt:formatNumber value="${signInUserCode }" type="number" var="uc" />
 
-				
+
 				<c:choose>
 
 
+					<c:when test="${empty signInUserCode}">
+						<button class="rightApply ra3 fhrmdls"  >
+							<h2>
+								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
+							</h2>
+						</button>
 
+					</c:when>
 					<c:when test="${fn:contains(meet.meet_member_code, uc) }">
 						<button class="rightApply ra1">
 							<h2>
@@ -288,8 +295,14 @@
 		});
 
 		
-		$(document).ready(function(){
+		$(".fhrmdls").click(function(){
+			event.preventDefault();
+			alert("로그인이 필요합니다.")
 			
+			
+		});
+		
+		$(document).ready(function(){
 			
 			if (${meet.meet_join_num } == ${meet.meet_member_num }) {
 					$("#disable").css({
