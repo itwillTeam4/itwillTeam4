@@ -97,7 +97,7 @@
 
 				</div>
 
-				<div>
+				<div style="display:none">
 					<table>
 						<thead>
 							<tr>
