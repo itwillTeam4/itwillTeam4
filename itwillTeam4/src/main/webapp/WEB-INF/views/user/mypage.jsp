@@ -76,7 +76,7 @@
 									<td>${meet.meet_member_num }</td>
 									<td>${meet.meet_join_num}</td>
 								</tr>
-								<p id="when${status.count}">${meet.meet_when}</p>
+								<input type="text" id="when${status.count}" value = "${meet.meet_when}" >
 								<p class="forCount">${status.count}</p>
 							</c:forEach>
 						</tbody>
@@ -136,13 +136,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
-		var n=$('.forCount').last().text();
-		var cal;
-		
-		for(var i=1;i<=n;i++){
-			cal+=$('#when'+i).text();
-		}
-		console.log(cal);
+
 
 		$(document).ready(function() {
 		});
@@ -178,46 +172,45 @@
 			$("#mypageCon3").show();
 
 		});
-	</script>
+		var n=$('.forCount').last().text();
+		var cal;
+		
+	var calinfo =	{
+			googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
+			initialView : 'dayGridMonth',
+			initialDate : '2022-02-07',
+			selectable : true,
+			editable : false,
+			displayEventTime : false,
+			locale : "ko",
+			headerToolbar : {
+				left : 'prev,next today',
+				center : 'title',
+				right : 'dayGridMonth,timeGridWeek,timeGridDay'
+			},
+			eventSources : [
+		
+				
+ ]
+		}
+		for(var i=1;i<=n;i++){
+			cal=$('#when'+i).val().replaceAll("'","\"");
+			console.log(cal);
+			var obj=JSON.parse(cal);
+			console.log(obj);
+			calinfo.eventSources.push(obj);
+		}
+		
+		
+		
+		
 
-	<script>
-		document
-				.addEventListener(
-						'DOMContentLoaded',
-						function() {
+		document.addEventListener('DOMContentLoaded',	function() {
 
-							var calendarEl = document
-									.getElementById('calendar');
+							var calendarEl = document	.getElementById('calendar');
 
-							var calendar = new FullCalendar.Calendar(
-									calendarEl,
-									{
-										googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
-										initialView : 'dayGridMonth',
-										initialDate : '2022-02-07',
-										selectable : true,
-										editable : false,
-										displayEventTime : false,
-										locale : "ko",
-										headerToolbar : {
-											left : 'prev,next today',
-											center : 'title',
-											right : 'dayGridMonth,timeGridWeek,timeGridDay'
-										},
-										eventSources : [
-												{
-													googleCalendarId : 'v0f54lctctfjig2rlnl58o07fc@group.calendar.google.com',
-													color : "#FF99CC"
-												},
-												{
-													googleCalendarId : 'ksqbbdr0r3cubgnfg7mcebujso@group.calendar.google.com',
-													color : "#FFC200"
-												},
-												{
-													googleCalendarId : '23aspkf41g1su64651c5da532c@group.calendar.google.com',
-													color : "#020715"
-												}, ]
-									});
+							var calendar = new FullCalendar.Calendar(calendarEl,calinfo
+								);
 
 							calendar.render();
 						});
