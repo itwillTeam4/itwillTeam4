@@ -3,6 +3,8 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,7 +108,8 @@
 								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '덕후형'}">
-							<p class="themeintro2">덕후형 모임은 작가나 작품을 선정하여 멤버들과 함께 깊이 있게 탐독하는 모임입니다.</p>
+							<p class="themeintro2">덕후형 모임은 작가나 작품을 선정하여 멤버들과 함께 깊이 있게
+								탐독하는 모임입니다.</p>
 						</c:when>
 
 					</c:choose>
@@ -198,47 +201,48 @@
 
 					<div>
 						<p>현재 모임인원</p>
-						<span>${meet.meet_join_num}명</span>
+						<span id="now">${meet.meet_join_num}명</span>
 					</div>
 					<div>
 						<p>모임정원</p>
-						<span>${meet.meet_member_num }명</span>
+						<span id="max">${meet.meet_member_num }명</span>
 					</div>
 
 
 				</div>
 
 
-				<c:set var="memberCode" value="${meet.meet_member_code}" />
-				<c:set var="loginCode" value="${signInUserCode }"/>
+				<fmt:formatNumber value = "${signInUserCode }" type = "number" var="uc" />
+
+				
 				<c:choose>
 
 
 
-					<c:when test="${fn:contains(memberCode, loginCode)} ">
-						<div class="rightApply ra1">
+					<c:when test="${fn:contains(meet.meet_member_code, uc) }">
+						<button class="rightApply ra1">
 							<h2>
 								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임탈퇴하기</a>
 							</h2>
-						</div>
+						</button>
 
 					</c:when>
 					<c:when test="${signInUserCode eq meet.meet_host}">
-						<div class="rightApply ra2">
+						<button class="rightApply ra2">
 							<h2>
 								<a href="./delete?meet_idx=${meet.meet_idx }" class="meetDelete">모임삭제하기</a>
 							</h2>
-						</div>
+						</button>
 
 					</c:when>
 
 
 					<c:otherwise>
-						<div class="rightApply ra3">
+						<button class="rightApply ra3" id="disable">
 							<h2>
-								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}" >모임가입하기</a>
+								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
 							</h2>
-						</div>
+						</button>
 					</c:otherwise>
 				</c:choose>
 
@@ -273,16 +277,41 @@
 			}, 1000)
 
 		}, 2500)
+
+		$('.meetDelete').click(function(event) {
+			event.preventDefault();
+			var result = confirm('모임을 정말 삭제할까요?');
+			if (result) {
+				location = $(this).attr('href');
+				alert('삭제되었습니다.')
+			}
+		});
+
+		
+		$(document).ready(function(){
+			
+			
+			if (${meet.meet_join_num } == ${meet.meet_member_num }) {
+					$("#disable").css({
+						"opacity" : "0.5"
+					});
+				$("#disable").prop("disabled",true);
+				$("#disable a").click(function() {
+					
+						event.preventDefault();
+						alert("모임의 정원이 다 찼습니다.")
+						
+					});
+				
+			}
+			
+			
+			
+			
+		});
 		
 		
-		$('.meetDelete').click(function(event){
-  			event.preventDefault();
-  			var result = confirm('모임을 정말 삭제할까요?');
-  			if (result){
-  				location = $(this).attr('href'); 
-  				alert('삭제되었습니다.')
-  			}
-  		});
+		
 	</script>
 </body>
 </html>
