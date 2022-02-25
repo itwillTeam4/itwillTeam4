@@ -21,7 +21,7 @@
 
 			<div class="left-gnb">
 				<div class="profile-box">
-					<p><span>${signInUserId}</span>님</p>
+					<p><span>${signInUserId}</span></p>
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
