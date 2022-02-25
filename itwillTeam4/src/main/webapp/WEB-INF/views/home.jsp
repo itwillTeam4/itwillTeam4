@@ -177,7 +177,7 @@
 			</ul>
 
 			<div class="more-btn-box">
-				<a href="http://localhost:8181/team4/board/main">
+				<a href="http://localhost:8181/team4/board?act=rlt">
 					<div id="more-btn-box">
 						<span>더보기</span> <img
 							src="${pageContext.request.contextPath}/resources/img/arrow.png"

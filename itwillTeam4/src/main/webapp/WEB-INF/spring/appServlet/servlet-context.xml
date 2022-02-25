@@ -26,12 +26,25 @@
 	
     <!-- interceptor -->
  	<beans:bean id="authInterceptor" class="edu.spring.team4.interceptor.AuthInterceptor"></beans:bean>
+ 	<beans:bean id="insertInterceptor" class="edu.spring.team4.interceptor.InsertInterceptor"></beans:bean>
+ 	<beans:bean id="meetInterceptor" class="edu.spring.team4.interceptor.MeetInterceptor"></beans:bean>
  	
  	<interceptors>
  		<interceptor>
- 			<mapping path="/board/insert"/>
  			<mapping path="/board"/>
  			<beans:ref bean="authInterceptor"/>
+ 		</interceptor>
+ 	</interceptors>
+ 	<interceptors>
+ 		<interceptor>
+ 			<mapping path="/board/insert"/>
+ 			<beans:ref bean="insertInterceptor"/>
+ 		</interceptor>
+ 	</interceptors>
+ 	<interceptors>
+ 		<interceptor>
+ 			<mapping path="/meet/detail"/>
+ 			<beans:ref bean="meetInterceptor"/>
  		</interceptor>
  	</interceptors>
  	
