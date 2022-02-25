@@ -54,7 +54,7 @@
 	<!-- 게시글 수정 -->
 	<update id="update">
 	UPDATE ${TABLE_MEET_TABLE}
-	SET ${COL_MEET_NAME} = #{meet_name}, ${COL_MEET_INTRO} = #{meet_intro}, ${COL_MEET_THEME} = #{meet_theme}, ${COL_MEET_MEMBER_NUM} = #{meet_member_num}, ${COL_MEET_ON_OR_OFF} = #{meet_on_or_off}, ${COL_MEET_WHEN} = #{meet_when}, ${COL_BOARD_REG_DATE} = sysdate
+	SET ${COL_MEET_NAME} = #{meet_name}, ${COL_MEET_INTRO} = #{meet_intro}, ${COL_MEET_THEME} = #{meet_theme}, ${COL_MEET_MEMBER_NUM} = #{meet_member_num}, ${COL_MEET_ON_OR_OFF} = #{meet_on_or_off}
 	WHERE ${COL_MEET_IDX} = #{meet_idx}
 	</update>
 	

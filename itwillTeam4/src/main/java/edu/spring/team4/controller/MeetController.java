@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.Meet;
 import edu.spring.team4.service.MeetService;
 
@@ -59,21 +60,28 @@ public class MeetController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public void update(int meet_idx, Model model) {
+		log.info("update(meet_idx={}) 호출", meet_idx);
+
 		Meet meet = meetService.select(meet_idx);
 		model.addAttribute("meet", meet);
+
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(Meet meet) {
+		log.info("update({}) POST 호출", meet);
+
 		meetService.update(meet);
 		return "redirect:/board?act=rlt";
-	}
+//		return "redirect:/meet/detail?meet_idx={meet_idx}";
 
+	}
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(int meet_idx) {
 		meetService.delete(meet_idx);
 		return "redirect:/board?act=rlt";
 	}
+	
 	
 	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
 	public String updateLike(@PathVariable(name = "meet_idx") Integer meet_idx,

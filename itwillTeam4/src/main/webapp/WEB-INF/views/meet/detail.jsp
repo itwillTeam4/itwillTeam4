@@ -182,6 +182,16 @@
 
 						</div>
 					</div>
+					
+					<c:if test="${signInUserCode == meet.meet_host}">
+						<!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
+						<a href="./update?meet_idx=${meet.meet_idx}">
+							<button class="btnUpdate">수정</button>
+						</a>
+						<a id="menu-delete" href="./delete?meet_idx=${meet.meet_idx}">
+							<button class="btnDelete">삭제</button>
+						</a>
+					</c:if>
 				</div>
 
 
