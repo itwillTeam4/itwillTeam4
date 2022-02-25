@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,6 +105,9 @@
 							<p class="themeintro2">낭독형 모임은 호스트와 멤버들이 책을 같이 소리내어 읽으며 공부하는
 								모임입니다.</p>
 						</c:when>
+						<c:when test="${meet.meet_theme eq '덕후형'}">
+							<p class="themeintro2">덕후형 모임은 작가나 작품을 선정하여 멤버들과 함께 깊이 있게 탐독하는 모임입니다.</p>
+						</c:when>
 
 					</c:choose>
 
@@ -143,31 +147,31 @@
 
 							<ul class="swiper-wrapper wpqkf">
 								<c:forEach begin="0" end="9" step="1" var="host_meet"
-										items="${meetlist }">
-										<li class="ehofk swiper-slide"><a
-											href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
-												<div class="info">
-													<div class="info1">
-														<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
-														<span class="meetThemeDetail">${host_meet.meet_theme }</span>
-													</div>
-													<div class="info2">
-														<span class="name">${host_meet.meet_host_name }</span> <span
-															class="meetMember"> ${host_meet.meet_member_num }
-															명 참여중</span>
-													</div>
-													<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
-
-
+									items="${meetlist }">
+									<li class="ehofk swiper-slide"><a
+										href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
+											<div class="info">
+												<div class="info1">
+													<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
+													<span class="meetThemeDetail">${host_meet.meet_theme }</span>
 												</div>
-												<div class="infoImgBoxDetail ">
-													<img src="${host_meet.meet_book_img }" alt="com01"
-														class="infoImg">
+												<div class="info2">
+													<span class="name">${host_meet.meet_host_name }</span> <span
+														class="meetMember"> ${host_meet.meet_member_num } 명
+														참여중</span>
 												</div>
+												<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
 
-										</a></li>
 
-									</c:forEach>
+											</div>
+											<div class="infoImgBoxDetail ">
+												<img src="${host_meet.meet_book_img }" alt="com01"
+													class="infoImg">
+											</div>
+
+									</a></li>
+
+								</c:forEach>
 							</ul>
 							<div class="swiper-pagination"></div>
 
@@ -177,41 +181,68 @@
 					</div>
 				</div>
 
-				
+
 			</div>
 
-		<div class="rightDetail">
+			<div class="rightDetail">
 
-					<div class="rightInfo">
-						<div>
-							<p>호스트</p>
-							<span>${meet.meet_host_name }</span>
-						</div>
-						<div>
-							<p>함께 읽을 책</p>
-							<span class="text-overflow">${meet.meet_book_title }</span>
-						</div>
-
-						<div>
-							<p>현재 모임인원</p>
-							<span>${meet.meet_join_num}명</span>
-						</div>
-						<div>
-							<p>모임정원</p>
-							<span>${meet.meet_member_num }명</span>
-						</div>
-
-
+				<div class="rightInfo">
+					<div>
+						<p>호스트</p>
+						<span>${meet.meet_host_name }</span>
+					</div>
+					<div>
+						<p>함께 읽을 책</p>
+						<span class="text-overflow">${meet.meet_book_title }</span>
 					</div>
 
-
-					<div class="rightApply">
-						<h2>
-							<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임가입하기</a>
-						</h2>
+					<div>
+						<p>현재 모임인원</p>
+						<span>${meet.meet_join_num}명</span>
 					</div>
+					<div>
+						<p>모임정원</p>
+						<span>${meet.meet_member_num }명</span>
+					</div>
+
 
 				</div>
+
+
+				<c:set var="memberCode" value="${meet.meet_member_code}" />
+				<c:set var="loginCode" value="${signInUserCode }"/>
+				<c:choose>
+
+
+
+					<c:when test="${fn:contains(memberCode, loginCode)} ">
+						<div class="rightApply ra1">
+							<h2>
+								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임탈퇴하기</a>
+							</h2>
+						</div>
+
+					</c:when>
+					<c:when test="${signInUserCode eq meet.meet_host}">
+						<div class="rightApply ra2">
+							<h2>
+								<a href="./delete?meet_idx=${meet.meet_idx }" class="meetDelete">모임삭제하기</a>
+							</h2>
+						</div>
+
+					</c:when>
+
+
+					<c:otherwise>
+						<div class="rightApply ra3">
+							<h2>
+								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}" >모임가입하기</a>
+							</h2>
+						</div>
+					</c:otherwise>
+				</c:choose>
+
+			</div>
 		</div>
 
 
@@ -224,20 +255,34 @@
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-	
+
 	<script>
-	 setInterval(function(){
-	        
-	        $(".wpqkf").delay(1500)
-	        $(".wpqkf").animate({"margin-left":"-623px"},1000)
-	        $(".wpqkf").delay(1500)
-	        $(".wpqkf").animate({"margin-left":"-1246px"},1000)
-	        $(".wpqkf").delay(1500)
-	        $(".wpqkf").animate({"margin-left":"0px"},1000)
-	        
-	        
-	    },2500)
-	    
+		setInterval(function() {
+
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "-623px"
+			}, 1000)
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "-1246px"
+			}, 1000)
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "0px"
+			}, 1000)
+
+		}, 2500)
+		
+		
+		$('.meetDelete').click(function(event){
+  			event.preventDefault();
+  			var result = confirm('모임을 정말 삭제할까요?');
+  			if (result){
+  				location = $(this).attr('href'); 
+  				alert('삭제되었습니다.')
+  			}
+  		});
 	</script>
 </body>
 </html>

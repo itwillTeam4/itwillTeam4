@@ -84,16 +84,6 @@
 						</div>
 					</div>
 
-					<div class="applyInputForms">
-
-						<div class="inputFormsLeft">
-							<p>when을 캘린더로 한다고하던데?</p>
-						</div>
-						<div class="inputFormsRight">
-							<input type="text" name="meet_when" class="applyInputText"
-								placeholder="어케할랭" maxlength="100" required />
-						</div>
-					</div>
 
 					<div class="applyInputForms">
 
