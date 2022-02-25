@@ -6,7 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>책오</title>
-
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css"
+	integrity="sha256-jLWPhwkAHq1rpueZOKALBno3eKP3m4IMB131kGhAlRQ="
+	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="${pageContext.request.contextPath}/resources/css/home.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
@@ -127,7 +130,7 @@
 		<div class="meetWrap">
 			<ul class="meetUl">
 
-				<c:forEach var="meet" items="${meetList}">
+				<c:forEach var="meet" items="${meetList}" varStatus="status">
 					<li><a href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
 							<div class="infoReal">
 								<div class="infoReal1">
@@ -137,7 +140,9 @@
 										<c:if test="${meet.meet_on_or_off == 1}">
 											<span class="meetOnOff"> #온라인모임 </span>
 										</c:if>
-
+												<input type="hidden" id="when${status.count}"
+									value="${meet.meet_when}">
+								<p class="forCount">${status.count}</p>
 
 										<c:if test="${meet.meet_on_or_off == 2}">
 											<span class="meetOnOff"> #오프라인모임 </span>
@@ -158,6 +163,7 @@
 							</div>
 
 						</a></li>
+
 				</c:forEach>
 
 
@@ -168,14 +174,15 @@
 
 
 			</ul>
+<div id='calendar'></div>
 		</div>
-
 	</div>
 
 	<%@include file="../footer.jsp"%>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
 	<script>
 		setInterval(function() {
 
@@ -192,7 +199,44 @@
 				"margin-left" : "0px"
 			}, 1000)
 
-		}, 2500)
+		}, 2500);
+		
+		var n = $('.forCount').last().text();
+		var cal;
+
+		var calinfo = {
+			googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
+			initialView : 'dayGridMonth',
+			initialDate : '2022-02-07',
+			selectable : true,
+			editable : false,
+			displayEventTime : false,
+			locale : "ko",
+			headerToolbar : {
+				left : 'prev,next today',
+				center : 'title',
+				right : 'dayGridMonth,timeGridWeek,timeGridDay'
+			},
+			eventSources : [
+
+			]
+		}
+		for (var i = 1; i <= n; i++) {
+			cal = $('#when' + i).val().replaceAll("'", "\"");
+			console.log(cal);
+			var obj = JSON.parse(cal);
+			console.log(obj);
+			calinfo.eventSources.push(obj);
+		}
+
+		document.addEventListener('DOMContentLoaded', function() {
+
+			var calendarEl = document.getElementById('calendar');
+
+			var calendar = new FullCalendar.Calendar(calendarEl, calinfo);
+
+			calendar.render();
+		});
 	</script>
 </body>
 </html>
