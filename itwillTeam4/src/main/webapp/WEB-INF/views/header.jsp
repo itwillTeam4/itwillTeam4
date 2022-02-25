@@ -273,10 +273,7 @@
 				}
 			});
 
-			// 회원가입 성공, 실패 메시지
-			$('#btn-complete').click(function(event){
-				alert("회원가입 성공! 반갑습니다*^^*");
-			});
+			
 			
 			if (location.href == "http://localhost:8181/team4/?register=fail"){
 				if ('${register}' == false) {

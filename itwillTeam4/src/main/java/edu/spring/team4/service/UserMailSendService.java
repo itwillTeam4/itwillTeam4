@@ -14,7 +14,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import edu.spring.team4.mapper.UserMapper;
 import edu.spring.team4.persistence.UserDao;
+import edu.spring.team4.persistence.UserDaoImpl;
 
 @Service
 public class UserMailSendService {
@@ -59,7 +61,7 @@ public class UserMailSendService {
 	public void mailSendWithUserKey(String user_id, String user_nn, HttpServletRequest request) {
 		
 		String key = getKey(false, 20);
-		userDao = sqlSession.getMapper(UserDao.class);
+		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 		userDao.getKey(user_nn, key); 
 		MimeMessage mail = mailSender.createMimeMessage();
 		String htmlStr = "<h2>안녕하세요 책오 입니다!</h2><br><br>" 
@@ -81,7 +83,7 @@ public class UserMailSendService {
 			
 			int resultCnt = 0;
 			
-			userDao = sqlSession.getMapper(UserDao.class);
+			UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 			resultCnt = userDao.alter_userKey(user_nn, key);
 			
 			return resultCnt;

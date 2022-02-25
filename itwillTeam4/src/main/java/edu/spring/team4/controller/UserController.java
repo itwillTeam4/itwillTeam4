@@ -20,6 +20,7 @@ import org.springframework.web.util.UriUtils;
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.Meet;
 import edu.spring.team4.domain.User;
+import edu.spring.team4.persistence.UserDao;
 import edu.spring.team4.service.BoardService;
 import edu.spring.team4.service.MeetService;
 import edu.spring.team4.service.UserMailSendService;
@@ -35,7 +36,7 @@ public class UserController {
 	@Autowired private BoardService boardService;
 	@Autowired private MeetService meetServie;
 	@Autowired private UserMailSendService mailsender;
-
+	@Autowired private UserDao userdao;
 
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
