@@ -66,13 +66,13 @@ public class MeetController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(Meet meet) {
 		meetService.update(meet);
-		return "redirect:/meet/main";
+		return "redirect:/board?act=rlt";
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(int meet_idx) {
 		meetService.delete(meet_idx);
-		return "redirect:/meet/main";
+		return "redirect:/board?act=rlt";
 	}
 	
 	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
