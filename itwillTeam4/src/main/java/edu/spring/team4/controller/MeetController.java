@@ -31,6 +31,11 @@ public class MeetController {
 		List<Meet> meetlist = meetService.select();
 		model.addAttribute("meetList", meetlist);
 	}
+	
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public void search(Model model) {
+		log.info("what() ȣ��");
+	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert() {
