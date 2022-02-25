@@ -2,6 +2,7 @@ package edu.spring.team4.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ import edu.spring.team4.domain.Meet;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.service.BoardService;
 import edu.spring.team4.service.MeetService;
+import edu.spring.team4.service.UserMailSendService;
 import edu.spring.team4.service.UserService;
 
 @Controller  
@@ -32,6 +34,9 @@ public class UserController {
 	@Autowired private UserService userService;
 	@Autowired private BoardService boardService;
 	@Autowired private MeetService meetServie;
+	@Autowired private UserMailSendService mailsender;
+
+
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void register() {
@@ -39,16 +44,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(User user, @RequestParam(value = "url", required=true)String url) {
+	public String register(User user, @RequestParam(value = "url", required=true)String url, 
+			HttpServletRequest request) {
 		log.info("register({}) POST 호출", user);
 		
-		int result = userService.registerNewUser(user);
+		userService.registerNewUser(user);
+		mailsender.mailSendWithUserKey(user.getUser_id(), user.getUser_nn(), request);
 		
-		if (result == 1) {
-			return "redirect:" + url;
-		} else {
-			return "redirect:/?register=false";
-		}
+		return "redirect:" + url;
 		
 	}
 	
@@ -145,4 +148,13 @@ public class UserController {
 		model.addAttribute("meetList",meetList);
 		
 	}
+	
+	@RequestMapping(value = "/key_alter", method = RequestMethod.GET)
+	public String key_alterConfirm(@RequestParam("user_nn") String user_nn, @RequestParam("user_key") String key) {
+
+		mailsender.alter_userKey_service(user_nn, key); // mailsender의 경우 @Autowired
+
+		return "user/userRegSuccess";
+	}
+	
 }

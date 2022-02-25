@@ -14,13 +14,14 @@ public class User {
 	private String user_meet_idx;
 	private int user_admin_check;
 	private String user_tag;
+	private String user_key;
 	
 	
 	public User() {}
 
 
 	public User(int user_code, String user_id, String user_pwd, String user_nn, String user_name, Date user_reg_date,
-			String user_phone, String user_meet_idx, int user_admin_check, String user_tag) {
+			String user_phone, String user_meet_idx, int user_admin_check, String user_tag, String user_key) {
 		this.user_code = user_code;
 		this.user_id = user_id;
 		this.user_pwd = user_pwd;
@@ -31,6 +32,7 @@ public class User {
 		this.user_meet_idx = user_meet_idx;
 		this.user_admin_check = user_admin_check;
 		this.user_tag = user_tag;
+		this.user_key = user_key;
 	}
 
 
@@ -134,6 +136,18 @@ public class User {
 	}
 	
 	
+	
+	
+	public String getUser_key() {
+		return user_key;
+	}
+
+
+	public void setUser_key(String user_key) {
+		this.user_key = user_key;
+	}
+
+
 @Override
 	public String toString() {
 		return String.format("User{user_code=%d, user_id=%s, user_pwd=%s, user_nn=%s, user_name=%s, user_reg_date=%s, user_phone=%s, user_meet_idx=%s,user_admin_check=%d,user_tag=%s", 

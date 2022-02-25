@@ -11,5 +11,7 @@ public interface UserDao {
 	User read(int user_code);
 	int update(User user);
 	int delete(int user_code);
+	int getKey(String user_nn, String user_key);
+	int alter_userKey(String user_nn, String user_key);
 	
 }

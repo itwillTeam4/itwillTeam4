@@ -1,6 +1,9 @@
 package edu.spring.team4.persistence;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +25,7 @@ public class UserDaoImpl implements UserDao {
 	private UserMapper mapper;
 	@Autowired
 	private SqlSession sqlSession;
-
+	
 	@Override
 	public int create(User user) {
 		log.info("create({}) 호출", user);
@@ -91,6 +94,22 @@ public class UserDaoImpl implements UserDao {
 	public int delete(int user_code) {
 		log.info("delete 호출");
 		return sqlSession.delete(USER_NAMESPACE + ".delete", user_code);
+	}
+
+	@Override
+	public int getKey(String user_nn, String user_key) {
+		Map<String, String> params = new HashMap<>();
+		params.put("user_nn",user_nn);
+		params.put("user_key", user_key);
+		return sqlSession.update(USER_NAMESPACE + ".getKey", params);
+	}
+	
+	@Override
+	public int alter_userKey(String user_nn, String user_key) {
+		Map<String, String> params = new HashMap<>();
+		params.put("user_nn",user_nn);
+		params.put("user_key", user_key);
+		return sqlSession.update(USER_NAMESPACE + ".alter_userkey", params);
 	}
 
 }
