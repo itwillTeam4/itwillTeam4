@@ -41,7 +41,7 @@
 	<select id="selectThree" resultType="Meet">
 	SELECT * FROM (
 
-		SELECT * FROM ${TABLE_MEET_TABLE} ORDER BY ${COL_MEET_MEMBER_NUM} DESC)
+		SELECT * FROM ${TABLE_MEET_TABLE} ORDER BY ${COL_MEET_JOIN_NUM} DESC)
 
 		<![CDATA[where rownum <= 3]]>
 	
