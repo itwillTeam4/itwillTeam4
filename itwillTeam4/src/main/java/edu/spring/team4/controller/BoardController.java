@@ -2,6 +2,8 @@ package edu.spring.team4.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +99,16 @@ public class BoardController {
 		return result;
 	}
 
+	@RequestMapping(value="/mymeet", method=RequestMethod.GET)
+	public void myMeet(Model model, HttpSession session) {
+		int userCode = (int)session.getAttribute("signInUserCode");
+		List<Meet> meetList = meetService.selectByMemberCode(Integer.toString(userCode));
+		model.addAttribute("meetList",meetList);
+	}
+	
+	
+	
+	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public void insert(Model model, @RequestParam(value = "MeetIdx", required = false) String meet_idx) {
 		log.info("insert() 호출");

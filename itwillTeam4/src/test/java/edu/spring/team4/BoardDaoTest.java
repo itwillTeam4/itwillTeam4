@@ -15,24 +15,29 @@ import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.User;
 import edu.spring.team4.persistence.BoardDao;
 import edu.spring.team4.persistence.UserDao;
+import edu.spring.team4.utils.AES256;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-		locations = { "file:src/main/webapp/WEB-INF/spring/**/*.xml" }
-)
+@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/**/*.xml" })
 @WebAppConfiguration
 public class BoardDaoTest {
 	private static final Logger log = LoggerFactory.getLogger(BoardDaoTest.class);
-	
-	@Autowired private BoardDao boardDao;
-	@Autowired private UserDao userDao;
-	
+
+	@Autowired
+	private BoardDao boardDao;
+	@Autowired
+	private UserDao userDao;
+
 	@Test
-	public void deTest() {
-		log.info("boardDao: {}", boardDao);
+	public void deTest() {	
+
+		AES256 aes256= new AES256();
+		try {
+			log.info("{}",aes256.decrypt("vUFJ3sl0TFZp1ZNU/oHDiw=="));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		List<Board> list = boardDao.read();
-		log.info("list size = {}", list.size());
 		
 //		
 //		Board board = boardDao.read(3);
@@ -45,5 +50,5 @@ public class BoardDaoTest {
 //		
 
 	}
-	
+
 }

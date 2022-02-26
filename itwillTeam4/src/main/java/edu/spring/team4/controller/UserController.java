@@ -34,7 +34,7 @@ public class UserController {
 	
 	@Autowired private UserService userService;
 	@Autowired private BoardService boardService;
-	@Autowired private MeetService meetServie;
+	@Autowired private MeetService meetService;
 	@Autowired private UserMailSendService mailsender;
 	@Autowired private UserDao userdao;
 
@@ -146,7 +146,7 @@ public class UserController {
 		
 		int userCode = (int)session.getAttribute("signInUserCode");
 		List<Board> boardList = boardService.selectByUserCode(userCode);
-		List<Meet> meetList = meetServie.selectByMemberCode(Integer.toString(userCode));
+		List<Meet> meetList = meetService.selectByMemberCode(Integer.toString(userCode));
 		model.addAttribute("boardList",boardList);
 		model.addAttribute("meetList",meetList);
 		
