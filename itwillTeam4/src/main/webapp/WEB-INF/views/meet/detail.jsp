@@ -50,7 +50,7 @@
 						<h2>${meet.meet_name }</h2>
 						<c:if test="${signInUserCode == meet.meet_host}">
 							<a href="./update?meet_idx=${meet.meet_idx}">
-								<div class="btnUpdate meetdetailOption">수정</div>
+								<div class="btn_con">수정</div>
 							</a>
 						</c:if>
 
@@ -233,14 +233,6 @@
 						</button>
 
 					</c:when>
-					<c:when test="${fn:contains(meet.meet_member_code, uc) }">
-						<button class="rightApply ra1">
-							<h2>
-								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임탈퇴하기</a>
-							</h2>
-						</button>
-
-					</c:when>
 					<c:when test="${signInUserCode eq meet.meet_host}">
 						<button class="rightApply ra2">
 							<h2>
@@ -249,6 +241,16 @@
 						</button>
 
 					</c:when>
+					
+					<c:when test="${fn:contains(meet.meet_member_code, uc) }">
+						<button class="rightApply ra1">
+							<h2>
+								<a href="./updateLike/${meet.meet_idx}?joiner=${signInUserCode}">모임탈퇴하기</a>
+							</h2>
+						</button>
+
+					</c:when>
+					
 
 
 					<c:otherwise>

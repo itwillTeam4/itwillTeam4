@@ -90,6 +90,12 @@ img {
 	justify-content: center;
 	align-items: center;
 }
+.selectRadioUp {
+display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom:30px;
+}
 
 .inputFormsLeft {
 	min-width: 300px;
@@ -179,11 +185,26 @@ img {
 	display: flex;
     flex-direction: row;
 }
+.leftDetailTop2 {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .leftDetailTop1 h2 {
 	font-size: 36px;
 	font-weight: 700;
 }
+
+.upName
+{
+	font-size: 36px;
+	font-weight: 700;
+	border:1px solid #e6e6e6 !important;
+	padding:10px !important;
+	border-radius:5px!important;
+}
+
 
 .themeDetail {
 	font-size: 16px;
@@ -458,3 +479,27 @@ img {
 	top: 13px;
 	text-align:center;
 }
+
+
+.btn_con {
+   width: 100px;
+    background-color: #007450;
+    color: white;
+    font-weight: 500;
+    height: 50px;
+    border-radius: 7px;
+    position: relative;
+    float: right;
+    border: none !important;
+    left: 30px;
+    text-align: center;
+    line-height: 50px;}
+    
+    
+.upText{
+	padding:10px;
+	border: 1px solid #e6e6e6 !important;
+    margin-bottom: 30px;
+    	border-radius:5px!important;
+}
+

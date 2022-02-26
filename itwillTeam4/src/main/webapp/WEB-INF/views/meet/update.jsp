@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +12,23 @@
 <title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="${pageContext.request.contextPath}/resources/css/home.css"
+	rel="stylesheet" type="text/css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+
+
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/board.css"
+	href="${pageContext.request.contextPath}/resources/css/meet.css"
 	type="text/css">
-<script src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
+
+
+
 </head>
 <body>
 	<%@include file="../header.jsp"%>
@@ -26,315 +37,250 @@
 
 
 
-	<div class="bookModalBG">
-		<div class="bookModal">
-			<div id="bookModalClose" class="close">
-				<img
-					src="${pageContext.request.contextPath}/resources/img/close.png"
-					alt="close">
-			</div>
 
-			<div class="book_info"></div>
-			<div class="book_info2">
+	<form action="./update?meet_idx=${meet.meet_idx}" method="post">
+		<input type="hidden" name="meet_idx" value="${meet.meet_idx}" />
+		<div class="contentWrapMeet">
 
+			<div class="innerWrapMeetFlex">
+				<div class="leftDetail">
 
+					<div class="leftDetailTop">
 
-				<input type="text" id="meet_book_title_fake"
-					placeholder="책 제목을 입력해주세요."  value="${meet.meet_book_title}" required  /> <input type="button"
-					id="btn_book_search" name="btn_book_search" value="검색" />
-				<div id="bookSubmitBtn" class="bookSubmitBtn">
-					<p>등록</p>
-				</div>
+						<div class="leftDetailTop2">
+							<input type="text" value="${meet.meet_name }" class="upName"
+								name="meet_name"> <input type="submit" class="btn_con"
+								value="완료">
 
 
-
-				<div>
-					<input type="text" id="meet_book_authors_fake"  value="${meet.meet_book_authors}" 
-						placeholder="저자" required readonly />
-				</div>
-				<div>
-					<input type="text" id="meet_book_pub_fake" value="${meet.meet_book_pub }"
-						placeholder="출판사" required readonly />
-				</div>
-				<div>
-					<input type="hidden" id="meet_book_img_fake" value="${meet.meet_book_img}" required />
-				</div>
+						</div>
+						<div class="meetETCDetail">
+							<span class="themeDetail"> ${meet.meet_theme }</span>
+							<c:if test="${meet.meet_on_or_off == 1}">
+								<span class="meetOnOffDetail"> #온라인모임 </span>
+							</c:if>
 
 
-			</div>
-
-
-			<div id="btns" class="btns">
-				<input type="button" id="btn_prev" class="searchBtn1"> <input
-					type="button" id="btn_next" class="searchBtn2">
-			</div>
-		</div>
-
-
-
-	</div>
-
-
-	<div id="contentWrap">
-		<div class="innerWrap">
-
-			<div class="left-gnb">
-				<div class="profile-box">
-					<p>
-						<span>${signInUserId}</span>
-					</p>
-					<span>환영합니다.</span>
-				</div>
-			</div>
-
-			<div class="right-contents">
-				<div id="right-top-wrapInsert">
-					<p id="right-contents-title">글 수정</p>
-
-					<div>
-						<input type="button" id="btn_book_modal" value="도서 검색">
+							<c:if test="${meet.meet_on_or_off == 2}">
+								<span class="meetOnOffDetail"> #오프라인모임 </span>
+							</c:if>
+						</div>
 					</div>
-				</div>
+
+					<div class="detailFrame">
+
+						<div class="frameInfo">
+							<h2 class="frameTitle text-overflow-line2">${meet.meet_book_title }</h2>
+							<h3 class="frameAuthors">${meet.meet_book_authors }</h3>
+							<h4 class="framePub">${meet.meet_book_pub }</h4>
+
+						</div>
+						<div class="frameImgBox">
 
 
-				<div class="rightInput">
+							<img src="${meet.meet_book_img }" alt="book">
+						</div>
+					</div>
+					<div class="themeintro">
+						<p class="themeintro1">
+							해당 모임은 [<span><select name="meet_theme" class="selectForm">
+									<option value="책수다형">책수다형</option>
+									<option value="독서토론형">독서토론형</option>
+									<option value="덕후형">덕후형</option>
+									<option value="생활습관 개선형">생활습관 개선형</option>
+									<option value="낭독형">낭독형</option>
+									<option value="챌린지형">챌린지형</option>
+									<option value="스터디형">스터디형</option>
+							</select></span>] 모임입니다.
+						</p>
 
-					<form action="./update?meet_idx=${meet.meet_idx}" method="post">
 
-						<div style="display: none;">
-							<input type="number" name="meet_idx" value="${meet.meet_idx}" readonly>
+
+					</div>
+					<div class="detailFormsWrap">
+						<div class="detailForms">
+							<h3>호스트</h3>
+							<p>${meet.meet_host_name }</p>
 						</div>
 
-						<div>
-							<input type="text" id="meet_name" name="meet_name"
-								class="rightInputTitle" placeholder="제목을 입력해주세요." value="${meet.meet_name}" required
-								autofocus />
+						<div class="detailForms">
+							<h3>우리 모임을 소개합니다:)</h3>
+							<textarea name="meet_intro" class="applyInputText upText"
+								placeholder="개설할 모임에 대한 소개를 입력해주세요.(최대 500자)" maxlength="500"
+								rows="5" required>${meet.meet_intro }</textarea>
 						</div>
-						<div>
-							<textarea name="meet_intro" id="meet_intro"
-								placeholder="내용을 입력해주세요.">${meet.meet_intro}</textarea>
-						</div>
-						
-						<div class="applyInputForms">
-							<div class="inputFormsLeft">
-								<p>독서 모임 테마</p>
-							</div>	
 
-							<select name="meet_theme" class="selectForm">
-								<option value="책수다형">책수다형</option>
-								<option value="독서토론형">독서토론형</option>
-								<option value="덕후형">덕후형</option>
-								<option value="생활습관 개선형">생활습관 개선형</option>
-								<option value="낭독형">낭독형</option>
-								<option value="챌린지형">챌린지형</option>
-								<option value="스터디형">스터디형</option>
-							</select>
-						</div>
-						
-						<div class="applyInputForms">
-							<div class="inputFormsLeft">
-								<p>독서 모임 정원</p>
-							</div>
-							<select name="meet_member_num" class="selectForm">
-								<option value="3">3</option>
-								<option value="5">5</option>
-									<option value="6">6</option>
-								<option value="8">8</option>
-								<option value="10">10</option>
-								<option value="12">12</option>
-								<option value="15">15</option>
-								<option value="18">18</option>
-								<option value="20">20</option>
-							</select>
-						</div>
-						
-						
-						<div class="applyInputForms">
-							<div class="inputFormsLeft">
-								<p>온라인/오프라인</p>
-							</div>
-							<div class="selectRadio">
+						<div class="detailForms">
+							<h3>모임 장소</h3>
+							<div class="selectRadioUp">
 								<div class="radio">
 									<label style="margin-right: 84px;"><input type="radio"
 										name="meet_on_or_off" value="1" checked>온라인</label>
 								</div>
 								<div class="radio">
-									<label><input type="radio" name="meet_on_or_off" value="2">오프라인</label>
+									<label><input type="radio" name="meet_on_or_off"
+										value="2">오프라인</label>
 								</div>
-							</div>						
+							</div>
+						</div>
+
+
+						<div class="detailForms noBorder">
+							<h3>호스트의 다른 모임</h3>
+
+
+							<div class="swiper mySwiper2">
+
+
+
+								<ul class="swiper-wrapper wpqkf">
+									<c:forEach begin="0" end="9" step="1" var="host_meet"
+										items="${meetlist }">
+										<li class="ehofk swiper-slide"><a
+											href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
+												<div class="info">
+													<div class="info1">
+														<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
+														<span class="meetThemeDetail">${host_meet.meet_theme }</span>
+													</div>
+													<div class="info2">
+														<span class="name">${host_meet.meet_host_name }</span> <span
+															class="meetMember"> ${host_meet.meet_join_num } 명
+															참여중</span>
+													</div>
+													<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
+
+
+												</div>
+												<div class="infoImgBoxDetail ">
+													<img src="${host_meet.meet_book_img }" alt="com01"
+														class="infoImg">
+												</div>
+
+										</a></li>
+
+									</c:forEach>
+								</ul>
+								<div class="swiper-pagination"></div>
+
+
+
+							</div>
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+				<div class="rightDetail">
+
+					<div class="rightInfo">
+						<div>
+							<p>호스트</p>
+							<span>${meet.meet_host_name }</span>
+						</div>
+						<div>
+							<p>함께 읽을 책</p>
+							<span class="text-overflow">${meet.meet_book_title }</span>
 						</div>
 
 						<div>
-							<input type="hidden" id="meet_host" name="meet_host"
-								value="${signInUserCode}" required readonly />
-						</div>
-
-						<div>
-							<input type="hidden" name="meet_host_name" value="${meet.meet_host_name}"
-								required readonly />
-						</div>
-
-
-						<div id="book_info2">
-
-							<input type="text" id="meet_book_title" class="meet_book_title"
-								name="meet_book_title"  value="${meet.meet_book_title}" required readonly />
-
-
-
-
-
-							<div>
-								<input type="hidden" id="meet_book_authors"
-									name="meet_book_authors"  value="${meet.meet_book_authors}" required />
-							</div>
-							<div>
-								<input type="hidden" id="meet_book_pub" name="meet_book_pub" value="${meet.meet_book_pub}"
-									required />
-							</div>
-							<div>
-								<input type="hidden" id="meet_book_img" name="meet_book_img"  value="${meet.meet_book_img}"
-									required />
-							</div>
-							<div id="meetIdx">
-								<input type="hidden" name="meet_meet_idx"
-									value="${userMeetIdx}" required readonly />
-							</div>
-
+							<p>현재 모임인원</p>
+							<span id="now">${meet.meet_join_num}명</span>
 						</div>
 						<div>
-							<input type="submit" class="btn_create" value="수정" />
+							<p>모임정원</p>
+							<span id="max">${meet.meet_member_num }명</span>
 						</div>
 
-					</form>
+
+					</div>
+
+
+
+					<button class="rightApply ra3 fhrmdls" disabled>
+						<h2>
+							수정중
+						</h2>
+					</button>
+
+
+
 				</div>
 			</div>
 
 
 
 
-
-
 		</div>
 
-
-
-	</div>
-
-
-
-
-
-
+	</form>
 	<%@include file="../footer.jsp"%>
 	<script
 		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-	<script type="text/javascript">
-		//$("#editor").prop('required',true); 
-
-		$("#btn_book_modal").click(function() {
-			$(".bookModalBG").fadeIn(300);
-			$(".bookModal").fadeIn(300);
-
-		});
-
-		$("#bookModalClose").click(function() {
-
-			$(".bookModalBG").fadeOut(300);
-			$(".bookModal").fadeOut(300);
-
-		});
-
-		//var fakeToReal = document.getElementById("bookSubmitBtn");
-
-		$(".bookSubmitBtn").click(function() {
-
-			$(".bookModalBG").fadeOut(300);
-			$(".bookModal").fadeOut(300);
-
-			var fakeTitle = $("#meet_book_title_fake").val();
-			$("#meet_book_title").val(fakeTitle);
-			var fakeAuthors = $("#meet_book_authors_fake").val();
-			$("#meet_book_authors").val(fakeAuthors);
-			var fakePub = $("#meet_book_pub_fake").val();
-			$("#meet_book_pub").val(fakePub);
-			var fakeImg = $("#meet_book_img_fake").val();
-			$("#meet_book_img").val(fakeImg);
-
-		});
-
-		var n = 0;
-		var msg;
-		$(document)
-				.ready(
-						function() {
-							$('#btn_book_search')
-									.click(
-											function(event) {
-												var title = $(
-														'#meet_book_title_fake')
-														.val();
-												$
-														.ajax({
-															method : "GET",
-															url : "https://dapi.kakao.com/v3/search/book?target=title",
-															data : {
-																query : title,
-																size : 50
-															},
-															headers : {
-																Authorization : "KakaoAK 3f1fb761122afdd0796567178c84f3dc"
-															},
-															success : function(
-																	info) {
-																msg = info;
-																console
-																		.log(msg);
-																if (msg.documents.lenght != 0) {
-																	getBookInfo(n);
-																} else {
-																	alert("도서 검색 실패!")
-																}
-															}
-														})
-											});
-
-						});
-		$('#btn_prev').click(function() {
-			if (n > 0) {
-				n--;
-				getBookInfo(n);
-			}
-		});
-		$('#btn_next').click(function() {
-			if (n < msg.documents.length - 1) {
-				n++;
-				getBookInfo(n);
-			}
-		});
-		function getBookInfo(n) {
-			var list_info = '';
-			$('.book_info').empty();
-			list_info += '<div>' + '<img src='+msg.documents[n].thumbnail+'/>'
-					+ '</div>' + '</div>';
-			$('.book_info').html(list_info);
-			$('#meet_book_title_fake').val(msg.documents[n].title);
-			$('#meet_book_authors_fake').val(msg.documents[n].authors);
-			$('#meet_book_pub_fake').val(msg.documents[n].publisher);
-			$('#meet_book_img_fake').val(msg.documents[n].thumbnail);
-			$('.book_info2').show();
-			$('#btns').show();
-		};
-	</script>
 	<script>
-		CKEDITOR.replace('meet_intro');
+		setInterval(function() {
+
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "-623px"
+			}, 1000)
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "-1246px"
+			}, 1000)
+			$(".wpqkf").delay(1500)
+			$(".wpqkf").animate({
+				"margin-left" : "0px"
+			}, 1000)
+
+		}, 2500)
+
+		$('.meetDelete').click(function(event) {
+			event.preventDefault();
+			var result = confirm('모임을 정말 삭제할까요?');
+			if (result) {
+				location = $(this).attr('href');
+				alert('삭제되었습니다.')
+			}
+		});
+
+		
+		$(".fhrmdls").click(function(){
+			event.preventDefault();
+			alert("로그인이 필요합니다.")
+			
+			
+		});
+		
+		$(document).ready(function(){
+			
+			if (${meet.meet_join_num } == ${meet.meet_member_num }) {
+					$("#disable").css({
+						"opacity" : "0.5"
+					});
+				$("#disable").prop("disabled",true);
+				$("#disable a").click(function() {
+					
+						event.preventDefault();
+						alert("모임의 정원이 다 찼습니다.")
+						
+					});
+				
+			}
+			
+			
+			
+			
+		});
+		
+		
+		
 	</script>
-
-
-
-
 </body>
 </html>

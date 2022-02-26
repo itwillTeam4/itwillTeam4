@@ -84,6 +84,7 @@
 
 					<c:if test="${signInUserCode == board.board_usercode}">
 						<!-- 로그인 사용자 아이디와 글 작성자 아이디가 일치할 때만 수정 메뉴를 보여줌. -->
+							
 						<a href="../update/${board.bno}">
 							<button class="btnUpdate">수정</button>
 						</a>
@@ -140,7 +141,7 @@
   			}
   		});
   		
-
+	
 
 		var cnt=${board.board_reply_cnt};
 		var boardNo =${board.bno};
@@ -179,12 +180,19 @@
       		   + '<button class="reply_like replyI">좋아요</button>';
      		  if ( this.user_code == userCode
      				  ) {
-          		list += '<button class="reply_update replyI">수정</button>'
+          		list +='<button class="reply_update replyI">완료</button>'
           			  + '<button class="reply_delete replyI">삭제</button>';
           	}
      		   list+= '</div>';
+     		  	   
+     		   
 			console.log("done");
 			});
+			
+			
+			
+			
+			
         $('#replies').html(list);
      });				
 		}
