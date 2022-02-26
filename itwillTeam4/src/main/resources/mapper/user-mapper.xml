@@ -34,6 +34,10 @@
         where ${COL_USER_NAME} = #{user_name} and ${COL_USER_PHONE} = #{user_phone} and ${COL_USER_KEY} = 'Y'
 	</select>
 	
+	<update id="searchPassword" parameterType="Map">
+		update ${TABLE_USER_TABLE} set ${COL_USER_PWD} = #{key} where ${COL_USER_ID} = #{user_id}
+	</update>
+	
 	
 	
 </mapper>

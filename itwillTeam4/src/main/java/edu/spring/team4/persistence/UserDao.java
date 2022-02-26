@@ -16,4 +16,5 @@ public interface UserDao {
 	int getKey(String user_nn, String user_key);
 	int alter_userKey(String user_nn, String user_key);
 	String searchId(@Param("user_name")String user_name, @Param("user_phone")String user_phone); // 유저 ID 찾기
+	int searchPassword(String user_id, String key);
 }

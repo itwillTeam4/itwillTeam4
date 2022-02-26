@@ -72,6 +72,8 @@ public class UserMailSendService {
 		try {
 			mail.setSubject("[본인인증] 독서 커뮤니티 <책오>의 인증메일입니다", "utf-8");
 			mail.setText(htmlStr, "utf-8", "html");
+			InternetAddress from = new InternetAddress("test@test.com");
+	        mail.setFrom(from);
 			mail.addRecipient(RecipientType.TO, new InternetAddress(user_id));
 			mailSender.send(mail);
 		} catch (MessagingException e) {

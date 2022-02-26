@@ -213,7 +213,7 @@
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputName_1">이름</label>
 						<div>
-							<input type="text" class="form-control ywForm" id="inputName_1" name="inputName_1" placeholder="ex) 갓민수">
+							<input type="text" class="form-control ywForm" id="inputName_1" name="inputName_1" placeholder="ex) 김민수">
 						</div>
 					</div>
 					<div class="form-group">
@@ -233,13 +233,13 @@
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputId">아이디</label>
 						<div>
-							<input type="text" class="form-control ywForm" id="inputId" name="inputId_2" placeholder="ex) godmisu">
+							<input type="text" class="form-control ywForm" id="inputId" name="inputId" placeholder="ex) abc@test.com">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="font-weight-bold" for="inputEmail_2">이메일</label>
+						<label class="font-weight-bold" for="inputPhone_2">전화번호</label>
 						<div>
-							<input type="email" class="form-control ywForm" id="inputEmail_2"	name="inputEmail_2" placeholder="ex) E-mail@gmail.com">
+							<input type="email" class="form-control ywForm" id="inputPhone_2"	name="inputPhone_2" placeholder="ex) 01077779999">
 						</div>
 					</div>
 					<div class="form-group">
@@ -411,10 +411,19 @@
 				});
 			});
 			
-			
-				
-				
-			
+			$("#searchBtn2").click(function(){
+				$.ajax({
+					type:"GET",
+					url:"${pageContext.request.contextPath}/user/searchPassword",
+					data : {
+						inputId : $('#inputId').val(),
+						inputPhone_2 : $('#inputPhone_2').val()},
+					success : function(data) {
+						alert("가입하신 이메일(아이디)로 임시 비밀번호를 전송했습니다!");
+						$("#searchModal").fadeOut(300);
+				     }
+				});
+			});
 			
 			
 		});

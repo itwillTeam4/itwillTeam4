@@ -29,7 +29,7 @@ public class UserSearchController {
 	@ResponseBody
 	public String userIdSearch(@RequestParam("inputName_1") String user_name, 
 			@RequestParam("inputPhone_1") String user_phone) {
-		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출");
+		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출 아이디를 찾아보자 ");
 		String result = searchService.get_searchId(user_name, user_phone);
 
 		return result;
@@ -37,17 +37,17 @@ public class UserSearchController {
 	}
 	
 	// 비밀번호 찾기
-//	@RequestMapping(value = "/user/searchPassword", method = RequestMethod.GET)
-//	@ResponseBody
-//	public String passwordSearch(@RequestParam("userId")String user_id,
-//			@RequestParam("userEmail")String user_email,
-//			HttpServletRequest request) {
-//
-//		mailsender.mailSendWithPassword(user_id, user_email, request);
-//		
-//		return "user/userSearchPassword";
-//	}
-//
+	@RequestMapping(value = "/user/searchPassword", method = RequestMethod.GET)
+	@ResponseBody
+	public String passwordSearch(@RequestParam(value="inputId", required=false)String user_id,
+			@RequestParam("inputPhone_2")String user_phone,
+			HttpServletRequest request) {
+		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출 비번을 찾아보자 ");
+		searchService.mailSendWithPassword(user_id, user_phone, request);
+		
+		return "user/searchPassword";
+	}
+
 
 	
 }
