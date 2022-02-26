@@ -111,7 +111,7 @@ public class MeetDaoImpl implements MeetDao {
 
 	@Override
 	public List<Meet> selectByMemberCode(String userCode) {
-		return sqlSession.selectList(MEET_NAMESPACE+".selectByMemberCode", " %"+userCode+"% ");
+		return sqlSession.selectList(MEET_NAMESPACE+".selectByMemberCode", "%"+ userCode+"%");
 	}
 
 	@Override

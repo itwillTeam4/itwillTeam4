@@ -34,7 +34,7 @@ public class BoardController {
 	private MeetService meetService;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String main(Model model, Paging page, @RequestParam(value = "nowPage", required = false) String nowPage,
+	public String main(HttpSession session,Model model, Paging page, @RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage,
 			@RequestParam(value = "order", required = false) String order,
 			@RequestParam(value = "act", required = false) String act,
@@ -60,6 +60,12 @@ public class BoardController {
 		if (act.equals("my")) {
 			log.info("나의");
 			result = "board/mymeet";
+			
+			int userCode = (int)session.getAttribute("signInUserCode");
+			List<Meet> meetList = meetService.selectByMemberCode(Integer.toString(userCode));
+			model.addAttribute("meetList",meetList);
+			
+			
 			
 		} else if (act.equals("rlt")) {
 			log.info("실시간");

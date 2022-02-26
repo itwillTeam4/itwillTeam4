@@ -100,7 +100,7 @@
 					<div class="detailFormsWrap">
 						<div class="detailForms">
 							<h3>호스트</h3>
-							<p>${meet.meet_host_name }</p>
+							<p style="margin-bottom:30px;">${meet.meet_host_name }</p>
 						</div>
 
 						<div class="detailForms">

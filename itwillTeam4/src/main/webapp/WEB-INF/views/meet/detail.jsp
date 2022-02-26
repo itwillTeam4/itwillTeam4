@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -11,15 +12,23 @@
 <title>책오</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="${pageContext.request.contextPath}/resources/css/home.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+<link href="${pageContext.request.contextPath}/resources/css/home.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
-<link href="${pageContext.request.contextPath}/resources/css/board.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link href="${pageContext.request.contextPath}/resources/css/board.css"
+	rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/meet.css" type="text/css">
-
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/meet.css"
+	type="text/css">
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 </head>
@@ -82,25 +91,32 @@
 					<c:choose>
 
 						<c:when test="${meet.meet_theme eq '독서토론형'}">
-							<p class="themeintro2">독서토론형 모임은 몇 개의 토론 주제를 뽑아 심도 깊은 토론을 하는 모임입니다.</p>
+							<p class="themeintro2">독서토론형 모임은 몇 개의 토론 주제를 뽑아 심도 깊은 토론을 하는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '책수다형'}">
-							<p class="themeintro2">책수다형 모임은 호스트와 멤버들이 책을 가지고 형식과 제한 없이 자유롭게 생각을 나누는 모임입니다.</p>
+							<p class="themeintro2">책수다형 모임은 호스트와 멤버들이 책을 가지고 형식과 제한 없이
+								자유롭게 생각을 나누는 모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '생활습관 개선형'}">
-							<p class="themeintro2">생활습관 개선형 모임은 책의 도움을 받아 생활 습관을 바꾸는 모임입니다.</p>
+							<p class="themeintro2">생활습관 개선형 모임은 책의 도움을 받아 생활 습관을 바꾸는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '챌린지형'}">
-							<p class="themeintro2">챌린지형 모임은 책과 관련된 특별한 미션과 과제가 주어지는 모임입니다.</p>
+							<p class="themeintro2">챌린지형 모임은 책과 관련된 특별한 미션과 과제가 주어지는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '스터디형'}">
-							<p class="themeintro2">스터디형 모임은 책 한권을 선정하여 멤버들과 함께 책의 내용을 공부하는 모임입니다.</p>
+							<p class="themeintro2">스터디형 모임은 책 한권을 선정하여 멤버들과 함께 책의 내용을
+								공부하는 모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '낭독형'}">
-							<p class="themeintro2">낭독형 모임은 호스트와 멤버들이 책을 같이 소리내어 읽으며 공부하는 모임입니다.</p>
+							<p class="themeintro2">낭독형 모임은 호스트와 멤버들이 책을 같이 소리내어 읽으며 공부하는
+								모임입니다.</p>
 						</c:when>
 						<c:when test="${meet.meet_theme eq '덕후형'}">
-							<p class="themeintro2">덕후형 모임은 작가나 작품을 선정하여 멤버들과 함께 깊이 있게 탐독하는 모임입니다.</p>
+							<p class="themeintro2">덕후형 모임은 작가나 작품을 선정하여 멤버들과 함께 깊이 있게
+								탐독하는 모임입니다.</p>
 						</c:when>
 
 					</c:choose>
@@ -129,43 +145,66 @@
 							<span class="meetOnOffDetail2"> 오프라인 </span>
 						</c:if>
 					</div>
-					<div>
-						<!-- 여기가 boardddddddd -->
-						<div class="postBox">
-							<c:forEach begin="0" end="9" step="1" var="board" items="${boardlist }">
-								<div class="box">
-									<a href="./board/detail/${board.bno }">
-										<div class="boxHeader">
-											<div class="bookImg">
-												<img src="${board.board_book_img}" alt="">
-												<p class="bookImgTitle text-overflow">${board.board_book_title }</p>
-											</div>
-											<div class="postInfo">
-												<p class="postTitle">${board.board_title }</p>
-												<p class="postUser">${board.board_userid }<span> 멤버</span>
-												</p>
 
-												<p class="postRegDate">
-													<fmt:formatDate value="${board.board_reg_date }" pattern="yyyy-MM-dd" />
-												</p>
-												<p class="postContent text-overflow-line3">${board.board_content}</p>
+					<div class="detailForms" >
+						<div
+							style="display: flex; align-items: center; justify-content: flex-start;">
+							<h3>모임 서평</h3>
+							<div id="writeImg"
+								style="width: 45px !important; height: 45px !important; margin-left: 30px;">
+								<a href="http://localhost:8181/team4/board/insert"> <img
+									src="${pageContext.request.contextPath}/resources/img/write.png"
+									alt="write">
+								</a>
+							</div>
+						</div>
+
+						<div class="detailBoard swiper mySwiper">
+
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-wrapper mySwiperWrapper">
+								<c:forEach begin="0" end="9" step="1" var="board"
+									items="${boardlist }">
+									<div class="detailboardWrap">
+										<a
+											href="http://localhost:8181/team4/board/detail/${board.bno }">
+											<div class="detailBoardFrame swiper-slide">
+
+												<div class="detailBoardInfo">
+													<div style="display: flex; align-items: center;">
+														<p class="postTitle" style="margin-right: 20px;">${board.board_title }</p>
+														<p class="postRegDate detailBoardUser">
+															<fmt:formatDate value="${board.board_reg_date }"
+																pattern="yyyy-MM-dd hh:mm:ss" />
+														</p>
+													</div>
+
+													<p class="postUser detailBoardUser">${board.board_userid }<span>
+															멤버</span>
+													</p>
+
+
+													<p class="postContent text-overflow-line3 detailBoardCon"
+														style="max-width: 380px;">${board.board_content}</p>
+												</div>
 											</div>
-										</div>
-									</a>
-									<div class="boxFooter">
-										<div class="boxLike">
-											<img src="${pageContext.request.contextPath}/resources/img/like.png" alt="like" class="boxLikeImg">
-											<p>&nbsp;${board.board_like_cnt }</p>
-										</div>
-										<div class="boxReply">
-											<img src="${pageContext.request.contextPath}/resources/img/reply.png" alt="reply" class="boxReplyImg">
-											<p>&nbsp;${board.board_reply_cnt  }</p>
-										</div>
+										</a>
+
 									</div>
-								</div>
-							</c:forEach>
+								</c:forEach>
+							</div>
 						</div>
 					</div>
+
+
+				</div>
+
+
+
+				<div>
+
+
 
 					<div class="detailForms noBorder">
 						<h3>호스트의 다른 모임</h3>
@@ -176,24 +215,30 @@
 
 
 							<ul class="swiper-wrapper wpqkf">
-								<c:forEach begin="0" end="9" step="1" var="host_meet" items="${meetlist }">
-									<li class="ehofk swiper-slide"><a href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
+								<c:forEach begin="0" end="9" step="1" var="host_meet"
+									items="${meetlist }">
+									<li class="ehofk swiper-slide"><a
+										href="http://localhost:8181/team4/meet/detail?meet_idx=${host_meet.meet_idx }">
 											<div class="info">
 												<div class="info1">
-													<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span> <span class="meetThemeDetail">${host_meet.meet_theme }</span>
+													<span class="meetTitle text-overflow note-title">${host_meet.meet_name }</span>
+													<span class="meetThemeDetail">${host_meet.meet_theme }</span>
 												</div>
 												<div class="info2">
-													<span class="name">${host_meet.meet_host_name }</span> <span class="meetMember"> ${host_meet.meet_join_num } 명 참여중</span>
+													<span class="name">${host_meet.meet_host_name }</span> <span
+														class="meetMember"> ${host_meet.meet_join_num } 명
+														참여중</span>
 												</div>
 												<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
 
 
 											</div>
 											<div class="infoImgBoxDetail ">
-												<img src="${host_meet.meet_book_img }" alt="com01" class="infoImg">
+												<img src="${host_meet.meet_book_img }" alt="com01"
+													class="infoImg">
 											</div>
 
-										</a></li>
+									</a></li>
 
 								</c:forEach>
 							</ul>
@@ -287,8 +332,10 @@
 	</div>
 
 	<%@include file="../footer.jsp"%>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
 		setInterval(function() {

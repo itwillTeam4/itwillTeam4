@@ -163,10 +163,8 @@ img {
     padding:25px;
 }
 
-}
-.swiper-button-next::after, .swiper-button-prev::after {
-	
-}
+
+
 
 .swiper-pagination-bullet {
 	background-color: #007450 !important;
