@@ -180,7 +180,7 @@
       		   + '<button class="reply_like replyI">좋아요</button>';
      		  if ( this.user_code == userCode
      				  ) {
-          		list +='<button class="reply_update replyI">완료</button>'
+          		list +='<button class="reply_update replyI">수정</button>'
           			  + '<button class="reply_delete replyI">삭제</button>';
           	}
      		   list+= '</div>';
