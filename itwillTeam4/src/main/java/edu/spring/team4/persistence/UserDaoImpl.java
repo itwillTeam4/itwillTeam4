@@ -112,4 +112,12 @@ public class UserDaoImpl implements UserDao {
 		return sqlSession.update(USER_NAMESPACE + ".alter_userkey", params);
 	}
 
+	@Override
+	public String searchId(String user_name, String user_phone) {
+		Map<String, String> params = new HashMap<>();
+		params.put("user_name",user_name);
+		params.put("user_phone", user_phone);
+		return sqlSession.selectOne(USER_NAMESPACE + ".searchId", params);
+	}
+
 }

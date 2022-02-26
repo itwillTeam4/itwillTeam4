@@ -225,6 +225,9 @@
 					<div class="form-group">
 						<button id="searchBtn" type="button" class="btn btn-primary btn-block ywBtn">찾기</button>
 					</div>
+					<div class= "searchResult">
+							<b id="id_value">아이디는: </b><p id="id_value"></p>
+					</div>
 				</div>
 				<div id="searchP" style="display: none;">
 					<div class="form-group">
@@ -390,7 +393,23 @@
 				//}
 			} */
 			
-		
+			var idV = "";
+			$("#searchBtn").click(function(){
+				$.ajax({
+					type:"POST",
+					url:"${pageContext.request.contextPath}/user/userSearch?inputName_1="
+							+$('#inputName_1').val()+"&inputPhone_1="+$('#inputPhone_1').val(),
+					success:function(data){
+						if(data == 0){
+							$('#id_value').text("회원 정보를 확인해주세요!");	
+						} else {
+							$('#id_value').text(data);
+							// 아이디값 별도로 저장
+							idV = data;
+						}
+					}
+				});
+			});
 			
 			
 				

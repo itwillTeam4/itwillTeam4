@@ -27,4 +27,13 @@
 		SET ${COL_USER_KEY} = 'Y' 
 		WHERE ${COL_USER_NN} = #{user_nn} AND ${COL_USER_KEY} = #{user_key} 
 	</update>
+	
+	<!-- 아이디 찾기 -->
+	<select id="searchId" resultType="String">
+		select nvl(${COL_USER_ID}, 0) from ${TABLE_USER_TABLE} 
+        where ${COL_USER_NAME} = #{user_name} and ${COL_USER_PHONE} = #{user_phone} and ${COL_USER_KEY} = 'Y'
+	</select>
+	
+	
+	
 </mapper>
