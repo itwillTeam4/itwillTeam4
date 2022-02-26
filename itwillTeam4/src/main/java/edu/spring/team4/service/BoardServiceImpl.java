@@ -91,4 +91,9 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.selectNew(board_title);
 	}
 
+	@Override
+	public List<Board> selectByMeetIdx(int meet_idx) {
+		return boardDao.selectByMeetIdx(meet_idx);
+	}
+
 }

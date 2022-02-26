@@ -24,6 +24,7 @@ public interface BoardDao {
 	List<Board> selectThree();
 	List<Board> selectByUserCode(int userCode);
 	List<Board> selectBest();
+	public List<Board> selectByMeetIdx(int meet_idx);
 	
 	
 }

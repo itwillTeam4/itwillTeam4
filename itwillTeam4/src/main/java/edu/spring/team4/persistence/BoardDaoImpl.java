@@ -154,4 +154,9 @@ public class BoardDaoImpl implements BoardDao {
 	public Board selectNew(String board_title) {
 		return sqlSession.selectOne(BOARD_NAMESPACE+".selectNew", board_title);
 	}
+
+	@Override
+	public List<Board> selectByMeetIdx(int meet_idx) {
+		return sqlSession.selectList(BOARD_NAMESPACE+".selectByMeetIdx",Integer.toString(meet_idx));
+	}
 }

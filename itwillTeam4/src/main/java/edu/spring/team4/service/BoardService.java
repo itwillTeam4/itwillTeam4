@@ -24,5 +24,6 @@ public interface BoardService {
 	List<Board> selectByUserCode(int userCode);
 	
 	List<Board> selectBest();
+	List<Board> selectByMeetIdx(int meet_idx);
 	
 }

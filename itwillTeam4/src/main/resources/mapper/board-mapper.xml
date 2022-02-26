@@ -151,6 +151,13 @@
 	</select>
 
 
+<select id="selectByMeetIdx" resultType="Board">
+	SELECT * FROM ${TABLE_BOARD_TABLE} 
+		WHERE ${COL_BOARD_MEET_IDX} = #{board_meet_idx}
+
+</select>
+
+
 	<insert id="create">
 		INSERT INTO ${TABLE_BOARD_TABLE} (${COL_BOARD_TITLE},
 		${COL_BOARD_USERID},

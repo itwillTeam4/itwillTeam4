@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.Meet;
+import edu.spring.team4.service.BoardService;
 import edu.spring.team4.service.MeetService;
 
 @Controller
@@ -26,6 +27,9 @@ public class MeetController {
 
 	@Autowired
 	private MeetService meetService;
+	@Autowired
+	private BoardService boardService;
+	
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void main(Model model) {
@@ -72,8 +76,11 @@ public class MeetController {
 	public void detail(int meet_idx, Model model) {
 		Meet meet = meetService.select(meet_idx);
 		List<Meet> meetlist = meetService.selectByHost(meet.getMeet_host(), meet.getMeet_idx());
+		List<Board> boardlist = boardService.selectByMeetIdx(meet_idx);
+		
 		model.addAttribute("meet", meet);
 		model.addAttribute("meetlist", meetlist);
+		model.addAttribute("boardlist",boardlist);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
