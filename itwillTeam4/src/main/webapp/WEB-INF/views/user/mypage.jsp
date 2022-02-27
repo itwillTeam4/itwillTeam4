@@ -75,7 +75,7 @@
 									<div class="info">
 										<div class="info1">
 											<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
-											<span class="meetThemeDetail">$meet.meet_theme }</span>
+											<span class="meetThemeDetail">${meet.meet_theme }</span>
 										</div>
 										<div class="info2">
 											<span class="name">${meet.meet_host_name }</span> <span
