@@ -14,8 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="${pageContext.request.contextPath}/resources/css/home.css"
 	rel="stylesheet" type="text/css" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -26,6 +24,9 @@
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/meet.css"
+	type="text/css">
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
 	type="text/css">
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -248,7 +249,7 @@
 														class="meetMember"> ${host_meet.meet_join_num } 명
 														참여중</span>
 												</div>
-												<span class="meetIntro text-overflow-line2">${host_meet.meet_intro }</span>
+												<span class="meetIntro text-overflow-line2" style="max-width: 300px;">${host_meet.meet_intro }</span>
 
 
 											</div>
@@ -359,20 +360,20 @@
 	<script>
 		setInterval(function() {
 
-			$(".wpqkf").delay(1500)
+			$(".wpqkf").delay(3000)
 			$(".wpqkf").animate({
 				"margin-left" : "-623px"
-			}, 1000)
-			$(".wpqkf").delay(1500)
+			}, 500)
+			$(".wpqkf").delay(3000)
 			$(".wpqkf").animate({
 				"margin-left" : "-1246px"
-			}, 1000)
-			$(".wpqkf").delay(1500)
+			}, 500)
+			$(".wpqkf").delay(3000)
 			$(".wpqkf").animate({
 				"margin-left" : "0px"
-			}, 1000)
+			},500)
 
-		}, 2500)
+		}, 0)
 
 		$('.meetDelete').click(function(event) {
 			event.preventDefault();
@@ -412,29 +413,9 @@
 			
 		});
 		
-		
+		$(".carousel-item").eq(0).addClass("active");
 		
 	</script>
-	<script>
-	var mySwiper2 = new Swiper('.mySwiper2', {
-		  // Optional parameters
-		  direction: 'horizontal',		// 가로 슬라이드
-		  slidesPerView: 3,			// 한 영역에 보이는 슬라이드 수
-		  spaceBetween: 16,
-
-		  // If we need pagination
-		  pagination: {
-		    el: '.swiper-page',
-		  },
-		  observer: true,	// 추가
-		  observeParents: true,	// 추가
-		  navigation : { // 네비게이션 설정
-				nextEl : '.btnNe', // 다음 버튼 클래스명
-				prevEl : '.btnPr', // 이번 버튼 클래스명
-			}
-		})
 	
-	
-	</script>
 </body>
 </html>

@@ -478,7 +478,7 @@ display: flex;
 }
 
 .mySwiper2 {
-	margin-left: 0px !important;
+	margin-left: 67px !important;
 }
 
 .myPrev {
@@ -584,6 +584,7 @@ display: flex;
 	background-repeat: no-repeat;
 	    padding: 10px;
     padding-left: 30px;
+    margin-left: 115px;
     margin-bottom:20px;
         box-shadow: 0px 8px 8px #dbdbdb;
     	
@@ -605,3 +606,6 @@ display: flex;
 	background-size: auto;
 	background-repeat: no-repeat;
 }
+
+
+
