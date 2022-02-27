@@ -418,6 +418,16 @@ img {
 	-webkit-box-orient: vertical;
 }
 
+.text-overflow-line2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	word-wrap: break-word;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
 .profile-box span {
 	font-weight: 500;
 }
@@ -1138,7 +1148,7 @@ to {
 
 .meetIntro {
 	position: relative;
-	width: 350px;
+	width: 400px;
 	font-weight: 400;
 	font-size: 14px;
 	top: 5px;
@@ -1168,11 +1178,12 @@ to {
 
 .infoReal2 {
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	align-items: flex-end;
-	margin-top: 85px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 65px;
+    margin-bottom: 10px;
 }
 
 #right-top-wrapReal {
