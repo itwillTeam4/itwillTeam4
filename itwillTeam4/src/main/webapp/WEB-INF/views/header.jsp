@@ -18,7 +18,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
 	rel="stylesheet">
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 
 </head>
 <body>
@@ -34,7 +35,7 @@
 
 
 			<ul id="navui1" class="menu">
-			
+
 				<li id="board"><a href="http://localhost:8181/team4/board">커뮤니티</a></li>
 				<li id="notice"><a
 					href="http://localhost:8181/team4/notice/main">공지사항</a></li>
@@ -75,12 +76,14 @@
 					<li id="login">
 						<!--  <a href="./user/signin">-->로그인
 					</li>
-					
+
 				</c:if>
 				<c:if test="${not empty signInUserCode }">
-				<li id="logout"><a href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
-					<li id="logout"><a href="http://localhost:8181/team4/user/signout?url=${requestScope['javax.servlet.forward.servlet_path']}">로그아웃</a></li>
-					
+					<li id="logout"><a
+						href="http://localhost:8181/team4/user/mypage">마이페이지</a></li>
+					<li id="logout"><a
+						href="http://localhost:8181/team4/user/signout?url=${requestScope['javax.servlet.forward.servlet_path']}">로그아웃</a></li>
+
 				</c:if>
 
 			</ul>
@@ -98,11 +101,13 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="http://localhost:8181/team4/user/signin?url=${requestScope['javax.servlet.forward.servlet_path']}" method="post">
+			<form
+				action="http://localhost:8181/team4/user/signin?url=${requestScope['javax.servlet.forward.servlet_path']}"
+				method="post">
 				<div id="loginInput">
 					<div class="loginInputForm">
-						<input type="text" name="user_id" id="idInput" placeholder="아이디(이메일) 입력"
-							autofocus required>
+						<input type="text" name="user_id" id="idInput"
+							placeholder="아이디(이메일) 입력" autofocus required>
 
 					</div>
 					<div class="loginInputForm">
@@ -111,12 +116,13 @@
 					</div>
 
 					<div>
-						<input type="submit" id = "login_confirm" value="로그인" />
+						<input type="submit" id="login_confirm" value="로그인" />
 					</div>
 				</div>
 			</form>
 
-			<span id="callRegister">회원가입</span><span id="callSearch">아이디/비밀번호 찾기</span>
+			<span id="callRegister">회원가입</span><span id="callSearch">아이디/비밀번호
+				찾기</span>
 
 		</div>
 
@@ -129,47 +135,71 @@
 					src="${pageContext.request.contextPath}/resources/img/close.png"
 					alt="close">
 			</div>
-			<form action="http://localhost:8181/team4/user/register?url=${requestScope['javax.servlet.forward.servlet_path']}" method="post">
+			<form
+				action="http://localhost:8181/team4/user/register?url=${requestScope['javax.servlet.forward.servlet_path']}"
+				method="post">
 				<div id="registerInput">
-					<div class="emailInput">
-						<input type="email" id="user_id" name="user_id"
-							placeholder="abc@abc.com" required autofocus />
+					<div class="form-group">
+						<label class="font-weight-bold" for="inputName_1">이메일</label>
+						<div>
+							<input type="email" class="form-control ywForm" name="user_id"
+								id="user_id" placeholder="abc@abc.com" required autofocus>
+						</div>
+						<div class="nullbox" id="nullbox1"></div>
 						<div class="valid_id">사용 가능한 아이디입니다.</div>
 						<div class="invalid_id">아이디가 중복됐습니다.</div>
 					</div>
-					<div class="pwdInput">
+
+
+
+					<div class="form-group">
+						<label class="font-weight-bold" for="inputName_1" style="margin-bottom:13px;">비밀번호</label>
 						<div>
 							<input type="password" id="user_pwd_ck" name="user_pwd_ck"
 								placeholder="비밀번호 입력" required />
 						</div>
-
 						<div>
 							<input type="password" id="user_pwd" name="user_pwd"
 								placeholder="비밀번호 확인" required />
+							<div class="nullbox" id="nullbox3"></div>
 							<div class="invalid_pwd">비밀번호가 틀렸습니다.</div>
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label class="font-weight-bold" for="inputName_1">닉네임</label>
+						<div>
+							<input type="text" id="user_nn" name="user_nn"
+								placeholder="닉네임 입력" required />
+							<div class="nullbox" id="nullbox2"></div>
+							<div class="valid_nn">사용 가능한 닉네임입니다.</div>
+							<div class="invalid_nn">닉네임이 중복됐습니다.</div>
+						</div>
 
-					<div class="nnInput">
-						<input type="text" id="user_nn" name="user_nn"
-							placeholder="닉네임 입력" required />
-						<div class="valid_nn">사용 가능한 닉네임입니다.</div>
-						<div class="invalid_nn">닉네임이 중복됐습니다.</div>
 					</div>
 
-					<div class="nameInput">
-						<input type="text" name="user_name" placeholder="이름 입력" required />
+
+
+					<div class="form-group ">
+						<label class="font-weight-bold" for="inputName_1">이름</label>
+						<div>
+							<input type="text" name="user_name" placeholder="이름 입력" required />
+						</div>
+
 					</div>
-
-
-					<div class="phoneInput">
-						<input type="text" name="user_phone"
+					
+					
+					<div class="form-group">
+						<label class="font-weight-bold" for="inputName_1">전화번호</label>
+						<div>
+							<input type="text" name="user_phone"
 							placeholder="전화번호 입력 (01012345678)" required />
+						</div>
+
 					</div>
 
 
-					<div class="tagInput">
+					<div class="tagInput" style="display: none;">
 						<input type="text" name="user_tag"
 							placeholder="선호 태그 입력 (#편안한 #로맨스 #소설)" />
 					</div>
@@ -183,7 +213,7 @@
 
 
 		</div>
-		
+
 		<div id="searchModal">
 
 			<div id="searchClose" class="close">
@@ -192,67 +222,81 @@
 					alt="close">
 			</div>
 			<div class="full">
-		<div class="container">
-			<div class="area_inputs wow fadeIn">
-				<div class="searchModalTop">
-					<p class="searchModalP">아이디/비밀번호 찾기</p>
-					<p class="searchModalP2">인증된 이메일만 정보 찾기가 가능합니다 :)</p>
-				</div>
-				<div class="btnWrap">
-				<div style="margin-bottom: 10px;"
-					class="custom-control custom-radio custom-control-inline">
-					<input type="radio" class="custom-control-input" id="search_1" name="search_total"  checked="checked">
-					<label class="custom-control-label font-weight-bold " for="search_1">아이디 찾기</label>
-				</div>
-				<div class="custom-control custom-radio custom-control-inline">
-					<input type="radio" class="custom-control-input" id="search_2" name="search_total" > 
-					<label class="custom-control-label font-weight-bold " for="search_2">비밀번호 찾기</label>
-				</div>
-				</div>
-				<div id="searchI">
-					<div class="form-group">
-						<label class="font-weight-bold" for="inputName_1">이름</label>
-						<div>
-							<input type="text" class="form-control ywForm" id="inputName_1" name="inputName_1" placeholder="ex) 김민수">
+				<div class="container">
+					<div class="area_inputs wow fadeIn">
+						<div class="searchModalTop">
+							<p class="searchModalP">아이디/비밀번호 찾기</p>
+							<p class="searchModalP2">인증된 이메일만 정보 찾기가 가능합니다 :)</p>
+						</div>
+						<div class="btnWrap">
+							<div style="margin-bottom: 10px;"
+								class="custom-control custom-radio custom-control-inline">
+								<input type="radio" class="custom-control-input" id="search_1"
+									name="search_total" checked="checked"> <label
+									class="custom-control-label font-weight-bold " for="search_1">아이디
+									찾기</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" class="custom-control-input" id="search_2"
+									name="search_total"> <label
+									class="custom-control-label font-weight-bold " for="search_2">비밀번호
+									찾기</label>
+							</div>
+						</div>
+						<div id="searchI">
+							<div class="form-group">
+								<label class="font-weight-bold" for="inputName_1">이름</label>
+								<div>
+									<input type="text" class="form-control ywForm" id="inputName_1"
+										name="inputName_1" placeholder="이름 입력">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="font-weight-bold" for="inputPhone_1">전화번호</label>
+								<div>
+									<input type="text" class="form-control ywForm"
+										id="inputPhone_1" name="inputPhone_1"
+										placeholder="전화번호 입력 (01012345678)">
+								</div>
+							</div>
+							<div class="form-group">
+								<button id="searchBtn" type="button"
+									class="btn btn-primary btn-block ywBtn">찾기</button>
+							</div>
+							<div class="searchResult" style="margin-top: 20px;">
+								<b id="id_value2" style="float: left;">아이디는 : </b>
+								<p id="id_value"
+									style="display: block; left: 10px; position: relative;"></p>
+							</div>
+						</div>
+						<div id="searchP" style="display: none;">
+							<div class="form-group">
+								<label class="font-weight-bold" for="inputId">아이디</label>
+								<div>
+									<input type="text" class="form-control ywForm" id="inputId"
+										name="inputId" placeholder="abc@abc.com">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="font-weight-bold" for="inputPhone_2">전화번호</label>
+								<div>
+									<input type="email" class="form-control ywForm"
+										id="inputPhone_2" name="inputPhone_2"
+										placeholder="전화번호 입력 (01012345678)">
+								</div>
+							</div>
+							<div class="form-group">
+								<button id="searchBtn2" type="button"
+									class="btn btn-primary btn-block ywBtn">찾기</button>
+							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="font-weight-bold" for="inputPhone_1">휴대폰번호</label>
-						<div>
-							<input type="text" class="form-control ywForm" id="inputPhone_1" name="inputPhone_1" placeholder="ex) 01077779999">
-						</div>
-					</div>
-					<div class="form-group">
-						<button id="searchBtn" type="button" class="btn btn-primary btn-block ywBtn">찾기</button>
-					</div>
-					<div class= "searchResult">
-							<b id="id_value">아이디는: </b><p id="id_value"></p>
-					</div>
-				</div>
-				<div id="searchP" style="display: none;">
-					<div class="form-group">
-						<label class="font-weight-bold" for="inputId">아이디</label>
-						<div>
-							<input type="text" class="form-control ywForm" id="inputId" name="inputId" placeholder="ex) abc@test.com">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="font-weight-bold" for="inputPhone_2">전화번호</label>
-						<div>
-							<input type="email" class="form-control ywForm" id="inputPhone_2"	name="inputPhone_2" placeholder="ex) 01077779999">
-						</div>
-					</div>
-					<div class="form-group">
-						<button id="searchBtn2" type="button" class="btn btn-primary btn-block ywBtn">찾기</button>
-				</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
 
 		</div>
-		
+
 	</div>
 
 
@@ -265,168 +309,243 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
-	
+		$("#login").click(function() {
+			$(".modalBackground").fadeIn(300);
+			$("#loginModal").fadeIn(300);
 
-	$("#login").click(function() {
-		$(".modalBackground").fadeIn(300);
-		$("#loginModal").fadeIn(300);
-	
-	});
-
-	$("#loginClose").click(function() {
-		$(".modalBackground").fadeOut(300);
-		$("#loginModal").fadeOut(300);
-	});
-
-	$("#callRegister").click(function() {
-		$("#registerModal").fadeIn(300);
-
-	});
-
-	$("#registerClose").click(function() {
-		$("#registerModal").fadeOut(300);
-	});
-	
-	$("#callSearch").click(function() {
-		$("#searchModal").fadeIn(300);
-
-	});
-	
-	$("#searchClose").click(function() {
-		$("#searchModal").fadeOut(300);
-	});
-	
-	
-	$("#search_1").click(function(){
-		
-		$("#searchI").show();
-		$("#searchP").hide();
-		
-	});
-	
-	
-	$("#search_2").click(function(){
-		
-		$("#searchI").hide();
-		$("#searchP").show();
-		
-	});
-	
-		$(document).ready(function() {
-			
-
-			// userid 아이디를 갖는 HTML 요소(input)에 변화가 생겼을 때 호출될 이벤트 리스너 콜백 함수를 등록. 
-			$('#user_id').change(function(event) {
-				// Ajax를 이용해서 아이디 중복 체크
-				var params = {
-					user_id : $(this).val()
-				};
-				// $.post(Ajax 요청 주소, 요청 파라미터, 응답 성공일 때 실행될 콜백 함수);
-				$.post('./user/checkid', params, function(response) {
-					if (response == 'valid_id') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-						$('.valid_id').show(); // valid div 보여줌.
-						$('.invalid_id').hide(); // valid div 없앰(display=none).
-						$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-					} else {
-						$('.valid_id').hide(); // valid div 없앰(display=none).
-						$('.invalid_id').show(); // invalid div 보여줌.
-						$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-					}
-				});
-			});
-			
-			
-
-			$('#user_nn').change(function(event) {
-				var params_nn = {
-					user_nn : $(this).val()
-				};
-				$.post('./user/checknn', params_nn, function(response) {
-					if (response == 'valid_nn') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-						$('.valid_nn').show(); // valid div 보여줌.
-						$('.invalid_nn').hide(); // valid div 없앰(display=none).
-						$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-					} else {
-						$('.valid_nn').hide(); // valid div 없앰(display=none).
-						$('.invalid_nn').show(); // invalid div 보여줌.
-						$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-					}
-				});
-			});
-
-			$('#user_pwd').change(function(event) {
-				if ($('#user_pwd_ck').val() == $('#user_pwd').val()) {
-					$('.invalid_pwd').hide(); // valid div 없앰(display=none).
-					$('#btn-complete').removeAttr('disabled'); // 버튼 활성화
-				} else {
-					$('.invalid_pwd').show(); // invalid div 보여줌.
-					$('#btn-complete').attr('disabled', 'true'); // 버튼 비활성화
-				}
-			}); 
-
-			// 회원가입 성공, 실패 메시지
-			$('#btn-complete').click(function(event){
-				alert("가입하신 이메일(아이디)로 인증메일을 전송했습니다!");
-			});
-			
-			if (location.href == "http://localhost:8181/team4/?register=fail"){
-				if ('${register}' == false) {
-					$("#registerModal").fadeIn(300);
-					alert("회원가입 정보를 다시 입력해 주세요.");
-				} 
-			}
-			
-			// 로그인 실패
-			
-			var url = window.location.href;
-			if(url.indexOf("fail") != -1){
-				$(".modalBackground").fadeIn(300);
-				$("#loginModal").fadeIn(300);
-			}
-			
-			
-			/* if (location.href == "http://localhost:8181/team4/?signin=fail"){
-				//if ('${signin}' == false) {
-					$(".modalBackground").fadeIn(300);
-					$("#loginModal").fadeIn(300);
-					alert("로그인 정보를 다시 입력해 주세요.");
-				//}
-			} */
-			
-			var idV = "";
-			$("#searchBtn").click(function(){
-				$.ajax({
-					type:"POST",
-					url:"${pageContext.request.contextPath}/user/userSearch?inputName_1="
-							+$('#inputName_1').val()+"&inputPhone_1="+$('#inputPhone_1').val(),
-					success:function(data){
-						if(data == 0){
-							$('#id_value').text("회원 정보를 확인해주세요!");	
-						} else {
-							$('#id_value').text(data);
-							// 아이디값 별도로 저장
-							idV = data;
-						}
-					}
-				});
-			});
-			
-			$("#searchBtn2").click(function(){
-				$.ajax({
-					type:"GET",
-					url:"${pageContext.request.contextPath}/user/searchPassword",
-					data : {
-						inputId : $('#inputId').val(),
-						inputPhone_2 : $('#inputPhone_2').val()},
-					success : function(data) {
-						alert("가입하신 이메일(아이디)로 임시 비밀번호를 전송했습니다!");
-						$("#searchModal").fadeOut(300);
-				     }
-				});
-			});
-			
-			
 		});
+
+		$("#loginClose").click(function() {
+			$(".modalBackground").fadeOut(300);
+			$("#loginModal").fadeOut(300);
+		});
+
+		$("#callRegister").click(function() {
+			$("#registerModal").fadeIn(300);
+
+		});
+
+		$("#registerClose").click(function() {
+			$("#registerModal").fadeOut(300);
+		});
+
+		$("#callSearch").click(function() {
+			$("#searchModal").fadeIn(300);
+
+		});
+
+		$("#searchClose").click(function() {
+			$("#searchModal").fadeOut(300);
+		});
+
+		$("#search_1").click(function() {
+
+			$("#searchI").show();
+			$("#searchP").hide();
+
+		});
+
+		$("#search_2").click(function() {
+
+			$("#searchI").hide();
+			$("#searchP").show();
+
+		});
+
+		$(document)
+				.ready(
+						function() {
+
+							// userid 아이디를 갖는 HTML 요소(input)에 변화가 생겼을 때 호출될 이벤트 리스너 콜백 함수를 등록. 
+							$('#user_id')
+									.change(
+											function(event) {
+												// Ajax를 이용해서 아이디 중복 체크
+												var params = {
+													user_id : $(this).val()
+												};
+												// $.post(Ajax 요청 주소, 요청 파라미터, 응답 성공일 때 실행될 콜백 함수);
+												$
+														.post(
+																'./user/checkid',
+																params,
+																function(
+																		response) {
+																	if (response == 'valid_id') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
+																		
+																		$("#nullbox1").hide();
+																		$(
+																				'.valid_id')
+																				.show(); // valid div 보여줌.
+																		$(
+																				'.invalid_id')
+																				.hide(); // valid div 없앰(display=none).
+																		$(
+																				'#btn-complete')
+																				.removeAttr(
+																						'disabled'); // 버튼 활성화
+																	} else {
+																		$("#nullbox1").hide();
+																		$(
+																				'.valid_id')
+																				.hide(); // valid div 없앰(display=none).
+																		$(
+																				'.invalid_id')
+																				.show(); // invalid div 보여줌.
+																		$(
+																				'#btn-complete')
+																				.attr(
+																						'disabled',
+																						'true'); // 버튼 비활성화
+																	}
+																});
+											});
+
+							$('#user_nn')
+									.change(
+											function(event) {
+												var params_nn = {
+													user_nn : $(this).val()
+												};
+												$
+														.post(
+																'./user/checknn',
+																params_nn,
+																function(
+																		response) {
+																	if (response == 'valid_nn') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
+																		$("#nullbox2").hide();
+																		$(
+																				'.valid_nn')
+																				.show(); // valid div 보여줌.
+																		$(
+																				'.invalid_nn')
+																				.hide(); // valid div 없앰(display=none).
+																		$(
+																				'#btn-complete')
+																				.removeAttr(
+																						'disabled'); // 버튼 활성화
+																	} else {
+																		$("#nullbox2").hide();
+																		$(
+																				'.valid_nn')
+																				.hide(); // valid div 없앰(display=none).
+																		$(
+																				'.invalid_nn')
+																				.show(); // invalid div 보여줌.
+																		$(
+																				'#btn-complete')
+																				.attr(
+																						'disabled',
+																						'true'); // 버튼 비활성화
+																	}
+																});
+											});
+
+							$('#user_pwd').change(
+									function(event) {
+										if ($('#user_pwd_ck').val() == $(
+												'#user_pwd').val()) {
+											$('.invalid_pwd').hide(); // valid div 없앰(display=none).
+											$('#btn-complete').removeAttr(
+													'disabled'); // 버튼 활성화
+										} else {
+											$("#nullbox3").hide();
+											$('.invalid_pwd').show(); // invalid div 보여줌.
+											$('#btn-complete').attr('disabled',
+													'true'); // 버튼 비활성화
+										}
+									});
+
+							// 회원가입 성공, 실패 메시지
+							$('#btn-complete').click(function(event) {
+								alert("가입하신 이메일(아이디)로 인증메일을 전송했습니다! \n서비스 이용에 지장은 없지만 아이디/비밀번호 찾기에 제한됩니다.");
+							});
+
+							if (location.href == "http://localhost:8181/team4/?register=fail") {
+								if ('${register}' == false) {
+									$("#registerModal").fadeIn(300);
+									alert("회원가입 정보를 다시 입력해 주세요.");
+								}
+							}
+
+							// 로그인 실패
+
+							var url = window.location.href;
+							if (url.indexOf("fail") != -1) {
+								$(".modalBackground").fadeIn(300);
+								$("#loginModal").fadeIn(300);
+							}
+
+							/* if (location.href == "http://localhost:8181/team4/?signin=fail"){
+								//if ('${signin}' == false) {
+									$(".modalBackground").fadeIn(300);
+									$("#loginModal").fadeIn(300);
+									alert("로그인 정보를 다시 입력해 주세요.");
+								//}
+							} */
+
+							var idV = "";
+							$("#searchBtn")
+									.click(
+											function() {
+												$
+														.ajax({
+															type : "POST",
+															url : "${pageContext.request.contextPath}/user/userSearch?inputName_1="
+																	+ $(
+																			'#inputName_1')
+																			.val()
+																	+ "&inputPhone_1="
+																	+ $(
+																			'#inputPhone_1')
+																			.val(),
+															success : function(
+																	data) {
+																if (data == 0) {
+																	$(
+																			'#id_value')
+																			.text(
+																					"회원 정보를 확인해주세요!");
+																} else {
+																	$(
+																			'#id_value')
+																			.text(
+																					data);
+																	// 아이디값 별도로 저장
+																	idV = data;
+																}
+															}
+														});
+											});
+
+							$("#searchBtn2")
+									.click(
+											function() {
+												$
+														.ajax({
+															type : "GET",
+															url : "${pageContext.request.contextPath}/user/searchPassword",
+															data : {
+																inputId : $(
+																		'#inputId')
+																		.val(),
+																inputPhone_2 : $(
+																		'#inputPhone_2')
+																		.val()
+															},
+															success : function(
+																	data) {
+																alert("가입하신 이메일(아이디)로 임시 비밀번호를 전송했습니다!");
+																$(
+																		"#searchModal")
+																		.fadeOut(
+																				300);
+															}
+														});
+											});
+
+						});
 	</script>
 </body>
 </html>

@@ -279,7 +279,7 @@ img {
 .pwdMargin {
 	margin-top: 10px !important;
 }
-.nullbox{height:21px;}
+.nullbox{min-height:21px!important;}
 
 .btn_create {
 	width: 100px;

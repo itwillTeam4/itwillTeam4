@@ -132,14 +132,14 @@
 					</div>
 
 
-					<div class="applyInputForms">
+					<div class="applyInputForms" style="display:none;">
 
 						<div class="inputFormsLeft">
 							<p>선호 태그 변경</p>
 						</div>
 						<div class="inputFormsRight userWidth">
 							<input type="text" value="${userUpdate.user_tag}" id="user_tag"
-								name="user_tag" placeholder="선호 태그 입력 (#편안한 #로맨스 #소설)" required />
+								name="user_tag" placeholder="선호 태그 입력 (#편안한 #로맨스 #소설)"/>
 						</div>
 					</div>
 

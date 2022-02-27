@@ -150,7 +150,7 @@ img {
 	width: 430px;
 	height: 40px;
 	float: left;
-	left: 300px;
+	left: 326px;
 	position: relative;
 	display: flex;
 	background-color: #f7f8fa;
@@ -326,12 +326,12 @@ button  img {
 
 #registerModal {
 	width: 370px;
-	height: 630px;
+	height: 800px;
 	position: absolute;
 	background-color: white;
 	left: 50%;
 	margin-left: -185px;
-	top: 100px;
+	top: 48px;
 	z-index: 10;
 	border-radius: 4px;
 	box-shadow: 1px 6px 8px #3f3f3f;
@@ -340,7 +340,7 @@ button  img {
 
 #searchModal {
 	width: 370px;
-	height: 630px;
+	height: 560px;
 	position: absolute;
 	background-color: white;
 	left: 50%;
@@ -392,9 +392,10 @@ button  img {
 	    margin-top: 3px!important;
 }
 #loginModal input[type=submit], #registerModal input[type=submit] {
-	background-color: #333333;
+	background-color: #007450;
 	margin-top: 20px;
 	color: white;
+	border-radius:4px;
 	font-weight: 400;
 }
 
@@ -411,6 +412,7 @@ button  img {
 	display: flex;
     align-content: flex-end;
     justify-content: space-evenly;
+    margin-top:30px;
 }
 
 #searchI, #searchP{
@@ -420,8 +422,9 @@ button  img {
     flex-direction: column;
     width: 322px!important;
     margin: 0 auto !important;
-    margin-top: 50px!important;
+    margin-top: 30px!important;
 }
+.nullbox{min-height:21px!important;}
 
 
 .ywForm{
@@ -444,7 +447,11 @@ button  img {
 	border-color:inherit!important;
 	
 }
-
+.ywForm::placeholder{
+	
+	color:#red!important;
+	
+}
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
     border-color: #007450!important;
