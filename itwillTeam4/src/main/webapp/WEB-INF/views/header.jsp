@@ -45,8 +45,8 @@
 
 			<div>
 				<!-- 검색 기능 UI -->
-				<form action="search" method="get" id="searchWrap">
-					<input type="text" name="keyword"
+				<form action="http://localhost:8181/team4/meet/find" method="post" id="searchWrap">
+					<input type="text" name="search3"
 						placeholder="함께 읽고 싶은 책이나 독서모임을 검색해보세요." required>
 					<button type="submit">
 						<img

@@ -125,7 +125,7 @@ public class MeetController {
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search(@RequestParam(value = "type", required = true) int type,
+	public String search(@RequestParam(value = "type", required = false) int type,
 			@RequestParam(value = "keyword", required = true) String keyword, Model model) {
 		List<Meet> list = meetService.select(type, keyword);
 		model.addAttribute("meetList", list);
