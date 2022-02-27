@@ -28,8 +28,8 @@
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
-					<li><a href="?act=rlt" id="rlt_rink">실시간 독서 모임 커뮤니티</a></li>
-					<li><a href="?act=my&MeetIdx=${userMeetIndex}" id="mymeet_rink">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="http://localhost:8181/team4/board?act=rlt" id="rlt_rink">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="http://localhost:8181/team4/board?act=my&MeetIdx=${userMeetIndex}" id="mymeet_rink">나의 독서 모임 커뮤니티</a></li>
 					<li><a href="http://localhost:8181/team4/board" class="on">자유로운 서평</a></li>
 					<li><a href="http://localhost:8181/team4/notice/main">공지사항/이벤트</a></li>
 
@@ -120,7 +120,7 @@
 	</div>
 	
 	<%@include file="../footer.jsp"%>
-
+	
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
