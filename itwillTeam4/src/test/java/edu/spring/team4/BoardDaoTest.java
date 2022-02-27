@@ -33,7 +33,7 @@ public class BoardDaoTest {
 
 		AES256 aes256= new AES256();
 		try {
-			log.info("{}",aes256.decrypt("vUFJ3sl0TFZp1ZNU/oHDiw=="));
+			log.info("{}",aes256.decrypt("Z1CLewotyvG413H4citvCg"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -17,7 +17,8 @@ import edu.spring.team4.utils.Paging;
 public class MeetDaoImpl implements MeetDao {
 	private static final Logger log = LoggerFactory.getLogger(MeetDaoImpl.class);
 	private static final String MEET_NAMESPACE = "edu.spring.team4.mapper.MeetMapper";
-
+	private static final String USER_NAMESPACE = "edu.spring.team4.mapper.UserMapper";
+	
 	@Autowired
 	private SqlSession sqlSession;
 	@Autowired
@@ -90,22 +91,38 @@ public class MeetDaoImpl implements MeetDao {
 	@Override
 	public int updateLike(int meet_idx, String joiner) {
 		String old_member = sqlSession.selectOne(MEET_NAMESPACE+".selectLike",meet_idx);
+		String old_meet_idx = sqlSession.selectOne(USER_NAMESPACE+".getMeetIdx",joiner);
+		
 		Map<String, Object> params = new HashMap<>();
-		List<String> list = methodDao.toList(old_member);
-		log.info("여기봐라ㅏ라라ㅏㅏ{}",list);
-		if(list.contains(joiner)) {
+		Map<String, Object> params2 = new HashMap<>();
+		List<String> old_member_list = methodDao.toList(old_member);
+		List<String> old_meet_idx_list = methodDao.toList(old_meet_idx);
+		
+		
+		log.info("여기봐라ㅏ라라ㅏㅏ{}",old_member_list);
+		if(old_member_list.contains(joiner)) {
 			params.put("increase", -1);
-			list.remove(joiner);
+			old_member_list.remove(joiner);
+			old_meet_idx_list.remove(Integer.toString(meet_idx));
+			
 		}else {
 			params.put("increase", 1);
-			list.add(joiner);
+			old_member_list.add(joiner);
+			old_meet_idx_list.add(Integer.toString(meet_idx));
 		}
 		params.put("meet_idx",meet_idx);
-		if(list.size()==0) {
+		if(old_member_list.size()==0) {
 			params.put("meet_member_code"," ");
 		}else {
-			params.put("meet_member_code"," "+methodDao.toString(list)+" ");
+			params.put("meet_member_code"," "+methodDao.toString(old_member_list)+" ");
 		}
+		params2.put("user_code", Integer.parseInt(joiner));
+		if(old_meet_idx_list.size()==0) {
+			params2.put("user_meet_idx", " ");
+		}else {
+			params2.put("user_meet_idx", " "+methodDao.toString(old_meet_idx_list)+" ");
+		}
+		sqlSession.update(USER_NAMESPACE+".updateLike", params2);
 		return sqlSession.update(MEET_NAMESPACE+".updateLike",params);
 	}
 

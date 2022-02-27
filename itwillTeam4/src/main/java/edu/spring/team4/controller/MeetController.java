@@ -3,6 +3,7 @@ package edu.spring.team4.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.spring.team4.domain.Board;
 import edu.spring.team4.domain.Meet;
+import edu.spring.team4.domain.User;
 import edu.spring.team4.service.BoardService;
 import edu.spring.team4.service.MeetService;
+import edu.spring.team4.service.UserService;
 
 @Controller
 @RequestMapping(value = "/meet")
@@ -29,6 +32,8 @@ public class MeetController {
 	private MeetService meetService;
 	@Autowired
 	private BoardService boardService;
+	@Autowired
+	private UserService userService;
 	
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
@@ -109,10 +114,13 @@ public class MeetController {
 	}
 
 	@RequestMapping(value = "/updateLike/{meet_idx}", method = RequestMethod.GET)
-	public String updateLike(@PathVariable(name = "meet_idx") Integer meet_idx,
+	public String updateLike(HttpSession session,@PathVariable(name = "meet_idx") Integer meet_idx,
 			@RequestParam(value = "joiner", required = false) String joiner) {
 		log.info("meet_idx={},joiner={}", meet_idx, joiner);
 		meetService.updateLike(meet_idx, joiner);
+		User userUpdate = userService.select(Integer.parseInt(joiner));
+		session.removeAttribute("userMeetIndex");
+		session.setAttribute("userMeetIndex", userUpdate.getUser_meet_idx());
 		return "redirect:/meet/detail?meet_idx={meet_idx}";
 	}
 
