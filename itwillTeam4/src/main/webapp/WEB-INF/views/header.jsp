@@ -59,7 +59,7 @@
 
 
 
-			<a href="./search" id="meetSearch">
+			<a href="http://localhost:8181/team4/meet/find" id="meetSearch">
 				<div id="meet">
 					<h2>독서모임 찾기</h2>
 				</div>
