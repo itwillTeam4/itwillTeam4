@@ -152,7 +152,7 @@
 							<h3>모임 서평</h3>
 							<div id="writeImg"
 								style="width: 45px !important; height: 45px !important; margin-left: 30px;">
-								<a href="http://localhost:8181/team4/board/insert"> <img
+								<a href="http://localhost:8181/team4/board/insert?MeetIdx=${meet.meet_idx }"> <img
 									src="${pageContext.request.contextPath}/resources/img/write.png"
 									alt="write">
 								</a>
