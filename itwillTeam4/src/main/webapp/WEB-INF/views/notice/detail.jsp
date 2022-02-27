@@ -32,10 +32,10 @@
 					<span>환영합니다.</span>
 				</div>
 				<ul class="comMenu">
-					<li><a href="#">실시간 독서 모임 커뮤니티</a></li>
-					<li><a href="#">나의 독서 모임 커뮤니티</a></li>
-					<li><a href="#">자유로운 서평</a></li>
-					<li><a href="#" class="on">공지사항/이벤트</a></li>
+					<li><a href="http://localhost:8181/team4/board?act=rlt">실시간 독서 모임 커뮤니티</a></li>
+					<li><a href="http://localhost:8181/team4/board?act=my&MeetIdx=${userMeetIndex}">나의 독서 모임 커뮤니티</a></li>
+					<li><a href="http://localhost:8181/team4/board">자유로운 서평</a></li>
+					<li><a href="http://localhost:8181/team4/notice/main" class="on">공지사항/이벤트</a></li>
 
 				</ul>
 			</div>
