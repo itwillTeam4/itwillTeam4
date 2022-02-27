@@ -116,12 +116,36 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public void insert(Model model, @RequestParam(value = "MeetIdx", required = false) String meet_idx) {
+	public void insert(Model model, @RequestParam(value = "MeetIdx", required = false) String meet_idx,
+			@RequestParam(value = "bookImg", required = false) String meet_bookImg,
+			@RequestParam(value = "bookTitle", required = false) String meet_bookTitle,
+			@RequestParam(value = "bookAuthors", required = false) String meet_bookAuthors,
+			@RequestParam(value = "bookPub", required = false) String meet_bookPub
+			) {
 		log.info("insert() 호출");
 		if (meet_idx == null) {
 			meet_idx = "0";
 		}
+		
+		if(meet_bookImg == null) {
+			meet_bookImg = "";
+		}
+		if(meet_bookTitle == null) {
+			meet_bookTitle = "";
+		}
+		if(meet_bookAuthors == null) {
+			meet_bookAuthors = "";
+		}
+		if(meet_bookPub == null) {
+			meet_bookPub = "";
+		}
+		log.info("insert() 호출 및 bookTitle({})",meet_bookTitle);
 		model.addAttribute("userMeetIdx", meet_idx);
+		model.addAttribute("bookImg", meet_bookImg);
+		model.addAttribute("bookTitle", meet_bookTitle);
+		model.addAttribute("bookAuthors", meet_bookAuthors);
+		model.addAttribute("bookPub", meet_bookPub);
+		
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)

@@ -134,7 +134,7 @@
 
 						<div id="book_info2">
 
-							<input type="text" id="board_book_title" class="board_book_title" name="board_book_title"
+							<input type="text" id="board_book_title" value="${bookTitle }"class="board_book_title" name="board_book_title"
 								required readonly />
 
 
@@ -143,14 +143,14 @@
 
 							<div>
 								<input type="hidden" id="board_book_authors"
-									name="board_book_authors" required />
+									name="board_book_authors" value="${bookAuthors }" required />
 							</div>
 							<div>
-								<input type="hidden" id="board_book_pub" name="board_book_pub"
+								<input type="hidden" id="board_book_pub" value="${bookPub }" name="board_book_pub"
 									required />
 							</div>
 							<div>
-								<input type="hidden" id="board_book_img" name="board_book_img"
+								<input type="hidden" id="board_book_img" value="${bookImg }"name="board_book_img"
 									required />
 							</div>
 							<div>

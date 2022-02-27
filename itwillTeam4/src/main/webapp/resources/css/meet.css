@@ -599,7 +599,9 @@ display: flex;
 	font-weight:400!important;
 }
 
-.mySwiperWrapper{
+.submitBG{
 	
-	
+		background-image:url(../img/write.png);
+	background-size: auto;
+	background-repeat: no-repeat;
 }

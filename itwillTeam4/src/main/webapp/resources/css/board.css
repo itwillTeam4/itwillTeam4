@@ -220,7 +220,7 @@ img {
 
 .innerWrapFree {
 	width: 1194px;
-	height: 3300px;
+	height: 4050px;
 	margin: -20px auto;
 }
 
@@ -242,7 +242,7 @@ img {
 
 #contentWrapFree {
 	width: 100%;
-
+	min-height: 4000px;
 	margin-top: 20px;
 	display: flex;
 }
