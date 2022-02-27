@@ -38,20 +38,20 @@ img {
 }
 
 
-#carouselWrap {
-	width: 1480px;
-	margin: 0 auto;
-	height: 450px;
+.caWrap1 {
+	width: 1480px!important;
+	margin: 0 auto!important;
+	height: 450px!important;
 }
 
-#carouselExampleInterval {
-	width: 1480px;
-	margin: 0 auto;
-	position: relative;
-	top: 20px;
+.caEI1 {
+	width: 1480px!important;
+	margin: 0 auto!important;
+	position: relative!important;
+	top: 20px!important;
 }
 
-.carousel-inner {
+.ci1  {
 	border-radius: 10px !important;
 }
 

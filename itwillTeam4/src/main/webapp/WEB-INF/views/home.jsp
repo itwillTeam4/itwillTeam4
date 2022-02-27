@@ -27,12 +27,12 @@
 
 
 	<%@include file="header.jsp"%>
-	<div class="container-fluid" id="wrap1">
+	<div class="container-fluid" id="wrap1" style="margin-bottom:30px;">
 
-		<div id="carouselWrap">
-			<div id="carouselExampleInterval" class="carousel slide"
+		<div id="carouselWrap" class="caWrap1">
+			<div id="carouselExampleInterval" class="carousel slide caEI1"
 				data-ride="carousel">
-				<div class="carousel-inner">
+				<div class="carousel-inner ci1">
 					<div class="carousel-item active" data-interval="3000">
 						<img
 							src="${pageContext.request.contextPath}/resources/img/slide1.png"
@@ -159,7 +159,7 @@
 								</div>
 								<div class="info2">
 									<span class="name">${meet.meet_host_name }</span> <span
-										class="meetMember"> ${meet.meet_member_num } 명 참여중</span>
+										class="meetMember"> ${meet.meet_join_num } 명 참여중</span>
 								</div>
 								<span class="meetIntro text-overflow-line2">${meet.meet_intro }</span>
 

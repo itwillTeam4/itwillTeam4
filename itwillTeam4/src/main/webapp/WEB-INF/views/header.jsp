@@ -459,7 +459,7 @@
 
 							// 회원가입 성공, 실패 메시지
 							$('#btn-complete').click(function(event) {
-								alert("가입하신 이메일(아이디)로 인증메일을 전송했습니다! \n서비스 이용에 지장은 없지만 아이디/비밀번호 찾기에 제한됩니다.");
+								alert("회원가입에 성공하였습니다! \n아이디/비밀번호찾기 서비스를 이용하시려면 이메일 인증도 진행해주세요.");
 							});
 
 							if (location.href == "http://localhost:8181/team4/?register=fail") {

@@ -35,7 +35,7 @@
 <body>
 	<%@include file="../header.jsp"%>
 
-
+	<fmt:formatNumber value="${signInUserCode }" type="number" var="uc" />
 
 
 
@@ -146,53 +146,72 @@
 						</c:if>
 					</div>
 
-					<div class="detailForms" >
+					<div class="detailForms">
 						<div
 							style="display: flex; align-items: center; justify-content: flex-start;">
 							<h3>모임 서평</h3>
-							<div id="writeImg"
-								style="width: 45px !important; height: 45px !important; margin-left: 30px;">
-								<a href="http://localhost:8181/team4/board/insert?MeetIdx=${meet.meet_idx }&bookImg=${meet.meet_book_img}&bookTitle=${meet.meet_book_title}&bookAuthors=${meet.meet_book_authors}&bookPub=${meet.meet_book_pub}"> <img
-									src="${pageContext.request.contextPath}/resources/img/write.png"
-									alt="write">
-								</a>
-							</div>
+
+							<c:if test="${fn:contains(meet.meet_member_code, uc) }">
+								<div id="writeImg"
+									style="width: 45px !important; height: 45px !important; margin-left: 30px;">
+									<a
+										href="http://localhost:8181/team4/board/insert?MeetIdx=${meet.meet_idx }&bookImg=${meet.meet_book_img}&bookTitle=${meet.meet_book_title}&bookAuthors=${meet.meet_book_authors}&bookPub=${meet.meet_book_pub}">
+										<img
+										src="${pageContext.request.contextPath}/resources/img/write.png"
+										alt="write">
+									</a>
+								</div>
+							</c:if>
 						</div>
 
-						<div class="detailBoard swiper mySwiper">
+						<div class="detailBoard" id="carouselWrap">
 
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-wrapper mySwiperWrapper">
-								<c:forEach begin="0" end="9" step="1" var="board"
-									items="${boardlist }">
-									<div class="detailboardWrap">
-										<a
-											href="http://localhost:8181/team4/board/detail/${board.bno }">
-											<div class="detailBoardFrame swiper-slide">
+							<div id="carouselExampleInterval" class="carousel slide"
+								data-ride="carousel">
+								<div class="carousel-inner" style="display:flex !important;">
 
-												<div class="detailBoardInfo">
-													<div style="display: flex; align-items: center;">
-														<p class="postTitle" style="margin-right: 20px;">${board.board_title }</p>
-														<p class="postRegDate detailBoardUser">
-															<fmt:formatDate value="${board.board_reg_date }"
-																pattern="yyyy-MM-dd hh:mm:ss" />
+									<c:forEach begin="0" end="9" step="1" var="board"
+										items="${boardlist }">
+										<div class="detailboardWrap carousel-item"
+											data-interval="3000">
+											<a
+												href="http://localhost:8181/team4/board/detail/${board.bno }">
+												<div class="detailBoardFrame">
+
+													<div class="detailBoardInfo">
+														<div style="display: flex; align-items: center;">
+															<p class="postTitle" style="margin-right: 20px;">${board.board_title }</p>
+															<p class="postRegDate detailBoardUser">
+																<fmt:formatDate value="${board.board_reg_date }"
+																	pattern="yyyy-MM-dd hh:mm:ss" />
+															</p>
+														</div>
+
+														<p class="postUser detailBoardUser">${board.board_userid }<span>
+																멤버</span>
 														</p>
+
+
+														<p class="postContent text-overflow-line3 detailBoardCon"
+															style="max-width: 380px;">${board.board_content}</p>
 													</div>
-
-													<p class="postUser detailBoardUser">${board.board_userid }<span>
-															멤버</span>
-													</p>
-
-
-													<p class="postContent text-overflow-line3 detailBoardCon"
-														style="max-width: 380px;">${board.board_content}</p>
 												</div>
-											</div>
-										</a>
+											</a>
 
-									</div>
-								</c:forEach>
+										</div>
+									</c:forEach>
+									<button class="carousel-control-prev" type="button"
+										data-target="#carouselExampleInterval" data-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</button>
+									<button class="carousel-control-next" type="button"
+										data-target="#carouselExampleInterval" data-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</button>
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -280,7 +299,7 @@
 				</div>
 
 
-				<fmt:formatNumber value="${signInUserCode }" type="number" var="uc" />
+
 
 
 				<c:choose>
@@ -395,6 +414,27 @@
 		
 		
 		
+	</script>
+	<script>
+	var mySwiper2 = new Swiper('.mySwiper2', {
+		  // Optional parameters
+		  direction: 'horizontal',		// 가로 슬라이드
+		  slidesPerView: 3,			// 한 영역에 보이는 슬라이드 수
+		  spaceBetween: 16,
+
+		  // If we need pagination
+		  pagination: {
+		    el: '.swiper-page',
+		  },
+		  observer: true,	// 추가
+		  observeParents: true,	// 추가
+		  navigation : { // 네비게이션 설정
+				nextEl : '.btnNe', // 다음 버튼 클래스명
+				prevEl : '.btnPr', // 이번 버튼 클래스명
+			}
+		})
+	
+	
 	</script>
 </body>
 </html>
