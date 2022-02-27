@@ -27,26 +27,31 @@
 
 
 	<%@include file="header.jsp"%>
-	<div class="container-fluid" id="wrap1" style="margin-bottom:30px;">
+	<div class="container-fluid" id="wrap1" style="margin-bottom: 30px;">
 
 		<div id="carouselWrap" class="caWrap1">
 			<div id="carouselExampleInterval" class="carousel slide caEI1"
 				data-ride="carousel">
 				<div class="carousel-inner ci1">
 					<div class="carousel-item active" data-interval="3000">
-						<img
+						<a href="http://localhost:8181/team4/meet/detail?meet_idx=37">
+							<img
 							src="${pageContext.request.contextPath}/resources/img/slide1.png"
 							class="d-block w-100" alt="...">
+						</a>
 					</div>
 					<div class="carousel-item" data-interval="3000">
-						<img
+						<a href="http://localhost:8181/team4/meet/detail?meet_idx=40">
+							<img
 							src="${pageContext.request.contextPath}/resources/img/slide2.png"
 							class="d-block w-100" alt="...">
+						</a>
 					</div>
 					<div class="carousel-item" data-interval="3000">
-						<img
+						<a href="http://localhost:8181/team4/notice/detail/103"> <img
 							src="${pageContext.request.contextPath}/resources/img/slide3.png"
 							class="d-block w-100" alt="...">
+						</a>
 					</div>
 				</div>
 				<button class="carousel-control-prev" type="button"
@@ -83,23 +88,24 @@
 			<div class="swiper-button-next"></div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-wrapper">
-			
-			
-			<c:forEach begin="0" end="5" step="1" var="board2" items="${boardList2 }">
-				<div class="swiper-slide">
-					<a href="http://localhost:8181/team4/board/detail/${board2.bno }">
-						<div class="a">
-							<div class="a_a">
-								<p class="text-overflow-line5">${board2.board_content }</p>
+
+
+				<c:forEach begin="0" end="5" step="1" var="board2"
+					items="${boardList2 }">
+					<div class="swiper-slide">
+						<a href="http://localhost:8181/team4/board/detail/${board2.bno }">
+							<div class="a">
+								<div class="a_a">
+									<p class="text-overflow-line5">${board2.board_content }</p>
+								</div>
+								<div class="a_b">
+									<p class="a_bUser">${board2.board_userid }</p>
+									<p class="a_bTitle">${board2.board_title }</p>
+								</div>
 							</div>
-							<div class="a_b">
-								<p class="a_bUser">${board2.board_userid }</p>
-								<p class="a_bTitle">${board2.board_title }</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				
+						</a>
+					</div>
+
 				</c:forEach>
 			</div>
 
@@ -151,7 +157,8 @@
 
 				<c:forEach begin="0" end="2" step="1" var="meet"
 					items="${meetList }">
-					<li><a href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
+					<li><a
+						href="http://localhost:8181/team4/meet/detail?meet_idx=${meet.meet_idx }">
 							<div class="info">
 								<div class="info1">
 									<span class="meetTitle text-overflow note-title">${meet.meet_name }</span>
@@ -204,7 +211,7 @@
 				</div>
 
 				<a
-					href="http://localhost:8181/team4/notice/detail?notice_idx=${event.notice_idx }">
+					href="http://localhost:8181/team4/notice/detail/${event.notice_idx }">
 					<div class="wrap4ConCon">
 						<img
 							src="${pageContext.request.contextPath}/resources/img/event.png"
