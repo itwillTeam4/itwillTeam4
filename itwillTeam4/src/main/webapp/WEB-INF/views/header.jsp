@@ -45,9 +45,10 @@
 
 			<div>
 				<!-- 검색 기능 UI -->
-				<form action="http://localhost:8181/team4/meet/find" method="post" id="searchWrap">
-					<input type="text" name="search3"
-						placeholder="함께 읽고 싶은 책이나 독서모임을 검색해보세요." required>
+				<form action="http://localhost:8181/team4/meet/find" method="post"
+					id="searchWrap">
+					<input type="text" name="search3" placeholder="함께 읽고 싶은 책을 검색해보세요."
+						required>
 					<button type="submit">
 						<img
 							src="${pageContext.request.contextPath}/resources/img/search.png"
@@ -153,7 +154,8 @@
 
 
 					<div class="form-group">
-						<label class="font-weight-bold" for="inputName_1" style="margin-bottom:13px;">비밀번호</label>
+						<label class="font-weight-bold" for="inputName_1"
+							style="margin-bottom: 13px;">비밀번호</label>
 						<div>
 							<input type="password" id="user_pwd_ck" name="user_pwd_ck"
 								placeholder="비밀번호 입력" required />
@@ -187,13 +189,13 @@
 						</div>
 
 					</div>
-					
-					
+
+
 					<div class="form-group">
 						<label class="font-weight-bold" for="inputName_1">전화번호</label>
 						<div>
 							<input type="text" name="user_phone"
-							placeholder="전화번호 입력 (01012345678)" required />
+								placeholder="전화번호 입력 (01012345678)" required />
 						</div>
 
 					</div>
@@ -271,7 +273,7 @@
 						</div>
 						<div id="searchP" style="display: none;">
 							<div class="form-group">
-								<label class="font-weight-bold" for="inputId">아이디</label>
+								<label class="font-weight-bold" for="inputId">이메일</label>
 								<div>
 									<input type="text" class="form-control ywForm" id="inputId"
 										name="inputId" placeholder="abc@abc.com">
@@ -372,8 +374,10 @@
 																function(
 																		response) {
 																	if (response == 'valid_id') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-																		
-																		$("#nullbox1").hide();
+
+																		$(
+																				"#nullbox1")
+																				.hide();
 																		$(
 																				'.valid_id')
 																				.show(); // valid div 보여줌.
@@ -385,19 +389,17 @@
 																				.removeAttr(
 																						'disabled'); // 버튼 활성화
 																	} else {
-																		$("#nullbox1").hide();
+																		$(
+																				"#nullbox1")
+																				.hide();
 																		$(
 																				'.valid_id')
 																				.hide(); // valid div 없앰(display=none).
 																		$(
 																				'.invalid_id')
 																				.show(); // invalid div 보여줌.
-																		$(
-																		'#btn-complete')
-																		.attr(
-																				'disabled',
-																				'true'); // 버튼 비활성화
-															}
+																		$('#btn-complete').attr('disabled','true'); // 버튼 비활성화
+																	}
 																});
 											});
 
@@ -414,7 +416,9 @@
 																function(
 																		response) {
 																	if (response == 'valid_nn') { // 사용 가능한 아이디(DB에 없는 아이디)인 경우
-																		$("#nullbox2").hide();
+																		$(
+																				"#nullbox2")
+																				.hide();
 																		$(
 																				'.valid_nn')
 																				.show(); // valid div 보여줌.
@@ -426,7 +430,9 @@
 																				.removeAttr(
 																						'disabled'); // 버튼 활성화
 																	} else {
-																		$("#nullbox2").hide();
+																		$(
+																				"#nullbox2")
+																				.hide();
 																		$(
 																				'.valid_nn')
 																				.hide(); // valid div 없앰(display=none).
@@ -458,9 +464,11 @@
 									});
 
 							// 회원가입 성공, 실패 메시지
-							$('#btn-complete').click(function(event) {
-								alert("회원가입에 성공하였습니다! \n아이디/비밀번호찾기 서비스를 이용하시려면 이메일 인증도 진행해주세요.");
-							});
+							$('#btn-complete')
+									.click(
+											function(event) {
+												alert("회원가입에 성공하였습니다! \n아이디/비밀번호찾기 서비스를 이용하시려면 이메일 인증도 진행해주세요.");
+											});
 
 							if (location.href == "http://localhost:8181/team4/?register=fail") {
 								if ('${register}' == false) {
