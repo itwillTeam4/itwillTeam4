@@ -102,8 +102,9 @@ public class MeetController {
 		log.info("update({}) POST 호출", meet);
 
 		meetService.update(meet);
-		return "redirect:/board?act=rlt";
-//		return "redirect:/meet/detail?meet_idx={meet_idx}";
+		int meet_idx = meet.getMeet_idx();
+		//return "redirect:/board?act=rlt";
+		return "redirect:/meet/detail?meet_idx=" + meet_idx;
 
 	}
 
