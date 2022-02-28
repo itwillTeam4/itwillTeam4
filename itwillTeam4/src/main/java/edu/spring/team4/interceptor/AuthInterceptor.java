@@ -32,10 +32,20 @@ public class AuthInterceptor implements HandlerInterceptor{
 			// 요청 URL 정보를 찾아서 signin 요청에 요청 파라미터 추가
 			String reqUrl = request.getRequestURL().toString();
 			String reqParam = request.getParameter("act");
-			if (reqParam == null) {
-				return true;
-			} 
+			String order = request.getParameter("order");
 			log.debug("request URL: {}", reqUrl);
+			log.debug("request Param: {}", reqParam);
+			log.debug("request Param: {}", order);
+//			if ((reqParam == null && order == null) || (reqParam.equals("free") && order.equals("0")) || (reqParam.equals("free") && order.equals("1"))
+//					|| (reqParam.equals("free") && order.equals("3")) || (reqParam.equals("free") && order.equals("4"))) {
+//				response.sendRedirect("http://localhost:8181/team4/board");
+//				return true;
+//			}
+			if ((reqParam == null && order == null) || reqParam.equals("free") || order.equals("0") || order.equals("1")
+					|| order.equals("3") || order.equals("4")) {
+				
+				return true; 
+			}
 
 
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
@@ -46,7 +56,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 			String target ="";
 			if (query == null) { //
 				target = UriUtils.encode(reqUrl, "UTF-8");
-			} else {
+			} else {	
 				target = UriUtils.encode(reqUrl + "?" + query, "UTF-8");
 			}
 
