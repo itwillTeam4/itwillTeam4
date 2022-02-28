@@ -243,7 +243,8 @@
 			}
 			
 		});
-		$("#rtext1").empty();
+		
+		$('#rtext1').val('');
 	});
 	
 	$('#replies').on('click', '.reply_item .reply_update', function () {
