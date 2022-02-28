@@ -105,7 +105,7 @@
 					<div id="replies"></div>
 
 
-					<input type="text" id="rtext1" name="rtext" class="replyInput" placeholder="댓글을 입력해주세요!" />
+					<input type="text" id="rtext1" name="rtext" class="replyInput" spellcheck="false" placeholder="댓글을 입력해주세요!" />
 					<!--어드민 대신 ${signInUserId}-->
 					<input type="hidden" id="userid" name="user_id" value='${signInUserId}' readonly="readonly" />
 					<button class="btn_create">등록</button>

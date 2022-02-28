@@ -100,7 +100,7 @@
 								</div>
 								<div class="a_b">
 									<p class="a_bUser">${board2.board_userid }</p>
-									<p class="a_bTitle">${board2.board_title }</p>
+									<p class="a_bTitle text-overflow">${board2.board_title }</p>
 								</div>
 							</div>
 						</a>

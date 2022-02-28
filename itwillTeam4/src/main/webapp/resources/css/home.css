@@ -153,14 +153,14 @@ img {
 }
 
 .a_b {
-	height: 78px !important;
     background-color: #f8f8f8;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding:25px;
+    padding: 16px;
+    padding-left: 25px;
 }
 
 
