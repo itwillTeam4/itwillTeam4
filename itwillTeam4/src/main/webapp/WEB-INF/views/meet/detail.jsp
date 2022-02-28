@@ -180,7 +180,7 @@
 												<div class="detailBoardFrame">
 
 													<div class="detailBoardInfo">
-														<div style="display: flex; align-items: center;">
+														<div class="text-overflow"style="display: flex; align-items: center;  max-width:300px;">
 															<p class="postTitle" style="margin-right: 20px;">${board.board_title }</p>
 															<p class="postRegDate detailBoardUser">
 																<fmt:formatDate value="${board.board_reg_date }"

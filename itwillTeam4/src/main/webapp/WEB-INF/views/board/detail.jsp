@@ -238,10 +238,14 @@
 				$('#blc1').text("\u00a0"+cnt);
 				$('#blc2').empty();
 				$('#blc2').text("댓글\u00a0"+cnt);
+				
 
 			}
+			
 		});
+		$("#rtext1").empty();
 	});
+	
 	$('#replies').on('click', '.reply_item .reply_update', function () {
 		
 		var rno = $(this).prevAll('#rno').val();
@@ -266,7 +270,7 @@
 	
 	$('#replies').on('click', '.reply_item .reply_delete', function (event) {
 		var rno = $(this).prevAll('#rno').val();
-		var result = confirm(rno + '번 댓글을 정말 삭제할까요?');
+		var result = confirm('댓글을 정말 삭제할까요?');
 		if (result) { // 확인(Yes) 버튼을 클릭했을 때
 			$.ajax({
 				url: 'http://localhost:8181/team4/replies/' + rno,
@@ -276,7 +280,7 @@
 					'X-HTTP-Method-Override': 'DELETE'
 				},
 				success: function () {
-					alert(rno + '번 댓글 삭제 성공!');
+					alert(rno + '댓글 삭제 성공!');
 					cnt -= 1;
 					getReplies(sort);
 					$('#blc1').empty();
@@ -290,7 +294,7 @@
 	});
 	$("#replies").on('click','.reply_item .reply_like', function(event){
 		var rno = $(this).prevAll('#rno').val();
-		var result = confirm('좋아요? 좋냐고');
+		var result = confirm('좋아요를 누르시겠습니까?');
 		var userCode=${signInUserCode};
 		if (result){
 			$.ajax({
@@ -304,10 +308,10 @@
 			  	
 			success: function () {
 				getReplies(sort); // 댓글 목록 업데이트
-				alert(rno + ' 좋아요 성공!');
+				alert('좋아요 성공!');
 				},
 			error: function(){
-				alert(rno + ' 좋아요 실패!');
+				alert('좋아요 실패!');
 			}
 			});
 		}
