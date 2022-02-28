@@ -19,8 +19,8 @@
 <body>
 	<%@include file="../header.jsp"%>
 
-	<div id="contentWrapFree">
-		<div class="innerWrapFree">
+	<div id="contentWrapFree" style="min-height: 3300px!important;">
+		<div class="innerWrapFree" style="height: 3323px!important;">
 
 			<div class="left-gnbFree">
 				<div class="profile-box">

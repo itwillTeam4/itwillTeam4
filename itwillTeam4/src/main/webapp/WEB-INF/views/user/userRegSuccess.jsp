@@ -5,20 +5,22 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>책오</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+		<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/img/favicon.ico">
 	</head>
 		<body>
 			<div style="margin: 100px;">
-			<a><img src="${pageContext.request.contextPath}/img/logo2.png"	style="height: 80px; margin-left: 10px;" /></a> <br>
+			<a><img src="${pageContext.request.contextPath}/resources/img/logo2.png"		style="height: 80px;" /></a> <br>
 			<br>
 			<h3>안녕하세요, ${param.user_nn} 님</h3>
 			<br>
 			<p>환영합니다!</p>
 			<br>
-			<p>회원가입이 정상적으로 이루어 졌습니다.</p>
+			<p>이메일 인증이 정상적으로 이루어 졌습니다.</p>
 			<br>
 			<p>로그인 하시면 홈페이지 내의 모든 서비스를 이용하실 수 있습니다.</p>
 			<br> <a href="${pageContext.request.contextPath}/">책오 페이지로 이동하기</a>

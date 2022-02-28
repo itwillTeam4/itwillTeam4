@@ -25,7 +25,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/meet.css"
 	type="text/css">
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
 	type="text/css">
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
@@ -41,7 +41,13 @@
 
 
 
-
+	<div class="back"
+		style="position: absolute; width: 15px; top: 228px; left: 320px;">
+		<a href="http://localhost:8181/team4/board?act=rlt"> <img
+			src="${pageContext.request.contextPath}/resources/img/greenArrow2.png"
+			alt="back" />
+		</a>
+	</div>
 	<div class="contentWrapMeet">
 
 		<div class="innerWrapMeetFlex">
@@ -169,7 +175,7 @@
 
 							<div id="carouselExampleInterval" class="carousel slide"
 								data-ride="carousel">
-								<div class="carousel-inner" style="display:flex !important;">
+								<div class="carousel-inner" style="display: flex !important;">
 
 									<c:forEach begin="0" end="9" step="1" var="board"
 										items="${boardlist }">
@@ -180,8 +186,10 @@
 												<div class="detailBoardFrame">
 
 													<div class="detailBoardInfo">
-														<div class="text-overflow"style="display: flex; align-items: center;  max-width:300px;">
-															<p class="postTitle" style="margin-right: 20px;">${board.board_title }</p>
+														<div class="text-overflow"
+															style="display: flex; align-items: center;">
+															<p class="postTitle"
+																style="margin-right: 20px; max-width: 300px !important;">${board.board_title }</p>
 															<p class="postRegDate detailBoardUser">
 																<fmt:formatDate value="${board.board_reg_date }"
 																	pattern="yyyy-MM-dd hh:mm:ss" />
@@ -249,7 +257,8 @@
 														class="meetMember"> ${host_meet.meet_join_num } 명
 														참여중</span>
 												</div>
-												<span class="meetIntro text-overflow-line2" style="max-width: 300px;">${host_meet.meet_intro }</span>
+												<span class="meetIntro text-overflow-line2"
+													style="max-width: 300px;">${host_meet.meet_intro }</span>
 
 
 											</div>
@@ -416,6 +425,6 @@
 		$(".carousel-item").eq(0).addClass("active");
 		
 	</script>
-	
+
 </body>
 </html>

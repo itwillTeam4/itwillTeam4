@@ -42,7 +42,7 @@
 				${signInUserId}<span>멤버</span>
 			</p>
 			<form class="topForm" action="./userupdate" method="get">
-				<input type="submit" class="mypageOption" value="설정">
+				<input type="submit" class="mypageOption" value="수정">
 		</div>
 
 

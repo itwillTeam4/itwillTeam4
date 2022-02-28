@@ -16,8 +16,8 @@
 <body>
 	<%@include file="../header.jsp"%>
 
-	<div id="contentWrapFree">
-		<div class="innerWrapFree">
+	<div id="contentWrapFree" style="min-height: 3300px!important;">
+		<div class="innerWrapFree" style="height: 3323px!important;">
 
 			<div class="left-gnbFree">
 				<div class="profile-box">
@@ -88,30 +88,7 @@
 
 
 					</div>
-					<div class="paginationCSS realPage" style="display: block; text-align: center;">
-						<ul class="pagination">
-							<c:if test="${paging.startPage != 1 }">
-								<li class="page-item"><a href="?act=${act}&nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&lt;</a></li>
-							</c:if>
-							<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
-								<c:choose>
-									<c:when test="${p == paging.nowPage }">
-										<li class="page-item active "><a class="page-link  mypage">
-												<b>${p }</b>
-											</a></li>
-									</c:when>
-									<c:when test="${p != paging.nowPage }">
-										<li class="page-item"><a href="?act=${act }&nowPage=${p }&cntPerPage=${paging.cntPerPage}" class="page-link">${p }</a>
-									</c:when>
-								</c:choose>
-							</c:forEach>
-							<c:if test="${paging.endPage != paging.lastPage}">
-								<li class="page-item"><a href="?act=${act }
-						&nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}" class="page-link">&gt;</a></li>
-
-							</c:if>
-						</ul>
-					</div>
+					
 
 				</div>
 
