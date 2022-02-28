@@ -73,8 +73,9 @@ public class MeetController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(Meet meet) {
 		meetService.insert(meet);
-
-		return "redirect:/board?act=rlt";
+		meet = meetService.selectNew(meet.getMeet_name());
+		int meet_idx = meet.getMeet_idx();
+		return "redirect:/meet/detail?meet_idx=" + meet_idx;
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)

@@ -90,4 +90,9 @@ public class MeetServiceImpl implements MeetService {
 	public int countMeet() {
 		return meetDao.countMeet();
 	}
+	
+	@Override
+	public Meet selectNew(String meet_name) {
+		return meetDao.selectNew(meet_name);
+	}
 }

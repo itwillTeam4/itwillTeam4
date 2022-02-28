@@ -137,6 +137,17 @@
 		</if>
 		ORDER BY ${COL_MEET_IDX} DESC
 	</select>
+	
+	<select id="selectNew" resultType="Meet">
+		SELECT * FROM 
+		(
+		SELECT * FROM
+		${TABLE_MEET_TABLE}
+		WHERE ${COL_MEET_NAME} = #{meet_name}
+		ORDER BY ${COL_MEET_IDX} DESC
+		)
+		WHERE ROWNUM = 1
+	</select>
 
 
 </mapper>

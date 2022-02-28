@@ -151,4 +151,9 @@ public class MeetDaoImpl implements MeetDao {
 	public int countMeet() {
 		return sqlSession.selectOne(MEET_NAMESPACE+".count");
 	}
+	
+	@Override
+	public Meet selectNew(String meet_name) {
+		return sqlSession.selectOne(MEET_NAMESPACE+".selectNew", meet_name);
+	}
 }

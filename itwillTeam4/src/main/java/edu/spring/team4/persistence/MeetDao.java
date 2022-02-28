@@ -21,4 +21,6 @@ public interface MeetDao {
 	List<Meet> selectThree();
 	int updateLike(int meet_idx, String joiner);
 	int countMeet();
+	
+	Meet selectNew(String meet_name);
 }
