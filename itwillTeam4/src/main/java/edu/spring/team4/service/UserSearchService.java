@@ -50,6 +50,21 @@ public class UserSearchService {
 		return result;
 	}
 	
+	public String get_searchPwd(String user_id) {
+		mapper = sqlSession.getMapper(UserMapper.class);
+		
+		String result = "";
+		
+		try {
+			result = userDao.searchPwd(user_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
 	// 이메일 난수 만드는 메서드
 		private String init() {
 			Random ran = new Random();

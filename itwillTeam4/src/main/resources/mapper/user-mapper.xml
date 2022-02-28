@@ -49,6 +49,14 @@
 		select ${COL_USER_MEET_IDX}
 		from ${TABLE_USER_TABLE} where ${COL_USER_CODE} = #{user_code}
 	</select>
+	
+	<!-- 비밀번호 Y 찾기 -->
+	<select id="searchPwdY" resultType="String">
+		select ${COL_USER_PWD}
+		from ${TABLE_USER_TABLE}
+		where ${COL_USER_ID} = #{user_id}
+		and ${COL_USER_KEY} = 'Y'
+	</select>
 
 
 	<update id="searchPassword" parameterType="Map">

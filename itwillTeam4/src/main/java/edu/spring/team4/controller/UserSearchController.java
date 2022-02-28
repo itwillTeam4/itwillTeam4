@@ -36,6 +36,17 @@ public class UserSearchController {
 		
 	}
 	
+	// 비번찾기 전 Y키 확인
+	@RequestMapping(value = "/user/userPwdY", method = RequestMethod.GET)
+	@ResponseBody
+	public String userIdSearch(@RequestParam("inputId") String user_id) {
+		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출 비밀번호 찾기 전에 Y냐  ");
+		String result = searchService.get_searchPwd(user_id);
+
+		return result;
+		
+	}
+	
 	// 비밀번호 찾기
 	@RequestMapping(value = "/user/searchPassword", method = RequestMethod.GET)
 	@ResponseBody
@@ -43,6 +54,8 @@ public class UserSearchController {
 			@RequestParam("inputPhone_2")String user_phone,
 			HttpServletRequest request) {
 		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출 비번을 찾아보자 ");
+		
+		
 		searchService.mailSendWithPassword(user_id, user_phone, request);
 		
 		return "user/searchPassword";

@@ -393,11 +393,11 @@
 																				'.invalid_id')
 																				.show(); // invalid div 보여줌.
 																		$(
-																				'#btn-complete')
-																				.attr(
-																						'disabled',
-																						'true'); // 버튼 비활성화
-																	}
+																		'#btn-complete')
+																		.attr(
+																				'disabled',
+																				'true'); // 버튼 비활성화
+															}
 																});
 											});
 
