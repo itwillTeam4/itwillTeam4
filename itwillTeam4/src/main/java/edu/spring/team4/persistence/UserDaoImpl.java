@@ -127,5 +127,10 @@ public class UserDaoImpl implements UserDao {
 		params.put("key", key);
 		return sqlSession.update(USER_NAMESPACE + ".searchPassword", params);
 	}
+	
+	@Override
+	public String searchPwd(String user_id) {
+		return sqlSession.selectOne(USER_NAMESPACE + ".searchPwdY", user_id);
+	}
 
 }
