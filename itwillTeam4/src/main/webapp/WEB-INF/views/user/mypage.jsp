@@ -233,7 +233,7 @@
 			googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
 			initialView : 'dayGridMonth',
 			initialDate : '2022-02-07',
-			selectable : true,
+			selectable : false,
 			editable : false,
 			displayEventTime : false,
 			locale : "ko",
