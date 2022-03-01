@@ -266,7 +266,7 @@
 									class="btn btn-primary btn-block ywBtn">찾기</button>
 							</div>
 							<div class="searchResult" style="margin-top: 20px;">
-								<b id="id_value2" style="float: left;">아이디는 : </b>
+								<b id="id_value2" style="float: left;">이메일은 : </b>
 								<p id="id_value"
 									style="display: block; left: 10px; position: relative;"></p>
 							</div>
