@@ -36,18 +36,15 @@ public class AuthInterceptor implements HandlerInterceptor{
 			log.debug("request URL: {}", reqUrl);
 			log.debug("request Param: {}", reqParam);
 			log.debug("request Param: {}", order);
-//			if ((reqParam == null && order == null) || (reqParam.equals("free") && order.equals("0")) || (reqParam.equals("free") && order.equals("1"))
-//					|| (reqParam.equals("free") && order.equals("3")) || (reqParam.equals("free") && order.equals("4"))) {
-//				response.sendRedirect("http://localhost:8181/team4/board");
-//				return true;
+//			if ( reqParam == null || reqParam.equals("free") || order.equals("0") || order.equals("1")
+//					|| order.equals("3") || order.equals("4")) {
+//				return true; 
 //			}
-			if ((reqParam == null && order == null) || reqParam.equals("free") || order.equals("0") || order.equals("1")
-					|| order.equals("3") || order.equals("4")) {
-				
+			
+			if ( reqParam == null || reqParam.equals("free")) {
 				return true; 
-			}
-
-
+			} 
+			
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
 
 			log.debug("URI 디코딩 후:{}", reqUrl);

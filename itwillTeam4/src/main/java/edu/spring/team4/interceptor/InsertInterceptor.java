@@ -24,10 +24,10 @@ public class InsertInterceptor implements HandlerInterceptor{
 			// 요청 URL 정보를 찾아서 signin 요청에 요청 파라미터 추가
 			String reqUrl = request.getRequestURL().toString();
 			String reqParam = request.getParameter("act");
-//			if ((reqParam != null && reqParam.equals("free")) || reqParam == null) {
-//				return true;
-//			} 
-
+			if ((reqParam != null && reqParam.equals("free")) || reqParam == null) {
+				return true;
+			} 
+ 
 
 			reqUrl = UriUtils.encode(reqUrl, "UTF-8");
 
