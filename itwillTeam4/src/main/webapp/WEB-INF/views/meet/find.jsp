@@ -213,7 +213,7 @@
 		var calinfo = {
 			googleCalendarApiKey : 'AIzaSyCqdOcfDe17hpHOJGaqgcph2bbc5-p5eyk',
 			initialView : 'dayGridMonth',
-			initialDate : '2022-02-07',
+			initialDate : '2022-03-01',
 			selectable : true,
 			editable : false,
 			displayEventTime : false,
