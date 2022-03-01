@@ -206,7 +206,6 @@
 		WHERE ${COL_BNO} = #{bno}
 	</update>
 
-	
 
 	<!-- 게시글 삭제 -->
 	<delete id="delete">

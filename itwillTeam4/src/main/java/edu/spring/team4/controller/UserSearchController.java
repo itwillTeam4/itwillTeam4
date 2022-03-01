@@ -37,14 +37,13 @@ public class UserSearchController {
 	}
 	
 	// 비번찾기 전 Y키 확인
-	@RequestMapping(value = "/user/userPwdY", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/userPwdY", method = RequestMethod.POST)
 	@ResponseBody
 	public String userIdSearch(@RequestParam("inputId") String user_id) {
 		log.info("유저 서치 컨트롤러ㅓㅓㅓ 호출 비밀번호 찾기 전에 Y냐  ");
 		String result = searchService.get_searchPwd(user_id);
 
 		return result;
-		
 	}
 	
 	// 비밀번호 찾기

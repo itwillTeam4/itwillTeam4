@@ -291,6 +291,9 @@
 								<button id="searchBtn2" type="button"
 									class="btn btn-primary btn-block ywBtn">찾기</button>
 							</div>
+							<div class="searchResultY" style="margin-top: 20px;">
+								<p id="pwd_value"></p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -526,32 +529,40 @@
 															}
 														});
 											});
+							
+							
+							// TODO
+							
+							$("#searchBtn2").click(function(){
+								
+								$.ajax({
+									type:"POST",
+									url:"${pageContext.request.contextPath}//user/userPwdY?inputId="
+											+$('#inputId').val(),
+									success:function(data){
+										if(data == 0){
+											$('#pwd_value').text("회원 정보를 확인해주세요!");	
+										} else {
+											
+											$.ajax({type : "GET",
+												url : "${pageContext.request.contextPath}/user/searchPassword",
+												data : {
+												inputId : $('#inputId').val(),
+												inputPhone_2 : $('#inputPhone_2').val()},
+													success : function(data) {
+														alert("가입하신 이메일(아이디)로 임시 비밀번호를 전송했습니다!");
+														$("#searchModal").fadeOut(300);
+													}
+												});
+											
+										}
+									}
+								});
+								
+							});
+						
 
-							$("#searchBtn2")
-									.click(
-											function() {
-												$
-														.ajax({
-															type : "GET",
-															url : "${pageContext.request.contextPath}/user/searchPassword",
-															data : {
-																inputId : $(
-																		'#inputId')
-																		.val(),
-																inputPhone_2 : $(
-																		'#inputPhone_2')
-																		.val()
-															},
-															success : function(
-																	data) {
-																alert("가입하신 이메일(아이디)로 임시 비밀번호를 전송했습니다!");
-																$(
-																		"#searchModal")
-																		.fadeOut(
-																				300);
-															}
-														});
-											});
+							
 
 						});
 	</script>

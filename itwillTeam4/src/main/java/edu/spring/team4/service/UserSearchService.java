@@ -56,7 +56,7 @@ public class UserSearchService {
 		String result = "";
 		
 		try {
-			result = userDao.searchPwd(user_id);
+			result = userDao.searchPwdY(user_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

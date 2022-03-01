@@ -129,7 +129,7 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public String searchPwd(String user_id) {
+	public String searchPwdY(String user_id) {
 		return sqlSession.selectOne(USER_NAMESPACE + ".searchPwdY", user_id);
 	}
 
